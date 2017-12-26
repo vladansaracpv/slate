@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>Alt36 API Reference</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;javascript&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -212,8 +212,6 @@
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
               <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
@@ -223,216 +221,193 @@
       <div id="toc" class="toc-list-h1">
           <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#about-the-platform" class="toc-h2 toc-link" data-title="About the platform">About the platform</a>
+                  </li>
+                  <li>
+                    <a href="#registration-and-onboarding" class="toc-h2 toc-link" data-title="Registration and onboarding">Registration and onboarding</a>
+                  </li>
+                  <li>
+                    <a href="#external-api-providers" class="toc-h2 toc-link" data-title="External API providers">External API providers</a>
+                  </li>
+                  <li>
+                    <a href="#architecture" class="toc-h2 toc-link" data-title="Architecture">Architecture</a>
+                  </li>
+                  <li>
+                    <a href="#sandbox-production" class="toc-h2 toc-link" data-title="Sandbox/Production">Sandbox/Production</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#user-roles" class="toc-h1 toc-link" data-title="User roles">User roles</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#partners" class="toc-h2 toc-link" data-title="Partners">Partners</a>
+                  </li>
+                  <li>
+                    <a href="#merchant" class="toc-h2 toc-link" data-title="Merchant">Merchant</a>
+                  </li>
+                  <li>
+                    <a href="#vendors" class="toc-h2 toc-link" data-title="Vendors">Vendors</a>
+                  </li>
+                  <li>
+                    <a href="#customers" class="toc-h2 toc-link" data-title="Customers">Customers</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#important-workflows-and-use-cases" class="toc-h1 toc-link" data-title="Important workflows and use cases">Important workflows and use cases</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#integration-workflow-for-external-partners" class="toc-h2 toc-link" data-title="Integration workflow for External Partners">Integration workflow for External Partners</a>
+                  </li>
+                  <li>
+                    <a href="#integration-workflow-for-pos-device-providers" class="toc-h2 toc-link" data-title="Integration workflow for PoS device providers">Integration workflow for PoS device providers</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#create" class="toc-h3 toc-link" data-title="Create">Create</a>
+                          </li>
+                          <li>
+                            <a href="#register-activate" class="toc-h3 toc-link" data-title="Register/Activate">Register/Activate</a>
+                          </li>
+                          <li>
+                            <a href="#deactivate" class="toc-h3 toc-link" data-title="Deactivate">Deactivate</a>
+                          </li>
+                          <li>
+                            <a href="#request-payment" class="toc-h3 toc-link" data-title="Request payment">Request payment</a>
+                          </li>
+                          <li>
+                            <a href="#linkovati-workflows-ka-endpoints" class="toc-h3 toc-link" data-title="Linkovati workflows ka endpoints">Linkovati workflows ka endpoints</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                    <a href="#payments" class="toc-h2 toc-link" data-title="Payments">Payments</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#send-dash" class="toc-h3 toc-link" data-title="Send Dash">Send Dash</a>
+                          </li>
+                          <li>
+                            <a href="#convert" class="toc-h3 toc-link" data-title="Convert">Convert</a>
+                          </li>
+                          <li>
+                            <a href="#buy-dash" class="toc-h3 toc-link" data-title="Buy Dash">Buy Dash</a>
+                          </li>
+                          <li>
+                            <a href="#cash-withdraw" class="toc-h3 toc-link" data-title="Cash withdraw">Cash withdraw</a>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+          <li>
+            <a href="#pagination" class="toc-h1 toc-link" data-title="Pagination">Pagination</a>
+          </li>
+          <li>
+            <a href="#metadata" class="toc-h1 toc-link" data-title="Metadata">Metadata</a>
+          </li>
+          <li>
+            <a href="#versioning" class="toc-h1 toc-link" data-title="Versioning">Versioning</a>
+          </li>
+          <li>
+            <a href="#core-resources" class="toc-h1 toc-link" data-title="Core resources">Core resources</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#backend-service" class="toc-h2 toc-link" data-title="Backend service">Backend service</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#payments-2" class="toc-h2 toc-link" data-title="Payments">Payments</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#account" class="toc-h3 toc-link" data-title="Account">Account</a>
+                          </li>
+                          <li>
+                            <a href="#list-of-bank-account" class="toc-h3 toc-link" data-title="List of bank account">List of bank account</a>
+                          </li>
+                          <li>
+                            <a href="#fiat-cash-out" class="toc-h3 toc-link" data-title="Fiat cash out">Fiat cash out</a>
+                          </li>
+                          <li>
+                            <a href="#send-to-internal-wallet" class="toc-h3 toc-link" data-title="Send to Internal wallet">Send to Internal wallet</a>
+                          </li>
+                          <li>
+                            <a href="#send-to-external-wallet" class="toc-h3 toc-link" data-title="Send to External wallet">Send to External wallet</a>
+                          </li>
+                          <li>
+                            <a href="#convert-2" class="toc-h3 toc-link" data-title="Convert">Convert</a>
+                          </li>
+                          <li>
+                            <a href="#buy" class="toc-h3 toc-link" data-title="Buy">Buy</a>
+                          </li>
+                          <li>
+                            <a href="#exchange-rates" class="toc-h3 toc-link" data-title="Exchange rates">Exchange rates</a>
+                          </li>
+                          <li>
+                            <a href="#pos" class="toc-h3 toc-link" data-title="POS">POS</a>
+                          </li>
+                          <li>
+                            <a href="#virtual-pos" class="toc-h3 toc-link" data-title="Virtual POS">Virtual POS</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#notifications" class="toc-h2 toc-link" data-title="Notifications">Notifications</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#payment-notification" class="toc-h3 toc-link" data-title="Payment Notification">Payment Notification</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                    <a href="#reporting" class="toc-h2 toc-link" data-title="Reporting">Reporting</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#dashboard-summary" class="toc-h3 toc-link" data-title="Dashboard Summary">Dashboard Summary</a>
+                          </li>
+                          <li>
+                            <a href="#dashboard-performance" class="toc-h3 toc-link" data-title="Dashboard performance">Dashboard performance</a>
+                          </li>
+                          <li>
+                            <a href="#sales-summary" class="toc-h3 toc-link" data-title="Sales Summary">Sales Summary</a>
+                          </li>
+                          <li>
+                            <a href="#reports-merchant" class="toc-h3 toc-link" data-title="Reports Merchant">Reports Merchant</a>
+                          </li>
+                          <li>
+                            <a href="#reports-locations" class="toc-h3 toc-link" data-title="Reports Locations">Reports Locations</a>
+                          </li>
+                          <li>
+                            <a href="#reports-pos" class="toc-h3 toc-link" data-title="Reports POS">Reports POS</a>
+                          </li>
+                          <li>
+                            <a href="#reports-tax" class="toc-h3 toc-link" data-title="Reports Tax">Reports Tax</a>
+                          </li>
+                      </ul>
                   </li>
               </ul>
+          </li>
+          <li>
+            <a href="#sign-up-login" class="toc-h1 toc-link" data-title="Sign Up/Login">Sign Up/Login</a>
+          </li>
+          <li>
+            <a href="#support" class="toc-h1 toc-link" data-title="Support">Support</a>
           </li>
           <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </div>
-        <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
-        </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
-
-<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
-<h1 id='errors'>Errors</h1>
+        <h1 id='introduction'>Introduction</h1><h2 id='about-the-platform'>About the platform</h2><h2 id='registration-and-onboarding'>Registration and onboarding</h2><h2 id='external-api-providers'>External API providers</h2><h2 id='architecture'>Architecture</h2><h2 id='sandbox-production'>Sandbox/Production</h2><h1 id='user-roles'>User roles</h1><h2 id='partners'>Partners</h2><h2 id='merchant'>Merchant</h2><h2 id='vendors'>Vendors</h2><h2 id='customers'>Customers</h2><h1 id='important-workflows-and-use-cases'>Important workflows and use cases</h1><h2 id='integration-workflow-for-external-partners'>Integration workflow for External Partners</h2><h2 id='integration-workflow-for-pos-device-providers'>Integration workflow for PoS device providers</h2><h3 id='create'>Create</h3><h3 id='register-activate'>Register/Activate</h3><h3 id='deactivate'>Deactivate</h3><h3 id='request-payment'>Request payment</h3><h3 id='linkovati-workflows-ka-endpoints'>Linkovati workflows ka endpoints</h3><h2 id='payments'>Payments</h2><h3 id='send-dash'>Send Dash</h3><h3 id='convert'>Convert</h3><h3 id='buy-dash'>Buy Dash</h3><h3 id='cash-withdraw'>Cash withdraw</h3><h1 id='authentication'>Authentication</h1><h1 id='errors'>Errors</h1><h1 id='pagination'>Pagination</h1><h1 id='metadata'>Metadata</h1><h1 id='versioning'>Versioning</h1><h1 id='core-resources'>Core resources</h1><h2 id='backend-service'>Backend service</h2><h2 id='payments-2'>Payments</h2><h3 id='account'>Account</h3><h3 id='list-of-bank-account'>List of bank account</h3><h3 id='fiat-cash-out'>Fiat cash out</h3><h3 id='send-to-internal-wallet'>Send to Internal wallet</h3><h3 id='send-to-external-wallet'>Send to External wallet</h3><h3 id='convert-2'>Convert</h3><h3 id='buy'>Buy</h3><h3 id='exchange-rates'>Exchange rates</h3><h3 id='pos'>POS</h3><h3 id='virtual-pos'>Virtual POS</h3><h2 id='notifications'>Notifications</h2><h3 id='payment-notification'>Payment Notification</h3><h2 id='reporting'>Reporting</h2><h3 id='dashboard-summary'>Dashboard Summary</h3><h4 id='general'>General</h4><h4 id='sales'>Sales</h4><h4 id='tax'>Tax</h4><h3 id='dashboard-performance'>Dashboard performance</h3><h4 id='merchant-performance'>Merchant performance</h4><h4 id='location-performance'>Location performance</h4><h3 id='sales-summary'>Sales Summary</h3><h4 id='associate'>Associate</h4><h4 id='location'>Location</h4><h4 id='pos-2'>POS</h4><h3 id='reports-merchant'>Reports Merchant</h3><h4 id='merchant-2'>Merchant</h4><h4 id='merchant-s-locations'>Merchant’s locations</h4><h4 id='pos-for-merchant-s-locations'>POS for Merchant’s locations</h4><h3 id='reports-locations'>Reports Locations</h3><h4 id='location-2'>Location</h4><h4 id='pos-for-locations'>POS for Locations</h4><h3 id='reports-pos'>Reports POS</h3><h3 id='reports-tax'>Reports Tax</h3><h1 id='sign-up-login'>Sign Up/Login</h1><h1 id='support'>Support</h1><h1 id='errors'>Errors</h1>
 <aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
 
 <p>The Kittn API uses the following error codes:</p>
@@ -493,8 +468,6 @@ Remember — a happy kitten is an authenticated kitten!
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
                 <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
