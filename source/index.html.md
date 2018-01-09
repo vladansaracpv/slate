@@ -41,6 +41,7 @@ The base URLs for Sandbox environment follow:
 * Reporting service: https://reporting-dot-sandboxaltthirtysixproduct36.appspot.com/ 
 * Payment gateway service: https://paymentgateway-dot-sandboxaltthirtysixproduct36.appspot.com/
 * Notifier service: https://notifier-dot-sandboxaltthirtysixproduct36.appspot.com/ 
+
 As one may notice the only difference in the base URL between sandbox and production is “sandbox” prefix in the main domain name (i.e. sandboxaltthirtysixproduct36 vs altthirtysixproduct36).
 
 ## Registration and onboarding
