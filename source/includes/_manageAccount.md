@@ -1,6 +1,6 @@
 
 
-### Manage account
+### Manage Account
 
 
 
@@ -150,7 +150,7 @@ System.out.println(response.toString());
 > The above command returns JSON structured like this:
 
 ```json
-{ 
+{
   "id":3544,
   "login":"merchant",
   "firstName":"Merchant",
@@ -747,12 +747,12 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!-- 
+<!--
 <aside class="success">
 This operation require authentication
 </aside> -->
 
- 
+
 #### Request password reset
 
 
@@ -1318,7 +1318,7 @@ PARTNER/MERCHANT/VENDOR/CUSTOMER admin roles only
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!-- 
+<!--
 <aside class="success">
 This operation does not require authentication
 </aside> -->
@@ -1488,7 +1488,7 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!-- 
+<!--
 <aside class="success">
 This operation require authentication
 </aside> -->
@@ -1822,7 +1822,3 @@ System.out.println(response.toString());
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
-
-
-
-

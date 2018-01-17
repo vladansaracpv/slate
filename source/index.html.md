@@ -34,9 +34,19 @@ includes:
   - manageVendors
   - manageCustomers
   - manageAccount
+  - common
+  - payments
+  - notifications
+  - reporting
+  - dashboardSummary
+  - dashboardPerformance
+  - salesVolume
+  - partnerSalesReport
+  - merchantSalesReport
+  - taxReport
+
   # - schemes
   # - rest
 
 search: true
 ---
-
