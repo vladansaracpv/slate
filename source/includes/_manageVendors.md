@@ -147,6 +147,12 @@ System.out.println(response.toString());
 
 *Get the all Vendors paginated*
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_PARTNER_USER`
+  * `ROLE_MERCHANT_ADMIN`
+  * `ROLE_MERCHANT_USER`
 
 <!-- <h3 id="getAllPaginatedUsingGET_4-parameters">Parameters</h3> -->
 
@@ -217,7 +223,7 @@ Status Code **200**
 |» vendors|integer(int32)|false|No description|
 |» zip|string|true|No description|
 
-<!-- 
+<!--
 <aside class="success">
 </aside> -->
 
@@ -365,6 +371,12 @@ System.out.println(response.toString());
 
 *Get the all Vendors*
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_PARTNER_USER`
+  * `ROLE_MERCHANT_ADMIN`
+  * `ROLE_MERCHANT_USER`
 
 > Example responses
 
@@ -570,6 +582,13 @@ System.out.println(response.toString());
 
 *Get the vendor by id*
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_PARTNER_USER`
+  * `ROLE_MERCHANT_ADMIN`
+  * `ROLE_MERCHANT_USER`
+  * `ROLE_VENDOR_ADMIN`
 
 <!-- <h3 id="getByIdUsingGET_4-parameters">Parameters</h3> -->
 
@@ -592,7 +611,7 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!-- 
+<!--
 <aside class="success">
 This operation does not require authentication
 </aside> -->
@@ -881,6 +900,13 @@ System.out.println(response.toString());
 
 *Creates a new vendor*
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_PARTNER_USER`
+  * `ROLE_MERCHANT_ADMIN`
+  * `ROLE_MERCHANT_USER`
+  * `ROLE_VENDOR_ADMIN`
 
 > Body parameter
 
@@ -1058,7 +1084,7 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!-- 
+<!--
 <aside class="success">
 This operation does not require authentication
 </aside> -->
@@ -1212,6 +1238,11 @@ System.out.println(response.toString());
 
 *Invite vendor via email*
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_MERCHANT_ADMIN`
+  * `ROLE_VENDOR_ADMIN`
 
 > Body parameter
 
@@ -1258,17 +1289,13 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!-- 
+<!--
 <aside class="success">
 This operation does not require authentication
 </aside> -->
 
 
 #### Vendor self-registration
-
-<aside class="success">
-This operation does not require authentication
-</aside>
 
 <a id="opIdselfRegistrationUsingPOST_3"></a>
 
@@ -1498,6 +1525,9 @@ System.out.println(response.toString());
 
 *Vendor self registration*
 
+**Required user role:**
+
+  * `No authentication is required`
 
 > Body parameter
 
@@ -1906,11 +1936,16 @@ System.out.println(response.toString());
 `PUT /api/vendors`
 
 
-*Updates an existing Merchant*
+*Updates an existing Vendor*
 
 
-Updates an existing Partner
+Updates an existing Vendor
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_MERCHANT_ADMIN`
+  * `ROLE_VENDOR_ADMIN`
 
 > Body parameter
 
@@ -2201,6 +2236,11 @@ System.out.println(response.toString());
 
 delete the Vendor with id. Deletes/Disables all vendor users first
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_MERCHANT_ADMIN`
+  * `ROLE_VENDOR_ADMIN`
 
 <!-- <h3 id="deleteUsingDELETE_4-parameters">Parameters</h3> -->
 
@@ -2220,7 +2260,7 @@ delete the Vendor with id. Deletes/Disables all vendor users first
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 
-<!-- 
+<!--
 <aside class="success">
 This operation does not require authentication
 </aside> -->
@@ -2373,10 +2413,17 @@ System.out.println(response.toString());
 
 *search*
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_PARTNER_USER`
+  * `ROLE_MERCHANT_ADMIN`
+  * `ROLE_MERCHANT_USER`
+  * `ROLE_VENDOR_ADMIN`
 
 <!-- <h3 id="searchUsingGET_5-parameters">Parameters</h3> -->
 
-
+1
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |q|query|string|false|q|
@@ -2398,8 +2445,7 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!-- 
+<!--
 <aside class="success">
 This operation does not require authentication
 </aside> -->
-

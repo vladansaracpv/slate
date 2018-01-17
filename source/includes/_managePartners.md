@@ -2,10 +2,6 @@
 ### Manage Partners
 #### Partner self registration
 
-<aside class="success">
-This operation does not require authentication
-</aside>
-
 <a id="opIdselfRegistrationUsingPOST_2"></a>
 
 
@@ -234,6 +230,9 @@ System.out.println(response.toString());
 
 *Partner self registration*
 
+**Required user role:**
+
+  * `No authentication is required`
 
 > Body parameter
 
@@ -650,6 +649,9 @@ System.out.println(response.toString());
 
 Updates an existing Partner
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
 
 > Body parameter
 
@@ -966,7 +968,10 @@ System.out.println(response.toString());
 
 *Get the partner by ID*
 
+**Required user role:**
 
+  * `ROLE_PARTNER_ADMIN`
+  
 <!-- <h3 id="getByIdUsingGET_3-parameters">Parameters</h3> -->
 
 

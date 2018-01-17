@@ -148,7 +148,12 @@ System.out.println(response.toString());
 
 *Get all the locations paginated*
 
+**Required user role:**
 
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_PARTNER_USER`
+  * `ROLE_MERCHANT_ADMIN`
+  * `ROLE_MERCHANT_USER`
 
 
 
@@ -496,6 +501,12 @@ System.out.println(response.toString());
 
 *Get all the locations*
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_PARTNER_USER`
+  * `ROLE_MERCHANT_ADMIN`
+  * `ROLE_MERCHANT_USER`
 
 <!-- <h3 id="getAllLocationsForDashboardUsingGET-parameters">Parameters</h3> -->
 
@@ -682,6 +693,12 @@ System.out.println(response.toString());
 
 *Get location by ID*
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_PARTNER_USER`
+  * `ROLE_MERCHANT_ADMIN`
+  * `ROLE_MERCHANT_USER`
 
 <!-- <h3 id="getLocationUsingGET_1-parameters">Parameters</h3> -->
 
@@ -733,13 +750,12 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!-- 
+<!--
 <aside class="success">
 </aside> -->
 
 
 #### Create Location
-
 
 <a id="opIdcreateLocationUsingPOST_1"></a>
 
@@ -908,6 +924,9 @@ System.out.println(response.toString());
 
 *Create a new location*
 
+**Required user role:**
+
+  * `ROLE_MERCHANT_ADMIN`
 
 > Body parameter
 
@@ -964,7 +983,7 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!-- 
+<!--
 <aside class="success">
 </aside> -->
 
@@ -1029,7 +1048,7 @@ System.out.println(response.toString());
       "customers":511,
       "locationsCount":49,
       "posCount":5
-      
+
    }
 }
 ```
@@ -1206,6 +1225,9 @@ System.out.println(response.toString());
 
 *Updates an existing location*
 
+**Required user role:**
+
+  * `ROLE_MERCHANT_ADMIN`
 
 > Body parameter
 
@@ -1383,6 +1405,9 @@ System.out.println(response.toString());
 
 *Delete location by ID*
 
+**Required user role:**
+
+  * `ROLE_MERCHANT_ADMIN`
 
 <!-- <h3 id="deleteLocationUsingDELETE_1-parameters">Parameters</h3> -->
 
@@ -1548,6 +1573,12 @@ System.out.println(response.toString());
 
 *search locations*
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_PARTNER_USER`
+  * `ROLE_MERCHANT_ADMIN`
+  * `ROLE_MERCHANT_USER`
 
 <!-- <h3 id="searchUsingGET_1-parameters">Parameters</h3> -->
 
@@ -1743,7 +1774,6 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!-- 
+<!--
 <aside class="success">
 </aside> -->
-

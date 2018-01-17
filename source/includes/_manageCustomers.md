@@ -148,6 +148,14 @@ System.out.println(response.toString());
 
 *Get the all Customers paginated*
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_PARTNER_USER`
+  * `ROLE_MERCHANT_ADMIN`
+  * `ROLE_MERCHANT_USER`
+  * `ROLE_VENDOR_ADMIN`
+  * `ROLE_VENDOR_USER`
 
 <!-- <h3 id="getAllPaginatedUsingGET-parameters">Parameters</h3> -->
 
@@ -363,6 +371,15 @@ System.out.println(response.toString());
 
 *Get the customer by id*
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_PARTNER_USER`
+  * `ROLE_MERCHANT_ADMIN`
+  * `ROLE_MERCHANT_USER`
+  * `ROLE_VENDOR_ADMIN`
+  * `ROLE_VENDOR_USER`
+  * `ROLE_CUSTOMER_ADMIN`
 
 <!-- <h3 id="getByIdUsingGET-parameters">Parameters</h3> -->
 
@@ -544,6 +561,11 @@ System.out.println(response.toString());
 
 *Creates a new customer*
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_MERCHANT_ADMIN`
+  * `ROLE_VENDOR_ADMIN`
 
 > Body parameter
 
@@ -595,7 +617,7 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!-- 
+<!--
 <aside class="success">
 This operation does not require authentication
 </aside> -->
@@ -751,6 +773,12 @@ System.out.println(response.toString());
 
 *Invite customer via email*
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_MERCHANT_ADMIN`
+  * `ROLE_VENDOR_ADMIN`
+  * `ROLE_CUSTOMER_ADMIN`
 
 > Body parameter
 
@@ -960,7 +988,9 @@ System.out.println(response.toString());
 
 *Customer self registration*
 
+**Required user role:**
 
+  * `No authentication is required`
 > Body parameter
 
 
@@ -1171,6 +1201,9 @@ System.out.println(response.toString());
 
 *Updates an existing Customer*
 
+**Required user role:**
+
+  * `ROLE_CUSTOMER_ADMIN`
 
 > Body parameter
 
@@ -1335,6 +1368,12 @@ System.out.println(response.toString());
 
 delete the Customer with id. Deletes/Disables all customer users first
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_MERCHANT_ADMIN`
+  * `ROLE_VENDOR_ADMIN`
+  * `ROLE_CUSTOMER_ADMIN`
 
 <!-- <h3 id="deleteUsingDELETE-parameters">Parameters</h3> -->
 
@@ -1504,6 +1543,14 @@ System.out.println(response.toString());
 
 *search*
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_PARTNER_USER`
+  * `ROLE_MERCHANT_ADMIN`
+  * `ROLE_MERCHANT_USER`
+  * `ROLE_VENDOR_ADMIN`
+  * `ROLE_VENDOR_USER`
 
 <!-- <h3 id="searchUsingGET-parameters">Parameters</h3> -->
 
@@ -1528,6 +1575,3 @@ System.out.println(response.toString());
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
-
-
-

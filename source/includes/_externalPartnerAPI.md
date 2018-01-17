@@ -1,6 +1,7 @@
 
 <h3 id="Alt36Dash-API-External-partner-resource">External Partner API</h3>
 
+**Important notice:** In case you need to use this API, please send an email to [support@alt36.com](malto:support@alt36.com) explaining your business preferences in order to be authorized to use the API. By default, Partner user roles `(ROLE_PARTNER_ADMIN, ROLE_PARTNER_USER)` are not authorized to use these APIs. `ROLE_EXTERNAL` is required for this API.
 
 External Partner Resource
 
@@ -146,9 +147,12 @@ System.out.println(response.toString());
 
 `GET /api/externalpartner/merchants`
 
-
 *Get the all Merchants paginated*
 
+**Required user role:**
+
+  * `ROLE_EXTERNAL, ROLE_PARTNER_ADMIN`
+  * `ROLE_EXTERNAL, ROLE_PARTNER_USER`
 
 <!-- <h3 id="getAllPaginatedUsingGET_1-parameters">Parameters</h3> -->
 
@@ -368,6 +372,10 @@ System.out.println(response.toString());
 
 *Get the merchant by id*
 
+**Required user role:**
+
+  * `ROLE_EXTERNAL, ROLE_PARTNER_ADMIN`
+  * `ROLE_EXTERNAL, ROLE_PARTNER_USER`
 
 <!-- <h3 id="getByIdUsingGET_1-parameters">Parameters</h3> -->
 
@@ -678,6 +686,10 @@ System.out.println(response.toString());
 
 *Creates a new merchant*
 
+**Required user role:**
+
+  * `ROLE_EXTERNAL, ROLE_PARTNER_ADMIN`
+  * `ROLE_EXTERNAL, ROLE_PARTNER_USER`
 
 > Body parameter
 
@@ -1142,8 +1154,10 @@ System.out.println(response.toString());
 
 *Updates an existing Merchant*
 
+**Required user role:**
 
-Updates an existing Merchant
+  * `ROLE_EXTERNAL, ROLE_PARTNER_ADMIN`
+  * `ROLE_EXTERNAL, ROLE_PARTNER_USER`
 
 
 > Body parameter
@@ -1436,9 +1450,12 @@ System.out.println(response.toString());
 
 *Delete the Merchant with id*
 
+Deletes/Disables all merchant users first
 
-delete the Merchant with id. Deletes/Disables all merchant users first
+**Required user role:**
 
+  * `ROLE_EXTERNAL, ROLE_PARTNER_ADMIN`
+  * `ROLE_EXTERNAL, ROLE_PARTNER_USER`
 
 <!-- <h3 id="deleteUsingDELETE_1-parameters">Parameters</h3> -->
 
@@ -1608,6 +1625,10 @@ System.out.println(response.toString());
 
 *Get all the locations*
 
+**Required user role:**
+
+  * `ROLE_EXTERNAL, ROLE_PARTNER_ADMIN`
+  * `ROLE_EXTERNAL, ROLE_PARTNER_USER`
 
 <!-- <h3 id="getAllLocationsUsingGET-parameters">Parameters</h3> -->
 
@@ -1783,6 +1804,10 @@ System.out.println(response.toString());
 
 *Get location by ID*
 
+**Required user role:**
+
+  * `ROLE_EXTERNAL, ROLE_PARTNER_ADMIN`
+  * `ROLE_EXTERNAL, ROLE_PARTNER_USER`
 
 <!-- <h3 id="getLocationUsingGET-parameters">Parameters</h3> -->
 
@@ -2009,6 +2034,10 @@ System.out.println(response.toString());
 
 *Create a new location*
 
+**Required user role:**
+
+  * `ROLE_EXTERNAL, ROLE_PARTNER_ADMIN`
+  * `ROLE_EXTERNAL, ROLE_PARTNER_USER`
 
 > Body parameter
 
@@ -2295,6 +2324,10 @@ System.out.println(response.toString());
 
 *Updates an existing location*
 
+**Required user role:**
+
+  * `ROLE_EXTERNAL, ROLE_PARTNER_ADMIN`
+  * `ROLE_EXTERNAL, ROLE_PARTNER_USER`
 
 > Body parameter
 
@@ -2499,6 +2532,10 @@ System.out.println(response.toString());
 
 *Delete location by ID*
 
+**Required user role:**
+
+  * `ROLE_EXTERNAL, ROLE_PARTNER_ADMIN`
+  * `ROLE_EXTERNAL, ROLE_PARTNER_USER`
 
 <!-- <h3 id="deleteLocationUsingDELETE-parameters">Parameters</h3> -->
 
@@ -2667,6 +2704,10 @@ System.out.println(response.toString());
 
 *Get all POS*
 
+**Required user role:**
+
+  * `ROLE_EXTERNAL, ROLE_PARTNER_ADMIN`
+  * `ROLE_EXTERNAL, ROLE_PARTNER_USER`
 
 <!-- <h3 id="getAllPointOfSalesUsingGET-parameters">Parameters</h3> -->
 
@@ -2843,6 +2884,10 @@ System.out.println(response.toString());
 
 *Get POS by ID*
 
+**Required user role:**
+
+  * `ROLE_EXTERNAL, ROLE_PARTNER_ADMIN`
+  * `ROLE_EXTERNAL, ROLE_PARTNER_USER`
 
 <!-- <h3 id="getPointOfSaleUsingGET-parameters">Parameters</h3> -->
 
@@ -2865,7 +2910,7 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!-- 
+<!--
 <aside class="success">
 </aside> -->
 
@@ -3088,6 +3133,10 @@ System.out.println(response.toString());
 
 *Create a new POS*
 
+**Required user role:**
+
+  * `ROLE_EXTERNAL, ROLE_PARTNER_ADMIN`
+  * `ROLE_EXTERNAL, ROLE_PARTNER_USER`
 
 > Body parameter
 
@@ -3414,6 +3463,10 @@ System.out.println(response.toString());
 
 *Update existing POS*
 
+**Required user role:**
+
+  * `ROLE_EXTERNAL, ROLE_PARTNER_ADMIN`
+  * `ROLE_EXTERNAL, ROLE_PARTNER_USER`
 
 > Body parameter
 
@@ -3640,6 +3693,10 @@ System.out.println(response.toString());
 
 *Delete POS by ID*
 
+**Required user role:**
+
+  * `ROLE_EXTERNAL, ROLE_PARTNER_ADMIN`
+  * `ROLE_EXTERNAL, ROLE_PARTNER_USER`
 
 <!-- <h3 id="deletePointOfSaleUsingDELETE-parameters">Parameters</h3> -->
 

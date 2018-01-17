@@ -149,6 +149,12 @@ System.out.println(response.toString());
 
 *Get all POS paginated*
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_PARTNER_USER`
+  * `ROLE_MERCHANT_ADMIN`
+  * `ROLE_MERCHANT_USER`
 
 <!-- <h3 id="getAllPointOfSalesUsingGET_1-parameters">Parameters</h3> -->
 
@@ -321,6 +327,12 @@ System.out.println(response.toString());
 
 *Get POS by ID*
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_PARTNER_USER`
+  * `ROLE_MERCHANT_ADMIN`
+  * `ROLE_MERCHANT_USER`
 
 <!-- <h3 id="getPointOfSaleUsingGET_1-parameters">Parameters</h3> -->
 
@@ -343,7 +355,7 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!-- 
+<!--
 <aside class="success">
 </aside> -->
 
@@ -566,6 +578,9 @@ System.out.println(response.toString());
 
 *Create a new POS*
 
+**Required user role:**
+
+  * `ROLE_MERCHANT_ADMIN`
 
 > Body parameter
 
@@ -669,7 +684,7 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!-- 
+<!--
 <aside class="success">
 </aside> -->
 
@@ -892,6 +907,9 @@ System.out.println(response.toString());
 
 *Update existing POS*
 
+**Required user role:**
+
+  * `ROLE_MERCHANT_ADMIN`
 
 > Body parameter
 
@@ -995,7 +1013,7 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!-- 
+<!--
 <aside class="success">
 </aside> -->
 
@@ -1117,6 +1135,9 @@ System.out.println(response.toString());
 
 *Delete POS by ID*
 
+**Required user role:**
+
+  * `ROLE_MERCHANT_ADMIN`
 
 <!-- <h3 id="deletePointOfSaleUsingDELETE_1-parameters">Parameters</h3> -->
 
@@ -1282,6 +1303,9 @@ System.out.println(response.toString());
 
 *Generate POS request token code*
 
+**Required user role:**
+
+  * `ROLE_MERCHANT_ADMIN`
 
 <!-- <h3 id="createNewPosAuthUsingGET-parameters">Parameters</h3> -->
 
@@ -1449,6 +1473,9 @@ System.out.println(response.toString());
 
 *Register POS with temp key*
 
+**Required user role:**
+
+  * `ROLE_MERCHANT_ADMIN`
 
 <!-- <h3 id="registerNewPosWithKeyUsingPOST-parameters">Parameters</h3> -->
 
@@ -1618,6 +1645,12 @@ System.out.println(response.toString());
 
 *Get POS status*
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_PARTNER_USER`
+  * `ROLE_MERCHANT_ADMIN`
+  * `ROLE_MERCHANT_USER`
 
 <!-- <h3 id="isPosActiveUsingGET-parameters">Parameters</h3> -->
 
@@ -1640,7 +1673,7 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!-- 
+<!--
 <aside class="success">
 </aside> -->
 
@@ -1790,6 +1823,9 @@ System.out.println(response.toString());
 
 *Deactivate POS token*
 
+**Required user role:**
+
+  * `ROLE_MERCHANT_ADMIN`
 
 <!-- <h3 id="deletePosAuthUsingDELETE-parameters">Parameters</h3> -->
 
@@ -1956,8 +1992,14 @@ System.out.println(response.toString());
 `GET /api/point-of-sale/search`
 
 
-*Search Point Of Sales
-*
+*Search Point Of Sales*
+
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_PARTNER_USER`
+  * `ROLE_MERCHANT_ADMIN`
+  * `ROLE_MERCHANT_USER`
 
 
 <!-- <h3 id="searchUsingGET_4-parameters">Parameters</h3> -->
@@ -1984,7 +2026,6 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!-- 
+<!--
 <aside class="success">
 </aside> -->
-

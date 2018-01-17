@@ -144,6 +144,9 @@ System.out.println(response.toString());
 
 *getAccount*
 
+**Required user role:**
+
+  * `Available to all user roles`
 
 > Example responses
 
@@ -347,6 +350,11 @@ System.out.println(response.toString());
 
 *saveAccount*
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_MERCHANT_ADMIN`
+  * `ROLE_VENDOR_ADMIN`
 
 > Body parameter
 
@@ -542,6 +550,9 @@ System.out.println(response.toString());
 
 *Confirm email address with key sent to email*
 
+**Required user role:**
+
+ * `Available to all user roles`
 
 <!-- <h3 id="activateAccountUsingGET-parameters">Parameters</h3> -->
 
@@ -714,6 +725,9 @@ System.out.println(response.toString());
 
 *changePassword*
 
+**Required user role:**
+
+ * `Available to all user roles`
 
 > Body parameter
 
@@ -901,6 +915,9 @@ System.out.println(response.toString());
 
 *Request Password Reset*
 
+**Required user role:**
+
+ * `Available to all user roles`
 
 > Body parameter
 
@@ -1098,6 +1115,9 @@ System.out.println(response.toString());
 
 *finish Password Reset*
 
+**Required user role:**
+
+ * `Available to all user roles`
 
 > Body parameter
 
@@ -1285,6 +1305,12 @@ System.out.println(response.toString());
 
 PARTNER/MERCHANT/VENDOR/CUSTOMER admin roles only
 
+**Required user role:**
+
+ * `ROLE_PARTNER_ADMIN`
+ * `ROLE_MERCHANT_ADMIN`
+ * `ROLE_VENDOR_ADMIN`
+ * `ROLE_CUSTOMER_ADMIN`
 
 > Body parameter
 
@@ -1466,6 +1492,9 @@ System.out.println(response.toString());
 
 *Get 2FA barcode image*
 
+**Required user role:**
+
+ * `Available to all user roles`
 
 <!-- <h3 id="getBarCodeImageUsingGET-parameters">Parameters</h3> -->
 
@@ -1638,6 +1667,9 @@ System.out.println(response.toString());
 
 *Modify 2FA status*
 
+**Required user role:**
+
+ * `Available to all user roles`
 
 <!-- <h3 id="modifyUser2FAUsingPOST-parameters">Parameters</h3> -->
 
@@ -1809,6 +1841,9 @@ System.out.println(response.toString());
 
 *Is current user Associate activated*
 
+**Required user role:**
+
+ * `Available to all user roles`
 
 > Example responses
 

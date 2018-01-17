@@ -144,6 +144,9 @@ System.out.println(response.toString());
 
 *Get USA states list*
 
+**Required user role:**
+
+ * `No authentication is required`
 
 > Example responses
 
@@ -439,6 +442,9 @@ Status Code **200**
 
 `GET /api/get/file/{uuid}`
 
+**Required user role:**
+
+ * `Available to all user roles`
 
 Parameter | In | Type | Required | Description
 --- | --- | --- | --- |---
@@ -598,6 +604,10 @@ System.out.println(response.toString());
 
 
 *Get all invitations sent by current Associate*
+
+**Required user role:**
+
+ * `No authentication is required`
 
 <!--
 <h3 id="getAllInvitationsUsingGET-parameters">Parameters</h3>

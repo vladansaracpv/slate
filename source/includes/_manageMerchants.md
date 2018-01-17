@@ -146,6 +146,11 @@ System.out.println(response.toString());
 
 *Get the all Merchants paginated*
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_PARTNER_USER`
+
 
 <!-- <h3 id="getAllPaginatedUsingGET_2-parameters">Parameters</h3> -->
 
@@ -365,6 +370,11 @@ System.out.println(response.toString());
 
 *Get the merchant by id*
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_PARTNER_USER`
+  * `ROLE_MERCHANT_ADMIN`
 
 <!-- <h3 id="getByIdUsingGET_2-parameters">Parameters</h3> -->
 
@@ -387,7 +397,7 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!-- 
+<!--
 <aside class="success">
 </aside> -->
 
@@ -677,6 +687,10 @@ System.out.println(response.toString());
 
 *Create a new Merchant*
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_MERCHANT_ADMIN`
 
 > Body parameter
 
@@ -1006,6 +1020,10 @@ System.out.println(response.toString());
 
 *Invite merchant via email*
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_MERCHANT_ADMIN`
 
 > Body parameter
 
@@ -1055,10 +1073,6 @@ System.out.println(response.toString());
 
 
 #### Merchant self-registration
-
-<aside class="success">
-This operation does not require authentication
-</aside>
 
 <a id="opIdselfRegistrationUsingPOST_1"></a>
 
@@ -1288,6 +1302,9 @@ System.out.println(response.toString());
 
 *Merchant self registration*
 
+**Required user role:**
+
+  * `No authentication is required`
 
 > Body parameter
 
@@ -1704,6 +1721,11 @@ System.out.println(response.toString());
 
 Updates an existing Merchant
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_MERCHANT_ADMIN`
+
 
 > Body parameter
 
@@ -2103,8 +2125,10 @@ System.out.println(response.toString());
 
 *New Request for delete MERCHANT*
 
+**Required user role:**
 
-PARTNER/MERCHANT admin roles only
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_MERCHANT_ADMIN`
 
 
 > Body parameter
@@ -2217,7 +2241,7 @@ PARTNER/MERCHANT admin roles only
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!-- 
+<!--
 <aside class="success">
 </aside> -->
 
@@ -2369,6 +2393,9 @@ System.out.println(response.toString());
 
 *Get all favorite Vendors*
 
+**Required user role:**
+
+  * `ROLE_MERCHANT_ADMIN`
 
 Paginated ResponseEntity with status 200 (OK) and the list of merchantVendors in body
 
@@ -2548,7 +2575,9 @@ System.out.println(response.toString());
 *Add Vendor to favorite list*
 
 
-ROLE_MERCHANT_ADMIN user only allowed
+**Required user role:**
+
+  * `ROLE_MERCHANT_ADMIN`
 
 
 > Body parameter
@@ -2560,7 +2589,7 @@ ROLE_MERCHANT_ADMIN user only allowed
     "id": 12,
     }
   "vendor": {
-  
+
     "id": 120
   }
 }
@@ -2708,8 +2737,9 @@ System.out.println(response.toString());
 
 *REST request to delete Vendors from favorite list*
 
+**Required user role:**
 
-ROLE_MERCHANT_ADMIN role only allowed to delete
+  * `ROLE_MERCHANT_ADMIN`
 
 
 <!-- <h3 id="deleteMerchantVendorUsingDELETE-parameters">Parameters</h3> -->
@@ -2872,6 +2902,10 @@ System.out.println(response.toString());
 
 `GET /api/merchant/autosell`
 
+**Required user role:**
+
+  * `ROLE_MERCHANT_ADMIN`
+  * `ROLE_MERCHANT_USER`
 
 *One may choose to have autosell option enabled allowing you to automatically convert and keep received funds in FIAT(USD), thus eliminating price volatility due to DASH market rate. The autosell option is enabled by default for each Merchant. You can use the API below to manage this feature.*
 
@@ -2889,7 +2923,7 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!-- 
+<!--
 <aside class="success">
 </aside> -->
 
@@ -3037,6 +3071,9 @@ System.out.println(response.toString());
 
 *Change Merchant autosell status*
 
+**Required user role:**
+
+  * `ROLE_MERCHANT_ADMIN`
 
 <!-- <h3 id="setMerchantAutosellUsingPUT-parameters">Parameters</h3> -->
 
@@ -3061,7 +3098,7 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!-- 
+<!--
 <aside class="success">
 </aside> -->
 
@@ -3210,6 +3247,10 @@ System.out.println(response.toString());
 
 *search merchants*
 
+**Required user role:**
+
+  * `ROLE_PARTNER_ADMIN`
+  * `ROLE_PARTNER_USER`
 
 <!-- <h3 id="searchUsingGET_2-parameters">Parameters</h3> -->
 
@@ -3235,6 +3276,6 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!-- 
+<!--
 <aside class="success">
 </aside> -->
