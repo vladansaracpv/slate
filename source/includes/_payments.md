@@ -1,6 +1,6 @@
 
 ## Payments
-Payments service endpoints are central endpoints of Product36. Endpoints enable clients to get balance information, as well as to intiate payment process for two supported types of POS devices. Published interfaces include getting the information about user account, as well as payment capabilities - converting FIAT amount to cryptocurrency and getting the destination address. It is important to note that in background this is a multistep process and it is not as simple as getting the destination address from hot wallet. So there are firm security and business rules that have to be obeyed in order to complete any of these processes.
+Payments service endpoints are central endpoints of Product36. Endpoints enable clients to get balance information, as well as to initiate payment process for two supported types of POS devices. Published interfaces include getting the information about user account, as well as payment capabilities - converting FIAT amount to cryptocurrency and getting the destination address. It is important to note that in background this is a multistep process and it is not as simple as getting the destination address from hot wallet. So there are firm security and business rules that have to be obeyed in order to complete any of these processes.
 At the end, there is a notification process that can be used for getting events from within the system.
 The base URL for Production environment is:
 
@@ -10,13 +10,69 @@ The base URL for Sandbox environment is:
 
 * https://paymentgateway-dot-sandboxaltthirtysixproduct36.appspot.com
 
+### Wallet balance
+**Required user role:**
+
+   * `Available to all user roles`
+
 ### List bank accounts
+
+**Required user role:**
+
+   * `Available to all user roles`
+
 ### FIAT cash out
+
+**Required user role:**
+
+   * `ROLE_PARTNER_ADMIN`
+   * `ROLE_MERCHANT_ADMIN`
+   * `ROLE_VENDOR_ADMIN`
+   * `ROLE_CUSTOMER_ADMIN`
+
 ### Send DASH to Internal wallet
+
+**Required user role:**
+
+   * `ROLE_PARTNER_ADMIN`
+   * `ROLE_MERCHANT_ADMIN`
+   * `ROLE_VENDOR_ADMIN`
+   * `ROLE_CUSTOMER_ADMIN`
+
 ### Send DASH to External wallet
+
+**Required user role:**
+
+   * `ROLE_PARTNER_ADMIN`
+   * `ROLE_MERCHANT_ADMIN`
+   * `ROLE_VENDOR_ADMIN`
+   * `ROLE_CUSTOMER_ADMIN`
+
 ### Convert DASH
+
+**Required user role:**
+
+   * `ROLE_PARTNER_ADMIN`
+   * `ROLE_MERCHANT_ADMIN`
+   * `ROLE_VENDOR_ADMIN`
+   * `ROLE_CUSTOMER_ADMIN`
+
 ### Buy DASH
+
+**Required user role:**
+
+   * `ROLE_PARTNER_ADMIN`
+   * `ROLE_MERCHANT_ADMIN`
+   * `ROLE_VENDOR_ADMIN`
+   * `ROLE_CUSTOMER_ADMIN`
+
+
 ### Exchange rates
+
+**Required user role:**
+
+   * `Available to all user roles`
+
 ### POS
 <a id="opIdcreateNewPaymentRequestPOS_1"></a>
 
@@ -27,7 +83,12 @@ The base URL for Sandbox environment is:
 
 Endpoint sends the amount in FIAT and gets value converted to dash along with destination address.
 
+**Required authentication:**
+
+   * `Please use API key received by registering POS`
+
 <!-- <h3 id="getAllPaginatedUsingGET_4-parameters">Parameters</h3> -->
+
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|[POSRequest](#schemaposrequest)|false|Page number of the requested page|
@@ -196,7 +257,11 @@ Endpoint sends the amount in FIAT and gets value converted to dash along with de
 
 *Create new payment request for virtual POS.*
 
-<!--<h3 id="getAllPaginatedUsingGET_4-parameters">Parameters</h3> -->
+**Required user role:**
+
+   * `ROLE_MERCHANT_ADMIN`
+   * `ROLE_MERCHANT_USER`
+
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|[POSRequest](#schemaposrequest)|false|Page number of the requested page|

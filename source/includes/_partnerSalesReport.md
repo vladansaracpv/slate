@@ -4,11 +4,16 @@
 
 <a id="opIdcreateAnalyticReports-merchant-list"></a>
 
-`GET /api/v1/analytics/reports/merchant/`
+`GET /api/v1/analytics/reports/merchant`
 
 *Partner fetch his merchant list with sales summary info*
 
 This endpoint lists all merchants for specified partner (based on jwt token)
+
+**Required user role:**
+
+   * `ROLE_PARTNER_ADMIN`
+   * `ROLE_PARTNER_USER`
 
 <!--<h3 id="opIdcreateAnalyticReports-partner-list-parameters">Parameters</h3>-->
 
@@ -82,7 +87,15 @@ This endpoint lists all merchants for specified partner (based on jwt token)
 <a id="opIdcreateAnalyticReports-location-list"></a>
 
 *Partner fetch list of all locations of his merchants with sales summary info*
+
 `GET /api/v1/analytics/reports/location`
+
+**Required user role:**
+
+   * `ROLE_PARTNER_ADMIN`
+   * `ROLE_PARTNER_USER`
+   * `ROLE_MERCHANT_ADMIN`
+   * `ROLE_MERCHANT_USER`
 
 <!-- <h3 id="opIdcreateAnalyticReports-partner-list-parameters">Parameters</h3> -->
 
@@ -161,7 +174,16 @@ This endpoint lists all merchants for specified partner (based on jwt token)
 <a id="opIdcreateAnalyticReports-pos-list"></a>
 
 *Partner's fetch POS list of all hisMerchants with sales summary info.*
+
 `GET /api/v1/analytics/reports/pos`
+
+**Required user role:**
+
+   * `ROLE_PARTNER_ADMIN`
+   * `ROLE_PARTNER_USER`
+   * `ROLE_MERCHANT_ADMIN`
+   * `ROLE_MERCHANT_USER`
+
 
 <!--<h3 id="opIdcreateAnalyticReports-pos-list-parameters">Parameters</h3>-->
 
@@ -240,7 +262,13 @@ This endpoint lists all merchants for specified partner (based on jwt token)
 <a id="opIdcreateAnalyticReports-location-list"></a>
 
 *Partner fetch list of all locations for a specific merchants with sales summary info*
+
 `GET /api/v1/analytics/merchant/<merchantid>/location`
+
+**Required user role:**
+
+   * `ROLE_PARTNER_ADMIN`
+   * `ROLE_PARTNER_USER`
 
 <!-- <h3 id="opIdcreateAnalyticReports-partner-list-parameters">Parameters</h3> -->
 
@@ -325,6 +353,10 @@ This endpoint lists all merchants for specified partner (based on jwt token)
 
 *Lists all POSs drilled down from specific merchant->location.*
 
+**Required user role:**
+
+   * `ROLE_PARTNER_ADMIN`
+   * `ROLE_PARTNER_USER`
 
 <!--<h3 id="opIdcreateAnalyticReports-pos-list-parameters">Parameters</h3>-->
 
@@ -408,6 +440,13 @@ This endpoint lists all merchants for specified partner (based on jwt token)
 `GET /api/v1/analytics/reports/location/<location_id>/pos`
 
 *Lists all locations drilled down from*
+
+**Required user role:**
+
+   * `ROLE_PARTNER_ADMIN`
+   * `ROLE_PARTNER_USER`
+   * `ROLE_MERCHANT_ADMIN`
+   * `ROLE_MERCHANT_USER`
 
 <!--<h3 id="opIdcreateAnalyticReports-pos-list-parameters">Parameters</h3>-->
 

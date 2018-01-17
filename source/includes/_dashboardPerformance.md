@@ -7,6 +7,11 @@
 
 *Returns top 5 merchants in the system.*
 
+**Required user role:**
+
+   * `ROLE_PARTNER_ADMIN`
+   * `ROLE_PARTNER_USER`
+
 <!--<h3 id="opIdcreateDashboard_performance_location-parameters">Parameters</h3>-->
 
 |Parameter|In|Type|Required|Description|
@@ -87,6 +92,13 @@
 `GET /api/v1/analytics/performance/location`
 
 *Returns top 5 locations in the system.*
+
+**Required user role:**
+
+   * `ROLE_PARTNER_ADMIN`
+   * `ROLE_PARTNER_USER`
+   * `ROLE_MERCHANT_ADMIN`
+   * `ROLE_MERCHANT_USER`
 
 <!--<h3 id="opIdcreateDashboard_performance_location-parameters">Parameters</h3>-->
 

@@ -8,6 +8,10 @@ Tax report for period of time
 
 `GET /api/v1/analytics/reports/tax/{associateId}`
 
+**Required user role:**
+
+   * `Available to all user roles`
+
 <!--<h3 id="opIdcreateDashboard_tax-report-parameters">Parameters</h3>-->
 
 |Parameter|In|Type|Required|Description|

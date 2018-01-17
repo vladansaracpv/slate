@@ -1,10 +1,20 @@
 ### Merchant Sales Report
 
 #### All Locations Sales
+
 <a id="opIdcreateAnalyticReports-location-list"></a>
 
-*Merchant fetch list of all locations with sales summary info*
 `GET /api/v1/analytics/reports/location`
+
+*Merchant fetch list of all locations with sales summary info*
+
+**Required user role:**
+
+   * `ROLE_PARTNER_ADMIN`
+   * `ROLE_PARTNER_USER`
+   * `ROLE_MERCHANT_ADMIN`
+   * `ROLE_MERCHANT_USER`
+
 
 <!-- <h3 id="opIdcreateAnalyticReports-partner-list-parameters">Parameters</h3> -->
 
@@ -81,16 +91,16 @@
 #### POS Sales for single Location
 <a id="opIdcreateAnalyticReports-pos-list"></a>
 
-*Alt36 POS list*
-`GET /api/v1/analytics/reports/pos`
-
-*This is Alt36 report list, it shows all point of sales in system.*
-
-*Merchant list -> location list -> pos list*
-
 `GET /api/v1/analytics/reports/location/<location_id>/pos`
 
 *Lists all locations drilled down from*
+
+**Required user role:**
+
+   * `ROLE_PARTNER_ADMIN`
+   * `ROLE_PARTNER_USER`
+   * `ROLE_MERCHANT_ADMIN`
+   * `ROLE_MERCHANT_USER`
 
 <!--<h3 id="opIdcreateAnalyticReports-pos-list-parameters">Parameters</h3>-->
 
@@ -174,6 +184,13 @@
 `GET /api/v1/analytics/reports/pos`
 
 *This is Alt36 report list, it shows all point of sales in system.*
+
+**Required user role:**
+
+   * `ROLE_PARTNER_ADMIN`
+   * `ROLE_PARTNER_USER`
+   * `ROLE_MERCHANT_ADMIN`
+   * `ROLE_MERCHANT_USER`
 
 <!--<h3 id="opIdcreateAnalyticReports-pos-list-parameters">Parameters</h3>-->
 

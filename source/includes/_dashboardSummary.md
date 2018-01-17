@@ -11,6 +11,10 @@
 
 This is info on system wide values of appropriate variables related to a given user. Information about user is read from request jwt token.
 
+**Required user role:**
+
+   * `Available to all user roles`
+
 <!--<h3 id="opIdcreateDashboard_general_summary-parameters">Parameters</h3>-->
 
 |Parameter|In|Type|Required|Description|
@@ -49,6 +53,13 @@ This is info on system wide values of appropriate variables related to a given u
 `GET /api/v1/analytics/summary/sales`
 
 *Total sales by time-range which is further divided on one hour interval. Note that the time intervals are rounded in hours. All values within hour intervals are aggregated.*
+
+**Required user role:**
+
+   * `ROLE_PARTNER_ADMIN`
+   * `ROLE_PARTNER_USER`
+   * `ROLE_MERCHANT_ADMIN`
+   * `ROLE_MERCHANT_USER`
 
 <!--<h3 id="opIdcreateDashboard_total_sales_by_timerange-parameters">Parameters</h3>-->
 
@@ -100,3 +111,7 @@ This is info on system wide values of appropriate variables related to a given u
 ```
 
 #### General tax summary
+
+**Required user role:**
+
+   * `Available to all user roles`
