@@ -4,53 +4,36 @@
 
 <a id="opIdselfRegistrationUsingPOST_2"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
 curl -X POST http://example.com/api/partner/register \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json'
-
-
 ```
-
 
 ```http
 POST http://example.com/api/partner/register HTTP/1.1
 Host: null
 Content-Type: application/json
 Accept: application/json
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Content-Type':'application/json',
   'Accept':'application/json'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/partner/register',
   method: 'post',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
@@ -140,13 +123,11 @@ const inputBody = '{
   },
   "zip": "string"
 }';
+
 const headers = {
   'Content-Type':'application/json',
   'Accept':'application/json'
-
-
 };
-
 
 fetch('http://example.com/api/partner/register',
 {
@@ -159,8 +140,6 @@ fetch('http://example.com/api/partner/register',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
 
 
@@ -168,43 +147,30 @@ fetch('http://example.com/api/partner/register',
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Content-Type' => 'application/json',
   'Accept' => 'application/json'
 }
 
-
 result = RestClient.post 'http://example.com/api/partner/register',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
-
 ```python
 import requests
+
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
 }
 
 
-r = requests.post('http://example.com/api/partner/register', params={
-
-
-}, headers = headers)
-
+r = requests.post('http://example.com/api/partner/register',
+                   params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/partner/register");
@@ -220,13 +186,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `POST /api/partner/register`
-
 
 *Partner self registration*
 
@@ -235,7 +197,6 @@ System.out.println(response.toString());
   * `No authentication is required`
 
 > Body parameter
-
 
 ```json
 {
@@ -326,18 +287,14 @@ System.out.println(response.toString());
 }
 ```
 
-
 <!-- <h3 id="selfRegistrationUsingPOST_2-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |key|query|string|false|key|
 |body|body|[SelfRegisterVM](#schemaselfregistervm)|true|partner|
 
-
 > Example responses
-
 
 ```json
 {
@@ -347,9 +304,7 @@ System.out.println(response.toString());
 }
 ```
 
-
 <h3 id="selfRegistrationUsingPOST_2-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -359,27 +314,16 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-
-<!-- <aside class="success">
-</aside> -->
-
-
 #### Update Partner
-
 
 <a id="opIdupdateUsingPUT_3"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
 curl -X PUT http://example.com/api/partners \
   -H 'Content-Type: application/json' \
   -H 'Accept: */*'
-
-
 ```
 
 
@@ -388,8 +332,6 @@ PUT http://example.com/api/partners HTTP/1.1
 Host: null
 Content-Type: application/json
 Accept: */*
-
-
 ```
 
 
@@ -397,10 +339,7 @@ Accept: */*
 var headers = {
   'Content-Type':'application/json',
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/partners',
@@ -412,10 +351,7 @@ $.ajax({
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
@@ -556,13 +492,11 @@ const inputBody = '{
   "vendors": 0,
   "zip": "string"
 }';
+
 const headers = {
   'Content-Type':'application/json',
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/partners',
 {
@@ -575,52 +509,36 @@ fetch('http://example.com/api/partners',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
-
 
 headers = {
   'Content-Type' => 'application/json',
   'Accept' => '*/*'
 }
 
-
 result = RestClient.put 'http://example.com/api/partners',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Content-Type': 'application/json',
   'Accept': '*/*'
 }
 
-
-r = requests.put('http://example.com/api/partners', params={
-
-
-}, headers = headers)
-
+r = requests.put('http://example.com/api/partners',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/partners");
@@ -636,25 +554,17 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
-
 
 `PUT /api/partners`
 
-
 *Updates an existing Partner*
-
-
-Updates an existing Partner
 
 **Required user role:**
 
   * `ROLE_PARTNER_ADMIN`
 
 > Body parameter
-
 
 ```json
 {
@@ -796,20 +706,15 @@ Updates an existing Partner
 }
 ```
 
-
 <!-- <h3 id="updateUsingPUT_3-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|[NewPartnerVM](#schemanewpartnervm)|true|associate|
 
-
 > Example responses
 
-
 <h3 id="updateUsingPUT_3-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -819,79 +724,51 @@ Updates an existing Partner
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-
-<!-- <aside class="success">
-</aside> -->
-
-
 #### Get Partner by ID
 
-
 <a id="opIdgetByIdUsingGET_3"></a>
-
 
 > Code samples
 
 
 ```shell
 # You can also use wget
-curl -X GET http://example.com/api/partners/{id} \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/partners/{id} -H 'Accept: */*'
 ```
 
 
 ```http
 GET http://example.com/api/partners/{id} HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
 
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/partners/{id}',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/partners/{id}',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -899,50 +776,34 @@ fetch('http://example.com/api/partners/{id}',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/partners/{id}',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/partners/{id}', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/partners/{id}',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/partners/{id}");
@@ -958,33 +819,25 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `GET /api/partners/{id}`
-
 
 *Get the partner by ID*
 
 **Required user role:**
 
   * `ROLE_PARTNER_ADMIN`
-  
-<!-- <h3 id="getByIdUsingGET_3-parameters">Parameters</h3> -->
 
+<!-- <h3 id="getByIdUsingGET_3-parameters">Parameters</h3> -->
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |id|path|integer(int64)|true|id|
 
-
 > Example responses
 
-
 <h3 id="getByIdUsingGET_3-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -992,7 +845,3 @@ System.out.println(response.toString());
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
-
-
-<!-- <aside class="success">
-</aside> -->
