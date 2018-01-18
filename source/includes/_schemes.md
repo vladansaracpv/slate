@@ -5457,3 +5457,387 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 |destination_address|string|true| Destination address
 |status|string|true|Current transaction status
 |request_was|[InternalRequest](#tocInternalRequest)|true|Original request
+
+
+
+<h2 id="tocScreateassociateadminuserwithpasswordvm">CreateAssociateAdminUserWithPasswordVM</h2>
+
+
+<a id="schemacreateassociateadminuserwithpasswordvm"></a>
+
+
+```json
+{
+  "email": "string",
+  "firstName": "string",
+  "lastName": "string",
+  "login": "string",
+  "password": "string"
+}
+```
+
+
+### Properties
+
+
+|Name|Type|Required|Description|
+|---|---|---|---|
+|email|string|true|No description|
+|firstName|string|true|No description|
+|lastName|string|true|No description|
+|login|string|true|No description|
+|password|string|true|No description|
+
+
+<h2 id="tocScreateassociateadminuservm">CreateAssociateAdminUserVM</h2>
+
+
+<a id="schemacreateassociateadminuservm"></a>
+
+
+```json
+{
+  "email": "string",
+  "firstName": "string",
+  "lastName": "string",
+  "login": "string"
+}
+```
+
+
+### Properties
+
+
+|Name|Type|Required|Description|
+|---|---|---|---|
+|email|string|true|No description|
+|firstName|string|true|No description|
+|lastName|string|true|No description|
+|login|string|true|No description|
+
+
+<h2 id="tocSconversionstransactionsvm">ConversionsTransactionsVM</h2>
+
+
+<a id="schemaconversionstransactionsvm"></a>
+
+
+```json
+{
+  "amountDash": "string",
+  "amountFiat": "string",
+  "conversionFrom": "string",
+  "conversionRate": "string",
+  "conversionTo": "string",
+  "id": 0,
+  "status": "string",
+  "timeAndDate": "2018-01-08T16:57:23Z",
+  "transactionId": "string"
+}
+```
+
+
+### Properties
+
+
+|Name|Type|Required|Description|
+|---|---|---|---|
+|amountDash|string|false|No description|
+|amountFiat|string|false|No description|
+|conversionFrom|string|false|No description|
+|conversionRate|string|false|No description|
+|conversionTo|string|false|No description|
+|id|integer(int64)|false|No description|
+|status|string|false|No description|
+|timeAndDate|string(date-time)|false|No description|
+|transactionId|string|false|No description|
+
+
+<h2 id="tocScommissionfee">CommissionFee</h2>
+
+
+<a id="schemacommissionfee"></a>
+
+
+```json
+{
+  "associateId": 0,
+  "commissionFee": 0
+}
+```
+
+
+### Properties
+
+
+|Name|Type|Required|Description|
+|---|---|---|---|
+|associateId|integer(int64)|true|No description|
+|commissionFee|number|true|No description|
+
+
+<h2 id="tocScoinfirm">Coinfirm</h2>
+
+
+<a id="schemacoinfirm"></a>
+
+
+```json
+{
+  "address": "string",
+  "addressSubtype": "string",
+  "addressType": "string",
+  "avgCcInflow": 0,
+  "avgCcInflowX": "string",
+  "avgCcOutflow": 0,
+  "avgCcOutflowX": 0,
+  "avgTxFee": 0,
+  "avgTxSize": 0,
+  "balance": 0,
+  "ccInflowX": 0,
+  "ccOutflowX": 0,
+  "clusterSize": 0,
+  "cscore": 0,
+  "daysWithoutTx": 0,
+  "description": "string",
+  "flags": "string",
+  "id": 0,
+  "initialBlockHeight": 0,
+  "initialBlockTime": "string",
+  "initialTxAmount": 0,
+  "initialTxHash": "string",
+  "initialTxUsdValue": 0,
+  "lastInputTxAmount": 0,
+  "lastInputTxBlockHeight": 0,
+  "lastInputTxBlockTime": "string",
+  "lastInputTxHash": "string",
+  "lastInputTxUsdValue": 0,
+  "lastOutputTxAmount": 0,
+  "lastOutputTxBlockHeight": 0,
+  "lastOutputTxBlockTime": "string",
+  "lastOutputTxHash": "string",
+  "lastOutputTxUsdValue": 0,
+  "maxInflow": 0,
+  "maxOutflow": 0,
+  "minInflow": 0,
+  "minOutflow": 0,
+  "multisig": true,
+  "profiles": "string",
+  "receiveCount": 0,
+  "receivePeak": 0,
+  "recommendation": 0,
+  "reportId": "string",
+  "reportType": "string",
+  "sentCount": 0,
+  "time": "string",
+  "totalInflow": 0,
+  "totalOutflow": 0,
+  "txCount": 0,
+  "usdBalance": 0,
+  "usdExchangeRate": 0,
+  "whitelist": true
+}
+```
+
+
+### Properties
+
+
+|Name|Type|Required|Description|
+|---|---|---|---|
+|address|string|false|No description|
+|addressSubtype|string|false|No description|
+|addressType|string|false|No description|
+|avgCcInflow|number(double)|false|No description|
+|avgCcInflowX|string|false|No description|
+|avgCcOutflow|number(double)|false|No description|
+|avgCcOutflowX|number(double)|false|No description|
+|avgTxFee|number(double)|false|No description|
+|avgTxSize|number(double)|false|No description|
+|balance|number(double)|false|No description|
+|ccInflowX|integer(int64)|false|No description|
+|ccOutflowX|integer(int64)|false|No description|
+|clusterSize|integer(int64)|false|No description|
+|cscore|integer(int64)|false|No description|
+|daysWithoutTx|integer(int64)|false|No description|
+|description|string|false|No description|
+|flags|string|false|No description|
+|id|integer(int64)|false|No description|
+|initialBlockHeight|integer(int64)|false|No description|
+|initialBlockTime|string|false|No description|
+|initialTxAmount|integer(int64)|false|No description|
+|initialTxHash|string|false|No description|
+|initialTxUsdValue|number(double)|false|No description|
+|lastInputTxAmount|integer(int64)|false|No description|
+|lastInputTxBlockHeight|integer(int64)|false|No description|
+|lastInputTxBlockTime|string|false|No description|
+|lastInputTxHash|string|false|No description|
+|lastInputTxUsdValue|number(double)|false|No description|
+|lastOutputTxAmount|integer(int64)|false|No description|
+|lastOutputTxBlockHeight|integer(int64)|false|No description|
+|lastOutputTxBlockTime|string|false|No description|
+|lastOutputTxHash|string|false|No description|
+|lastOutputTxUsdValue|number(double)|false|No description|
+|maxInflow|integer(int64)|false|No description|
+|maxOutflow|integer(int64)|false|No description|
+|minInflow|integer(int64)|false|No description|
+|minOutflow|integer(int64)|false|No description|
+|multisig|boolean|false|No description|
+|profiles|string|false|No description|
+|receiveCount|integer(int64)|false|No description|
+|receivePeak|integer(int64)|false|No description|
+|recommendation|integer(int64)|false|No description|
+|reportId|string|false|No description|
+|reportType|string|false|No description|
+|sentCount|integer(int64)|false|No description|
+|time|string|false|No description|
+|totalInflow|integer(int64)|false|No description|
+|totalOutflow|integer(int64)|false|No description|
+|txCount|integer(int64)|false|No description|
+|usdBalance|integer(int64)|false|No description|
+|usdExchangeRate|number(double)|false|No description|
+|whitelist|boolean|false|No description|
+
+
+<h2 id="tocSchangepasswordvm">ChangePasswordVM</h2>
+
+
+<a id="schemachangepasswordvm"></a>
+
+
+```json
+{
+  "password": "string"
+}
+```
+
+
+### Properties
+
+
+|Name|Type|Required|Description|
+|---|---|---|---|
+|password|string|true|No description|
+
+
+<h2 id="tocSassociate">Associate</h2>
+
+
+<a id="schemaassociate"></a>
+
+
+```json
+{
+  "address": "string",
+  "altAutosellInternal": true,
+  "associateType": "ALT36",
+  "autosell": true,
+  "beneficiaryPercent": 0,
+  "canEditOnboarded": true,
+  "city": "string",
+  "coinaPultApiKey": "string",
+  "commissionFee": 0,
+  "companyEIN": "string",
+  "companyWebsite": "string",
+  "createdDate": "2018-01-08T16:57:23Z",
+  "cryptoCapitalApiKey": "string",
+  "customers": 0,
+  "deletedDate": "2018-01-08T16:57:23Z",
+  "emailAddress": "string",
+  "enabled": true,
+  "enrolledBy": null,
+  "id": 0,
+  "incorporationDate": "2018-01-08",
+  "internalFee": 0,
+  "legalBusinessName": "string",
+  "locationsCount": 0,
+  "merchants": 0,
+  "note": "string",
+  "partners": 0,
+  "phone": "string",
+  "posCount": 0,
+  "state": {
+    "abbreviation": "string",
+    "id": 0,
+    "state": "string"
+  },
+  "usBankAccount": "string",
+  "vendors": 0,
+  "zip": "string"
+}
+```
+
+
+### Properties
+
+
+|Name|Type|Required|Description|
+|---|---|---|---|
+|address|string|true|No description|
+|altAutosellInternal|boolean|false|No description|
+|associateType|string|true|No description|
+|autosell|boolean|false|No description|
+|beneficiaryPercent|integer(int64)|false|No description|
+|canEditOnboarded|boolean|false|No description|
+|city|string|true|No description|
+|coinaPultApiKey|string|false|No description|
+|commissionFee|number|false|No description|
+|companyEIN|string|false|No description|
+|companyWebsite|string|false|No description|
+|createdDate|string(date-time)|false|No description|
+|cryptoCapitalApiKey|string|false|No description|
+|customers|integer(int32)|false|No description|
+|deletedDate|string(date-time)|false|No description|
+|emailAddress|string|true|No description|
+|enabled|boolean|false|No description|
+|enrolledBy|[Associate](#schemaassociate)|false|No description|
+|id|integer(int64)|false|No description|
+|incorporationDate|string(date)|false|No description|
+|internalFee|number(double)|false|No description|
+|legalBusinessName|string|true|No description|
+|locationsCount|integer(int32)|false|No description|
+|merchants|integer(int32)|false|No description|
+|note|string|false|No description|
+|partners|integer(int32)|false|No description|
+|phone|string|true|No description|
+|posCount|integer(int32)|false|No description|
+|state|[CountryState](#schemacountrystate)|true|No description|
+|usBankAccount|string|false|No description|
+|vendors|integer(int32)|false|No description|
+|zip|string|true|No description|
+
+
+#### Enumerated Values
+
+
+|Property|Value|
+|---|---|
+|associateType|ALT36|
+|associateType|PARTNER|
+|associateType|MERCHANT|
+|associateType|VENDOR|
+|associateType|CUSTOMER|
+
+<h2 id="tocSapikeyapisecretvm">ApiKeyApiSecretVM</h2>
+
+
+<a id="schemaapikeyapisecretvm"></a>
+
+
+```json
+{
+  "apiKey": "string",
+  "apiSecret": "string",
+  "registeredEmail": "string"
+}
+```
+
+
+### Properties
+
+
+|Name|Type|Required|Description|
+|---|---|---|---|
+|apiKey|string|true|No description|
+|apiSecret|string|true|No description|
+|registeredEmail|string|true|No description|
