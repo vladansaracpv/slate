@@ -4311,7 +4311,1151 @@
 first (Boolean) - refers to whether the requested page is first page
 last (Boolean) - refers to whether the requested page is last page
 number (Integer) - current number of a page, zero index rule is used
-numberOfElements (Integer) - total number of elements in the requested list of objects 
+numberOfElements (Integer) - total number of elements in the requested list of objects
 size (Integer)- size of the page as requested  
 totalPages (Integer)- total number of pages for the requested list of objects
 As one may notice, totalElements parameter is omitted here. instead numberOfElements is used to represent that value.
+
+
+<h2 id="tocPOSRequest">POSRequest</h2>
+
+<a id="schemaposrequest"></a>
+
+```json
+{
+"timestamp_req":integer,
+"amount":number,
+"currency":string,
+"convert_to": string,
+"location_id":integer,
+"user_id": string
+}
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|timestamp_req|integer|false|Internal transaction id, this is part of internal transaction storage.
+|amount|string|true|Amount in currency as defined in currency parameter. Currently only USD is supported.
+|amount|string|true|Amount in currency as defined in currency parameter. Currently only USD is supported.
+|currency|string|true|FIAT Currency from which we transfer to DASH
+|convert_to|string|true|Cryptocurrency to which conversion is done. For sandbox purposes Product36 uses Bitcoin Testnet3 blockchain.
+|location_id|integer|optional|Identifier of the location for which POS is registered. It is required for virtual POS, but not for registered POS request
+ |user_id|integer|true|general puvrpose value, can be any string. Providers can use this value to put anything inside, for example it can be local user id.
+
+
+<h2 id="tocPOSRequest">POSResponce</h2>
+
+<a id="schemaposresponce"></a>
+
+```json
+{
+"tx_id": "TXtbbSjB4HdQ",
+"requested_amount": 25,
+"requested_currency": "USD",
+"converted_amount": 0.06778558065128386,
+"converted_currency": "DASH",
+"conversion_rate": 368.81,
+"timetamp_system": 1504047876,
+"pay_to_address": "msJfkM8XmwTxwVVV9EvWLXb4fjCpSvbKWT"
+}
+
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|tx_id|string|-|Timestamp of the current request moment (used for statistics on server)
+|requested_amount|integer|-|FIAT value that sender required
+|requested_currency|string|-|FIAT currency that is requested.
+|converted_amount|number|-|Amount in cryptocurrency.
+|converted_currency|string|-|Currency to which FIAT value is converted.
+|conversion_rate|number|-|Conversion rate used for calculation of "converted_amount"
+|timetamp_system|integer|-|timestamp when transaction has been created in the system.
+|pay_to_address|string|-|Destination address for the transaction.
+
+The values converted_amount and pay_to_address are used as the information for generating customer transaction either directly entered or to generate QR code for payment.
+Prior to transaction processing, service endpoint checks that the appropriate data embodied in API key match the values sent in message body.
+Important note: There is minimal FIAT value that can be converted, otherwise system will report an error. Minimum value is defined dynamically and it is calculated for every transaction.
+
+<h2 id="tocGeneralSummaryResponse">GeneralSummaryResponse</h2>
+
+<a id="schemageneralsummaryresponse"></a>
+
+```json
+{
+  "timerange_from": "2017-11-01T00:00:00.0Z",
+  "timerange_to": "2018-01-11T23:59:59.1Z",
+  "number_of_sales": 84,
+  "avg_tx_amount": 0.12657074607143,
+  "avg_tx_amount_fiat": 88.72505512713,
+  "total_sales": 10.63194267,
+  "total_sales_fiat": 7452.9046306789,
+  "total_commission_fee_charged": 0.85386515,
+  "total_commission_fee_charged_fiat": 602.6705777301
+}
+
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|timerange_from|string|true|start point in the time range.
+|timerange_to|string|true|end point of the time range.
+|number_of_sales|integer|true| total number of sales for user
+|avg_tx_amount|number|true|average transaction amount of all transactions
+|avg_tx_amount_fiat|number|true|average transaction amount converted to FIAT (defaults to USD)
+|total_sales|number|total sales sum
+|total_sales_fiat|number|true|total sales sum in FIAT (defaults to USD)
+|total_commission_fee_charged|number|true|total commission fee.
+|total_commission_fee_charged_fiat|number|true|total commission fee converted to FIAT.
+
+<!-- LocationPerformanceItem-->
+<h2 id="tocLocationPerformanceItem">LocationPerformanceItem</h2>
+
+<a id="schemareportlocationperformanceitem"></a>
+
+```json
+{
+  "location_id": 743,
+  "location_name": "Peoria",
+  "location_address": "29701 N Sunrise Point",
+  "item_sales_crypto": 1.41153177,
+  "item_sales_fiat": 936.622608258,
+  "associate_owner": "Demo Merchant",
+  "associate_owner_id": 2102
+}
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|location_id|integer|true|Location identifier
+|location_name|string|true|Name of the location
+|location_address|string|true|Location postal address
+|item_sales_crypto|number|true|Sum of all sales for a given time range
+|item_sales_fiat|number|true|Sum of all sales for a given time range in FIAT value
+|associate_owner|string|true|Name of location merchant owner
+|associate_owner_id|integer|true|Merchant owner identifier
+
+<!-- RolePerformanceItem-->
+<h2 id="tocRolePerformanceItem">RolePerformanceItem</h2>
+
+<a id="schemareportroleperformanceitem"></a>
+
+```json
+{
+  "item_id": 303,
+  "item_name": "Merlin",
+  "item_sales_crypto": 1.26886494,
+  "item_sales_fiat": 767.8435600896,
+  "pos_count": 42
+}
+
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|item_id|integer|true|Merchant identifier
+|item_name|string|true|Merchant name as defined in the system
+|item_sales_crypto|number|true|Sum of all sales
+|item_sales_fiat|number|true|um of all sales in FIAT value
+|pos_count|integer|true|Number of POS-es associated with merchant
+
+<!-- SalesItem-->
+<h2 id="tocSalesItem">SalesItem</h2>
+
+<a id="schemasalesitem"></a>
+
+```json
+{
+  "total_amount_of_sales": 0.01242642,
+  "total_amount_of_sales_fiat":24.23,
+  "time_from": "2017-10-12T14:00:00.000Z",
+  "time_to": "2017-10-12T15:00:00.000Z"
+}
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|total_amount_of_sales|number|true|Total amount of sales in cryptocurrency
+|item_name|string|true|Total amount of sales in FIAT value
+|time_from|number|true|Sum of all sales
+|time_to|number|true|Sum of all sales in FIAT value
+
+<!-- TaxItem-->
+<h2 id="tocTaxItem">TaxItem</h2>
+
+<a id="schemataxitem"></a>
+
+```json
+{
+  "total_amount_of_tax": 0.01242642,
+  "total_amount_of_tax_fiat":24.23,
+  "time_from": "2017-10-12T14:00:00.000Z",
+  "time_to": "2017-10-12T15:00:00.000Z"
+}
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|total_amount_of_tax|number|true|Total amount of tax in cryptocurrency
+|total_amount_of_tax_fiat|string|true|Total amount of tax in FIAT value
+|time_from|string|true|Start of interval (ISO format, timestamp...)
+|time_to|string|true|End of interval (ISO format, timestamp ...)
+
+<!-- SummaryItem-->
+<h2 id="tocSummaryItem">SummaryItem</h2>
+
+<a id="schemasummaryresponseitem"></a>
+
+```json
+{
+    "totalSalesVolume": 11.59312777,
+    "totalSalesVolumeFiat": 8035.0585505919,
+    "totalSalesCount": 105,
+    "avgTXAmount": 0.11041074066667,
+    "avgTXAmountFiat": 76.524367148494,
+    "totalSalesCommission": 0.85508097,
+    "totalSalesCommissionFiat": 604.1271665647,
+    "totalInternalCommissions": 0.22554123,
+    "totalInternalCommissionsFiat":1562.1233554
+    "income":0.0254,
+    "incomeFiat": 156.256
+  }
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|totalSalesVolume|number|true|Total sales volume in cryprocurrency
+|totalSalesVolumeFiat|number|true|Total sales volume in in FIAT value
+|totalSalesCount|integer|true|Total sales count for a given period of time.
+|avgTXAmount|number|true|Average transaction value in cryptocurrency
+|avgTXAmountFiat|number|true|Average transaction value in FIAT value
+|totalSalesCommission|number|true| Total sales commission generated in cryptocurrency
+|totalInternalCommissions|number|true|Total commissions from internal transactions
+|totalInternalCommissionsFiat|number|true|Total income (vendor)
+|income|number|true|Total sales commission generated in FIAT
+|totalSalesCommissionFiat|number|true|Total income (vendor) in FIAT
+
+
+<!-- PartnerResponseItem-->
+<h2 id="tocPartnerResponseItem">PartnerResponseItem</h2>
+
+<a id="schemapartnerresponseitem"></a>
+
+```json
+{
+  "id": 10656,
+  "name": "AdminAddPartner",
+  "address": "Neon 47",
+  "commissionFee": 0,
+  "commissionFeeFiat": 0,
+  "totalSales": 0,
+  "totalSalesFiat": 0,
+  "merchantCnt": 0,
+  "locationCnt": 0,
+  "posCnt": 0
+}
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|id|integer|true|Merchant identifier
+|name|string|true|Merchant Name
+|commissionFee|number|true|Commission fee sum for this partner in cryptocurrency
+|commissionFeeFiat|number|true|Commission fee sum for this partner in FIAT
+|totalSales|number|true|Total sales for this partner in cryptocurrency
+|totalSalesFiat|number|true|Total sales for this partner in FIAT
+|merchantCnt|integer|true|Total merchant count enrolled by this merchant
+|locationCnt|number|true|Total locations number summed for all merchants enrolled by this partner
+|posCnt|number|true|Total point of sales number summed for all merchants enrolled by this partner (by locations).
+
+
+<!-- MerchantResponseItem-->
+<h2 id="tocMerchantResponseItem">MerchantResponseItem</h2>
+
+<a id="schemamerchantresponseitem"></a>
+
+```json
+{
+    "id": 2102,
+    "name": "DO_NOT_DELETE_Merchant_19770",
+    "email": "ikovico@gmail.com",
+    "vendorCnt": 25,
+    "locationsCnt": 4,
+    "posCnt": 7,
+    "customersCnt": 29,
+    "totalSalesCommission": 0.02316468,
+    "totalSalesCommissionFiat": 568.25 ,
+    "totalSales":0.024064688,
+    "totalSalesFiat":785.23    
+}
+
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|id|integer|true|Merchant identifier
+|name|string|true|Merchant Name
+|email|string|true|Merchant email (main email used for registration process)
+|vendorCnt|integer|true|Number of vendors connected to this merchant
+|locationsCnt|integer|true|Number of location owned by this merchant
+|posCnt|integer|true|total number of POSs related to locations related to merchant.
+|customersCnt|integer|true|Number of customers related to this merchant
+|totalSalesCommission|number|true|Total commission sales from this merchant in cryptocurrency
+|totalSalesCommissionFiat|number|true|Total commission sales from this merchant in FIAT (USD default)
+|totalSales|number|true|Total sales for this merchant in cryptocurrency
+|totalSalesFiat|number|true|Total sales for this merchant in FIAT (USD default)
+
+
+<!-- LocationResponseItem-->
+<h2 id="tocLocationResponseItem">LocationResponseItem</h2>
+
+<a id="schemalocationresponseitem"></a>
+
+```json
+{
+    "id": 305,
+    "name": "Merchant_Location_60438",
+    "address": "Miodraga Bulatovica 17",
+    "numberOfPOS": 3,
+    "totalSales": 0.017231902,
+    "totalSalesFiat":175.46,
+    "totalCommission": 0.01678190,
+    "totalSalesCommissionFiat": 156.26,
+    "avgTransaction": 168.123,
+    "totalCount": 1
+}
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|id|integer|true|Location identifier
+|name|string|true|Location Name
+|address|string|true|Location registered address
+|numberOfPOS|integer|true|Number of POS devices bound to this location.
+|posCnt|integer|true|total number of POSs related to locations.
+|customersCnt|integer|true|Number of customers related to this merchant
+|totalSales|number|true|Total sales for this merchant in cryptocurrency
+|totalSalesFiat|number|true|Total sales for this merchant in FIAT (USD default)
+|totalSalesCommission|number|true|Total commission sales from this merchant in cryptocurrency
+|totalSalesCommissionFiat|number|true|Total commission sales from this merchant in FIAT (USD default)
+|totalCount|number|true|Total sales count
+
+<!-- POSResponseItem-->
+<h2 id="tocPOSResponseItem">POSResponseItem</h2>
+
+<a id="schemaPOSresponseitem"></a>
+
+```json
+{
+  "id": 42,
+  "inventoryNumber": "POS 2",
+  "name": "POS 2",
+  "totalSales": 0,
+  "totalSalesFiat": 0,
+  "totalCount": 0,
+  "avgTransaction": 0,
+  "avgTransactionFiat": 0
+}
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|id|integer|true|POS identifier (For virtual POS id is always -100)
+|inventoryNumber|string|true|POS inventoryNumber
+|name|string|true|POS Name
+|totalSales|number|true|Total sales volume for this POS in cryptocurrency
+|totalSalesFiat|number|true|Total sales volume for this POS in FIAT (USD default)
+|totalCount|integer|true|Total number of sales realized with this POS
+|avgTransaction|number|true|Average transaction on this POS in cryprocurrency
+|avgTransactionFiat|number|true|Average transaction on this POS in Fiat
+
+
+<!-- TaxResposeItem-->
+<h2 id="tocTaxResposeItemItem">TaxResposeItem</h2>
+
+<a id="schemataxresponseitem"></a>
+
+```json
+{
+        "totalTax":  256.23,
+        "totalAmountReceived": 0.00223456,
+        "totalAmountReceivedFiat": 25.36,
+        "totalAmountSent": 0.001232,
+        "totalAmountSentFiat": 15.25,
+        "totalFee": 0.00012356,
+        "totalFeeFiat": 1.0012356,
+        "totalNumTxSpent": 52,
+        "totalNumTxReceived": 23,
+    }
+
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|totalTax|number|true|the amount of tax reported for received transactions. This is for information reporting only and is not part of any calculations.
+|totalAmountReceived|number|true|Total amount received in cryptocurrency
+|totalAmountReceivedFiat|number|true|Total amount received in cryptocurrency Fiat
+|totalAmountSent|number|true|Total amount sent in cryptocurrency
+|totalAmountSentFiat|number|true|Total amount sent in cryptocurrency Fiat
+|totalFee|number|true|Total fee applied to transactions in cryptocurrency
+|totalFeeFiat|number|true|Total fee applied to transactions in Fiat
+|totalNumTxSpent|integer|true|Total number of transactions that spent value
+|totalNumTxReceived|integer|true|Total bumber of transactions that received value
+
+<!-- CommissionResposeItem-->
+<h2 id="tocCommissionResposeItemItem">CommissionResposeItem</h2>
+
+<a id="schemacommissionresponseitem"></a>
+
+```json
+{
+    "associateId": 2102,
+    "name": "John Stockton",
+    "role": "CUSTOMER",
+    "sales_commission_sum": 123.56,
+    "sales_commission_sum_fiat": 35654.23,
+    "internal_commission_sum": 20.15,
+    "internal_commission_sum_fiat": 6523.12
+}
+
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|associateId|integer|true|Associate identifier
+|name|string|true|Associate name
+|role|number|true|Associate role
+|sales_commission_sum|number|true|Total commissions from sales in cryptocurrency
+|sales_commission_sum_fiat|number|true|Total commissions from sales in Fiat
+|internal_commission_sum|number|true|Total commission sum from internal transactions
+|internal_commission_sum_fiat|number|true|Total commission sum from internal transactions in Fiat
+
+
+<!-- ReportMetadata -->
+<h2 id="tocReportMetadata">ReportMetadata</h2>
+
+<a id="schemareportmetadata"></a>
+
+```json
+{
+    "timerangeFrom": "2017-09-01T00:00:00.0Z",
+    "timerangeTo": "2018-01-15T23:59:59.1Z",
+    "number": 0,
+    "size": 2,
+    "numberOfElements": 531,
+    "totalPages": 54,
+    "first": true,
+    "last": false
+  }
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|timerange_from|string|true|Start date/datetime in ISO format|
+|timerange_to|string|true|End date/datetime in ISO format|
+|number|integer|true|Page number|
+|size|number|true|Page size|
+|numberOfElements|integer|true|Total number of elements|
+|totalPages|Integer|true|Total number of pages|
+|first|boolean|true|Is this the first page|
+|last|Integer|true|Is this the last page|
+
+<!-- LocationPerformanceResponse -->
+<h2 id="tocLocationPerformanceResponse">LocationPerformanceResponse</h2>
+
+<a id="schemareportLocationPerformanceResponse"></a>
+
+```json
+{
+  "metadata":{
+      "timerangeFrom": "2017-09-01T00:00:00.0Z",
+      "timerangeTo": "2018-01-15T23:59:59.1Z",
+      "number": 0,
+      "size": 2,
+      "numberOfElements": 531,
+      "totalPages": 54,
+      "first": true,
+      "last": false
+    },
+  "data":[
+    {
+      "location_id": 2432,
+      "location_name": "Phoenician",
+      "location_address": "6000 E Camelback Rd",
+      "item_sales_crypto": 3.03869975,
+      "item_sales_fiat": 2213.7153887805,
+      "associate_owner": "Demo Merchant",
+      "associate_owner_id": 2102
+    },
+    {
+      "location_id": 743,
+      "location_name": "Peoria",
+      "location_address": "29701 N Sunrise Point",
+      "item_sales_crypto": 1.41153177,
+      "item_sales_fiat": 936.622608258,
+      "associate_owner": "Demo Merchant",
+      "associate_owner_id": 2102
+    },
+    {
+      "location_id": 303,
+      "location_name": "Phoenix",
+      "location_address": "340 N 3rd St",
+      "item_sales_crypto": 1.26886494,
+      "item_sales_fiat": 767.8435600896,
+      "associate_owner": "Demo Merchant",
+      "associate_owner_id": 2102
+    },
+    {
+      "location_id": 2427,
+      "location_name": "ByMerchant",
+      "location_address": "N 7th St",
+      "item_sales_crypto": 1.05366415,
+      "item_sales_fiat": 720.2720775932,
+      "associate_owner": "Demo Merchant",
+      "associate_owner_id": 2102
+    },
+    {
+      "location_id": 744,
+      "location_name": "Oakland",
+      "location_address": "1411 E 31st St",
+      "item_sales_crypto": 1.02292684,
+      "item_sales_fiat": 690.7045676177,
+      "associate_owner": "Demo Merchant",
+      "associate_owner_id": 2102
+    }
+  ]
+}
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata
+|data|Array([LocationPerformanceItem](#schemarepotlocationperformanceitem))|true|Arary of location performance data
+
+
+<!-- RolePerformanceResponse -->
+<h2 id="tocRolePerformanceResponse">RolePerformanceResponse</h2>
+
+<a id="schemareportRolePerformanceResponse"></a>
+
+```json
+{
+  "metadata":{
+      "timerangeFrom": "2017-09-01T00:00:00.0Z",
+      "timerangeTo": "2018-01-15T23:59:59.1Z",
+      "number": 0,
+      "size": 2,
+      "numberOfElements": 531,
+      "totalPages": 54,
+      "first": true,
+      "last": false
+    },
+  "data":[
+    {
+      "item_id": 2432,
+      "item_name": "Merchant Phoenix",
+      "item_sales_crypto": 3.03869975,
+      "item_sales_fiat": 2213.7153887805,
+      "pos_count": 12
+    },
+    {
+      "item_id": 743,
+      "item_name": "Red hat",
+      "item_sales_crypto": 1.41153177,
+      "item_sales_fiat": 936.622608258,
+      "pos_count": 23
+    },
+    {
+      "item_id": 303,
+      "item_name": "Merlin",
+      "item_sales_crypto": 1.26886494,
+      "item_sales_fiat": 767.8435600896,
+      "pos_count": 42
+    },
+    {
+      "item_id": 2427,
+      "item_name": "Luna",
+      "item_sales_crypto": 1.05366415,
+      "item_sales_fiat": 720.2720775932,
+      "pos_count": 11
+    },
+    {
+      "item_id": 744,
+      "item_name": "Venus",
+      "item_sales_crypto": 1.02292684,
+      "item_sales_fiat": 690.7045676177,
+      "pos_count": 35
+    }
+  ]
+
+}
+
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata
+|data|Array([RolePerformanceItem](#schemareportroleperformanceitem))|true|Arary of location performance data
+
+<!-- TaxSummaryResponse -->
+<h2 id="tocTaxSummaryResponse">TaxSummaryResponse</h2>
+
+<a id="schemareportTaxSummaryResponse"></a>
+
+```json
+{
+  "metadata":{
+      "timerangeFrom": "2017-09-01T00:00:00.0Z",
+      "timerangeTo": "2018-01-15T23:59:59.1Z",
+      "number": 0,
+      "size": 2,
+      "numberOfElements": 531,
+      "totalPages": 54,
+      "first": true,
+      "last": false
+    },
+    "data":[
+      {
+        "total_amount_of_tax": 0.01242642,
+        "total_amount_of_tax_fiat":24.23,
+        "time_from": "2017-10-12T14:00:00.000Z",
+        "time_to": "2017-10-12T15:00:00.000Z"
+      },
+      {
+        "total_amount_of_tax": 0.12546585,
+        "total_amount_of_tax_fiat":28.15,
+        "time_from": "2017-10-12T15:00:00.000Z",
+        "time_to": "2017-10-12T16:00:00.000Z"
+      }
+
+    ]
+}
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata
+|data|Array([TaxItem](#schemataxitem))|true|Array of tax items
+
+
+<!-- SalesSummaryResponse -->
+<h2 id="tocSalesSummaryResponse">SalesSummaryResponse</h2>
+
+<a id="schemareportSalesSummaryResponse"></a>
+
+```json
+{
+  "metadata":{
+      "timerangeFrom": "2017-09-01T00:00:00.0Z",
+      "timerangeTo": "2018-01-15T23:59:59.1Z",
+      "number": 0,
+      "size": 2,
+      "numberOfElements": 531,
+      "totalPages": 54,
+      "first": true,
+      "last": false
+    },
+  "data":[
+          {
+              "total_amount_of_sales": 0,
+              "total_amount_of_sales_fiat":0,
+              "time_from": "2017-10-12T13:00:00.000Z",
+              "time_to": "2017-10-12T14:00:00.000Z"
+          },
+          {
+              "total_amount_of_sales": 0.01242642,
+              "total_amount_of_sales_fiat":24.23,
+              "time_from": "2017-10-12T14:00:00.000Z",
+              "time_to": "2017-10-12T15:00:00.000Z"
+          }
+    ]
+}
+
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata
+|data|Array([SalesItem](#schemasalesitem))|true|Array of sales items
+
+<!-- ReportResponse -->
+<h2 id="tocReportResponse">PartnerReportResponse</h2>
+
+<a id="schemareportPartnerReportResponse"></a>
+
+```json
+{
+  "metadata":{
+      "timerangeFrom": "2017-09-01T00:00:00.0Z",
+      "timerangeTo": "2018-01-15T23:59:59.1Z",
+      "number": 0,
+      "size": 2,
+      "numberOfElements": 531,
+      "totalPages": 54,
+      "first": true,
+      "last": false
+    },
+  "summary":{
+      "totalSalesVolume": 13.4566654,
+      "totalSalesVolumeFiat": 94235.0255456,
+      "totalSalesCount": 94,
+      "avgTXAmount": 0.0955647785212,
+      "avgTXAmountFiat": 52.15564556872,
+      "totalSalesCommission": 0.9985645,
+      "totalSalesCommissionFiat": 1026.25,
+      "totalInternalCommissions": 0.22554123,
+      "totalInternalCommissionsFiat":1562.1233554
+      "income":0.03541,
+      "incomeFiat": 180.365
+    }
+  "data":[
+          {
+            "id": 10656,
+            "name": "AdminAddPartner",
+            "address": "Neon 47",
+            "commissionFee": 0,
+            "commissionFeeFiat": 0,
+            "tootalSales": 0,
+            "tootalSalesFiat": 0,
+            "merchantCnt": 0,
+            "locationCnt": 0,
+            "posCnt": 0
+          },
+          {
+            "id": 10664,
+            "name": "Bakaja Partner",
+            "address": "Neon 47",
+            "commissionFee": 0,
+            "commissionFeeFiat": 0,
+            "tootalSales": 0,
+            "tootalSalesFiat": 0,
+            "merchantCnt": 0,
+            "locationCnt": 0,
+            "posCnt": 0
+          }
+    ]
+}
+
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata
+|summary|[SummaryItem](#tocSummaryItem)|true|Summary data - ralates to all pages of data.
+|data|Array([PartnerResponseItem](#tocPartnerResponseItem))|true|Array of objects
+
+<!-- MerchantReportResponse -->
+<h2 id="tocMerchantReportResponse">MerchantReportResponse</h2>
+
+<a id="schemareportMerchantReportResponse"></a>
+
+```json
+{
+    "metadata": {
+        "currency": null,
+        "timerangeFrom": "2017-10-21T11:00:26Z",
+        "timerangeTo": "2017-10-26T23:00:26Z",
+        "pageNumber": 0,
+        "itemsPerPage": 2,
+        "targetRole": null,
+        "totalNumberOfItems": 17
+    },
+    "summary": {
+      "totalSalesVolume": 13.4566654,
+      "totalSalesVolumeFiat": 94235.0255456,
+      "totalSalesCount": 94,
+      "avgTXAmount": 0.0955647785212,
+      "avgTXAmountFiat": 52.15564556872,
+      "totalSalesCommission": 0.9985645,
+      "totalSalesCommissionFiat": 1026.25,
+      "totalInternalCommissions": 0.22554123,
+      "totalInternalCommissionsFiat":1562.1233554
+      "income":0.03541,
+      "incomeFiat": 180.365
+    },
+    "data": [
+        {
+            "id": 2102,
+            "name": "DO_NOT_DELETE_Merchant_19770",
+            "email": "ikovico@gmail.com",
+            "vendorCnt": 25,
+            "locationsCnt": 4,
+            "posCnt": 7,
+            "customersCnt": 29,
+            "totalSalesCommission": 0.02316468,
+            "totalSalesCommissionFiat": 568.25 ,
+            "totalSales":0.024064688,
+            "totalSalesFiat":785.23    
+        },
+        {
+            "id": 2192,
+            "name": "Merchant_064",
+            "email": "partnermerchant36@gmail.com",
+            "vendorCnt": 0,
+            "locationsCnt": 1,
+            "posCnt": 1,
+            "customersCnt": 0,
+            "totalSalesCommission": 0,
+            "totalSalesCommissionFiat": 568.25 ,
+            "totalSales": 0,
+            "totalSalesFiat":785.23
+        }
+   ]
+}
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata
+|summary|[SummaryItem](#tocSummaryItem)|true|Summary data - ralates to all pages of data.
+|data|Array([MerchantResponseItem](#tocMerchantResponseItem))|true|Array of objects
+
+<!-- LocationReportResponse -->
+<h2 id="tocLocationReportResponse">LocationReportResponse</h2>
+
+<a id="schemareportLocationReportResponse"></a>
+
+```json
+{
+    "metadata": {
+        "currency": null,
+        "timerangeFrom": "2017-10-21T11:00:26Z",
+        "timerangeTo": "2017-10-26T23:00:26Z",
+        "pageNumber": 0,
+        "itemsPerPage": 2,
+        "targetRole": null,
+        "totalNumberOfItems": 17
+    },
+    "summary": {
+      "totalSalesVolume": 13.4566654,
+      "totalSalesVolumeFiat": 94235.0255456,
+      "totalSalesCount": 94,
+      "avgTXAmount": 0.0955647785212,
+      "avgTXAmountFiat": 52.15564556872,
+      "totalSalesCommission": 0.9985645,
+      "totalSalesCommissionFiat": 1026.25,
+      "totalInternalCommissions": 0.22554123,
+      "totalInternalCommissionsFiat":1562.1233554
+      "income":0.03541,
+      "incomeFiat": 180.365
+    },
+    "data": [
+      {
+          "id": 363,
+          "name": "New location",
+          "address": "Test",
+          "numberOfPOS": 2,
+          "totalSales": 0,
+          "totalSalesFiat":0,
+          "totalCommission": 0,
+          "totalCommissionFiat":0,
+          "avgTransaction": 0,
+          "avgTransactionFiat":0,
+          "totalCount": 0
+      },
+      {
+          "id": 305,
+          "name": "Merchant_Location_60438",
+          "address": "Miodraga Bulatovica 17",
+          "numberOfPOS": 3,
+          "totalSales": 0.017231902,
+          "totalSalesFiat":175.46,
+          "totalCommission": 0.01678190,
+          "avgTransaction": 168.123,
+          "totalCount": 1
+      }
+
+   ]
+}
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata
+|summary|[SummaryItem](#tocSummaryItem)|true|Summary data - ralates to all pages of data.
+|data|Array([LocationResponseItem](#tocLocationResponseItem))|true|Array of objects
+
+
+<!-- PosReportResponse -->
+<h2 id="tocPOSReportResponse">POSReportResponse</h2>
+
+<a id="schemareportPOSReportResponse"></a>
+
+```json
+{
+  "metadata": {
+    "timerangeFrom": "2017-09-01T00:00:00.0Z",
+    "timerangeTo": "2018-01-15T23:59:59.0Z",
+    "number": 0,
+    "size": 2,
+    "numberOfElements": 6,
+    "totalPages": 1,
+    "first": true,
+    "last": true
+  },
+  "summary": {
+    "totalSalesVolume": 11.52008667,
+    "totalSalesVolumeFiat": 7947.5531215589,
+    "totalSalesCount": 104,
+    "avgTXAmount": 0.11077006413462,
+    "avgTXAmountFiat": 76.418780014989,
+    "totalSalesCommission": 0.85386515,
+    "totalSalesCommissionFiat": 602.6705777301
+  },
+  "content": [
+    {
+      "id": -100,
+      "inventoryNumber": "N\/A",
+      "name": "Virtual POS",
+      "totalSales": 4.1240819,
+      "totalSalesFiat": 2647.8644134884,
+      "totalCount": 41,
+      "avgTransaction": 0.10058736341463,
+      "avgTransactionFiat": 64.582058865571
+    },
+    {
+      "id": 42,
+      "inventoryNumber": "POS 2",
+      "name": "POS 2",
+      "totalSales": 0,
+      "totalSalesFiat": 0,
+      "totalCount": 0,
+      "avgTransaction": 0,
+      "avgTransactionFiat": 0
+    }
+  ]
+}
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata
+|summary|[SummaryItem](#tocSummaryItem)|true|Summary data - ralates to all pages of data.
+|data|Array([POSResponseItem](#tocPOSResponseItem))|true|Array of objects
+
+
+<!-- TaxReportResponse -->
+<h2 id="tocTaxReportResponse">TaxReportResponse</h2>
+
+<a id="schemareportTaxReportResponse"></a>
+
+```json
+{
+    "metadata": {
+        "timerangeFrom": "2017-11-11T00:00:00.000Z",
+        "timerangeTo": "2017-11-11T23:00:00.000Z"
+    },
+    "content": {
+        "totalTax":  256.23,
+        "totalAmountReceived": 0.00223456,
+        "totalAmountReceivedFiat": 25.36,
+        "totalAmountSent": 0.001232,
+        "totalAmountSentFiat": 15.25,
+        "totalFee": 0.00012356,
+        "totalFeeFiat": 1.0012356,
+        "totalNumTxSpent": 52,
+        "totalNumTxReceived": 23,
+    }
+}
+
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata
+|content|[TaxResponseItem](#tocTaxResposeItemItem)|true| Tax report item instance
+
+<!-- AltCommissionReportResponse -->
+<h2 id="tocAltCommissionReportResponse">AltCommissionReportResponse</h2>
+
+<a id="schemareporAltCommissionReportResponse"></a>
+
+```json
+{
+    "metadata": {
+        "currency": "DASH",
+        "timerangeFrom": "2017-11-09T00:00:0.0Z",
+        "timerangeTo": "2017-11-10T01:00:00.0Z",
+        "size": 2,
+        "targetRole": "ROLE_ADMIN",
+        "numberOfElements": 2,
+        "totalPages": 1,
+        "first": true,
+        "last": false
+    },
+    "summaryCommission": {
+        "salesCommission": 345.23,
+        "salesCommissionFiat": 10234.22,
+        "internalCommission": 123.22,
+        "internalCommissionFiat": 3523.23
+    },
+    "content": [
+        {
+            "associateId": 2102,
+            "name": "John Stockton",
+            "role": "CUSTOMER",
+            "sales_commission_sum": 0.56654,
+            "sales_commission_sum_fiat": 2542.25,
+            "internal_commission_sum": 0.00235,
+            "internal_commission_sum_fiat": 25.56
+        },
+        {
+            "associateId": 2054,
+            "name": "Johnatan Doe",
+            "role": "PARTNER",
+            "sales_commission_sum": 0.85652,
+            "sales_commission_sum_fiat": 6854.23,
+            "internal_commission_sum": 0.008974,
+            "internal_commission_sum_fiat": 175.25
+        }
+    ]
+}
+
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata
+|content|Array([CommissionResponseItem])(#tocCommissionResposeItemItem)|true| Array of commission report intems
+
+<!-- ErrorMessage -->
+<h2 id="tocErrorMessage">ErrorMessage</h2>
+
+<a id="schemareporterrormessage"></a>
+
+```json
+{
+  "message":"There was an error processing the request"
+}
+
+```
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|message|string|true|Error message returned along with status code
+
+
+<!-- Notification message -->
+<h2 id="tocNotificationMessage">NotificationMessage</h2>
+
+<a id="schemanotificationmessage"></a>
+
+```json
+{
+ "tx_id":"iw210iw21i0",
+ "tx_state":"COMPLETED",
+ "requested_amount":25.00,
+ "requested_currency":"USD",
+ "converted_to_amount": 0.2,
+ "converted_to_currency":"DASH",
+ "timestamp_resp": 1503007674,
+ "pay_to_address": "1xj239s8…js928jswi",
+ "warning_msg":{  
+        "message":
+                "User payed MORE than required, expected_amount_crypto: 0.056 expected_amount_fiat: 25.50, payed_amount_crypto: 0.0571 payed_amount_fiat: 27.25, difference_crypto: 0.0011 difference_fiat: 2.25"
+      }
+  }
+}
+```
+
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|tx_id|string|false|Internal transaction id, this is part of internal transaction storage.
+|tx_state|string|true|Current state of the transaction
+|requested_amount|number|true|Requested amount that system generated
+|requested_currency|string|true|Requested currency
+|converted_to_amount|number|true|To which mount value has been converted
+|converted_to_currency|string|true|Curency conversion
+|timestamp_resp|integer|true|Responce timestamp created on server
+|pay_to_address|string|true|The address that has been payed to
+|warning_msg|[ErrorMessage](#tocErrorMessage)|true|The address that has been payed to
+
+
+
+
+
+<!-- InternalRequest -->
+
+<h2 id="tocInternalRequest">InternalRequest</h2>
+
+<a id="schemainternalrequest"></a>
+
+```json
+{
+    "type":"INTERNAL_CRYPTO_TO_INTERNAL_CRYPTO",
+    "source_associate_id": 20,
+    "destination_associate_id": 100,
+    "amount": 1.2,
+    "currency_in": "DASH",
+    "currency_out": "DASH",
+    "timestamp_req":"152345465564",
+    "note":"Some transaction note string"
+}
+```
+
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|type|integer|false| Enumeration (INTERNAL_CRYPTO_TO_INTERNAL_CRYPTO, INTERNAL_CRYPTO_TO_EXTERNAL_CRYPTO, INTERNAL_CRYPTO_TO_FIAT, FIAT_TO_INTERNAL_CRYPTO, INTERNAL_FIAT_TO_EXTERNAL_FIAT).
+|source_associate_id|integer|true|Internal associate Id of transaction initiator
+|destination_associate_id|integer|true|Internal associate id of transaction destination
+|amount|number|true|Amount to transfer
+|currency_in|string|true|Currency that is transfered
+|currency_out|string|true|Currency to which is transfered
+|timestamp_req|integer|true|Timestamp of the request
+|note|string|false|General note about transaction
+
+
+<!-- AssociateAccount -->
+<h2 id="tocAssociateAccount">AssociateAccount</h2>
+
+<a id="schemaassociateaccount"></a>
+
+```json
+{
+  "id":"20",
+  "email":"test@example.com"
+}
+```
+
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|timestamp_req|integer|false|Internal transaction id, this is part of internal transaction storage.
+|id|integer|true|Internal user identifier
+|email|string|true|User email address. This address is used for registration with Coinapult and cannot be changed later.
+
+<!-- InternalRequest -->
+
+<h2 id="tocInternalRequest">InternalRequest</h2>
+
+<a id="schemainternalrequest"></a>
+
+```json
+{
+    "type":"INTERNAL_CRYPTO_TO_INTERNAL_CRYPTO",
+    "source_associate_id": 20,
+    "destination_associate_id": 100,
+    "amount": 1.2,
+    "currency_in": "DASH",
+    "currency_out": "DASH",
+    "timestamp_req":"152345465564",
+    "note":"Some transaction note string"
+}
+```
+
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|type|integer|false| Enumeration (INTERNAL_CRYPTO_TO_INTERNAL_CRYPTO, INTERNAL_CRYPTO_TO_EXTERNAL_CRYPTO, INTERNAL_CRYPTO_TO_FIAT, FIAT_TO_INTERNAL_CRYPTO, INTERNAL_FIAT_TO_EXTERNAL_FIAT).
+|source_associate_id|integer|true|Internal associate Id of transaction initiator
+|destination_associate_id|integer|true|Internal associate id of transaction destination
+|amount|number|true|Amount to transfer
+|currency_in|string|true|Currency that is transfered
+|currency_out|string|true|Currency to which is transfered
+|timestamp_req|integer|true|Timestamp of the request
+|note|string|false|General note about transaction
+
+
+<!-- InternalResponse -->
+
+<h2 id="tocInternalResponse">InternalResponse</h2>
+
+<a id="schemainternalresponse"></a>
+
+```json
+{
+    "timestamp_accepted": 152345465566,
+    "tx_id": "TXtbbSjB4HdQ",
+    "destination_address":"myzREJCjMo3peEcvpmPBWdgDpNhvVHTNBZ"
+    "status": "PENDING",
+    "request_was":{
+                "type":"INTERNAL_CRYPTO_TO_INTERNAL_CRYPTO",
+                "source_associate_id": 20,
+                "destination_associate_id": 100,
+                "amount": 1.2,
+                "currency_in": "DASH",
+                "currency_out": "DASH",
+                "timestamp_req":"152345465564",
+                "note":"Some transaction note string"
+        }
+}
+```
+
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|timestamp_accepted|integer|false| timestamp when the transaction is accepted on service
+|tx_id|integer|string|Internal transaction identifier
+|destination_address|string|true| Destination address
+|status|string|true|Current transaction status
+|request_was|[InternalRequest](#tocInternalRequest)|true|Original request

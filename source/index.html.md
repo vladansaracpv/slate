@@ -44,9 +44,8 @@ includes:
   - partnerSalesReport
   - merchantSalesReport
   - taxReport
-
-  # - schemes
-  # - rest
+  - schemes
+  - support
 
 search: true
 ---

@@ -1,16 +1,19 @@
 
 #Authentication
-First you retrieve a new Bearer token using login/password authentication. After that you can use it to access other resources.
 
-The URL examples throughout this documentation use "<token>" as a placeholder. For these examples to work, you need to substitute the value with your own access token.
+The Product36 platform uses [JSON Web Tokens](https://jwt.io/) for authentication.
+
+The first step for authentication is to get a Bearer token by using [Authenticate](#authenticate) API. The token received in the response should be used to access all other resources. In order to use the token please include it in the request headers:
+
+`Authorization: Bearer <token>`
+
+The URL examples throughout this documentation use `<token>` as a placeholder. For these examples to work, you need to substitute the value with your own access token. The token expires after 24 hours. Once expired, a new token should be obtained.
 
 ##Authenticate
 
 `POST /api/authenticate`
 
 Access tokens are required to access nearly all endpoints of this API.
-
-
 
 > Body parameter
 
@@ -52,9 +55,14 @@ Access tokens are required to access nearly all endpoints of this API.
 
 
 ## Is Authenticated
-<aside class="success">
-This operation does not require authentication
-</aside>
+
+`GET /api/authenticate`
+
+*Is Authenticated*
+
+**Parameters**
+
+None
 
 > Code samples
 
@@ -161,13 +169,6 @@ System.out.println(response.toString());
 
 ```
 
-
-`GET /api/authenticate`
-
-
-*Is Authenticated*
-
-
 > Example responses
 
 
@@ -179,4 +180,3 @@ System.out.println(response.toString());
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
-

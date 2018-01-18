@@ -2,6 +2,7 @@
 ## Payments
 Payments service endpoints are central endpoints of Product36. Endpoints enable clients to get balance information, as well as to initiate payment process for two supported types of POS devices. Published interfaces include getting the information about user account, as well as payment capabilities - converting FIAT amount to cryptocurrency and getting the destination address. It is important to note that in background this is a multistep process and it is not as simple as getting the destination address from hot wallet. So there are firm security and business rules that have to be obeyed in order to complete any of these processes.
 At the end, there is a notification process that can be used for getting events from within the system.
+
 The base URL for Production environment is:
 
 * `https://paymentgateway-dot-altthirtysixproduct36.appspot.com`
