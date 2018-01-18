@@ -1,77 +1,48 @@
-
 <h3 id="Alt36Dash-API-Customer">Manage Customers</h3>
 
-
 Customer Resource
-
 
 #### Get all Customers
 
 <a id="opIdgetAllPaginatedUsingGET"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
-curl -X GET http://example.com/api/customers \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/customers -H 'Accept: */*'
 ```
-
 
 ```http
 GET http://example.com/api/customers HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/customers',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/customers',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -79,50 +50,34 @@ fetch('http://example.com/api/customers',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/customers',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/customers', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/customers',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/customers");
@@ -138,13 +93,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `GET /api/customers`
-
 
 *Get the all Customers paginated*
 
@@ -159,19 +110,15 @@ System.out.println(response.toString());
 
 <!-- <h3 id="getAllPaginatedUsingGET-parameters">Parameters</h3> -->
 
-
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |page|query|integer(int32)|false|Page number of the requested page|
 |size|query|integer(int32)|false|Size of a page|
-|sort|query|array[string]|false|Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.|
-
+|sort|query|array[string]|false|Sorting criteria in the format: property(,asc/desc). Default sort order is ascending. Multiple sort criteria are supported.|
 
 > Example responses
 
-
 <h3 id="getAllPaginatedUsingGET-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -180,12 +127,9 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-
 <h3 id="getAllPaginatedUsingGET-responseschema">Response Schema</h3>
 
-
 Status Code **200**
-
 
 |Name|Type|Required|Description|
 |---|---|---|---|
@@ -226,75 +170,48 @@ Status Code **200**
 |» vendors|integer(int32)|false|No description|
 |» zip|string|true|No description|
 
-
 #### Get Customer by ID
-
 
 <a id="opIdgetByIdUsingGET"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
 curl -X GET http://example.com/api/customers/{id} \
   -H 'Accept: */*'
-
-
 ```
-
 
 ```http
 GET http://example.com/api/customers/{id} HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/customers/{id}',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/customers/{id}',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -302,50 +219,34 @@ fetch('http://example.com/api/customers/{id}',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/customers/{id}',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/customers/{id}', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/customers/{id}',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/customers/{id}");
@@ -361,13 +262,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `GET /api/customers/{id}`
-
 
 *Get the customer by id*
 
@@ -383,17 +280,13 @@ System.out.println(response.toString());
 
 <!-- <h3 id="getByIdUsingGET-parameters">Parameters</h3> -->
 
-
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |id|path|integer(int64)|true|id|
 
-
 > Example responses
 
-
 <h3 id="getByIdUsingGET-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -402,60 +295,40 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-
-
-
 #### Create Customer
-
 
 <a id="opIdregisterNewUsingPOST"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
 curl -X POST http://example.com/api/customer \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json'
-
 ```
-
 
 ```http
 POST http://example.com/api/customer HTTP/1.1
 Host: null
 Content-Type: application/json
 Accept: application/json
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Content-Type':'application/json',
   'Accept':'application/json'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/customer',
   method: 'post',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
@@ -471,13 +344,11 @@ const inputBody = '{
     "login": "string"
   }
 }';
+
 const headers = {
   'Content-Type':'application/json',
   'Accept':'application/json'
-
-
 };
-
 
 fetch('http://example.com/api/customer',
 {
@@ -490,52 +361,36 @@ fetch('http://example.com/api/customer',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
-
 
 headers = {
   'Content-Type' => 'application/json',
   'Accept' => 'application/json'
 }
 
-
 result = RestClient.post 'http://example.com/api/customer',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
 }
 
-
-r = requests.post('http://example.com/api/customer', params={
-
-
-}, headers = headers)
-
+r = requests.post('http://example.com/api/customer',
+                   params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/customer");
@@ -551,13 +406,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `POST /api/customer`
-
 
 *Creates a new customer*
 
@@ -568,7 +419,6 @@ System.out.println(response.toString());
   * `ROLE_VENDOR_ADMIN`
 
 > Body parameter
-
 
 ```json
 {
@@ -585,17 +435,13 @@ System.out.println(response.toString());
 }
 ```
 
-
 <!-- <h3 id="registerNewUsingPOST-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|[NewCustomerVM](#schemanewcustomervm)|true|partner|
 
-
 > Example responses
-
 
 ```json
 {
@@ -605,9 +451,7 @@ System.out.println(response.toString());
 }
 ```
 
-
 <h3 id="registerNewUsingPOST-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -617,79 +461,52 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!--
-<aside class="success">
-This operation does not require authentication
-</aside> -->
-
-
-
-
 #### Invite Customer via email
-
 
 <a id="opIdinviteUsingPOST"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
 curl -X POST http://example.com/api/customer/invite \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json'
-
-
 ```
-
 
 ```http
 POST http://example.com/api/customer/invite HTTP/1.1
 Host: null
 Content-Type: application/json
 Accept: application/json
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Content-Type':'application/json',
   'Accept':'application/json'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/customer/invite',
   method: 'post',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
+
 const inputBody = '{
   "email": "string"
 }';
+
 const headers = {
   'Content-Type':'application/json',
   'Accept':'application/json'
-
-
 };
-
 
 fetch('http://example.com/api/customer/invite',
 {
@@ -702,10 +519,7 @@ fetch('http://example.com/api/customer/invite',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
@@ -717,37 +531,25 @@ headers = {
   'Accept' => 'application/json'
 }
 
-
 result = RestClient.post 'http://example.com/api/customer/invite',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
 }
 
-
-r = requests.post('http://example.com/api/customer/invite', params={
-
-
-}, headers = headers)
-
+r = requests.post('http://example.com/api/customer/invite',
+                   params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/customer/invite");
@@ -763,13 +565,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `POST /api/customer/invite`
-
 
 *Invite customer via email*
 
@@ -782,24 +580,19 @@ System.out.println(response.toString());
 
 > Body parameter
 
-
 ```json
 {
   "email": "string"
 }
 ```
 
-
 <!-- <h3 id="inviteUsingPOST-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|[InviteAssociateViaEmail](#schemainviteassociateviaemail)|true|associateViaEmail|
 
-
 > Example responses
-
 
 ```json
 {
@@ -813,9 +606,7 @@ System.out.println(response.toString());
 }
 ```
 
-
 <h3 id="inviteUsingPOST-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -825,9 +616,6 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-
-
-
 #### Customer self-registration
 
 <aside class="success">
@@ -836,53 +624,37 @@ This operation does not require authentication
 
 <a id="opIdselfRegistrationUsingPOST"></a>
 
-
 > Code samples
-
 
 ```shell
 # You can also use wget
 curl -X POST http://example.com/api/customer/register \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json'
-
-
 ```
-
 
 ```http
 POST http://example.com/api/customer/register HTTP/1.1
 Host: null
 Content-Type: application/json
 Accept: application/json
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Content-Type':'application/json',
   'Accept':'application/json'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/customer/register',
   method: 'post',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
@@ -901,10 +673,7 @@ const inputBody = '{
 const headers = {
   'Content-Type':'application/json',
   'Accept':'application/json'
-
-
 };
-
 
 fetch('http://example.com/api/customer/register',
 {
@@ -917,15 +686,11 @@ fetch('http://example.com/api/customer/register',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
-
 
 headers = {
   'Content-Type' => 'application/json',
@@ -934,35 +699,24 @@ headers = {
 
 
 result = RestClient.post 'http://example.com/api/customer/register',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
 }
 
-
-r = requests.post('http://example.com/api/customer/register', params={
-
-
-}, headers = headers)
-
+r = requests.post('http://example.com/api/customer/register',
+                   params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/customer/register");
@@ -978,21 +732,17 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `POST /api/customer/register`
-
 
 *Customer self registration*
 
 **Required user role:**
 
   * `No authentication is required`
-> Body parameter
 
+> Body parameter
 
 ```json
 {
@@ -1009,18 +759,14 @@ System.out.println(response.toString());
 }
 ```
 
-
 <!-- <h3 id="selfRegistrationUsingPOST-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |key|query|string|false|key|
 |body|body|[SelfRegisterCustomerVM](#schemaselfregistercustomervm)|true|partner|
 
-
 > Example responses
-
 
 ```json
 {
@@ -1030,9 +776,7 @@ System.out.println(response.toString());
 }
 ```
 
-
 <h3 id="selfRegistrationUsingPOST-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -1042,60 +786,40 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-
-
 #### Update Customer
-
 
 <a id="opIdupdateUsingPUT"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
 curl -X PUT http://example.com/api/customers \
   -H 'Content-Type: application/json' \
   -H 'Accept: */*'
-
-
 ```
-
 
 ```http
 PUT http://example.com/api/customers HTTP/1.1
 Host: null
 Content-Type: application/json
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Content-Type':'application/json',
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/customers',
   method: 'put',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
@@ -1111,13 +835,12 @@ const inputBody = '{
     "login": "string"
   }
 }';
+
 const headers = {
   'Content-Type':'application/json',
   'Accept':'*/*'
 
-
 };
-
 
 fetch('http://example.com/api/customers',
 {
@@ -1130,52 +853,36 @@ fetch('http://example.com/api/customers',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
-
 
 headers = {
   'Content-Type' => 'application/json',
   'Accept' => '*/*'
 }
 
-
 result = RestClient.put 'http://example.com/api/customers',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Content-Type': 'application/json',
   'Accept': '*/*'
 }
 
-
-r = requests.put('http://example.com/api/customers', params={
-
-
-}, headers = headers)
-
+r = requests.put('http://example.com/api/customers',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/customers");
@@ -1191,13 +898,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `PUT /api/customers`
-
 
 *Updates an existing Customer*
 
@@ -1206,7 +909,6 @@ System.out.println(response.toString());
   * `ROLE_CUSTOMER_ADMIN`
 
 > Body parameter
-
 
 ```json
 {
@@ -1223,20 +925,15 @@ System.out.println(response.toString());
 }
 ```
 
-
 <!-- <h3 id="updateUsingPUT-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|[NewCustomerVM](#schemanewcustomervm)|true|associate|
 
-
 > Example responses
 
-
 <h3 id="updateUsingPUT-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -1246,100 +943,62 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-
 #### Delete Customer
-
 
 <a id="opIddeleteUsingDELETE"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
 curl -X DELETE http://example.com/api/customer/{id}
-
-
 ```
-
 
 ```http
 DELETE http://example.com/api/customer/{id} HTTP/1.1
 Host: null
-
-
 ```
 
-
 ```javascript
-
-
 $.ajax({
   url: 'http://example.com/api/customer/{id}',
   method: 'delete',
-
-
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 fetch('http://example.com/api/customer/{id}',
 {
   method: 'DELETE'
-
-
 })
 .then(function(res) {
     return res.json();
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 result = RestClient.delete 'http://example.com/api/customer/{id}',
-  params: {
-  }
-
+         params: {}
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
 
-
-r = requests.delete('http://example.com/api/customer/{id}', params={
-
-
-)
-
+r = requests.delete('http://example.com/api/customer/{id}', params={})
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/customer/{id}");
@@ -1355,18 +1014,11 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
-
 
 `DELETE /api/customer/{id}`
 
-
 *Delete the Customer with id*
-
-
-delete the Customer with id. Deletes/Disables all customer users first
 
 **Required user role:**
 
@@ -1377,14 +1029,11 @@ delete the Customer with id. Deletes/Disables all customer users first
 
 <!-- <h3 id="deleteUsingDELETE-parameters">Parameters</h3> -->
 
-
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |id|path|integer(int64)|true|id|
 
-
 <h3 id="deleteUsingDELETE-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -1393,80 +1042,47 @@ delete the Customer with id. Deletes/Disables all customer users first
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 
-
-
-
-
-
-
 #### Search Customers
-
 
 <a id="opIdsearchUsingGET"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
-curl -X GET http://example.com/api/customer/search \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/customer/search -H 'Accept: */*'
 ```
-
 
 ```http
 GET http://example.com/api/customer/search HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/customer/search',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/customer/search',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -1474,50 +1090,34 @@ fetch('http://example.com/api/customer/search',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/customer/search',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/customer/search', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/customer/search',
+                 params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/customer/search");
@@ -1533,13 +1133,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `GET /api/customer/search`
-
 
 *search*
 
@@ -1560,14 +1156,11 @@ System.out.println(response.toString());
 |q|query|string|false|q|
 |page|query|integer(int32)|false|Page number of the requested page|
 |size|query|integer(int32)|false|Size of a page|
-|sort|query|array[string]|false|Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.|
-
+|sort|query|array[string]|false|Sorting criteria in the format: property(,asc/desc). Default sort order is ascending. Multiple sort criteria are supported.|
 
 > Example responses
 
-
 <h3 id="searchUsingGET-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|

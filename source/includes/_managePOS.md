@@ -1,78 +1,49 @@
-
-
 <h3 id="Alt36Dash-API-Merchant-POS">Manage POS</h3>
 
-
 Point Of Sale Resource
-
 
 #### Get all POS
 
 <a id="opIdgetAllPointOfSalesUsingGET_1"></a>
 
-
 > Code samples
-
 
 ```shell
 # You can also use wget
-curl -X GET http://example.com/api/point-of-sales \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/point-of-sales -H 'Accept: */*'
 ```
-
 
 ```http
 GET http://example.com/api/point-of-sales HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/point-of-sales',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/point-of-sales',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -80,50 +51,34 @@ fetch('http://example.com/api/point-of-sales',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/point-of-sales',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/point-of-sales', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/point-of-sales',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/point-of-sales");
@@ -139,8 +94,6 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
 
@@ -158,21 +111,17 @@ System.out.println(response.toString());
 
 <!-- <h3 id="getAllPointOfSalesUsingGET_1-parameters">Parameters</h3> -->
 
-
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |locationId|query|integer(int64)|false|locationId|
 |merchantId|query|integer(int64)|false|merchantId|
 |page|query|integer(int32)|false|Page number of the requested page|
 |size|query|integer(int32)|false|Size of a page|
-|sort|query|array[string]|false|Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.|
-
+|sort|query|array[string]|false|Sorting criteria in the format: property(,asc/desc). Default sort order is ascending. Multiple sort criteria are supported.|
 
 > Example responses
 
-
 <h3 id="getAllPointOfSalesUsingGET_1-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -181,76 +130,47 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-
-
 #### Get POS by ID
-
 
 <a id="opIdgetPointOfSaleUsingGET_1"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
-curl -X GET http://example.com/api/point-of-sales/{id} \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/point-of-sales/{id} -H 'Accept: */*'
 ```
-
 
 ```http
 GET http://example.com/api/point-of-sales/{id} HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/point-of-sales/{id}',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/point-of-sales/{id}',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -258,50 +178,34 @@ fetch('http://example.com/api/point-of-sales/{id}',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/point-of-sales/{id}',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/point-of-sales/{id}', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/point-of-sales/{id}',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/point-of-sales/{id}");
@@ -317,13 +221,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `GET /api/point-of-sales/{id}`
-
 
 *Get POS by ID*
 
@@ -336,17 +236,13 @@ System.out.println(response.toString());
 
 <!-- <h3 id="getPointOfSaleUsingGET_1-parameters">Parameters</h3> -->
 
-
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |id|path|integer(int64)|true|id|
 
-
 > Example responses
 
-
 <h3 id="getPointOfSaleUsingGET_1-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -355,63 +251,41 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!--
-<aside class="success">
-</aside> -->
-
-
 #### Create POS
-
 
 <a id="opIdcreatePointOfSaleUsingPOST_1"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
+
 curl -X POST http://example.com/api/point-of-sales \
   -H 'Content-Type: application/json' \
   -H 'Accept: */*'
-
-
 ```
-
 
 ```http
 POST http://example.com/api/point-of-sales HTTP/1.1
 Host: null
 Content-Type: application/json
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Content-Type':'application/json',
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/point-of-sales',
   method: 'post',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
@@ -488,13 +362,11 @@ const inputBody = '{
   "pointOfSaleType": "GREENBITS",
   "virtualPointOfSalesEnabled": true
 }';
+
 const headers = {
   'Content-Type':'application/json',
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/point-of-sales',
 {
@@ -507,52 +379,36 @@ fetch('http://example.com/api/point-of-sales',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
-
 
 headers = {
   'Content-Type' => 'application/json',
   'Accept' => '*/*'
 }
 
-
 result = RestClient.post 'http://example.com/api/point-of-sales',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Content-Type': 'application/json',
   'Accept': '*/*'
 }
 
-
-r = requests.post('http://example.com/api/point-of-sales', params={
-
-
-}, headers = headers)
-
+r = requests.post('http://example.com/api/point-of-sales',
+                   params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/point-of-sales");
@@ -568,13 +424,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `POST /api/point-of-sales`
-
 
 *Create a new POS*
 
@@ -583,7 +435,6 @@ System.out.println(response.toString());
   * `ROLE_MERCHANT_ADMIN`
 
 > Body parameter
-
 
 ```json
 {
@@ -661,20 +512,15 @@ System.out.println(response.toString());
 }
 ```
 
-
 <!-- <h3 id="createPointOfSaleUsingPOST_1-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|[PointOfSale](#schemapointofsale)|true|pointOfSale|
 
-
 > Example responses
 
-
 <h3 id="createPointOfSaleUsingPOST_1-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -684,63 +530,40 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!--
-<aside class="success">
-</aside> -->
-
-
 #### Update POS
-
 
 <a id="opIdupdatePointOfSaleUsingPUT_1"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
 curl -X PUT http://example.com/api/point-of-sales \
   -H 'Content-Type: application/json' \
   -H 'Accept: */*'
-
-
 ```
-
 
 ```http
 PUT http://example.com/api/point-of-sales HTTP/1.1
 Host: null
 Content-Type: application/json
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Content-Type':'application/json',
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/point-of-sales',
   method: 'put',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
@@ -817,13 +640,11 @@ const inputBody = '{
   "pointOfSaleType": "GREENBITS",
   "virtualPointOfSalesEnabled": true
 }';
+
 const headers = {
   'Content-Type':'application/json',
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/point-of-sales',
 {
@@ -836,52 +657,36 @@ fetch('http://example.com/api/point-of-sales',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
-
 
 headers = {
   'Content-Type' => 'application/json',
   'Accept' => '*/*'
 }
 
-
 result = RestClient.put 'http://example.com/api/point-of-sales',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Content-Type': 'application/json',
   'Accept': '*/*'
 }
 
-
-r = requests.put('http://example.com/api/point-of-sales', params={
-
-
-}, headers = headers)
-
+r = requests.put('http://example.com/api/point-of-sales',
+                 params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/point-of-sales");
@@ -897,13 +702,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `PUT /api/point-of-sales`
-
 
 *Update existing POS*
 
@@ -912,7 +713,6 @@ System.out.println(response.toString());
   * `ROLE_MERCHANT_ADMIN`
 
 > Body parameter
-
 
 ```json
 {
@@ -990,20 +790,15 @@ System.out.println(response.toString());
 }
 ```
 
-
 <!-- <h3 id="updatePointOfSaleUsingPUT_1-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|[PointOfSale](#schemapointofsale)|true|pointOfSale|
 
-
 > Example responses
 
-
 <h3 id="updatePointOfSaleUsingPUT_1-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -1013,103 +808,64 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!--
-<aside class="success">
-</aside> -->
-
 #### Delete POS
-
 
 <a id="opIddeletePointOfSaleUsingDELETE_1"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
 curl -X DELETE http://example.com/api/point-of-sales/{id}
-
-
 ```
-
 
 ```http
 DELETE http://example.com/api/point-of-sales/{id} HTTP/1.1
 Host: null
-
-
 ```
 
 
 ```javascript
-
-
 $.ajax({
   url: 'http://example.com/api/point-of-sales/{id}',
   method: 'delete',
-
-
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 fetch('http://example.com/api/point-of-sales/{id}',
 {
   method: 'DELETE'
-
-
 })
 .then(function(res) {
     return res.json();
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 result = RestClient.delete 'http://example.com/api/point-of-sales/{id}',
-  params: {
-  }
-
+         params: {}
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
 
-
-r = requests.delete('http://example.com/api/point-of-sales/{id}', params={
-
-
-)
-
+r = requests.delete('http://example.com/api/point-of-sales/{id}',
+                     params={})
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/point-of-sales/{id}");
@@ -1125,13 +881,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `DELETE /api/point-of-sales/{id}`
-
 
 *Delete POS by ID*
 
@@ -1141,14 +893,11 @@ System.out.println(response.toString());
 
 <!-- <h3 id="deletePointOfSaleUsingDELETE_1-parameters">Parameters</h3> -->
 
-
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |id|path|integer(int64)|true|id|
 
-
 <h3 id="deletePointOfSaleUsingDELETE_1-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -1158,75 +907,49 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 
 
-
 #### Generate POS API request code
 
 
 <a id="opIdcreateNewPosAuthUsingGET"></a>
 
-
 > Code samples
-
 
 ```shell
 # You can also use wget
-curl -X GET http://example.com/api/point-of-sales/{id}/token \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/point-of-sales/{id}/token -H 'Accept: */*'
 ```
-
 
 ```http
 GET http://example.com/api/point-of-sales/{id}/token HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/point-of-sales/{id}/token',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/point-of-sales/{id}/token',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -1234,10 +957,7 @@ fetch('http://example.com/api/point-of-sales/{id}/token',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
@@ -1248,36 +968,24 @@ headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/point-of-sales/{id}/token',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/point-of-sales/{id}/token', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/point-of-sales/{id}/token',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/point-of-sales/{id}/token");
@@ -1293,33 +1001,26 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `GET /api/point-of-sales/{id}/token`
-
 
 *Generate POS request token code*
 
 **Required user role:**
 
   * `ROLE_MERCHANT_ADMIN`
+  * `ROLE_EXTERNAL, ROLE_PARTNER_ADMIN`
 
 <!-- <h3 id="createNewPosAuthUsingGET-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |id|path|integer(int64)|true|id|
 
-
 > Example responses
 
-
 <h3 id="createNewPosAuthUsingGET-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -1328,44 +1029,26 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-
-
 #### Register POS with API request code
-
 
 <a id="opIdregisterNewPosWithKeyUsingPOST"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
-curl -X POST http://example.com/api/pos/register?key=string \
-  -H 'Accept: */*'
-
-
+curl -X POST http://example.com/api/pos/register?key=string -H 'Accept: */*'
 ```
-
 
 ```http
 POST http://example.com/api/pos/register?key=string HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/pos/register',
@@ -1376,27 +1059,18 @@ $.ajax({
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/pos/register?key=string',
 {
   method: 'POST',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -1404,50 +1078,34 @@ fetch('http://example.com/api/pos/register?key=string',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.post 'http://example.com/api/pos/register',
-  params: {
-  'key' => 'string'
-}, headers: headers
-
+         params: {'key' => 'string'}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.post('http://example.com/api/pos/register', params={
-  'key': 'string'
-}, headers = headers)
-
+r = requests.post('http://example.com/api/pos/register',
+                   params={'key': 'string'}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/pos/register?key=string");
@@ -1463,33 +1121,25 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `POST /api/pos/register`
-
 
 *Register POS with temp key*
 
 **Required user role:**
 
-  * `ROLE_MERCHANT_ADMIN`
+  * `No authentication is required`
 
 <!-- <h3 id="registerNewPosWithKeyUsingPOST-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |key|query|string|true|key|
 
-
 > Example responses
 
-
 <h3 id="registerNewPosWithKeyUsingPOST-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -1499,76 +1149,47 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-
-
 #### Get POS status
-
 
 <a id="opIdisPosActiveUsingGET"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
-curl -X GET http://example.com/api/point-of-sales/{id}/isActive \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/point-of-sales/{id}/isActive -H 'Accept: */*'
 ```
-
 
 ```http
 GET http://example.com/api/point-of-sales/{id}/isActive HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/point-of-sales/{id}/isActive',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/point-of-sales/{id}/isActive',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -1576,50 +1197,34 @@ fetch('http://example.com/api/point-of-sales/{id}/isActive',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/point-of-sales/{id}/isActive',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/point-of-sales/{id}/isActive', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/point-of-sales/{id}/isActive',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/point-of-sales/{id}/isActive");
@@ -1635,13 +1240,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `GET /api/point-of-sales/{id}/isActive`
-
 
 *Get POS status*
 
@@ -1654,17 +1255,13 @@ System.out.println(response.toString());
 
 <!-- <h3 id="isPosActiveUsingGET-parameters">Parameters</h3> -->
 
-
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |id|path|integer(int64)|true|id|
 
-
 > Example responses
 
-
 <h3 id="isPosActiveUsingGET-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -1673,80 +1270,47 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!--
-<aside class="success">
-</aside> -->
-
-
-
 #### Deactivate POS
-
 
 <a id="opIddeletePosAuthUsingDELETE"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
-curl -X DELETE http://example.com/api/point-of-sales/{id}/token \
-  -H 'Accept: */*'
-
-
+curl -X DELETE http://example.com/api/point-of-sales/{id}/token -H 'Accept: */*'
 ```
-
 
 ```http
 DELETE http://example.com/api/point-of-sales/{id}/token HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/point-of-sales/{id}/token',
   method: 'delete',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/point-of-sales/{id}/token',
 {
   method: 'DELETE',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -1754,50 +1318,34 @@ fetch('http://example.com/api/point-of-sales/{id}/token',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.delete 'http://example.com/api/point-of-sales/{id}/token',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.delete('http://example.com/api/point-of-sales/{id}/token', params={
-
-
-}, headers = headers)
-
+r = requests.delete('http://example.com/api/point-of-sales/{id}/token',
+                     params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/point-of-sales/{id}/token");
@@ -1813,13 +1361,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `DELETE /api/point-of-sales/{id}/token`
-
 
 *Deactivate POS token*
 
@@ -1829,17 +1373,13 @@ System.out.println(response.toString());
 
 <!-- <h3 id="deletePosAuthUsingDELETE-parameters">Parameters</h3> -->
 
-
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |id|path|integer(int64)|true|id|
 
-
 > Example responses
 
-
 <h3 id="deletePosAuthUsingDELETE-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -1848,76 +1388,48 @@ System.out.println(response.toString());
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 
-
-
 #### Search POS
-
 
 <a id="opIdsearchUsingGET_4"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
-curl -X GET http://example.com/api/point-of-sale/search \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/point-of-sale/search -H 'Accept: */*'
 ```
-
 
 ```http
 GET http://example.com/api/point-of-sale/search HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
 
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/point-of-sale/search',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/point-of-sale/search',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -1925,50 +1437,34 @@ fetch('http://example.com/api/point-of-sale/search',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/point-of-sale/search',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/point-of-sale/search', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/point-of-sale/search',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/point-of-sale/search");
@@ -1984,13 +1480,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `GET /api/point-of-sale/search`
-
 
 *Search Point Of Sales*
 
@@ -2001,23 +1493,18 @@ System.out.println(response.toString());
   * `ROLE_MERCHANT_ADMIN`
   * `ROLE_MERCHANT_USER`
 
-
 <!-- <h3 id="searchUsingGET_4-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |q|query|string|false|q|
 |page|query|integer(int32)|false|Page number of the requested page|
 |size|query|integer(int32)|false|Size of a page|
-|sort|query|array[string]|false|Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.|
-
+|sort|query|array[string]|false|Sorting criteria in the format: property(,asc/desc). Default sort order is ascending. Multiple sort criteria are supported.|
 
 > Example responses
 
-
 <h3 id="searchUsingGET_4-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -2025,7 +1512,3 @@ System.out.println(response.toString());
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
-
-<!--
-<aside class="success">
-</aside> -->

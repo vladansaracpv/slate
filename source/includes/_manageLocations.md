@@ -1,77 +1,50 @@
 
 <h3 id="Alt36Dash-API-Merchant-locations">Manage Locations</h3>
 
-
 Location Resource
-
 
 #### Get all Locations paginated
 
 <a id="opIdgetAllLocationsUsingGET_1"></a>
 
-
 > Code samples
-
 
 ```shell
 # You can also use wget
-curl -X GET http://example.com/api/locations \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/locations -H 'Accept: */*'
 ```
-
 
 ```http
 GET http://example.com/api/locations HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/locations',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/locations',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -79,50 +52,34 @@ fetch('http://example.com/api/locations',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/locations',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/locations', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/locations',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/locations");
@@ -138,13 +95,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `GET /api/locations`
-
 
 *Get all the locations paginated*
 
@@ -155,18 +108,14 @@ System.out.println(response.toString());
   * `ROLE_MERCHANT_ADMIN`
   * `ROLE_MERCHANT_USER`
 
-
-
 <!-- <h3 id="getAllLocationsUsingGET_1-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |merchantId|query|integer(int64)|false|merchantId|
 |page|query|integer(int32)|false|Page number of the requested page|
 |size|query|integer(int32)|false|Size of a page|
-|sort|query|array[string]|false|Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.|
-
+|sort|query|array[string]|false|Sorting criteria in the format: property(,asc/desc). Default sort order is ascending. Multiple sort criteria are supported.|
 
 > Example responses
 
@@ -338,11 +287,9 @@ System.out.println(response.toString());
    "first":true,
    "numberOfElements":1
 }
-
 ```
 
 <h3 id="getAllLocationsUsingGET_1-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -351,80 +298,48 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-
-<!-- <aside class="success">
-</aside> -->
-
-
-
 #### Get all Locations
-
 
 <a id="opIdgetAllLocationsForDashboardUsingGET"></a>
 
-
 > Code samples
-
 
 ```shell
 # You can also use wget
-curl -X GET http://example.com/api/dashboard-locations \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/dashboard-locations -H 'Accept: */*'
 ```
-
 
 ```http
 GET http://example.com/api/dashboard-locations HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/dashboard-locations',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/dashboard-locations',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -432,50 +347,34 @@ fetch('http://example.com/api/dashboard-locations',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/dashboard-locations',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/dashboard-locations', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/dashboard-locations',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/dashboard-locations");
@@ -491,13 +390,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `GET /api/dashboard-locations`
-
 
 *Get all the locations*
 
@@ -510,17 +405,13 @@ System.out.println(response.toString());
 
 <!-- <h3 id="getAllLocationsForDashboardUsingGET-parameters">Parameters</h3> -->
 
-
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |merchantId|query|integer(int64)|false|merchantId|
 
-
 > Example responses
 
-
 <h3 id="getAllLocationsForDashboardUsingGET-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -529,12 +420,9 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-
 <h3 id="getAllLocationsForDashboardUsingGET-responseschema">Response Schema</h3>
 
-
 Status Code **200**
-
 
 |Name|Type|Required|Description|
 |---|---|---|---|
@@ -547,76 +435,47 @@ Status Code **200**
 |» noofpos|integer(int64)|false|No description|
 |» state|string|false|No description|
 
-
-
 #### Get Location by ID
-
 
 <a id="opIdgetLocationUsingGET_1"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
-curl -X GET http://example.com/api/locations/{id} \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/locations/{id} -H 'Accept: */*'
 ```
-
 
 ```http
 GET http://example.com/api/locations/{id} HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/locations/{id}',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/locations/{id}',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -624,50 +483,34 @@ fetch('http://example.com/api/locations/{id}',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/locations/{id}',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/locations/{id}', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/locations/{id}',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/locations/{id}");
@@ -683,13 +526,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `GET /api/locations/{id}`
-
 
 *Get location by ID*
 
@@ -702,11 +541,9 @@ System.out.println(response.toString());
 
 <!-- <h3 id="getLocationUsingGET_1-parameters">Parameters</h3> -->
 
-
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |id|path|integer(int64)|true|id|
-
 
 > Example responses
 
@@ -739,9 +576,7 @@ System.out.println(response.toString());
 }
 ```
 
-
 <h3 id="getLocationUsingGET_1-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -750,62 +585,40 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!--
-<aside class="success">
-</aside> -->
-
-
 #### Create Location
 
 <a id="opIdcreateLocationUsingPOST_1"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
 curl -X POST http://example.com/api/locations \
   -H 'Content-Type: application/json' \
   -H 'Accept: */*'
-
-
 ```
-
 
 ```http
 POST http://example.com/api/locations HTTP/1.1
 Host: null
 Content-Type: application/json
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Content-Type':'application/json',
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/locations',
   method: 'post',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
@@ -834,13 +647,11 @@ const inputBody = '{
     "contactType": "LOCATION"
   }
 }';
+
 const headers = {
   'Content-Type':'application/json',
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/locations',
 {
@@ -853,52 +664,36 @@ fetch('http://example.com/api/locations',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
-
 
 headers = {
   'Content-Type' => 'application/json',
   'Accept' => '*/*'
 }
 
-
 result = RestClient.post 'http://example.com/api/locations',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Content-Type': 'application/json',
   'Accept': '*/*'
 }
 
-
-r = requests.post('http://example.com/api/locations', params={
-
-
-}, headers = headers)
-
+r = requests.post('http://example.com/api/locations',
+                   params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/locations");
@@ -914,13 +709,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `POST /api/locations`
-
 
 *Create a new location*
 
@@ -929,7 +720,6 @@ System.out.println(response.toString());
   * `ROLE_MERCHANT_ADMIN`
 
 > Body parameter
-
 
 ```json
 {
@@ -959,21 +749,16 @@ System.out.println(response.toString());
 }
 ```
 
-
 <!-- <h3 id="createLocationUsingPOST_1-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |merchantId|query|integer(int64)|false|merchantId|
 |body|body|[LocationVm](#schemalocationvm)|true|locationVm|
 
-
 > Example responses
 
-
 <h3 id="createLocationUsingPOST_1-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -982,10 +767,6 @@ System.out.println(response.toString());
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
-
-<!--
-<aside class="success">
-</aside> -->
 
 ```json
 {  
@@ -1053,59 +834,40 @@ System.out.println(response.toString());
 }
 ```
 
-
 #### Update Location
-
 
 <a id="opIdupdateLocationUsingPUT_1"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
 curl -X PUT http://example.com/api/locations \
   -H 'Content-Type: application/json' \
   -H 'Accept: */*'
-
-
 ```
-
 
 ```http
 PUT http://example.com/api/locations HTTP/1.1
 Host: null
 Content-Type: application/json
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Content-Type':'application/json',
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/locations',
   method: 'put',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
@@ -1135,11 +897,10 @@ const inputBody = '{
     "contactType": "LOCATION"
   }
 }';
+
 const headers = {
   'Content-Type':'application/json',
   'Accept':'*/*'
-
-
 };
 
 
@@ -1154,52 +915,36 @@ fetch('http://example.com/api/locations',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
-
 
 headers = {
   'Content-Type' => 'application/json',
   'Accept' => '*/*'
 }
 
-
 result = RestClient.put 'http://example.com/api/locations',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Content-Type': 'application/json',
   'Accept': '*/*'
 }
 
-
-r = requests.put('http://example.com/api/locations', params={
-
-
-}, headers = headers)
-
+r = requests.put('http://example.com/api/locations',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/locations");
@@ -1215,13 +960,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `PUT /api/locations`
-
 
 *Updates an existing location*
 
@@ -1230,7 +971,6 @@ System.out.println(response.toString());
   * `ROLE_MERCHANT_ADMIN`
 
 > Body parameter
-
 
 ```json
 {
@@ -1261,20 +1001,15 @@ System.out.println(response.toString());
 }
 ```
 
-
 <!-- <h3 id="updateLocationUsingPUT_1-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|[LocationVm](#schemalocationvm)|true|locationVm|
 
-
 > Example responses
 
-
 <h3 id="updateLocationUsingPUT_1-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -1284,104 +1019,66 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-
-
 #### Delete Location
-
 
 <a id="opIddeleteLocationUsingDELETE_1"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
 curl -X DELETE http://example.com/api/locations/{id}
-
-
 ```
-
 
 ```http
 DELETE http://example.com/api/locations/{id} HTTP/1.1
 Host: null
-
-
 ```
 
-
 ```javascript
-
-
 $.ajax({
   url: 'http://example.com/api/locations/{id}',
   method: 'delete',
-
-
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
 
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 fetch('http://example.com/api/locations/{id}',
 {
   method: 'DELETE'
-
-
 })
 .then(function(res) {
     return res.json();
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 result = RestClient.delete 'http://example.com/api/locations/{id}',
-  params: {
-  }
-
+         params: {}
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
 
-
-r = requests.delete('http://example.com/api/locations/{id}', params={
-
-
-)
-
+r = requests.delete('http://example.com/api/locations/{id}',
+                     params={}, headers = headers)
 
 print r.json()
-
-
 ```
 
-
 ```java
-
 URL obj = new URL("http://example.com/api/locations/{id}");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("DELETE");
@@ -1395,13 +1092,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `DELETE /api/locations/{id}`
-
 
 *Delete location by ID*
 
@@ -1411,14 +1104,11 @@ System.out.println(response.toString());
 
 <!-- <h3 id="deleteLocationUsingDELETE_1-parameters">Parameters</h3> -->
 
-
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |id|path|integer(int64)|true|id|
 
-
 <h3 id="deleteLocationUsingDELETE_1-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -1427,76 +1117,47 @@ System.out.println(response.toString());
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 
-
-
 #### Search Locations
-
 
 <a id="opIdsearchUsingGET_1"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
-curl -X GET http://example.com/api/location/search \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/location/search -H 'Accept: */*'
 ```
-
 
 ```http
 GET http://example.com/api/location/search HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/location/search',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/location/search',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -1504,50 +1165,34 @@ fetch('http://example.com/api/location/search',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/location/search',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/location/search', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/location/search',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/location/search");
@@ -1563,13 +1208,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `GET /api/location/search`
-
 
 *search locations*
 
@@ -1582,14 +1223,12 @@ System.out.println(response.toString());
 
 <!-- <h3 id="searchUsingGET_1-parameters">Parameters</h3> -->
 
-
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |q|query|string|false|q|
 |page|query|integer(int32)|false|Page number of the requested page|
 |size|query|integer(int32)|false|Size of a page|
-|sort|query|array[string]|false|Sorting criteria in the format: property(asc\|desc). Default sort order is ascending. Multiple sort criteria are supported.|
-
+|sort|query|array[string]|false|Sorting criteria in the format: property(,asc/desc). Default sort order is ascending. Multiple sort criteria are supported.|
 
 > Example responses
 
@@ -1763,9 +1402,7 @@ System.out.println(response.toString());
 }
 ```
 
-
 <h3 id="searchUsingGET_1-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -1773,7 +1410,3 @@ System.out.println(response.toString());
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
-
-<!--
-<aside class="success">
-</aside> -->
