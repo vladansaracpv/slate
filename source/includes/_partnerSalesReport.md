@@ -6,9 +6,7 @@
 
 `GET /api/v1/analytics/reports/merchant`
 
-*Partner fetch his merchant list with sales summary info*
-
-This endpoint lists all merchants for specified partner (based on jwt token)
+*Fetch Merchant list with sales summary info.*
 
 **Required user role:**
 
@@ -86,7 +84,7 @@ This endpoint lists all merchants for specified partner (based on jwt token)
 
 <a id="opIdcreateAnalyticReports-location-list"></a>
 
-*Partner fetch list of all locations of his merchants with sales summary info*
+*Fetch list of all locations of Partner's Merchants with sales summary info.*
 
 `GET /api/v1/analytics/reports/location`
 
@@ -173,7 +171,7 @@ This endpoint lists all merchants for specified partner (based on jwt token)
 
 <a id="opIdcreateAnalyticReports-pos-list"></a>
 
-*Partner's fetch POS list of all hisMerchants with sales summary info.*
+*Fetch POS list of all Partner's Merchants with sales summary info.*
 
 `GET /api/v1/analytics/reports/pos`
 
@@ -261,9 +259,9 @@ This endpoint lists all merchants for specified partner (based on jwt token)
 #### Locations of single Merchant
 <a id="opIdcreateAnalyticReports-location-list"></a>
 
-*Partner fetch list of all locations for a specific merchants with sales summary info*
-
 `GET /api/v1/analytics/merchant/<merchantid>/location`
+
+*Fetch list of all locations for a specific Merchant with sales summary info.*
 
 **Required user role:**
 
@@ -347,11 +345,9 @@ This endpoint lists all merchants for specified partner (based on jwt token)
 
 <a id="opIdcreateAnalyticReports-pos-list"></a>
 
-*Partner merchant list -> merchant list -> location list->pos list*
-
 `GET /api/v1/analytics/reports/merchant/<merchant_id>/location/<location_id>/pos`
 
-*Lists all POSs drilled down from specific merchant->location.*
+*Fetch list of all POS drilled down from specific Merchant->Location with sales summary info.*
 
 **Required user role:**
 
@@ -435,11 +431,9 @@ This endpoint lists all merchants for specified partner (based on jwt token)
 #### POS of single Location
 <a id="opIdcreateAnalyticReports-pos-list"></a>
 
-*Merchant list -> location list -> pos list*
-
 `GET /api/v1/analytics/reports/location/<location_id>/pos`
 
-*Lists all locations drilled down from*
+*Fetch list of all POS drilled down from specific location with sales summary info.*
 
 **Required user role:**
 

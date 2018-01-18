@@ -17,6 +17,8 @@ The base URL for Sandbox environment is:
 
 `GET /api/account/cpaccountinfo`
 
+*Get current balance of your wallet.*
+
 **Required user role:**
 
   * `Available to all user roles`
@@ -28,9 +30,9 @@ The base URL for Sandbox environment is:
 |associateId|query|string|true|Internal associate id|
 |currency|query|string|false|Currency short string (DASH for example). Currently ignored
 
-<h3 id="opIdcreateDashboard_tax-coinapult-account">Responses</h3>
+**Responses**
 
-Response result is passed-through from coinapult and the system does not either store or processes it.
+Response result is passed-through from Coinapult and the system does not either store or processes it.
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -56,13 +58,11 @@ Response result is passed-through from coinapult and the system does not either 
 
 ### Send DASH to Internal wallet
 
-Internal transfer of cryptocirrency between coinapult accounts.
-
 <a id="opIdcreate_intenal_crypto_2_internal_crypto"></a>
 
 `POST /api/transfer/internal_crypto/2/internal_crypto`
 
-*Create new internal payment request.*
+*Send DASH to an internal wallet (to someone on the platform).*
 
 **Required user role:**
 
@@ -96,7 +96,7 @@ Internal transfer of cryptocirrency between coinapult accounts.
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[InternalResponce](#tocInternalResponse)|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[InternalResponse](#tocInternalResponse)|
 |401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
@@ -124,13 +124,11 @@ Internal transfer of cryptocirrency between coinapult accounts.
 
 ### Send DASH to External wallet
 
-Internal transfer of cryptocurrency from coinapult account to an external wallet
-
 <a id="opIdcreate_intenal_crypto_2_external_crypto"></a>
 
 `POST /api/transfer/internal_crypto/2/external_crypto`
 
-*Create new internal payment request.*
+*Send DASH to an external wallet by providing destination address.*
 
 **Required user role:**
 
@@ -165,7 +163,7 @@ Internal transfer of cryptocurrency from coinapult account to an external wallet
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[InternalResponce](#tocInternalResponse)|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[InternalResponse](#tocInternalResponse)|
 |401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
@@ -197,13 +195,11 @@ Internal transfer of cryptocurrency from coinapult account to an external wallet
 
 ### Convert DASH
 
-Internal transfer from cryptocurrency to fiat (internal)
-
 <a id="opIdcreate_intenal_crypto_2_fiat"></a>
 
 `POST /api/convert/crypto/2/fiat`
 
-*Internal conversion from cryptocurrency to fiat*
+*Internal conversion from cryptocurrency (DASH) to FIAT (USD).*
 
 **Required user role:**
 
@@ -238,7 +234,7 @@ Internal transfer from cryptocurrency to fiat (internal)
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[InternalResponce](#tocInternalResponse)|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[InternalResponse](#tocInternalResponse)|
 |401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
@@ -266,13 +262,11 @@ Internal transfer from cryptocurrency to fiat (internal)
 
 ### Buy DASH
 
-Internal transfer from fiat to cryptocurrency
-
 <a id="opIdcreate_fiat_to_crypto"></a>
 
 `POST /api/convert/fiat/2/crypto`
 
-*Internal conversion from fiat to cryptocurrency*
+*Internal conversion from FIAT (USD) to cryptocurrency (DASH) - Buy DASH.*
 
 **Required user role:**
 
@@ -304,7 +298,7 @@ Internal transfer from fiat to cryptocurrency
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[InternalResponce](#tocInternalResponse)|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[InternalResponse](#tocInternalResponse)|
 |401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
@@ -330,19 +324,19 @@ Internal transfer from fiat to cryptocurrency
 
 ### List bank accounts
 
+*List your FIAT (USD) accounts*
+
 **Required user role:**
 
    * `Available to all user roles`
 
 ### FIAT cash out
 
-Internal transfer from internal fiat to external fiat
-
 <a id="opIdcreate_fiat_to_external_fiat"></a>
 
 `POST /api/transfer/internalfiat/2/externalfiat`
 
-*Internal conversion from internal fiat to external fiat*
+*Transfer FIAT (USD) funds to Crypto Capital Bank.*
 
 **Required user role:**
 
@@ -374,7 +368,7 @@ Internal transfer from internal fiat to external fiat
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[InternalResponce](#tocInternalResponse)|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[InternalResponse](#tocInternalResponse)|
 |401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
@@ -403,7 +397,9 @@ Internal transfer from internal fiat to external fiat
 
 <a id="opIdcoinapult-currency-exchange-rate"></a>
 
-`/api/pos/exchange_rates`
+`GET /api/pos/exchange_rates`
+
+*Get current market rate from Coinapult for DASH*
 
 **Parameters**
 
@@ -478,13 +474,13 @@ Response result is passed-through from Coinapult and the system does not either 
 
 `POST /api/pos/payment`
 
-*Create new payment request for POS.*
-
-Endpoint sends the amount in FIAT and gets value converted to dash along with destination address.
+*Create new payment request for POS. Endpoint expects the amount in FIAT and returns value converted to DASH along with destination/payment address.*
 
 **Required authentication:**
 
-   * `Please use API key received by registering POS`
+   * Please use API key received by registering/activating POS
+   * API key should be used in request header in following manner: `Authorization: Bearer API_KEY`
+   * Please replace `API_KEY` with your own API key for POS
 
 <!-- <h3 id="getAllPaginatedUsingGET_4-parameters">Parameters</h3> -->
 
@@ -507,7 +503,7 @@ Endpoint sends the amount in FIAT and gets value converted to dash along with de
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[POSResponce](#schemaposresponce)|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[POSResponse](#schemaposresponse)|
 |401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
@@ -646,14 +642,12 @@ System.out.println(response.toString());
 
 <!-- VIRTUAL POS SECTION-->
 
-Endpoint sends the amount in FIAT and gets value converted to dash along with destination address.
-
 <a id="opIdcreateNewPaymentRequest_2"></a>
 
 
 `POST /api/pos/payment/vpos`
 
-*Create new payment request for virtual POS.*
+*Create new payment request for virtual POS. Endpoint expects the amount in FIAT and returns value converted to DASH along with destination/payment address.*
 
 **Required user role:**
 
@@ -680,7 +674,7 @@ Endpoint sends the amount in FIAT and gets value converted to dash along with de
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[POSResponce](#schemaposresponce)|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[POSResponse](#schemaposresponse)|
 |401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 

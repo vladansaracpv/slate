@@ -6,7 +6,7 @@
 
 `GET /api/v1/analytics/reports/location`
 
-*Merchant fetch list of all locations with sales summary info*
+*Fetch list of all locations with sales summary info.*
 
 **Required user role:**
 
@@ -93,7 +93,7 @@
 
 `GET /api/v1/analytics/reports/location/<location_id>/pos`
 
-*Lists all locations drilled down from*
+*Fetch list of all POS for a corresponding location with sales summary info.*
 
 **Required user role:**
 
@@ -180,10 +180,9 @@
 
 <a id="opIdcreateAnalyticReports-pos-list"></a>
 
-*Alt36 POS list*
 `GET /api/v1/analytics/reports/pos`
 
-*This is Alt36 report list, it shows all point of sales in system.*
+*Fetch list of all point of sales with sales summary info.*
 
 **Required user role:**
 

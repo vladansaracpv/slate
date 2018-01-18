@@ -1,12 +1,12 @@
 ### Tax Report
 
-Tax report for period of time
-
 #### Tax report for associate
 
 <a id="opIdcreateTaxReport"></a>
 
 `GET /api/v1/analytics/reports/tax/{associateId}`
+
+*Get tax report for your associate ID for a period of time.*
 
 **Required user role:**
 

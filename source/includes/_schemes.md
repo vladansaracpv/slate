@@ -4335,16 +4335,14 @@ As one may notice, totalElements parameter is omitted here. instead numberOfElem
 |---|---|---|---|---|
 |timestamp_req|integer|false|Internal transaction id, this is part of internal transaction storage.
 |amount|string|true|Amount in currency as defined in currency parameter. Currently only USD is supported.
-|amount|string|true|Amount in currency as defined in currency parameter. Currently only USD is supported.
-|currency|string|true|FIAT Currency from which we transfer to DASH
-|convert_to|string|true|Cryptocurrency to which conversion is done. For sandbox purposes Product36 uses Bitcoin Testnet3 blockchain.
+|currency|string|true|FIAT Currency from which we transfer to DASH (please use USD)
+|convert_to|string|true|Cryptocurrency to which conversion is done (please use DASH, or BTC). For sandbox purposes Product36 uses Bitcoin Testnet3 blockchain.
 |location_id|integer|optional|Identifier of the location for which POS is registered. It is required for virtual POS, but not for registered POS request
- |user_id|integer|true|general puvrpose value, can be any string. Providers can use this value to put anything inside, for example it can be local user id.
+|user_id|integer|true|General purpose value, can be any string. Providers can use this value to put anything inside, for example it can be local user id.
 
+<h2 id="tocPOSRequest">POSResponse</h2>
 
-<h2 id="tocPOSRequest">POSResponce</h2>
-
-<a id="schemaposresponce"></a>
+<a id="schemaposresponse"></a>
 
 ```json
 {
@@ -5339,7 +5337,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 |requested_currency|string|true|Requested currency
 |converted_to_amount|number|true|To which mount value has been converted
 |converted_to_currency|string|true|Curency conversion
-|timestamp_resp|integer|true|Responce timestamp created on server
+|timestamp_resp|integer|true|Response timestamp created on server
 |pay_to_address|string|true|The address that has been payed to
 |warning_msg|[ErrorMessage](#tocErrorMessage)|true|The address that has been payed to
 

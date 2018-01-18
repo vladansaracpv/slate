@@ -7,9 +7,7 @@
 
 `GET /api/v1/analytics/summary/general`
 
-*Get general system summary data*
-
-This is info on system wide values of appropriate variables related to a given user. Information about user is read from request jwt token.
+*Get general system summary data. This is info on system wide values of appropriate variables related to a given user. Information about user is read from request JWT token.*
 
 **Required user role:**
 
