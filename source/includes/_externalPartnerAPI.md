@@ -6,7 +6,7 @@
 External Partner Resource
 
 
-#### Get all Merchants
+#### EXT Get all Merchants
 
 
 <a id="opIdgetAllPaginatedUsingGET_1"></a>
@@ -228,7 +228,7 @@ Status Code **200**
 </aside> -->
 
 
-#### Get Merchant by ID
+#### EXT Get Merchant by ID
 
 
 <a id="opIdgetByIdUsingGET_1"></a>
@@ -403,7 +403,7 @@ System.out.println(response.toString());
 </aside> -->
 
 
-#### Create Merchant
+#### EXT Create Merchant
 
 
 <a id="opIdregisterNewUsingPOST_1"></a>
@@ -871,7 +871,7 @@ System.out.println(response.toString());
 <!-- <aside class="success">
 </aside> -->
 
-#### Update Merchant
+#### EXT Update Merchant
 
 
 <a id="opIdupdateUsingPUT_1"></a>
@@ -1332,7 +1332,7 @@ System.out.println(response.toString());
 </aside> -->
 
 
-#### Delete Merchant
+#### EXT Delete Merchant
 
 
 <a id="opIddeleteUsingDELETE_1"></a>
@@ -1481,7 +1481,7 @@ Deletes/Disables all merchant users first
 
 
 
-#### Get all Locations
+#### EXT Get all Locations
 
 
 <a id="opIdgetAllLocationsUsingGET"></a>
@@ -1658,13 +1658,9 @@ System.out.println(response.toString());
 <!-- <aside class="success">
 </aside> -->
 
-
-
-#### Get Location by ID
-
+#### EXT Get Location by ID
 
 <a id="opIdgetLocationUsingGET"></a>
-
 
 > Code samples
 
@@ -1836,7 +1832,7 @@ System.out.println(response.toString());
 
 
 
-#### Create Location
+#### EXT Create Location
 
 
 <a id="opIdcreateLocationUsingPOST"></a>
@@ -2127,7 +2123,7 @@ System.out.println(response.toString());
 
 
 
-#### Update Location
+#### EXT Update Location
 
 
 <a id="opIdupdateLocationUsingPUT"></a>
@@ -2414,7 +2410,7 @@ System.out.println(response.toString());
 <!-- <aside class="success">
 </aside> -->
 
-#### Delete Location
+#### EXT Delete Location
 
 
 <a id="opIddeleteLocationUsingDELETE"></a>
@@ -2560,7 +2556,7 @@ System.out.println(response.toString());
 </aside> -->
 
 
-#### Get all POS
+#### EXT Get all POS
 
 
 <a id="opIdgetAllPointOfSalesUsingGET"></a>
@@ -2740,7 +2736,7 @@ System.out.println(response.toString());
 
 
 
-#### Get POS by ID
+#### EXT Get POS by ID
 
 
 <a id="opIdgetPointOfSaleUsingGET"></a>
@@ -2915,7 +2911,7 @@ System.out.println(response.toString());
 </aside> -->
 
 
-#### Create POS
+#### EXT Create POS
 
 
 <a id="opIdcreatePointOfSaleUsingPOST"></a>
@@ -3245,7 +3241,7 @@ System.out.println(response.toString());
 </aside> -->
 
 
-#### Update POS
+#### EXT Update POS
 
 
 <a id="opIdupdatePointOfSaleUsingPUT"></a>
@@ -3575,7 +3571,7 @@ System.out.println(response.toString());
 </aside> -->
 
 
-#### Delete POS
+#### EXT Delete POS
 
 
 <a id="opIddeletePointOfSaleUsingDELETE"></a>
