@@ -2,72 +2,45 @@
 
 #### Get all states
 
-
 <a id="opIdgetAllCountryStatesUsingGET"></a>
-
 
 > Code samples
 
-
 ```shell
-# You can also use wget
-curl -X GET http://example.com/api/common/states/us \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/common/states/us -H 'Accept: */*'
 ```
-
 
 ```http
 GET http://example.com/api/common/states/us HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/common/states/us',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/common/states/us',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -75,50 +48,34 @@ fetch('http://example.com/api/common/states/us',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/common/states/us',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/common/states/us', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/common/states/us',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/common/states/us");
@@ -134,13 +91,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `GET /api/common/states/us`
-
 
 *Get USA states list*
 
@@ -410,9 +363,7 @@ System.out.println(response.toString());
 ]
 ```
 
-
 <h3 id="getAllCountryStatesUsingGET-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -421,12 +372,9 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-
 <h3 id="getAllCountryStatesUsingGET-responseschema">Response Schema</h3>
 
-
 Status Code **200**
-
 
 |Name|Type|Required|Description|
 |---|---|---|---|
@@ -434,7 +382,6 @@ Status Code **200**
 |» abbreviation|string|false|No description|
 |» id|integer(int64)|false|No description|
 |» state|string|false|No description|
-
 
 #### Get file by uuid
 
@@ -459,76 +406,47 @@ Code | Type | Description
 403 |  | Forbidden
 404 |  | Not Found
 
-
-
 #### Get all invitations
-
 
 <a id="opIdgetAllInvitationsUsingGET"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
-curl -X GET http://example.com/api/invitations \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/invitations -H 'Accept: */*'
 ```
-
 
 ```http
 GET http://example.com/api/invitations HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/invitations',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/invitations',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -536,50 +454,34 @@ fetch('http://example.com/api/invitations',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/invitations',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/invitations', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/invitations',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/invitations");
@@ -595,13 +497,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `GET /api/invitations`
-
 
 *Get all invitations sent by current Associate*
 
@@ -617,14 +515,11 @@ System.out.println(response.toString());
 |---|---|---|---|---|
 |page|query|integer(int32)|false|Page number of the requested page|
 |size|query|integer(int32)|false|Size of a page|
-|sort|query|array[string]|false|Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.|
-
+|sort|query|array[string]|false|Sorting criteria in the format: property(,asc/desc). Default sort order is ascending. Multiple sort criteria are supported.|
 
 > Example responses
 
-
 <h3 id="getAllInvitationsUsingGET-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -632,7 +527,3 @@ System.out.println(response.toString());
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
-
-
-<aside class="success">
-</aside>

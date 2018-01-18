@@ -510,12 +510,8 @@ headers = {
 r = requests.post('http://example.com/api/account/change_password',
                    params={}, headers = headers)
 
-
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/account/change_password");
@@ -531,13 +527,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `POST /api/account/change_password`
-
 
 *changePassword*
 
@@ -547,27 +539,21 @@ System.out.println(response.toString());
 
 > Body parameter
 
-
 ```json
 {
   "password": "string"
 }
 ```
 
-
 <!-- <h3 id="changePasswordUsingPOST-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|[ChangePasswordVM](#schemachangepasswordvm)|true|password|
 
-
 > Example responses
 
-
 <h3 id="changePasswordUsingPOST-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -577,64 +563,41 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!--
-<aside class="success">
-This operation require authentication
-</aside> -->
-
-
 #### Request password reset
-
 
 <a id="opIdrequestPasswordResetUsingPOST"></a>
 
-
 > Code samples
-
 
 ```shell
 # You can also use wget
 curl -X POST http://example.com/api/account/reset_password/init \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json'
-
-
 ```
-
 
 ```http
 POST http://example.com/api/account/reset_password/init HTTP/1.1
 Host: null
 Content-Type: application/json
 Accept: application/json
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Content-Type':'application/json',
   'Accept':'application/json'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/account/reset_password/init',
   method: 'post',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
@@ -644,10 +607,7 @@ const inputBody = '{
 const headers = {
   'Content-Type':'application/json',
   'Accept':'application/json'
-
-
 };
-
 
 fetch('http://example.com/api/account/reset_password/init',
 {
@@ -660,52 +620,36 @@ fetch('http://example.com/api/account/reset_password/init',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
-
 
 headers = {
   'Content-Type' => 'application/json',
   'Accept' => 'application/json'
 }
 
-
 result = RestClient.post 'http://example.com/api/account/reset_password/init',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
 }
 
-
-r = requests.post('http://example.com/api/account/reset_password/init', params={
-
-
-}, headers = headers)
-
+r = requests.post('http://example.com/api/account/reset_password/init',
+                   params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/account/reset_password/init");
@@ -721,13 +665,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `POST /api/account/reset_password/init`
-
 
 *Request Password Reset*
 
@@ -737,24 +677,19 @@ System.out.println(response.toString());
 
 > Body parameter
 
-
 ```json
 {
   "email": "string"
 }
 ```
 
-
 <!-- <h3 id="requestPasswordResetUsingPOST-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|[ResetPasswordVM](#schemaresetpasswordvm)|true|mail|
 
-
 > Example responses
-
 
 ```json
 {
@@ -764,9 +699,7 @@ System.out.println(response.toString());
 }
 ```
 
-
 <h3 id="requestPasswordResetUsingPOST-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -776,64 +709,40 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-
-<aside class="success">
-This operation does not require authentication
-</aside>
-
-
 #### Finish password reset
-
 
 <a id="opIdfinishPasswordResetUsingPOST"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
 curl -X POST http://example.com/api/account/reset_password/finish \
   -H 'Content-Type: application/json' \
   -H 'Accept: */*'
-
-
 ```
-
 
 ```http
 POST http://example.com/api/account/reset_password/finish HTTP/1.1
 Host: null
 Content-Type: application/json
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Content-Type':'application/json',
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/account/reset_password/finish',
   method: 'post',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
@@ -844,10 +753,7 @@ const inputBody = '{
 const headers = {
   'Content-Type':'application/json',
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/account/reset_password/finish',
 {
@@ -860,52 +766,36 @@ fetch('http://example.com/api/account/reset_password/finish',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
-
 
 headers = {
   'Content-Type' => 'application/json',
   'Accept' => '*/*'
 }
 
-
 result = RestClient.post 'http://example.com/api/account/reset_password/finish',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Content-Type': 'application/json',
   'Accept': '*/*'
 }
 
-
-r = requests.post('http://example.com/api/account/reset_password/finish', params={
-
-
-}, headers = headers)
-
+r = requests.post('http://example.com/api/account/reset_password/finish',
+                   params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/account/reset_password/finish");
@@ -921,13 +811,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `POST /api/account/reset_password/finish`
-
 
 *finish Password Reset*
 
@@ -937,7 +823,6 @@ System.out.println(response.toString());
 
 > Body parameter
 
-
 ```json
 {
   "key": "string",
@@ -945,20 +830,15 @@ System.out.println(response.toString());
 }
 ```
 
-
 <!-- <h3 id="finishPasswordResetUsingPOST-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|[KeyAndPasswordVM](#schemakeyandpasswordvm)|true|keyAndPassword|
 
-
 > Example responses
 
-
 <h3 id="finishPasswordResetUsingPOST-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -968,73 +848,51 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-
-
 #### Close account
-
 
 <a id="opIdshutDownAccountUsingPOST"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
 curl -X POST http://example.com/api/close-account \
   -H 'Content-Type: application/json' \
   -H 'Accept: */*'
-
-
 ```
-
 
 ```http
 POST http://example.com/api/close-account HTTP/1.1
 Host: null
 Content-Type: application/json
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Content-Type':'application/json',
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/close-account',
   method: 'post',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 const inputBody = '{
   "reason": "string"
 }';
+
 const headers = {
   'Content-Type':'application/json',
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/close-account',
 {
@@ -1047,52 +905,36 @@ fetch('http://example.com/api/close-account',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
-
 
 headers = {
   'Content-Type' => 'application/json',
   'Accept' => '*/*'
 }
 
-
 result = RestClient.post 'http://example.com/api/close-account',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Content-Type': 'application/json',
   'Accept': '*/*'
 }
 
-
-r = requests.post('http://example.com/api/close-account', params={
-
-
-}, headers = headers)
-
+r = requests.post('http://example.com/api/close-account',
+                   params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/close-account");
@@ -1108,18 +950,11 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
-
 
 `POST /api/close-account`
 
-
 *New Request for closing Account*
-
-
-PARTNER/MERCHANT/VENDOR/CUSTOMER admin roles only
 
 **Required user role:**
 
@@ -1130,27 +965,21 @@ PARTNER/MERCHANT/VENDOR/CUSTOMER admin roles only
 
 > Body parameter
 
-
 ```json
 {
   "reason": "string"
 }
 ```
 
-
 <!-- <h3 id="shutDownAccountUsingPOST-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|[ShutDownAccountRequestVM](#schemashutdownaccountrequestvm)|true|requestForDeleteAcssociate|
 
-
 > Example responses
 
-
 <h3 id="shutDownAccountUsingPOST-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -1160,47 +989,26 @@ PARTNER/MERCHANT/VENDOR/CUSTOMER admin roles only
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!--
-<aside class="success">
-This operation does not require authentication
-</aside> -->
-
 #### Get 2FA barcode image
-
 
 <a id="opIdgetBarCodeImageUsingGET"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
-curl -X GET http://example.com/api/account/2fa/barcode?use2FA=true \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/account/2fa/barcode?use2FA=true -H 'Accept: */*'
 ```
-
 
 ```http
 GET http://example.com/api/account/2fa/barcode?use2FA=true HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/account/2fa/barcode',
@@ -1211,27 +1019,18 @@ $.ajax({
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/account/2fa/barcode?use2FA=true',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -1239,50 +1038,34 @@ fetch('http://example.com/api/account/2fa/barcode?use2FA=true',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/account/2fa/barcode',
-  params: {
-  'use2FA' => 'boolean'
-}, headers: headers
-
+         params: {'use2FA' => 'boolean'}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/account/2fa/barcode', params={
-  'use2FA': 'true'
-}, headers = headers)
-
+r = requests.get('http://example.com/api/account/2fa/barcode',
+                  params={'use2FA': 'true'}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/account/2fa/barcode?use2FA=true");
@@ -1298,13 +1081,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `GET /api/account/2fa/barcode`
-
 
 *Get 2FA barcode image*
 
@@ -1314,17 +1093,13 @@ System.out.println(response.toString());
 
 <!-- <h3 id="getBarCodeImageUsingGET-parameters">Parameters</h3> -->
 
-
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |use2FA|query|boolean|true|use2FA|
 
-
 > Example responses
 
-
 <h3 id="getBarCodeImageUsingGET-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -1333,48 +1108,27 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-<!--
-<aside class="success">
-This operation require authentication
-</aside> -->
-
-
 #### Modify 2FA status
-
 
 <a id="opIdmodifyUser2FAUsingPOST"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
 curl -X POST http://example.com/api/account/2fa/update?use2FA=true?code=string \
   -H 'Accept: */*'
-
-
 ```
-
 
 ```http
 POST http://example.com/api/account/2fa/update?use2FA=true?code=string HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/account/2fa/update',
@@ -1385,27 +1139,18 @@ $.ajax({
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
-
 ```javascript--nodejs
 const request = require('node-fetch');
-
 
 const headers = {
   'Accept':'*/*'
 
-
 };
-
 
 fetch('http://example.com/api/account/2fa/update?use2FA=true?code=string',
 {
   method: 'POST',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -1413,51 +1158,38 @@ fetch('http://example.com/api/account/2fa/update?use2FA=true?code=string',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.post 'http://example.com/api/account/2fa/update',
   params: {
-  'use2FA' => 'boolean',
-'code' => 'string'
-}, headers: headers
-
+    'use2FA' => 'boolean',
+    'code' => 'string'}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.post('http://example.com/api/account/2fa/update', params={
-  'use2FA': 'true',  'code': 'string'
-}, headers = headers)
-
+r = requests.post('http://example.com/api/account/2fa/update',
+  params={
+    'use2FA': 'true',
+    'code': 'string'}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/account/2fa/update?use2FA=true?code=string");
@@ -1473,13 +1205,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `POST /api/account/2fa/update`
-
 
 *Modify 2FA status*
 
@@ -1489,18 +1217,14 @@ System.out.println(response.toString());
 
 <!-- <h3 id="modifyUser2FAUsingPOST-parameters">Parameters</h3> -->
 
-
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |use2FA|query|boolean|true|use2FA|
 |code|query|string|true|code|
 
-
 > Example responses
 
-
 <h3 id="modifyUser2FAUsingPOST-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -1510,77 +1234,48 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-
-
-
 #### Get currrent user Associate
-
 
 <a id="opIdgetAssociateUsingGET"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
 curl -X GET http://example.com/api/isactive \
   -H 'Accept: */*'
-
-
 ```
-
 
 ```http
 GET http://example.com/api/isactive HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/isactive',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/isactive',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -1588,50 +1283,34 @@ fetch('http://example.com/api/isactive',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/isactive',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/isactive', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/isactive',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/isactive");
@@ -1647,13 +1326,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `GET /api/isactive`
-
 
 *Is current user Associate activated*
 
@@ -1663,9 +1338,7 @@ System.out.println(response.toString());
 
 > Example responses
 
-
 <h3 id="getAssociateUsingGET-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
