@@ -110,6 +110,61 @@
 
 #### General tax summary
 
+<a id="opIdcreateDashboard_total_tax_by_timerange"></a>
+
+`GET /api/v1/analytics/summary/tax`
+
+*Total tax by time-range which is further divided on one day interval. Note that the time intervals are rounded in days. All values within day intervals are aggregated.*
+
 **Required user role:**
 
    * `Available to all user roles`
+
+<!--<h3 id="opIdcreateDashboard_total_tax_by_timerange-parameters">Parameters</h3>-->
+
+|Parameter|In|Type|Required|Description|
+|---|---|---|---|---|
+|currency|query|string|false|which currency result should respond (currently ignored)|
+|timerange_from|query|string|true|start date/datetime in ISO format|
+|timerange_to|query|string|true|end date/datetime in ISO format|
+|page_number|integer|string|true| represents requested page number (currently ignored)|
+
+
+<h3 id="opIdcreateDashboard_performance_merchant-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[TaxSummaryResponse](#tocTaxSummaryResponse)|
+|500|Internal server error|Internal server error|[ErrorMessage](#schemareporterrormessage)|
+|403|Forbidden|Forbidden|[ErrorMessage](#schemareporterrormessage)|
+
+> Example responses
+
+```json
+{
+  "metadata":{
+      "timerangeFrom": "2017-09-01T00:00:00.0Z",
+      "timerangeTo": "2018-01-15T23:59:59.1Z",
+      "number": 0,
+      "size": 2,
+      "numberOfElements": 531,
+      "totalPages": 54,
+      "first": true,
+      "last": false
+    },
+  "data":[
+          {
+              "total_amount_of_tax": 1.22334,
+              "total_amount_of_tax_fiat":564.25,
+              "time_from": "2017-10-12T00:00:00.000Z",
+              "time_to": "2017-10-13T00:00:00.000Z"
+          },
+          {
+              "total_amount_of_tax": 0.99210921,
+              "total_amount_of_tax_fiat":458.25,
+              "time_from": "2017-10-13T00:00:00.000Z",
+              "time_to": "2017-10-14T00:00:00.000Z"
+          }
+    ]
+}
+```
