@@ -2,11 +2,11 @@
 Reporting subsystem is a comprehensive list of endpoints that are used for getting various statistic information about user performance, and accounting.
 The base URL for Production environment is:
 
-* https:/reporting-dot-altthirtysixproduct36.appspot.com
+* `https:/reporting-dot-altthirtysixproduct36.appspot.com`
 
 The base URL for Sandbox environment is:
 
-* https://reporting-dot-sandboxaltthirtysixproduct36.appspot.com
+* `https://reporting-dot-sandboxaltthirtysixproduct36.appspot.com`
 
 **Important notice:** There is a uniform date format which is used for time bound results. Generally, all ISO formats can be used. Nevertheless, following format is commonly used on the platform:
 
