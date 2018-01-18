@@ -1,4 +1,3 @@
-
 ## Payments
 Payments service endpoints are central endpoints of Product36. Endpoints enable clients to get balance information, as well as to initiate payment process for two supported types of POS devices. Published interfaces include getting the information about user account, as well as payment capabilities - converting FIAT amount to cryptocurrency and getting the destination address. It is important to note that in background this is a multistep process and it is not as simple as getting the destination address from hot wallet. So there are firm security and business rules that have to be obeyed in order to complete any of these processes.
 At the end, there is a notification process that can be used for getting events from within the system.
@@ -53,7 +52,6 @@ Response result is passed-through from Coinapult and the system does not either 
  "role": "capite",
  "unconfirmed_balances": []
 }
-
 ```
 
 ### Send DASH to Internal wallet
@@ -90,8 +88,8 @@ Response result is passed-through from Coinapult and the system does not either 
     "timestamp_req":"152345465564",
     "note":"Some transaction note string"
 }
-
 ```
+
 <h3 id="poscreatenewpaymentrequest-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
@@ -119,7 +117,6 @@ Response result is passed-through from Coinapult and the system does not either 
                 "note":"Some transaction note string"
         }
 }  
-
 ```
 
 ### Send DASH to External wallet
@@ -156,9 +153,8 @@ Response result is passed-through from Coinapult and the system does not either 
     "timestamp_req":152345465564,
     "note":"Some transaction note string"
 }
-
-
 ```
+
 <h3 id="poscreatenewpaymentrequest-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
@@ -167,10 +163,7 @@ Response result is passed-through from Coinapult and the system does not either 
 |401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
-
-
 > Example responses
-
 
 ```json
 {
@@ -190,7 +183,6 @@ Response result is passed-through from Coinapult and the system does not either 
             "note":"Some transaction note string"
     }
 }
-
 ```
 
 ### Convert DASH
@@ -226,10 +218,8 @@ Response result is passed-through from Coinapult and the system does not either 
     "timestamp_req":"152345465564",
     "note":"Some transaction note string"
 }
-
-
-
 ```
+
 <h3 id="poscreatenewpaymentrequest-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
@@ -238,10 +228,7 @@ Response result is passed-through from Coinapult and the system does not either 
 |401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
-
-
 > Example responses
-
 
 ```json
 {
@@ -294,6 +281,7 @@ Response result is passed-through from Coinapult and the system does not either 
     "note":"Some transaction note string"
 }
 ```
+
 <h3 id="poscreatenewpaymentrequest-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
@@ -319,16 +307,41 @@ Response result is passed-through from Coinapult and the system does not either 
         "note":"Some transaction note string"
     }
 }
-
 ```
 
 ### List bank accounts
+<a id="opIdcreate_bank_account_list"></a>
+
+`POST /api/account/bank_account`
 
 *List your FIAT (USD) accounts*
 
 **Required user role:**
 
    * `Available to all user roles`
+
+<h3 id="poscreatenewpaymentrequest-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[string]|
+|401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+> Example responses
+
+```json
+{
+  "accounts": [
+    {
+      "currency": "USD",
+      "number": "9000000000",
+      "description": "my account",
+      "institution": "Crypto Capital"
+    }
+  ]
+}
+```
 
 ### FIAT cash out
 
@@ -362,8 +375,8 @@ Response result is passed-through from Coinapult and the system does not either 
     "currency_out": "USD",
     "note":"Some transaction note string"
 }
-
 ```
+
 <h3 id="poscreatenewpaymentrequest-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
@@ -372,10 +385,7 @@ Response result is passed-through from Coinapult and the system does not either 
 |401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
-
-
 > Example responses
-
 
 ```json
 {
@@ -499,6 +509,7 @@ Response result is passed-through from Coinapult and the system does not either 
   "user_id":"ke2309s2399d"
 }
 ```
+
 <h3 id="poscreatenewpaymentrequest-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
@@ -507,9 +518,7 @@ Response result is passed-through from Coinapult and the system does not either 
 |401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
-
 > Example responses
-
 
 ```json
 {
@@ -522,10 +531,9 @@ Response result is passed-through from Coinapult and the system does not either 
 "timetamp_system": 1504047876,
 "pay_to_address": "msJfkM8XmwTxwVVV9EvWLXb4fjCpSvbKWT"
 }
-
 ```
-> Code samples
 
+> Code samples
 
 ```shell
 # You can also use wget
@@ -542,23 +550,22 @@ Accept: application/json
 ```
 
 ```javascript
+
 var headers = {
   'Content-Type':'application/json',
   'Accept':'application/json'
-
-
 };
+
 $.ajax({
   url: 'http://example.com/api/pos/payment',
   method: 'post',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
 ```
+
 ```javascript--nodejs
 const request = require('node-fetch');
 const inputBody = '{
@@ -588,7 +595,6 @@ fetch('http://example.com/api/pos/payment',
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Content-Type' => 'application/json',
   'Accept' => 'application/json'
@@ -603,6 +609,7 @@ p JSON.parse(result)
 
 ```python
 import requests
+
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -616,7 +623,6 @@ r = requests.post('http://example.com/api/vendor', params={
 'location_id':123,
 'user_id':'ke2309s2399d'
 }, headers = headers)
-
 
 print r.json()
 ```
@@ -634,8 +640,6 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
 ### Virtual POS
@@ -643,7 +647,6 @@ System.out.println(response.toString());
 <!-- VIRTUAL POS SECTION-->
 
 <a id="opIdcreateNewPaymentRequest_2"></a>
-
 
 `POST /api/pos/payment/vpos`
 
@@ -670,6 +673,7 @@ System.out.println(response.toString());
   "user_id":"ke2309s2399d"
 }
 ```
+
 <h3 id="poscreatenewpaymentrequest-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
@@ -678,10 +682,7 @@ System.out.println(response.toString());
 |401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
-
-
 > Example responses
-
 
 ```json
 {
@@ -694,10 +695,9 @@ System.out.println(response.toString());
 "timetamp_system": 1504047876,
 "pay_to_address": "msJfkM8XmwTxwVVV9EvWLXb4fjCpSvbKWT"
 }
-
 ```
-> Code samples
 
+> Code samples
 
 ```shell
 # You can also use wget
@@ -717,20 +717,17 @@ Accept: application/json
 var headers = {
   'Content-Type':'application/json',
   'Accept':'application/json'
-
-
 };
 $.ajax({
   url: 'http://example.com/api/pos/payment',
   method: 'post',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
 ```
+
 ```javascript--nodejs
 const request = require('node-fetch');
 const inputBody = '{
@@ -760,7 +757,6 @@ fetch('http://example.com/api/pos/payment',
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Content-Type' => 'application/json',
   'Accept' => 'application/json'
@@ -775,6 +771,7 @@ p JSON.parse(result)
 
 ```python
 import requests
+
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -789,9 +786,9 @@ r = requests.post('http://example.com/api/vendor', params={
 'user_id':'ke2309s2399d'
 }, headers = headers)
 
-
 print r.json()
 ```
+
 ```java
 URL obj = new URL("http://example.com/api/vendor");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -806,6 +803,4 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
