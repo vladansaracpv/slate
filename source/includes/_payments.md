@@ -12,6 +12,102 @@ The base URL for Sandbox environment is:
 
 ### Wallet balance
 
+> Code samples
+
+```shell
+curl -X GET http://example.com/api/account/cpaccountinfo -H Authorization: Bearer <token>'
+```
+
+```php
+<?php
+$URL = "http://example.com/api/account/cpaccountinfo";
+
+$aHTTP['http']['method']  = 'GET';
+
+$aHTTP['http']['header']  = "Authorization: YOUR_API_KEY_HERE";
+
+$context = stream_context_create($aHTTP);
+
+$response = file_get_contents($URL, false, $context);
+?>
+
+```
+
+```javascript
+var headers = {
+  'Authorization':'Bearer <token>'
+};
+
+$.ajax({
+  url: 'http://example.com/api/account/cpaccountinfo',
+  method: 'get',
+  headers: headers,
+  success: function(data) {
+    console.log(JSON.stringify(data));
+  }
+});
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Authorization' => 'Bearer <token>'
+}
+
+result = RestClient.get 'http://example.com/api/account/cpaccountinfo',
+         params: {}, headers: headers
+
+p JSON.parse(result)
+```
+
+```python
+import requests
+
+headers = {
+  'Authorization': 'Bearer <token>'
+}
+
+r = requests.get('http://example.com/api/account/cpaccountinfo',
+                  params={}, headers = headers)
+
+print r.json()
+```
+
+```java
+URL obj = new URL("http://example.com/api/account/cpaccountinfo");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Authorization", "Bearer <token>");
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+```
+
+
+> Example responses
+
+```json
+{
+ "balances": [
+   {
+     "amount": 1.2,
+     "currency": "BTC"
+   }
+ ],
+ "role": "capite",
+ "unconfirmed_balances": []
+}
+```
+
 <a id="opIdcoinapult-account-info"></a>
 
 `GET /api/account/cpaccountinfo`
@@ -39,41 +135,123 @@ Response result is passed-through from Coinapult and the system does not either 
 |500|Internal server error|Internal server error|[ErrorMessage](#schemareporterrormessage)|
 |403|Forbidden|Forbidden|[ErrorMessage](#schemareporterrormessage)|
 
-> Example responses
-
-```json
-{
- "balances": [
-   {
-     "amount": 1.2,
-     "currency": "BTC"
-   }
- ],
- "role": "capite",
- "unconfirmed_balances": []
-}
-```
 
 ### Send DASH to Internal wallet
 
-<a id="opIdcreate_intenal_crypto_2_internal_crypto"></a>
+> Code samples
 
-`POST /api/transfer/internal_crypto/2/internal_crypto`
+```shell
+curl -X POST http://example.com/api/transfer/internal_crypto/2/internal_crypto \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer <token>'
+  -D '<body_here>'
+```
 
-*Send DASH to an internal wallet (to someone on the platform).*
+```php
+<?php
+    $body="<body_here>";
+    $opts = array('http' =>
+      array(
+        'method'  => 'POST',
+        'header'  => "Authorization: Bearer <token>\r\nContent-Type: application/json\r\nAccept: application/json\r\n",
+        'content' => $body
+      )
+    );
+    $context  = stream_context_create($opts);
+    $URL = "http://example.com/api/transfer/internal_crypto/2/internal_crypto";
+    $result = file_get_contents($url, false, $context, -1, 40000);
+);
 
-**Required user role:**
 
-   * `ROLE_PARTNER_ADMIN`
-   * `ROLE_MERCHANT_ADMIN`
-   * `ROLE_VENDOR_ADMIN`
-   * `ROLE_CUSTOMER_ADMIN`
+$context = stream_context_create($aHTTP);
+    $response = file_get_contents($URL, false, $context);
+?>
 
-<!--<h3 id="getAllPaginatedUsingGET_4-parameters">Parameters</h3>-->
+```
 
-|Parameter|In|Type|Required|Description|
-|---|---|---|---|---|
-|body|body|[InternalRequest](#tocInternalRequest)|false|InternalRequest object|
+```javascript
+var headers = {
+  'Content-Type':'application/json',
+  'Accept':'application/json',
+  'Authorization': 'Bearer <token>'
+};
+
+var requestBody=<body_here>
+
+$.ajax({
+  url: 'http://example.com/api/transfer/internal_crypto/2/internal_crypto',
+  method: 'POST',
+  headers: headers,
+  data: requestBody,
+  success: function(data) {
+    console.log(JSON.stringify(data));
+  }
+})
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'application/json'
+  'Authorization'=>'Bearer <token>'
+}
+
+result = RestClient.post 'http://example.com/api/transfer/internal_crypto/2/internal_crypto',
+         payload:<body_here>, headers: headers
+
+p JSON.parse(result)
+```
+
+```python
+import requests
+
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer <token>'
+
+}
+
+r = requests.post('http://example.com/api/transfer/internal_crypto/2/internal_crypto',
+                  data=<body_here>, params={}, headers = headers)
+
+print r.json()
+```
+
+```java
+URL obj = new URL("http://example.com/api/transfer/internal_crypto/2/internal_crypto");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Accept", "application/json");
+con.setRequestProperty("Content-Type", "application/json");
+con.setRequestProperty("Authorization", "Bearer <token>");
+con.setDoOutput(true);
+con.setRequestMethod("POST");
+OutputStream os = con.getOutputStream();
+OutputStreamWriter osw = new OutputStreamWriter(os, "UTF-8");
+osw.write("<body_here>");
+osw.flush();
+osw.close();
+os.close();  //don't forget to close the OutputStream
+httpCon.connect();
+
+
+//read the inputstream and print it
+String result;
+BufferedInputStream bis = new BufferedInputStream(con.getInputStream());
+ByteArrayOutputStream buf = new ByteArrayOutputStream();
+int result2 = bis.read();
+while(result2 != -1) {
+    buf.write((byte) result2);
+    result2 = bis.read();
+}
+result = buf.toString();
+System.out.println(result);
+```
+
 
 >Body parameter
 
@@ -89,14 +267,6 @@ Response result is passed-through from Coinapult and the system does not either 
     "note":"Some transaction note string"
 }
 ```
-
-<h3 id="poscreatenewpaymentrequest-responses">Responses</h3>
-
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[InternalResponse](#tocInternalResponse)|
-|401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 > Example responses
 
@@ -118,6 +288,35 @@ Response result is passed-through from Coinapult and the system does not either 
         }
 }  
 ```
+
+<a id="opIdcreate_intenal_crypto_2_internal_crypto"></a>
+
+`POST /api/transfer/internal_crypto/2/internal_crypto`
+
+*Send DASH to an internal wallet (to someone on the platform).*
+
+**Required user role:**
+
+   * `ROLE_PARTNER_ADMIN`
+   * `ROLE_MERCHANT_ADMIN`
+   * `ROLE_VENDOR_ADMIN`
+   * `ROLE_CUSTOMER_ADMIN`
+
+<!--<h3 id="getAllPaginatedUsingGET_4-parameters">Parameters</h3>-->
+
+|Parameter|In|Type|Required|Description|
+|---|---|---|---|---|
+|body|body|[InternalRequest](#tocInternalRequest)|false|InternalRequest object|
+
+
+<h3 id="poscreatenewpaymentrequest-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[InternalResponse](#tocInternalResponse)|
+|401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
 
 ### Send DASH to External wallet
 
