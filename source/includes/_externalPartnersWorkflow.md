@@ -30,7 +30,7 @@ In order to authenticate your POS, you would need to generate an API request cod
 
 ### Register the POS
 
-Please use the API request code from the previous step to activate/register the POS. In order to do so, please use [Register POS with API request code](#register-pos-with-api-request-code) API. As a result authorization token will be provided which should be used for all future payment requests as shown in the next step. Please store this token and use it only to request payments for corresponding Merchant. The token has expiration time of 32 years. If expired, please repeat the last to steps in order to generate a new authorization token.
+Please use the API request code from the previous step to activate/register the POS. In order to do so, please use [Register POS with API request code](#register-pos-with-api-request-code) API. As a result authorization token will be provided which should be used for all future payment requests as shown in the next step. Please store this token and use it only to request payments for corresponding Merchant. The token is valid until 11 Feb 2050. If expired, please repeat the last to steps in order to generate a new authorization token.
 
 **Important notice**
 

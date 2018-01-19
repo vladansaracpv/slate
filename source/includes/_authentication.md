@@ -7,7 +7,7 @@ The first step for authentication is to get a Bearer token by using [Authenticat
 
 `Authorization: Bearer <token>`
 
-The URL examples throughout this documentation use `<token>` as a placeholder. For these examples to work, you need to substitute the value with your own access token. The token expires after 24 hours. Once expired, a new token should be obtained.
+The URL examples throughout this documentation use `<token>` as a placeholder. For these examples to work, you need to substitute the value with your own access token. The token expires after 24 hours. If `rememberMe` parameter is set to `true`, the token expires after 30 days. Once expired, a new token should be obtained.
 
 ##Authenticate
 
