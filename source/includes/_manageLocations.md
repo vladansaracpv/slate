@@ -10,7 +10,6 @@ Location Resource
 > Code samples
 
 ```shell
-# You can also use wget
 curl -X GET http://example.com/api/locations -H 'Accept: */*'
 ```
 
@@ -305,7 +304,6 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-# You can also use wget
 curl -X GET http://example.com/api/dashboard-locations -H 'Accept: */*'
 ```
 
@@ -1073,7 +1071,7 @@ p JSON.parse(result)
 import requests
 
 r = requests.delete('http://example.com/api/locations/{id}',
-                     params={}, headers = headers)
+                     params={})
 
 print r.json()
 ```

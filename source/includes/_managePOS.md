@@ -9,7 +9,6 @@ Point Of Sale Resource
 > Code samples
 
 ```shell
-# You can also use wget
 curl -X GET http://example.com/api/point-of-sales -H 'Accept: */*'
 ```
 
@@ -96,9 +95,7 @@ in.close();
 System.out.println(response.toString());
 ```
 
-
 `GET /api/point-of-sales`
-
 
 *Get all POS paginated*
 
@@ -258,7 +255,6 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-
 curl -X POST http://example.com/api/point-of-sales \
   -H 'Content-Type: application/json' \
   -H 'Accept: */*'
@@ -906,16 +902,13 @@ System.out.println(response.toString());
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 
-
 #### Generate POS API request code
-
 
 <a id="opIdcreateNewPosAuthUsingGET"></a>
 
 > Code samples
 
 ```shell
-# You can also use wget
 curl -X GET http://example.com/api/point-of-sales/{id}/token -H 'Accept: */*'
 ```
 

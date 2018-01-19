@@ -165,7 +165,6 @@ headers = {
   'Accept': 'application/json'
 }
 
-
 r = requests.post('http://example.com/api/partner/register',
                    params={}, headers = headers)
 
@@ -730,12 +729,9 @@ System.out.println(response.toString());
 
 > Code samples
 
-
 ```shell
-# You can also use wget
 curl -X GET http://example.com/api/partners/{id} -H 'Accept: */*'
 ```
-
 
 ```http
 GET http://example.com/api/partners/{id} HTTP/1.1

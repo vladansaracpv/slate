@@ -92,7 +92,7 @@ System.out.println(response.toString());
 
 `GET /api/account`
 
-*getAccount*
+*get Account*
 
 **Required user role:**
 
@@ -255,7 +255,7 @@ System.out.println(response.toString());
 
 `POST /api/account`
 
-*saveAccount*
+*save Account*
 
 **Required user role:**
 
@@ -531,7 +531,7 @@ System.out.println(response.toString());
 
 `POST /api/account/change_password`
 
-*changePassword*
+*change Password*
 
 **Required user role:**
 
@@ -570,7 +570,6 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-# You can also use wget
 curl -X POST http://example.com/api/account/reset_password/init \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json'
@@ -1115,8 +1114,7 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X POST http://example.com/api/account/2fa/update?use2FA=true?code=string \
-  -H 'Accept: */*'
+curl -X POST http://example.com/api/account/2fa/update?use2FA=true?code=string -H 'Accept: */*'
 ```
 
 ```http
@@ -1241,8 +1239,7 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/isactive \
-  -H 'Accept: */*'
+curl -X GET http://example.com/api/isactive -H 'Accept: */*'
 ```
 
 ```http

@@ -292,7 +292,6 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-
 curl -X POST http://example.com/api/merchant \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json'
@@ -861,7 +860,6 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-# You can also use wget
 curl -X POST http://example.com/api/merchant/register \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json'
@@ -1585,7 +1583,6 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-# You can also use wget
 curl -X POST http://example.com/api/request-for-delete \
   -H 'Content-Type: application/json' \
   -H 'Accept: */*'
@@ -1607,8 +1604,6 @@ var headers = {
 $.ajax({
   url: 'http://example.com/api/request-for-delete',
   method: 'post',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
@@ -1765,7 +1760,7 @@ System.out.println(response.toString());
 
 `POST /api/request-for-delete`
 
-*New Request for delete MERCHANT*
+*New Request for delete Merchant*
 
 **Required user role:**
 
@@ -1883,9 +1878,7 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-# You can also use wget
-curl -X GET http://example.com/api/merchant-vendors \
-  -H 'Accept: */*'
+curl -X GET http://example.com/api/merchant-vendors -H 'Accept: */*'
 ```
 
 ```http
@@ -1979,8 +1972,6 @@ System.out.println(response.toString());
 
   * `ROLE_MERCHANT_ADMIN`
 
-Paginated ResponseEntity with status 200 (OK) and the list of merchantVendors in body
-
 <!-- <h3 id="getAllMerchantVendorsUsingGET-parameters">Parameters</h3> -->
 
 |Parameter|In|Type|Required|Description|
@@ -2007,7 +1998,6 @@ Paginated ResponseEntity with status 200 (OK) and the list of merchantVendors in
 > Code samples
 
 ```shell
-# You can also use wget
 curl -X POST http://example.com/api/merchant-vendors \
   -H 'Content-Type: application/json' \
   -H 'Accept: */*'
@@ -2122,9 +2112,8 @@ System.out.println(response.toString());
 {
   "merchant": {
     "id": 12,
-    }
+  },
   "vendor": {
-
     "id": 120
   }
 }
@@ -2201,7 +2190,7 @@ p JSON.parse(result)
 import requests
 
 r = requests.delete('http://example.com/api/merchant-vendors/{id}',
-                     params={}, headers = headers)
+                     params={})
 
 print r.json()
 ```
@@ -2224,7 +2213,7 @@ System.out.println(response.toString());
 
 `DELETE /api/merchant-vendors/{id}`
 
-*REST request to delete Vendors from favorite list*
+*Request to delete Vendors from favorite list*
 
 **Required user role:**
 
@@ -2252,8 +2241,7 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/merchant/autosell \
-  -H 'Accept: */*'
+curl -X GET http://example.com/api/merchant/autosell -H 'Accept: */*'
 ```
 
 ```http
@@ -2341,12 +2329,12 @@ System.out.println(response.toString());
 
 `GET /api/merchant/autosell`
 
+*One may choose to have autosell option enabled allowing you to automatically convert and keep received funds in FIAT(USD), thus eliminating price volatility due to DASH market rate. The autosell option is enabled by default for each Merchant. You can use the API below to manage this feature.*
+
 **Required user role:**
 
   * `ROLE_MERCHANT_ADMIN`
   * `ROLE_MERCHANT_USER`
-
-*One may choose to have autosell option enabled allowing you to automatically convert and keep received funds in FIAT(USD), thus eliminating price volatility due to DASH market rate. The autosell option is enabled by default for each Merchant. You can use the API below to manage this feature.*
 
 > Example responses
 
@@ -2575,7 +2563,7 @@ System.out.println(response.toString());
 
 `GET /api/merchant/search`
 
-*search merchants*
+*Search merchants*
 
 **Required user role:**
 

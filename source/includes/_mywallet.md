@@ -1,77 +1,48 @@
 ### My Wallet
 
-
 Pending Transaction Resource
-
 
 #### Get All Payments
 
-
 <a id="opIdgetAllPaymentsTransactionsUsingGET"></a>
-
 
 > Code samples
 
-
 ```shell
-# You can also use wget
-curl -X GET http://example.com/api/transactions/allpayments \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/transactions/allpayments -H 'Accept: */*'
 ```
-
 
 ```http
 GET http://example.com/api/transactions/allpayments HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/transactions/allpayments',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/transactions/allpayments',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -79,50 +50,34 @@ fetch('http://example.com/api/transactions/allpayments',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/transactions/allpayments',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/transactions/allpayments', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/transactions/allpayments',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/transactions/allpayments");
@@ -138,26 +93,18 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
-
 
 `GET /api/transactions/allpayments`
 
-
 *Get all payments (Partner gets all payments for associates he enroled)*
-
 
 **Required user role:**
 
   * `ROLE_PARTNER_ADMIN`
   * `ROLE_PARTNER_USER`
 
-
-
 <!-- <h3 id="getAllPaymentsTransactionsUsingGET-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
@@ -166,14 +113,11 @@ System.out.println(response.toString());
 |status.equals|query|string|false|Filter by status|
 |page|query|integer(int32)|false|Page number of the requested page|
 |size|query|integer(int32)|false|Size of a page|
-|sort|query|array[string]|false|Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.|
-
+|sort|query|array[string]|false|Sorting criteria in the format: property(,asc/desc). Default sort order is ascending. Multiple sort criteria are supported.|
 
 > Example responses
 
-
 <h3 id="getAllPaymentsTransactionsUsingGET-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -182,77 +126,48 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-
-
-
 #### Get Sales Transactions
-
 
 <a id="opIdgetSalesTransactionsForAdminAndPartnerUsingGET"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
-curl -X GET http://example.com/api/transactions/allsales \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/transactions/allsales -H 'Accept: */*'
 ```
 
 
 ```http
 GET http://example.com/api/transactions/allsales HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/transactions/allsales',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/transactions/allsales',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -260,50 +175,34 @@ fetch('http://example.com/api/transactions/allsales',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/transactions/allsales',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/transactions/allsales', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/transactions/allsales',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/transactions/allsales");
@@ -319,25 +218,18 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
-
 
 `GET /api/transactions/allsales`
 
-
 *Get all sales (Partner gets all sales from his merchants)*
-
 
 **Required user role:**
 
   * `ROLE_PARTNER_ADMIN`
   * `ROLE_PARTNER_USER`
 
-
 <!-- <h3 id="getSalesTransactionsForAdminAndPartnerUsingGET-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
@@ -348,12 +240,9 @@ System.out.println(response.toString());
 |size|query|integer(int32)|false|Size of a page|
 |sort|query|array[string]|false|Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.|
 
-
 > Example responses
 
-
 <h3 id="getSalesTransactionsForAdminAndPartnerUsingGET-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -362,76 +251,47 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-
-
 #### Get Conversions Transactions
-
 
 <a id="opIdgetConversionsTransactionsUsingGET"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
-curl -X GET http://example.com/api/transactions/conversions \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/transactions/conversions -H 'Accept: */*'
 ```
-
 
 ```http
 GET http://example.com/api/transactions/conversions HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/transactions/conversions',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/transactions/conversions',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -439,50 +299,34 @@ fetch('http://example.com/api/transactions/conversions',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/transactions/conversions',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/transactions/conversions', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/transactions/conversions',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/transactions/conversions");
@@ -498,15 +342,11 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
-
 
 `GET /api/transactions/conversions`
 
-
-* Get Conversions Transactions*
+*Get Conversions Transactions*
 
 **Required user role:**
 
@@ -520,7 +360,6 @@ System.out.println(response.toString());
 
 <!-- <h3 id="getConversionsTransactionsUsingGET-parameters">Parameters</h3> -->
 
-
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |date.greaterThan|query|string(date-time)|false|From date|
@@ -528,14 +367,11 @@ System.out.println(response.toString());
 |status.equals|query|string|false|Filter by status|
 |page|query|integer(int32)|false|Page number of the requested page|
 |size|query|integer(int32)|false|Size of a page|
-|sort|query|array[string]|false|Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.|
-
+|sort|query|array[string]|false|Sorting criteria in the format: property(,asc/desc). Default sort order is ascending. Multiple sort criteria are supported.|
 
 > Example responses
 
-
 <h3 id="getConversionsTransactionsUsingGET-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -593,72 +429,45 @@ System.out.println(response.toString());
 
 #### Get All Transactions By Location
 
-
 <a id="opIdgetAllPendingTransactionsByLocationUsingGET"></a>
-
 
 > Code samples
 
-
 ```shell
-# You can also use wget
-curl -X GET http://example.com/api/transactions/location/{locationId} \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/transactions/location/{locationId} -H 'Accept: */*'
 ```
-
 
 ```http
 GET http://example.com/api/transactions/location/{locationId} HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/transactions/location/{locationId}',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/transactions/location/{locationId}',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -666,50 +475,34 @@ fetch('http://example.com/api/transactions/location/{locationId}',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/transactions/location/{locationId}',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/transactions/location/{locationId}', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/transactions/location/{locationId}',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/transactions/location/{locationId}");
@@ -725,16 +518,11 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
-
 
 `GET /api/transactions/location/{locationId}`
 
-
 *Get Transactions by location*
-
 
 **Required user role:**
 
@@ -743,23 +531,18 @@ System.out.println(response.toString());
   * `ROLE_MERCHANT_ADMIN`
   * `ROLE_MERCHANT_USER`
 
-
 <!-- <h3 id="getAllPendingTransactionsByLocationUsingGET-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |locationId|path|integer(int64)|true|Location ID|
 |page|query|integer(int32)|false|Page number of the requested page|
 |size|query|integer(int32)|false|Size of a page|
-|sort|query|array[string]|false|Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.|
-
+|sort|query|array[string]|false|Sorting criteria in the format: property(,asc/desc). Default sort order is ascending. Multiple sort criteria are supported.|
 
 > Example responses
 
-
 <h3 id="getAllPendingTransactionsByLocationUsingGET-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -768,76 +551,47 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-
-
 #### Get my Last Transaction
-
 
 <a id="opIdgetLastTransactionByAssociateUsingGET"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
-curl -X GET http://example.com/api/transactions/mylasttransaction \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/transactions/mylasttransaction -H 'Accept: */*'
 ```
-
 
 ```http
 GET http://example.com/api/transactions/mylasttransaction HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/transactions/mylasttransaction',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/transactions/mylasttransaction',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -845,50 +599,35 @@ fetch('http://example.com/api/transactions/mylasttransaction',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/transactions/mylasttransaction',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
 
-r = requests.get('http://example.com/api/transactions/mylasttransaction', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/transactions/mylasttransaction',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/transactions/mylasttransaction");
@@ -904,13 +643,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `GET /api/transactions/mylasttransaction`
-
 
 *Get my (current user associate) last successful transaction *
 
@@ -919,13 +654,9 @@ System.out.println(response.toString());
 
   * All roles
 
-
-
 > Example responses
 
-
 <h3 id="getLastTransactionByAssociateUsingGET-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -934,77 +665,47 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-
-
-
 #### Get Payments Transactions
-
 
 <a id="opIdgetPaymentsTransactionsUsingGET"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
-curl -X GET http://example.com/api/transactions/payments \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/transactions/payments -H 'Accept: */*'
 ```
-
 
 ```http
 GET http://example.com/api/transactions/payments HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/transactions/payments',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/transactions/payments',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -1012,50 +713,34 @@ fetch('http://example.com/api/transactions/payments',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/transactions/payments',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/transactions/payments', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/transactions/payments',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/transactions/payments");
@@ -1071,13 +756,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `GET /api/transactions/payments`
-
 
 *Get Payments Transactions*
 
@@ -1085,9 +766,7 @@ System.out.println(response.toString());
 
   * All roles
 
-
 <!-- <h3 id="getPaymentsTransactionsUsingGET-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
@@ -1098,14 +777,11 @@ System.out.println(response.toString());
 |showall|query|boolean|false|showall|
 |page|query|integer(int32)|false|Page number of the requested page|
 |size|query|integer(int32)|false|Size of a page|
-|sort|query|array[string]|false|Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.|
-
+|sort|query|array[string]|false|Sorting criteria in the format: property(,asc/desc). Default sort order is ascending. Multiple sort criteria are supported.|
 
 > Example responses
 
-
 <h3 id="getPaymentsTransactionsUsingGET-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -1184,72 +860,45 @@ System.out.println(response.toString());
 
 #### Get All Transactions By Pos
 
-
 <a id="opIdgetAllPendingTransactionsByPosUsingGET"></a>
-
 
 > Code samples
 
-
 ```shell
-# You can also use wget
-curl -X GET http://example.com/api/transactions/pos/{posId} \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/transactions/pos/{posId} -H 'Accept: */*'
 ```
-
 
 ```http
 GET http://example.com/api/transactions/pos/{posId} HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/transactions/pos/{posId}',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/transactions/pos/{posId}',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -1257,50 +906,34 @@ fetch('http://example.com/api/transactions/pos/{posId}',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/transactions/pos/{posId}',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/transactions/pos/{posId}', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/transactions/pos/{posId}',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/transactions/pos/{posId}");
@@ -1316,16 +949,11 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
-
 
 `GET /api/transactions/pos/{posId}`
 
-
 *Get Transactions by POS*
-
 
 **Required user role:**
 
@@ -1334,23 +962,18 @@ System.out.println(response.toString());
   * `ROLE_MERCHANT_ADMIN`
   * `ROLE_MERCHANT_USER`
 
-
 <!-- <h3 id="getAllPendingTransactionsByPosUsingGET-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |posId|path|integer(int64)|true|posId|
 |page|query|integer(int32)|false|Page number of the requested page|
 |size|query|integer(int32)|false|Size of a page|
-|sort|query|array[string]|false|Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.|
-
+|sort|query|array[string]|false|Sorting criteria in the format: property(,asc/desc). Default sort order is ascending. Multiple sort criteria are supported.|
 
 > Example responses
 
-
 <h3 id="getAllPendingTransactionsByPosUsingGET-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -1359,75 +982,47 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-
 #### Get Sales Transactions
-
 
 <a id="opIdgetSalesTransactionsUsingGET"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
-curl -X GET http://example.com/api/transactions/sales \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/transactions/sales -H 'Accept: */*'
 ```
-
 
 ```http
 GET http://example.com/api/transactions/sales HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/transactions/sales',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/transactions/sales',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -1435,50 +1030,34 @@ fetch('http://example.com/api/transactions/sales',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/transactions/sales',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/transactions/sales', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/transactions/sales',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/transactions/sales");
@@ -1494,15 +1073,11 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
-
 
 `GET /api/transactions/sales`
 
-
-* Get Sales Transactions*
+*Get Sales Transactions*
 
 **Required user role:**
 
@@ -1511,10 +1086,7 @@ System.out.println(response.toString());
   * `ROLE_MERCHANT_ADMIN`
   * `ROLE_MERCHANT_USER`
 
-
-
 <!-- <h3 id="getSalesTransactionsUsingGET-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
@@ -1524,14 +1096,11 @@ System.out.println(response.toString());
 |showall|query|boolean|false|showall|
 |page|query|integer(int32)|false|Page number of the requested page|
 |size|query|integer(int32)|false|Size of a page|
-|sort|query|array[string]|false|Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.|
-
+|sort|query|array[string]|false|Sorting criteria in the format: property(,asc/desc). Default sort order is ascending. Multiple sort criteria are supported.|
 
 > Example responses
 
-
 <h3 id="getSalesTransactionsUsingGET-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -1539,7 +1108,6 @@ System.out.println(response.toString());
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
-
 
 ```json
 {  
@@ -1589,75 +1157,47 @@ System.out.println(response.toString());
 }
 ```
 
-
 #### Get All Transactions By Location
-
 
 <a id="opIdgetAllPendingTransactionsByLocationAndCurrentUserUsingGET"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
-curl -X GET http://example.com/api/transactions/userlocation/{locationId} \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/transactions/userlocation/{locationId} -H 'Accept: */*'
 ```
-
 
 ```http
 GET http://example.com/api/transactions/userlocation/{locationId} HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/transactions/userlocation/{locationId}',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/transactions/userlocation/{locationId}',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -1665,56 +1205,39 @@ fetch('http://example.com/api/transactions/userlocation/{locationId}',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/transactions/userlocation/{locationId}',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/transactions/userlocation/{locationId}', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/transactions/userlocation/{locationId}',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/transactions/userlocation/{locationId}");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("GET");
-int responseCode = con.getResponseCode();
+con.setRequestMethod("GET");int responseCode = con.getResponseCode();
 BufferedReader in = new BufferedReader(
     new InputStreamReader(con.getInputStream()));
 String inputLine;
@@ -1724,23 +1247,16 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
-
 
 `GET /api/transactions/userlocation/{locationId}`
 
-
 *Get Transactions by location for current user*
-
 
 **Required user role:**
 
   * `ROLE_MERCHANT_ADMIN`
   * `ROLE_MERCHANT_USER`
-
-
 
 <!-- <h3 id="getAllPendingTransactionsByLocationAndCurrentUserUsingGET-parameters">Parameters</h3> -->
 
@@ -1750,14 +1266,11 @@ System.out.println(response.toString());
 |locationId|path|integer(int64)|true|Location ID|
 |page|query|integer(int32)|false|Page number of the requested page|
 |size|query|integer(int32)|false|Size of a page|
-|sort|query|array[string]|false|Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.|
-
+|sort|query|array[string]|false|Sorting criteria in the format: property(,asc/desc). Default sort order is ascending. Multiple sort criteria are supported.|
 
 > Example responses
 
-
 <h3 id="getAllPendingTransactionsByLocationAndCurrentUserUsingGET-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -1766,75 +1279,47 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
-
 #### Get Withdrawals Transactions
-
 
 <a id="opIdgetWithdrawalsTransactionsUsingGET"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
-curl -X GET http://example.com/api/transactions/withdrawals \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/transactions/withdrawals -H 'Accept: */*'
 ```
-
 
 ```http
 GET http://example.com/api/transactions/withdrawals HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/transactions/withdrawals',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/transactions/withdrawals',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -1842,50 +1327,34 @@ fetch('http://example.com/api/transactions/withdrawals',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/transactions/withdrawals',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/transactions/withdrawals', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/transactions/withdrawals',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/transactions/withdrawals");
@@ -1901,19 +1370,13 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
-
 
 `GET /api/transactions/withdrawals`
 
-
 *Get Withdrawals Transactions*
 
-
 <!-- <h3 id="getWithdrawalsTransactionsUsingGET-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
@@ -1922,14 +1385,11 @@ System.out.println(response.toString());
 |status.equals|query|string|false|Filter by status|
 |page|query|integer(int32)|false|Page number of the requested page|
 |size|query|integer(int32)|false|Size of a page|
-|sort|query|array[string]|false|Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.|
-
+|sort|query|array[string]|false|Sorting criteria in the format: property(,asc/desc). Default sort order is ascending. Multiple sort criteria are supported.|
 
 > Example responses
 
-
 <h3 id="getWithdrawalsTransactionsUsingGET-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -1937,7 +1397,6 @@ System.out.println(response.toString());
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
-
 
 ```json
 {  
@@ -1964,75 +1423,47 @@ System.out.println(response.toString());
 }
 ```
 
-
 #### Get single Transaction by ID
-
 
 <a id="opIdgetPendingTransactionUsingGET"></a>
 
-
 > Code samples
 
-
 ```shell
-# You can also use wget
-curl -X GET http://example.com/api/transactions/{id} \
-  -H 'Accept: */*'
-
-
+curl -X GET http://example.com/api/transactions/{id} -H 'Accept: */*'
 ```
-
 
 ```http
 GET http://example.com/api/transactions/{id} HTTP/1.1
 Host: null
-
-
 Accept: */*
-
-
 ```
-
 
 ```javascript
 var headers = {
   'Accept':'*/*'
-
-
 };
-
 
 $.ajax({
   url: 'http://example.com/api/transactions/{id}',
   method: 'get',
-
-
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-
-
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
 
-
 const headers = {
   'Accept':'*/*'
-
-
 };
-
 
 fetch('http://example.com/api/transactions/{id}',
 {
   method: 'GET',
-
-
   headers: headers
 })
 .then(function(res) {
@@ -2040,50 +1471,34 @@ fetch('http://example.com/api/transactions/{id}',
 }).then(function(body) {
     console.log(body);
 });
-
-
 ```
-
 
 ```ruby
 require 'rest-client'
 require 'json'
 
-
 headers = {
   'Accept' => '*/*'
 }
 
-
 result = RestClient.get 'http://example.com/api/transactions/{id}',
-  params: {
-  }, headers: headers
-
+         params: {}, headers: headers
 
 p JSON.parse(result)
-
-
 ```
-
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-
-r = requests.get('http://example.com/api/transactions/{id}', params={
-
-
-}, headers = headers)
-
+r = requests.get('http://example.com/api/transactions/{id}',
+                  params={}, headers = headers)
 
 print r.json()
-
-
 ```
-
 
 ```java
 URL obj = new URL("http://example.com/api/transactions/{id}");
@@ -2099,13 +1514,9 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
-
 ```
 
-
 `GET /api/transactions/{id}`
-
 
 *Get single Transaction by ID*
 
@@ -2114,20 +1525,15 @@ System.out.println(response.toString());
   * `ROLE_MERCHANT_ADMIN`
   * `ROLE_MERCHANT_USER`
 
-
 <!-- <h3 id="getPendingTransactionUsingGET-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |id|path|integer(int64)|true|id|
 
-
 > Example responses
 
-
 <h3 id="getPendingTransactionUsingGET-responses">Responses</h3>
-
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|

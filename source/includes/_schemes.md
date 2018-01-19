@@ -105,7 +105,7 @@
 |authorizedSignerContact|[ContactVM](#schemacontactvm)|true|No description|
 |city|string|true|No description|
 |companyEIN|string|true|No description|
-|companyWebsite|string|false|No description|
+|companyWebsite|string|true|No description|
 |emailAddress|string|true|No description|
 |incorporationDate|string(date)|false|No description|
 |legalBusinessName|string|true|No description|
@@ -2350,7 +2350,192 @@
 |city|string|true|No description|
 |commissionFee|number|false|No description|
 |companyEIN|string|true|No description|
-|companyWebsite|string|false|No description|
+|companyWebsite|string|true|No description|
+|createdDate|string(date-time)|false|No description|
+|customers|integer(int32)|false|No description|
+|emailAddress|string|true|No description|
+|enabled|boolean|false|No description|
+|enroledBy|[Associate](#schemaassociate)|false|No description|
+|id|integer(int64)|false|No description|
+|incorporationDate|string(date)|false|No description|
+|legalBusinessName|string|true|No description|
+|locationsCount|integer(int32)|false|No description|
+|mainContact|[ContactVM](#schemacontactvm)|true|No description|
+|merchants|integer(int32)|false|No description|
+|note|string|false|No description|
+|partners|integer(int32)|false|No description|
+|phone|string|true|No description|
+|posCount|integer(int32)|false|No description|
+|saleVolume|number(double)|false|No description|
+|state|[CountryState](#schemacountrystate)|true|No description|
+|usBankAccount|string|false|No description|
+|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|false|No description|
+|vendors|integer(int32)|false|No description|
+|zip|string|true|No description|
+
+
+<h2 id="tocSnewvendorvm">NewVendorVM</h2>
+
+
+<a id="schemanewvendorvm"></a>
+
+
+```json
+{
+  "address": "string",
+  "address2": "string",
+  "altAutosellInternal": true,
+  "authorizedSignerContact": {
+    "address": "string",
+    "address2": "string",
+    "beneficiaryPercent": 0,
+    "birthDate": "2018-01-08",
+    "city": "string",
+    "file": "string",
+    "fileBytes": "string",
+    "fileContentType": "string",
+    "firstName": "string",
+    "gender": "MALE",
+    "id": 0,
+    "lastName": "string",
+    "nationality": "string",
+    "note": "string",
+    "passportExpiryDate": "2018-01-08",
+    "passportIssueDate": "2018-01-08",
+    "passportNumber": "string",
+    "position": "string",
+    "primaryEmailAddress": "string",
+    "primaryMobilePhone": "string",
+    "secondaryEmailAddress": "string",
+    "secondaryMobilePhone": "string",
+    "state": {
+      "abbreviation": "string",
+      "id": 0,
+      "state": "string"
+    },
+    "zip": "string"
+  },
+  "autosell": true,
+  "canEditOnboarded": true,
+  "city": "string",
+  "commissionFee": 0,
+  "companyEIN": "string",
+  "companyWebsite": "string",
+  "createdDate": "2018-01-08T16:57:23Z",
+  "customers": 0,
+  "emailAddress": "string",
+  "enabled": true,
+  "enroledBy": {
+    "address": "string",
+    "altAutosellInternal": true,
+    "associateType": "ALT36",
+    "autosell": true,
+    "beneficiaryPercent": 0,
+    "canEditOnboarded": true,
+    "city": "string",
+    "coinaPultApiKey": "string",
+    "commissionFee": 0,
+    "companyEIN": "string",
+    "companyWebsite": "string",
+    "createdDate": "2018-01-08T16:57:23Z",
+    "cryptoCapitalApiKey": "string",
+    "customers": 0,
+    "deletedDate": "2018-01-08T16:57:23Z",
+    "emailAddress": "string",
+    "enabled": true,
+    "enrolledBy": null,
+    "id": 0,
+    "incorporationDate": "2018-01-08",
+    "internalFee": 0,
+    "legalBusinessName": "string",
+    "locationsCount": 0,
+    "merchants": 0,
+    "note": "string",
+    "partners": 0,
+    "phone": "string",
+    "posCount": 0,
+    "state": {
+      "abbreviation": "string",
+      "id": 0,
+      "state": "string"
+    },
+    "usBankAccount": "string",
+    "vendors": 0,
+    "zip": "string"
+  },
+  "id": 0,
+  "incorporationDate": "2018-01-08",
+  "legalBusinessName": "string",
+  "locationsCount": 0,
+  "mainContact": {
+    "address": "string",
+    "address2": "string",
+    "beneficiaryPercent": 0,
+    "birthDate": "2018-01-08",
+    "city": "string",
+    "file": "string",
+    "fileBytes": "string",
+    "fileContentType": "string",
+    "firstName": "string",
+    "gender": "MALE",
+    "id": 0,
+    "lastName": "string",
+    "nationality": "string",
+    "note": "string",
+    "passportExpiryDate": "2018-01-08",
+    "passportIssueDate": "2018-01-08",
+    "passportNumber": "string",
+    "position": "string",
+    "primaryEmailAddress": "string",
+    "primaryMobilePhone": "string",
+    "secondaryEmailAddress": "string",
+    "secondaryMobilePhone": "string",
+    "state": {
+      "abbreviation": "string",
+      "id": 0,
+      "state": "string"
+    },
+    "zip": "string"
+  },
+  "merchants": 0,
+  "note": "string",
+  "partners": 0,
+  "phone": "string",
+  "posCount": 0,
+  "saleVolume": 0,
+  "state": {
+    "abbreviation": "string",
+    "id": 0,
+    "state": "string"
+  },
+  "usBankAccount": "string",
+  "user": {
+    "email": "john.doe@example.com",
+    "firstName": "string",
+    "lastName": "string",
+    "login": "string"
+  },
+  "vendors": 0,
+  "zip": "string"
+}
+```
+
+
+### Properties
+
+
+|Name|Type|Required|Description|
+|---|---|---|---|
+|address|string|true|No description|
+|address2|string|false|No description|
+|altAutosellInternal|boolean|false|No description|
+|authorizedSignerContact|[ContactVM](#schemacontactvm)|true|No description|
+|autosell|boolean|false|No description|
+|canEditOnboarded|boolean|false|No description|
+|city|string|true|No description|
+|commissionFee|number|false|No description|
+|companyEIN|string|true|No description|
+|companyWebsite|string|true|No description|
 |createdDate|string(date-time)|false|No description|
 |customers|integer(int32)|false|No description|
 |emailAddress|string|true|No description|
@@ -4495,13 +4680,16 @@
 
 <h2 id="reportingPaginationObject">Reporting pagination object</h2>
 
-first (Boolean) - refers to whether the requested page is first page
-last (Boolean) - refers to whether the requested page is last page
-number (Integer) - current number of a page, zero index rule is used
-numberOfElements (Integer) - total number of elements in the requested list of objects
-size (Integer)- size of the page as requested  
-totalPages (Integer)- total number of pages for the requested list of objects
-As one may notice, totalElements parameter is omitted here. instead numberOfElements is used to represent that value.
+### Properties
+
+|Name|Type|Required|Description|
+|---|---|---|---|
+|first|boolean|true|refers to whether the requested page is first page|
+|last|boolean|true|refers to whether the requested page is last page|
+|number|integer|true|current number of a page, zero index rule is used|
+|numberOfElements|integer|true|total number of elements in the requested list of objects|
+|size|integer|true|size of the page as requested|
+|totalPages|integer|true|total number of pages for the requested list of objects|
 
 
 <h2 id="tocPOSRequest">POSRequest</h2>
@@ -4693,7 +4881,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
     "totalSalesCommission": 0.85508097,
     "totalSalesCommissionFiat": 604.1271665647,
     "totalInternalCommissions": 0.22554123,
-    "totalInternalCommissionsFiat":1562.1233554
+    "totalInternalCommissionsFiat":1562.1233554,
     "income":0.0254,
     "incomeFiat": 156.256
   }
@@ -4706,11 +4894,11 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 |avgTXAmount|number|true|Average transaction value in cryptocurrency
 |avgTXAmountFiat|number|true|Average transaction value in FIAT value
 |totalSalesCommission|number|true| Total sales commission generated in cryptocurrency
-|totalInternalCommissions|number|true|Total commissions from internal transactions
-|totalInternalCommissionsFiat|number|true|Total income (vendor)
-|income|number|true|Total sales commission generated in FIAT
 |totalSalesCommissionFiat|number|true|Total income (vendor) in FIAT
-
+|totalInternalCommissions|number|false|Total commissions from internal transactions, omitted for locations and pos
+|totalInternalCommissionsFiat|number|false|Total income (vendor). Total commissions from internal transactions, omitted for locations and pos
+|income|number|false|Total sales commission generated in cryptocurrency (available only for Patners)
+|incomeFiat|number|false|Total sales commission generated in FIAT (available only for Partners)
 
 <!-- PartnerResponseItem-->
 <h2 id="tocPartnerResponseItem">PartnerResponseItem</h2>
@@ -4870,8 +5058,8 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 |totalAmountSentFiat|number|true|Total amount sent in cryptocurrency Fiat
 |totalFee|number|true|Total fee applied to transactions in cryptocurrency
 |totalFeeFiat|number|true|Total fee applied to transactions in Fiat
-|totalNumTxSpent|integer|true|Total number of transactions that spent value
-|totalNumTxReceived|integer|true|Total bumber of transactions that received value
+|totalNumTxSpent|integer|false|Total number of transactions that spent value
+|totalNumTxReceived|integer|fasle|Total bumber of transactions that received value
 
 <!-- CommissionResposeItem-->
 <h2 id="tocCommissionResposeItemItem">CommissionResposeItem</h2>
@@ -5526,7 +5714,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 |converted_to_currency|string|true|Curency conversion
 |timestamp_resp|integer|true|Response timestamp created on server
 |pay_to_address|string|true|The address that has been payed to
-|warning_msg|[ErrorMessage](#tocErrorMessage)|true|The address that has been payed to
+|warning_msg|[ErrorMessage](#tocErrorMessage)|true|Warning message (could be omitted)
 
 
 <!-- AssociateAccount -->
@@ -5568,7 +5756,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 
 |Parameter|Type|Required|Description|
 |---|---|---|---|---|
-|type|integer|false| Enumeration (INTERNAL_CRYPTO_TO_INTERNAL_CRYPTO, INTERNAL_CRYPTO_TO_EXTERNAL_CRYPTO, INTERNAL_CRYPTO_TO_FIAT, FIAT_TO_INTERNAL_CRYPTO, INTERNAL_FIAT_TO_EXTERNAL_FIAT).
+|type|string|false| Enumeration (INTERNAL_CRYPTO_TO_INTERNAL_CRYPTO, INTERNAL_CRYPTO_TO_EXTERNAL_CRYPTO, INTERNAL_CRYPTO_TO_FIAT, FIAT_TO_INTERNAL_CRYPTO, INTERNAL_FIAT_TO_EXTERNAL_FIAT).
 |source_associate_id|integer|true|Internal associate Id of transaction initiator
 |destination_associate_id|integer|true|Internal associate id of transaction destination
 |amount|number|true|Amount to transfer
@@ -5588,7 +5776,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 {
     "timestamp_accepted": 152345465566,
     "tx_id": "TXtbbSjB4HdQ",
-    "destination_address":"myzREJCjMo3peEcvpmPBWdgDpNhvVHTNBZ"
+    "destination_address":"myzREJCjMo3peEcvpmPBWdgDpNhvVHTNBZ",
     "status": "PENDING",
     "request_was":{
                 "type":"INTERNAL_CRYPTO_TO_INTERNAL_CRYPTO",
@@ -5606,7 +5794,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 |Parameter|Type|Required|Description|
 |---|---|---|---|---|
 |timestamp_accepted|integer|false| timestamp when the transaction is accepted on service
-|tx_id|integer|string|Internal transaction identifier
+|tx_id|string|string|Internal transaction identifier
 |destination_address|string|true| Destination address
 |status|string|true|Current transaction status
 |request_was|[InternalRequest](#tocInternalRequest)|true|Original request
@@ -5936,7 +6124,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 |coinaPultApiKey|string|false|No description|
 |commissionFee|number|false|No description|
 |companyEIN|string|false|No description|
-|companyWebsite|string|false|No description|
+|companyWebsite|string|true|No description|
 |createdDate|string(date-time)|false|No description|
 |cryptoCapitalApiKey|string|false|No description|
 |customers|integer(int32)|false|No description|

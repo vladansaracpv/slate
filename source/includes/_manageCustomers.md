@@ -144,7 +144,7 @@ Status Code **200**
 |» coinaPultApiKey|string|false|No description|
 |» commissionFee|number|false|No description|
 |» companyEIN|string|false|No description|
-|» companyWebsite|string|false|No description|
+|» companyWebsite|string|true|No description|
 |» createdDate|string(date-time)|false|No description|
 |» cryptoCapitalApiKey|string|false|No description|
 |» customers|integer(int32)|false|No description|
@@ -177,8 +177,7 @@ Status Code **200**
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/customers/{id} \
-  -H 'Accept: */*'
+curl -X GET http://example.com/api/customers/{id} -H 'Accept: */*'
 ```
 
 ```http
@@ -266,7 +265,7 @@ System.out.println(response.toString());
 
 `GET /api/customers/{id}`
 
-*Get the customer by id*
+*Get the customer by ID*
 
 **Required user role:**
 
@@ -290,7 +289,7 @@ System.out.println(response.toString());
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[NewPartnerVM](#schemanewpartnervm)|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[NewCustomerVM](#schemanewcustomervm)|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
@@ -618,16 +617,11 @@ System.out.println(response.toString());
 
 #### Customer self-registration
 
-<aside class="success">
-This operation does not require authentication
-</aside>
-
 <a id="opIdselfRegistrationUsingPOST"></a>
 
 > Code samples
 
 ```shell
-# You can also use wget
 curl -X POST http://example.com/api/customer/register \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json'
@@ -696,7 +690,6 @@ headers = {
   'Content-Type' => 'application/json',
   'Accept' => 'application/json'
 }
-
 
 result = RestClient.post 'http://example.com/api/customer/register',
          params: {}, headers: headers
@@ -995,7 +988,8 @@ p JSON.parse(result)
 ```python
 import requests
 
-r = requests.delete('http://example.com/api/customer/{id}', params={})
+r = requests.delete('http://example.com/api/customer/{id}',
+                     params={})
 
 print r.json()
 ```
@@ -1018,7 +1012,7 @@ System.out.println(response.toString());
 
 `DELETE /api/customer/{id}`
 
-*Delete the Customer with id*
+*Delete the Customer with ID*
 
 **Required user role:**
 
@@ -1149,7 +1143,6 @@ System.out.println(response.toString());
   * `ROLE_VENDOR_USER`
 
 <!-- <h3 id="searchUsingGET-parameters">Parameters</h3> -->
-
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|

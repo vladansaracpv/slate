@@ -141,7 +141,7 @@ Status Code **200**
 |» coinaPultApiKey|string|false|No description|
 |» commissionFee|number|false|No description|
 |» companyEIN|string|false|No description|
-|» companyWebsite|string|false|No description|
+|» companyWebsite|string|true|No description|
 |» createdDate|string(date-time)|false|No description|
 |» cryptoCapitalApiKey|string|false|No description|
 |» customers|integer(int32)|false|No description|
@@ -174,8 +174,7 @@ Status Code **200**
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/allvendors \
-  -H 'Accept: */*'
+curl -X GET http://example.com/api/allvendors -H 'Accept: */*'
 ```
 
 ```http
@@ -300,7 +299,7 @@ Status Code **200**
 |» coinaPultApiKey|string|false|No description|
 |» commissionFee|number|false|No description|
 |» companyEIN|string|false|No description|
-|» companyWebsite|string|false|No description|
+|» companyWebsite|string|true|No description|
 |» createdDate|string(date-time)|false|No description|
 |» cryptoCapitalApiKey|string|false|No description|
 |» customers|integer(int32)|false|No description|
@@ -333,7 +332,6 @@ Status Code **200**
 > Code samples
 
 ```shell
-
 curl -X GET http://example.com/api/vendors/{id} -H 'Accept: */*'
 ```
 
@@ -445,7 +443,7 @@ System.out.println(response.toString());
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[NewPartnerVM](#schemanewpartnervm)|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[NewVendorVM](#schemanewvendorvm)|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
@@ -848,7 +846,7 @@ System.out.println(response.toString());
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|[NewMerchantVM](#schemanewmerchantvm)|true|partner|
+|body|body|[NewVendorVM](#schemanewvendorvm)|true|partner|
 
 > Example responses
 
@@ -945,6 +943,7 @@ p JSON.parse(result)
 
 ```python
 import requests
+
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -1543,6 +1542,7 @@ p JSON.parse(result)
 
 ```python
 import requests
+
 headers = {
   'Content-Type': 'application/json',
   'Accept': '*/*'
@@ -1726,7 +1726,7 @@ System.out.println(response.toString());
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|[NewPartnerVM](#schemanewpartnervm)|true|associate|
+|body|body|[NewVendorVM](#schemanewvendorvm)|true|associate|
 
 > Example responses
 
@@ -1790,6 +1790,7 @@ p JSON.parse(result)
 ```
 
 ```python
+
 import requests
 
 r = requests.delete('http://example.com/api/vendor/{id}',
@@ -1816,7 +1817,7 @@ System.out.println(response.toString());
 
 `DELETE /api/vendor/{id}`
 
-*Delete the Vendor with id*
+*Delete the Vendor with ID*
 
 **Required user role:**
 
@@ -1846,7 +1847,6 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-
 curl -X GET http://example.com/api/vendor/search -H 'Accept: */*'
 ```
 
