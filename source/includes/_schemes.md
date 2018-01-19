@@ -1978,7 +1978,7 @@
 |city|string|true|No description|
 |commissionFee|number|false|No description|
 |companyEIN|string|true|No description|
-|companyWebsite|string|false|No description|
+|companyWebsite|string|true|No description|
 |createdDate|string(date-time)|false|No description|
 |customers|integer(int32)|false|No description|
 |emailAddress|string|true|No description|
@@ -2001,6 +2001,193 @@
 |vendors|integer(int32)|false|No description|
 |zip|string|true|No description|
 
+<h2 id="tocSnewmerchantvm2">UpdateMerchantVM</h2>
+
+
+<a id="schemanewmerchantvm2"></a>
+
+
+```json
+{
+  "id": "integer",
+  "address": "string",
+  "address2": "string",
+  "altAutosellInternal": true,
+  "authorizedSignerContact": {
+    "address": "string",
+    "address2": "string",
+    "beneficiaryPercent": 0,
+    "birthDate": "2018-01-08",
+    "city": "string",
+    "file": "string",
+    "fileBytes": "string",
+    "fileContentType": "string",
+    "firstName": "string",
+    "gender": "MALE",
+    "id": 0,
+    "lastName": "string",
+    "nationality": "string",
+    "note": "string",
+    "passportExpiryDate": "2018-01-08",
+    "passportIssueDate": "2018-01-08",
+    "passportNumber": "string",
+    "position": "string",
+    "primaryEmailAddress": "string",
+    "primaryMobilePhone": "string",
+    "secondaryEmailAddress": "string",
+    "secondaryMobilePhone": "string",
+    "state": {
+      "abbreviation": "string",
+      "id": 0,
+      "state": "string"
+    },
+    "zip": "string"
+  },
+  "autosell": true,
+  "beneficiaryPercent": 0,
+  "canEditOnboarded": true,
+  "city": "string",
+  "commissionFee": 0,
+  "companyEIN": "string",
+  "companyWebsite": "string",
+  "createdDate": "2018-01-08T16:57:23Z",
+  "customers": 0,
+  "emailAddress": "string",
+  "enabled": true,
+  "enroledBy": {
+    "address": "string",
+    "altAutosellInternal": true,
+    "associateType": "ALT36",
+    "autosell": true,
+    "beneficiaryPercent": 0,
+    "canEditOnboarded": true,
+    "city": "string",
+    "coinaPultApiKey": "string",
+    "commissionFee": 0,
+    "companyEIN": "string",
+    "companyWebsite": "string",
+    "createdDate": "2018-01-08T16:57:23Z",
+    "cryptoCapitalApiKey": "string",
+    "customers": 0,
+    "deletedDate": "2018-01-08T16:57:23Z",
+    "emailAddress": "string",
+    "enabled": true,
+    "enrolledBy": null,
+    "id": 0,
+    "incorporationDate": "2018-01-08",
+    "internalFee": 0,
+    "legalBusinessName": "string",
+    "locationsCount": 0,
+    "merchants": 0,
+    "note": "string",
+    "partners": 0,
+    "phone": "string",
+    "posCount": 0,
+    "state": {
+      "abbreviation": "string",
+      "id": 0,
+      "state": "string"
+    },
+    "usBankAccount": "string",
+    "vendors": 0,
+    "zip": "string"
+  },
+  "id": 0,
+  "incorporationDate": "2018-01-08",
+  "legalBusinessName": "string",
+  "locationsCount": 0,
+  "mainContact": {
+    "address": "string",
+    "address2": "string",
+    "beneficiaryPercent": 0,
+    "birthDate": "2018-01-08",
+    "city": "string",
+    "file": "string",
+    "fileBytes": "string",
+    "fileContentType": "string",
+    "firstName": "string",
+    "gender": "MALE",
+    "id": 0,
+    "lastName": "string",
+    "nationality": "string",
+    "note": "string",
+    "passportExpiryDate": "2018-01-08",
+    "passportIssueDate": "2018-01-08",
+    "passportNumber": "string",
+    "position": "string",
+    "primaryEmailAddress": "string",
+    "primaryMobilePhone": "string",
+    "secondaryEmailAddress": "string",
+    "secondaryMobilePhone": "string",
+    "state": {
+      "abbreviation": "string",
+      "id": 0,
+      "state": "string"
+    },
+    "zip": "string"
+  },
+  "merchants": 0,
+  "note": "string",
+  "partners": 0,
+  "phone": "string",
+  "posCount": 0,
+  "saleVolume": 0,
+  "state": {
+    "abbreviation": "string",
+    "id": 0,
+    "state": "string"
+  },
+  "usBankAccount": "string",
+  "user": {
+    "email": "john.doe@example.com",
+    "firstName": "string",
+    "lastName": "string",
+    "login": "string"
+  },
+  "vendors": 0,
+  "zip": "string"
+}
+```
+
+
+### Properties
+
+
+|Name|Type|Required|Description|
+|---|---|---|---|
+|id|integer|true|No description|
+|address|string|true|No description|
+|address2|string|false|No description|
+|altAutosellInternal|boolean|false|No description|
+|authorizedSignerContact|[ContactVM](#schemacontactvm)|true|No description|
+|autosell|boolean|false|No description|
+|beneficiaryPercent|integer(int64)|false|No description|
+|canEditOnboarded|boolean|false|No description|
+|city|string|true|No description|
+|commissionFee|number|false|No description|
+|companyEIN|string|true|No description|
+|companyWebsite|string|true|No description|
+|createdDate|string(date-time)|false|No description|
+|customers|integer(int32)|false|No description|
+|emailAddress|string|true|No description|
+|enabled|boolean|false|No description|
+|enroledBy|[Associate](#schemaassociate)|false|No description|
+|id|integer(int64)|false|No description|
+|incorporationDate|string(date)|true|No description|
+|legalBusinessName|string|true|No description|
+|locationsCount|integer(int32)|false|No description|
+|mainContact|[ContactVM](#schemacontactvm)|true|No description|
+|merchants|integer(int32)|false|No description|
+|note|string|false|No description|
+|partners|integer(int32)|false|No description|
+|phone|string|true|No description|
+|posCount|integer(int32)|false|No description|
+|saleVolume|number(double)|false|No description|
+|state|[CountryState](#schemacountrystate)|true|No description|
+|usBankAccount|string|false|No description|
+|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|false|No description|
+|vendors|integer(int32)|false|No description|
+|zip|string|true|No description|
 
 <h2 id="tocSnewpartnervm">NewPartnerVM</h2>
 
@@ -5342,40 +5529,6 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 |warning_msg|[ErrorMessage](#tocErrorMessage)|true|The address that has been payed to
 
 
-
-
-
-<!-- InternalRequest -->
-
-<h2 id="tocInternalRequest">InternalRequest</h2>
-
-<a id="schemainternalrequest"></a>
-
-```json
-{
-    "type":"INTERNAL_CRYPTO_TO_INTERNAL_CRYPTO",
-    "source_associate_id": 20,
-    "destination_associate_id": 100,
-    "amount": 1.2,
-    "currency_in": "DASH",
-    "currency_out": "DASH",
-    "timestamp_req":"152345465564",
-    "note":"Some transaction note string"
-}
-```
-
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|type|integer|false| Enumeration (INTERNAL_CRYPTO_TO_INTERNAL_CRYPTO, INTERNAL_CRYPTO_TO_EXTERNAL_CRYPTO, INTERNAL_CRYPTO_TO_FIAT, FIAT_TO_INTERNAL_CRYPTO, INTERNAL_FIAT_TO_EXTERNAL_FIAT).
-|source_associate_id|integer|true|Internal associate Id of transaction initiator
-|destination_associate_id|integer|true|Internal associate id of transaction destination
-|amount|number|true|Amount to transfer
-|currency_in|string|true|Currency that is transfered
-|currency_out|string|true|Currency to which is transfered
-|timestamp_req|integer|true|Timestamp of the request
-|note|string|false|General note about transaction
-
-
 <!-- AssociateAccount -->
 <h2 id="tocAssociateAccount">AssociateAccount</h2>
 
@@ -5841,3 +5994,26 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 |apiKey|string|true|No description|
 |apiSecret|string|true|No description|
 |registeredEmail|string|true|No description|
+
+<!-- SalesVolume -->
+
+<h2 id="tocSalesVolume">SalesVolume</h2>
+
+<a id="schemasalesvolume"></a>
+Note that the given example is only for associate SalesVolume object
+
+```json
+{
+  "associate_id": 2102,
+  "sales_crypto": 11.52008667,
+  "sales_fiat": 7947.5531215589
+}
+```
+
+|Parameter|Type|Required|Description|
+|---|---|---|---|---|
+|associate_id|integer|false| Associate identifier (used with associate sales volume)
+|location_id|integer|false|Location idenfifier (used with location sales volume)
+|pos_id|integer|false|POS identifier (used with pos sales volume)
+|sales_crypto|number|true|Total sales in cryptocurrency
+|sales_fiat|string|true|Total sales in FIAT currency (USD)

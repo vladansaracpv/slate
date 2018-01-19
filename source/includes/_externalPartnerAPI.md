@@ -1164,12 +1164,11 @@ result = RestClient.delete 'http://example.com/api/externalpartner/merchant/{id}
 p JSON.parse(result)
 ```
 
-
 ```python
 import requests
 
 r = requests.delete('http://example.com/api/externalpartner/merchant/{id}',
-                     params={}, headers = headers)
+                     params={})
 
 print r.json()
 ```
@@ -1193,8 +1192,6 @@ System.out.println(response.toString());
 `DELETE /api/externalpartner/merchant/{id}`
 
 *Delete the Merchant with id*
-
-Deletes/Disables all merchant users first
 
 **Required user role:**
 
@@ -1824,6 +1821,7 @@ p JSON.parse(result)
 
 ```python
 import requests
+
 headers = {
   'Content-Type': 'application/json',
   'Accept': '*/*'
@@ -1989,7 +1987,7 @@ p JSON.parse(result)
 import requests
 
 r = requests.delete('http://example.com/api/externalpartner/locations/{id}',
-                    params={}, headers = headers)
+                    params={})
 
 print r.json()
 ```
@@ -2712,7 +2710,7 @@ headers = {
 }
 
 r = requests.put('http://example.com/api/externalpartner/point-of-sales',
-                  params={}, headers = headers)
+                  params={})
 
 print r.json()
 ```
@@ -2882,7 +2880,7 @@ require 'rest-client'
 require 'json'
 
 result = RestClient.delete 'http://example.com/api/externalpartner/point-of-sales/{id}',
-  params: {}
+         params: {}
 
 p JSON.parse(result)
 ```
@@ -2891,7 +2889,7 @@ p JSON.parse(result)
 import requests
 
 r = requests.delete('http://example.com/api/externalpartner/point-of-sales/{id}',
-                     params={}, headers = headers)
+                     params={})
 
 print r.json()
 ```

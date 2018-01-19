@@ -8,7 +8,6 @@
 > Code samples
 
 ```shell
-# You can also use wget
 curl -X GET http://example.com/api/merchants -H 'Accept: */*'
 ```
 

@@ -1,6 +1,5 @@
 ### Manage Users
 
-
 #### Get Authorities
 
 <a id="opIdgetAuthoritiesUsingGET"></a>
@@ -8,9 +7,7 @@
 > Code samples
 
 ```shell
-# You can also use wget
-curl -X GET http://example.com/api/roles \
-  -H 'Accept: */*'
+curl -X GET http://example.com/api/roles -H 'Accept: */*'
 ```
 
 ```http
@@ -61,20 +58,20 @@ headers = {
 }
 
 result = RestClient.get 'http://example.com/api/roles',
-  params: {
-  }, headers: headers
+         params: {}, headers: headers
 
 p JSON.parse(result)
 ```
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-r = requests.get('http://example.com/api/roles', params={
-}, headers = headers)
+r = requests.get('http://example.com/api/roles',
+                  params={}, headers = headers)
 
 print r.json()
 ```
@@ -121,9 +118,7 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-# You can also use wget
-curl -X GET http://example.com/api/users \
-  -H 'Accept: */*'
+curl -X GET http://example.com/api/users -H 'Accept: */*'
 ```
 
 ```http
@@ -180,12 +175,13 @@ p JSON.parse(result)
 
 ```python
 import requests
+
 headers = {
   'Accept': '*/*'
 }
 
-r = requests.get('http://example.com/api/users', params={
-}, headers = headers)
+r = requests.get('http://example.com/api/users',
+                  params={}, headers = headers)
 
 print r.json()
 ```
@@ -220,7 +216,7 @@ System.out.println(response.toString());
 |---|---|---|---|---|
 |page|query|integer(int32)|false|Page number of the requested page|
 |size|query|integer(int32)|false|Size of a page|
-|sort|query|array[string]|false|Sorting criteria in the format: property(,asc|desc). Default sort order is ascending. Multiple sort criteria are supported.|
+|sort|query|array[string]|false|Sorting criteria in the format: property(,asc/desc). Default sort order is ascending. Multiple sort criteria are supported.|
 
 > Example responses
 
@@ -304,9 +300,7 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-# You can also use wget
-curl -X GET http://example.com/api/users/{login} \
-  -H 'Accept: */*'
+curl -X GET http://example.com/api/users/{login} -H 'Accept: */*'
 ```
 
 ```http
@@ -357,8 +351,7 @@ headers = {
 }
 
 result = RestClient.get 'http://example.com/api/users/{login}',
-  params: {
-  }, headers: headers
+         params: {}, headers: headers
 
 p JSON.parse(result)
 ```
@@ -370,8 +363,8 @@ headers = {
   'Accept': '*/*'
 }
 
-r = requests.get('http://example.com/api/users/{login}', params={
-}, headers = headers)
+r = requests.get('http://example.com/api/users/{login}',
+                  params={}, headers = headers)
 
 print r.json()
 ```
@@ -424,7 +417,6 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-# You can also use wget
 curl -X POST http://example.com/api/users \
   -H 'Content-Type: application/json' \
   -H 'Accept: */*'
@@ -503,8 +495,7 @@ headers = {
 }
 
 result = RestClient.post 'http://example.com/api/users',
-  params: {
-  }, headers: headers
+         params: {}, headers: headers
 
 p JSON.parse(result)
 ```
@@ -517,8 +508,8 @@ headers = {
   'Accept': '*/*'
 }
 
-r = requests.post('http://example.com/api/users', params={
-}, headers = headers)
+r = requests.post('http://example.com/api/users',
+                   params={}, headers = headers)
 
 print r.json()
 ```
@@ -584,25 +575,25 @@ System.out.println(response.toString());
 
 ```json
 {  
-         "id":3544,
-         "login":"merchant",
-         "firstName":"Merchant",
-         "lastName":"Admin",
-         "email":"ikovico@gmail.com",
-         "imageUrl":"",
-         "activated":true,
-         "langKey":"en",
-         "createdBy":"partner",
-         "createdDate":"2017-09-21T21:16:49Z",
-         "lastModifiedBy":"merchant",
-         "lastModifiedDate":"2018-01-19T00:04:11Z",
-         "lastLoginDateTime":"2018-01-19T00:04:11Z",
-         "authorities":[  
-            "ROLE_MERCHANT_ADMIN"
-         ],
-         "splashscreenEnabled":true,
-         "using2fa":false
-      }
+   "id":3544,
+   "login":"merchant",
+   "firstName":"Merchant",
+   "lastName":"Admin",
+   "email":"ikovico@gmail.com",
+   "imageUrl":"",
+   "activated":true,
+   "langKey":"en",
+   "createdBy":"partner",
+   "createdDate":"2017-09-21T21:16:49Z",
+   "lastModifiedBy":"merchant",
+   "lastModifiedDate":"2018-01-19T00:04:11Z",
+   "lastLoginDateTime":"2018-01-19T00:04:11Z",
+   "authorities":[  
+      "ROLE_MERCHANT_ADMIN"
+   ],
+   "splashscreenEnabled":true,
+   "using2fa":false
+}
 ```
 
 <h3 id="createUserUsingPOST-responses">Responses</h3>
@@ -622,7 +613,6 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-# You can also use wget
 curl -X PUT http://example.com/api/users \
   -H 'Content-Type: application/json' \
   -H 'Accept: */*'
@@ -700,8 +690,7 @@ headers = {
 }
 
 result = RestClient.put 'http://example.com/api/users',
-  params: {
-  }, headers: headers
+         params: {}, headers: headers
 
 p JSON.parse(result)
 ```
@@ -714,8 +703,8 @@ headers = {
   'Accept': '*/*'
 }
 
-r = requests.put('http://example.com/api/users', params={
-}, headers = headers)
+r = requests.put('http://example.com/api/users',
+                  params={}, headers = headers)
 
 print r.json()
 ```
@@ -750,18 +739,18 @@ System.out.println(response.toString());
 
 ```json
 {  
-         "id":3544,
-         "login":"merchant",
-         "firstName":"Merchant",
-         "lastName":"Admin",
-         "email":"ikovico@gmail.com",
-         "langKey":"en",
-         "authorities":[  
-            "ROLE_MERCHANT_ADMIN"
-         ],
-         "splashscreenEnabled":true,
-         "using2fa":false
-      }
+   "id":3544,
+   "login":"merchant",
+   "firstName":"Merchant",
+   "lastName":"Admin",
+   "email":"ikovico@gmail.com",
+   "langKey":"en",
+   "authorities":[  
+      "ROLE_MERCHANT_ADMIN"
+   ],
+   "splashscreenEnabled":true,
+   "using2fa":false
+}
 ```
 
 <!-- <h3 id="updateUserUsingPUT-parameters">Parameters</h3> -->
@@ -775,25 +764,25 @@ System.out.println(response.toString());
 ```json
 
 {  
-         "id":3544,
-         "login":"merchant",
-         "firstName":"Merchant",
-         "lastName":"Admin",
-         "email":"ikovico@gmail.com",
-         "imageUrl":"",
-         "activated":true,
-         "langKey":"en",
-         "createdBy":"partner",
-         "createdDate":"2017-09-21T21:16:49Z",
-         "lastModifiedBy":"merchant",
-         "lastModifiedDate":"2018-01-19T00:04:11Z",
-         "lastLoginDateTime":"2018-01-19T00:04:11Z",
-         "authorities":[  
-            "ROLE_MERCHANT_ADMIN"
-         ],
-         "splashscreenEnabled":true,
-         "using2fa":false
-      }
+   "id":3544,
+   "login":"merchant",
+   "firstName":"Merchant",
+   "lastName":"Admin",
+   "email":"ikovico@gmail.com",
+   "imageUrl":"",
+   "activated":true,
+   "langKey":"en",
+   "createdBy":"partner",
+   "createdDate":"2017-09-21T21:16:49Z",
+   "lastModifiedBy":"merchant",
+   "lastModifiedDate":"2018-01-19T00:04:11Z",
+   "lastLoginDateTime":"2018-01-19T00:04:11Z",
+   "authorities":[  
+      "ROLE_MERCHANT_ADMIN"
+   ],
+   "splashscreenEnabled":true,
+   "using2fa":false
+}
 ```
 
 <h3 id="updateUserUsingPUT-responses">Responses</h3>
@@ -813,7 +802,6 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-# You can also use wget
 curl -X DELETE http://example.com/api/users/{login}
 ```
 
@@ -850,8 +838,7 @@ require 'rest-client'
 require 'json'
 
 result = RestClient.delete 'http://example.com/api/users/{login}',
-  params: {
-  }
+         params: {}
 
 p JSON.parse(result)
 ```
@@ -859,9 +846,8 @@ p JSON.parse(result)
 ```python
 import requests
 
-r = requests.delete('http://example.com/api/users/{login}', params={
-
-)
+r = requests.delete('http://example.com/api/users/{login}',
+                     params={})
 
 print r.json()
 ```
