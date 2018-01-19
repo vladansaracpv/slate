@@ -544,7 +544,52 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
+```json
 
+{  
+   "totalPages":1,
+   "numberOfElements":2,
+   "content":[  
+      {  
+         "id":5042,
+         "timeAndDate":"2017-12-13T00:29:58Z",
+         "transactionId":"ALTowLDgA0xyarVsTj",
+         "status":"Succeded",
+         "amountFiat":"20.0",
+         "amountDash":"0.00115413",
+         "conversionFrom":"USD",
+         "conversionTo":"BTC",
+         "conversionRate":"17329.09"
+      },
+      {  
+         "id":4932,
+         "timeAndDate":"2017-12-08T15:03:39Z",
+         "transactionId":"ALTSIcPj7Rw8ajlTIy",
+         "status":"Succeded",
+         "amountFiat":"3037.718",
+         "amountDash":"0.2",
+         "conversionFrom":"BTC",
+         "conversionTo":"USD",
+         "conversionRate":"15188.59"
+      }
+   ],
+   "sort":[  
+      {  
+         "direction":"DESC",
+         "property":"id",
+         "ignoreCase":false,
+         "nullHandling":"NATIVE",
+         "ascending":false,
+         "descending":true
+      }
+   ],
+   "size":2,
+   "number":0,
+   "totalElements":2,
+   "first":true,
+   "last":false
+}
+```
 
 #### Get All Transactions By Location
 
@@ -1069,6 +1114,73 @@ System.out.println(response.toString());
 |403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
+```json
+{  
+   "totalPages":1,
+   "numberOfElements":4,
+   "content":[  
+      {  
+         "id":5067,
+         "timeAndDate":"2018-01-12T11:27:03Z",
+         "transactionId":"ALTUJ0NgkWsaxBZL0h",
+         "status":"Succeded",
+         "receiver":"alt thirty six",
+         "receiverType":"ALT36",
+         "sender":"Demo Merchant",
+         "senderType":"MERCHANT",
+         "amount":"0.1"
+      }
+      {  
+         "id":4789,
+         "timeAndDate":"2017-12-07T09:49:21Z",
+         "transactionId":"ALTlo2amCQtiQnzbG5",
+         "status":"Succeded",
+         "receiver":"mnyHyG6CYfCGXdgKTSwEv1tmJSkXp3oMyj",
+         "receiverType":"",
+         "sender":"Demo Merchant",
+         "senderType":"MERCHANT",
+         "amount":"0.3"
+      },
+      {  
+         "id":4788,
+         "timeAndDate":"2017-12-07T09:48:49Z",
+         "transactionId":"ALTudowKWC0njGk2G6",
+         "status":"Succeded",
+         "receiver":"Demo Vendor",
+         "receiverType":"VENDOR",
+         "sender":"Demo Merchant",
+         "senderType":"MERCHANT",
+         "amount":"1.0"
+      },
+      {  
+         "id":4787,
+         "timeAndDate":"2017-12-07T09:47:35Z",
+         "transactionId":"ALTJQpbCp5CYBRVsFy",
+         "status":"Succeded",
+         "receiver":"Demo Vendor",
+         "receiverType":"VENDOR",
+         "sender":"Demo Merchant",
+         "senderType":"MERCHANT",
+         "amount":"0.1"
+      }
+   ],
+   "sort":[  
+      {  
+         "direction":"DESC",
+         "property":"id",
+         "ignoreCase":false,
+         "nullHandling":"NATIVE",
+         "ascending":false,
+         "descending":true
+      }
+   ],
+   "size":4,
+   "number":0,
+   "totalElements":4,
+   "first":true,
+   "last":false
+}
+```
 
 #### Get All Transactions By Pos
 
@@ -1429,6 +1541,54 @@ System.out.println(response.toString());
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
 
+```json
+{  
+   "totalPages":115,
+   "numberOfElements":2,
+   "content":[  
+      {  
+         "id":5035,
+         "timeAndDate":"2017-12-11T18:24:41Z",
+         "transactionId":"ALToZ2sdVfRW5LoQFW",
+         "status":"Pending",
+         "commisionFeeinDash":"0.013629734629066772",
+         "commisionFeeinUSD":"10.0",
+         "amountInDash":"0.1362973462906677",
+         "amountInUSD":"100.0",
+         "pointOfSale":null,
+         "location":"ASdasd"
+      },
+      {  
+         "id":5034,
+         "timeAndDate":"2017-12-11T13:30:30Z",
+         "transactionId":"ALT0QucSqzBEYwqeMz",
+         "status":"Succeded",
+         "commisionFeeinDash":"0.007146328216562331",
+         "commisionFeeinUSD":"5.0",
+         "amountInDash":"0.07146328216562331",
+         "amountInUSD":"50.0",
+         "pointOfSale":null,
+         "location":"Peoria"
+      }
+   ],
+   "sort":[  
+      {  
+         "direction":"DESC",
+         "property":"id",
+         "ignoreCase":false,
+         "nullHandling":"NATIVE",
+         "ascending":false,
+         "descending":true
+      }
+   ],
+   "size":2,
+   "number":0,
+   "totalElements":230,
+   "first":true,
+   "last":false
+}
+```
+
 
 #### Get All Transactions By Location
 
@@ -1779,7 +1939,30 @@ System.out.println(response.toString());
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|None|
 
 
+```json
+{  
+   "totalPages":0,
+   "numberOfElements":0,
+   "content":[  
 
+   ],
+   "sort":[  
+      {  
+         "direction":"DESC",
+         "property":"id",
+         "ignoreCase":false,
+         "nullHandling":"NATIVE",
+         "ascending":false,
+         "descending":true
+      }
+   ],
+   "size":25,
+   "number":0,
+   "totalElements":0,
+   "first":true,
+   "last":true
+}
+```
 
 
 #### Get single Transaction by ID
