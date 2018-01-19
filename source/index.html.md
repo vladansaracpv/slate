@@ -3,7 +3,7 @@ title: Alt36 API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  - http
+  - php
   - javascript
   - ruby
   - python
