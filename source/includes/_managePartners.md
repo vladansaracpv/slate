@@ -9,139 +9,52 @@
 ```shell
 curl -X POST http://example.com/api/partner/register \
   -H 'Content-Type: application/json' \
-  -H 'Accept: application/json'
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer <token>'
+  -D '<body_here>'
 ```
 
-```http
-POST http://example.com/api/partner/register HTTP/1.1
-Host: null
-Content-Type: application/json
-Accept: application/json
+```php
+<?php
+    $body="<body_here>";
+    $opts = array('http' =>
+      array(
+        'method'  => 'POST',
+        'header'  => "Authorization: Bearer <token>\r\nContent-Type: application/json\r\nAccept: application/json\r\n",
+        'content' => $body
+      )
+    );
+    $context  = stream_context_create($opts);
+    $URL = "http://example.com/api/partner/register";
+    $result = file_get_contents($url, false, $context, -1, 40000);
+);
+
+
+$context = stream_context_create($aHTTP);
+    $response = file_get_contents($URL, false, $context);
+?>
+
 ```
 
 ```javascript
 var headers = {
   'Content-Type':'application/json',
-  'Accept':'application/json'
+  'Accept':'application/json',
+  'Authorization': 'Bearer <token>'
 };
+
+var requestBody=<body_here>
 
 $.ajax({
   url: 'http://example.com/api/partner/register',
-  method: 'post',
+  method: 'POST',
   headers: headers,
+  data: requestBody,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
 ```
-
-```javascript--nodejs
-const request = require('node-fetch');
-const inputBody = '{
-  "address": "string",
-  "address2": "string",
-  "authorizedSignerContact": {
-    "address": "string",
-    "address2": "string",
-    "beneficiaryPercent": 0,
-    "birthDate": "2018-01-08",
-    "city": "string",
-    "file": "string",
-    "fileBytes": "string",
-    "fileContentType": "string",
-    "firstName": "string",
-    "gender": "MALE",
-    "id": 0,
-    "lastName": "string",
-    "nationality": "string",
-    "note": "string",
-    "passportExpiryDate": "2018-01-08",
-    "passportIssueDate": "2018-01-08",
-    "passportNumber": "string",
-    "position": "string",
-    "primaryEmailAddress": "string",
-    "primaryMobilePhone": "string",
-    "secondaryEmailAddress": "string",
-    "secondaryMobilePhone": "string",
-    "state": {
-      "abbreviation": "string",
-      "id": 0,
-      "state": "string"
-    },
-    "zip": "string"
-  },
-  "city": "string",
-  "companyEIN": "string",
-  "companyWebsite": "string",
-  "emailAddress": "string",
-  "incorporationDate": "2018-01-08",
-  "legalBusinessName": "string",
-  "mainContact": {
-    "address": "string",
-    "address2": "string",
-    "beneficiaryPercent": 0,
-    "birthDate": "2018-01-08",
-    "city": "string",
-    "file": "string",
-    "fileBytes": "string",
-    "fileContentType": "string",
-    "firstName": "string",
-    "gender": "MALE",
-    "id": 0,
-    "lastName": "string",
-    "nationality": "string",
-    "note": "string",
-    "passportExpiryDate": "2018-01-08",
-    "passportIssueDate": "2018-01-08",
-    "passportNumber": "string",
-    "position": "string",
-    "primaryEmailAddress": "string",
-    "primaryMobilePhone": "string",
-    "secondaryEmailAddress": "string",
-    "secondaryMobilePhone": "string",
-    "state": {
-      "abbreviation": "string",
-      "id": 0,
-      "state": "string"
-    },
-    "zip": "string"
-  },
-  "note": "string",
-  "phone": "string",
-  "state": {
-    "abbreviation": "string",
-    "id": 0,
-    "state": "string"
-  },
-  "usBankAccount": "string",
-  "user": {
-    "email": "string",
-    "firstName": "string",
-    "lastName": "string",
-    "login": "string",
-    "password": "string"
-  },
-  "zip": "string"
-}';
-
-const headers = {
-  'Content-Type':'application/json',
-  'Accept':'application/json'
-};
-
-fetch('http://example.com/api/partner/register',
-{
-  method: 'POST',
-  body: inputBody,
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-```
-
 
 ```ruby
 require 'rest-client'
@@ -150,23 +63,27 @@ require 'json'
 headers = {
   'Content-Type' => 'application/json',
   'Accept' => 'application/json'
+  'Authorization'=>'Bearer <token>'
 }
 
 result = RestClient.post 'http://example.com/api/partner/register',
-         params: {}, headers: headers
+         payload:<body_here>, headers: headers
 
 p JSON.parse(result)
 ```
+
 ```python
 import requests
 
 headers = {
   'Content-Type': 'application/json',
-  'Accept': 'application/json'
+  'Accept': 'application/json',
+  'Authorization': 'Bearer <token>'
+
 }
 
 r = requests.post('http://example.com/api/partner/register',
-                   params={}, headers = headers)
+                  data=<body_here>, params={}, headers = headers)
 
 print r.json()
 ```
@@ -174,17 +91,31 @@ print r.json()
 ```java
 URL obj = new URL("http://example.com/api/partner/register");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Accept", "application/json");
+con.setRequestProperty("Content-Type", "application/json");
+con.setRequestProperty("Authorization", "Bearer <token>");
+con.setDoOutput(true);
 con.setRequestMethod("POST");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
+OutputStream os = con.getOutputStream();
+OutputStreamWriter osw = new OutputStreamWriter(os, "UTF-8");
+osw.write("<body_here>");
+osw.flush();
+osw.close();
+os.close();  //don't forget to close the OutputStream
+httpCon.connect();
+
+
+//read the inputstream and print it
+String result;
+BufferedInputStream bis = new BufferedInputStream(con.getInputStream());
+ByteArrayOutputStream buf = new ByteArrayOutputStream();
+int result2 = bis.read();
+while(result2 != -1) {
+    buf.write((byte) result2);
+    result2 = bis.read();
 }
-in.close();
-System.out.println(response.toString());
+result = buf.toString();
+System.out.println(result);
 ```
 
 `POST /api/partner/register`

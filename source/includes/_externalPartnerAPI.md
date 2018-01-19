@@ -280,189 +280,51 @@ System.out.println(response.toString());
 ```shell
 curl -X POST http://example.com/api/externalpartner/merchant \
   -H 'Content-Type: application/json' \
-  -H 'Accept: application/json'
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer <token>'
+  -D '<body_here>'
 ```
 
-```http
-POST http://example.com/api/externalpartner/merchant HTTP/1.1
-Host: null
-Content-Type: application/json
-Accept: application/json
+```php
+<?php
+    $body="<body_here>";
+    $opts = array('http' =>
+      array(
+        'method'  => 'POST',
+        'header'  => "Authorization: Bearer <token>\r\nContent-Type: application/json\r\nAccept: application/json\r\n",
+        'content' => $body
+      )
+    );
+    $context  = stream_context_create($opts);
+    $URL = "http://example.com/api/externalpartner/merchant";
+    $result = file_get_contents($url, false, $context, -1, 40000);
+);
+
+
+$context = stream_context_create($aHTTP);
+    $response = file_get_contents($URL, false, $context);
+?>
+
 ```
 
 ```javascript
 var headers = {
   'Content-Type':'application/json',
-  'Accept':'application/json'
+  'Accept':'application/json',
+  'Authorization': 'Bearer <token>'
 };
+
+var requestBody=<body_here>
 
 $.ajax({
   url: 'http://example.com/api/externalpartner/merchant',
-  method: 'post',
+  method: 'POST',
   headers: headers,
+  data: requestBody,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-```
-
-```javascript--nodejs
-const request = require('node-fetch');
-const inputBody = '{
-  "address": "string",
-  "address2": "string",
-  "altAutosellInternal": true,
-  "authorizedSignerContact": {
-    "address": "string",
-    "address2": "string",
-    "beneficiaryPercent": 0,
-    "birthDate": "2018-01-08",
-    "city": "string",
-    "file": "string",
-    "fileBytes": "string",
-    "fileContentType": "string",
-    "firstName": "string",
-    "gender": "MALE",
-    "id": 0,
-    "lastName": "string",
-    "nationality": "string",
-    "note": "string",
-    "passportExpiryDate": "2018-01-08",
-    "passportIssueDate": "2018-01-08",
-    "passportNumber": "string",
-    "position": "string",
-    "primaryEmailAddress": "string",
-    "primaryMobilePhone": "string",
-    "secondaryEmailAddress": "string",
-    "secondaryMobilePhone": "string",
-    "state": {
-      "abbreviation": "string",
-      "id": 0,
-      "state": "string"
-    },
-    "zip": "string"
-  },
-  "autosell": true,
-  "beneficiaryPercent": 0,
-  "canEditOnboarded": true,
-  "city": "string",
-  "commissionFee": 0,
-  "companyEIN": "string",
-  "companyWebsite": "string",
-  "createdDate": "2018-01-08T16:57:22Z",
-  "customers": 0,
-  "emailAddress": "string",
-  "enabled": true,
-  "enroledBy": {
-    "address": "string",
-    "altAutosellInternal": true,
-    "associateType": "ALT36",
-    "autosell": true,
-    "beneficiaryPercent": 0,
-    "canEditOnboarded": true,
-    "city": "string",
-    "coinaPultApiKey": "string",
-    "commissionFee": 0,
-    "companyEIN": "string",
-    "companyWebsite": "string",
-    "createdDate": "2018-01-08T16:57:22Z",
-    "cryptoCapitalApiKey": "string",
-    "customers": 0,
-    "deletedDate": "2018-01-08T16:57:22Z",
-    "emailAddress": "string",
-    "enabled": true,
-    "enrolledBy": null,
-    "id": 0,
-    "incorporationDate": "2018-01-08",
-    "internalFee": 0,
-    "legalBusinessName": "string",
-    "locationsCount": 0,
-    "merchants": 0,
-    "note": "string",
-    "partners": 0,
-    "phone": "string",
-    "posCount": 0,
-    "state": {
-      "abbreviation": "string",
-      "id": 0,
-      "state": "string"
-    },
-    "usBankAccount": "string",
-    "vendors": 0,
-    "zip": "string"
-  },
-  "id": 0,
-  "incorporationDate": "2018-01-08",
-  "legalBusinessName": "string",
-  "locationsCount": 0,
-  "mainContact": {
-    "address": "string",
-    "address2": "string",
-    "beneficiaryPercent": 0,
-    "birthDate": "2018-01-08",
-    "city": "string",
-    "file": "string",
-    "fileBytes": "string",
-    "fileContentType": "string",
-    "firstName": "string",
-    "gender": "MALE",
-    "id": 0,
-    "lastName": "string",
-    "nationality": "string",
-    "note": "string",
-    "passportExpiryDate": "2018-01-08",
-    "passportIssueDate": "2018-01-08",
-    "passportNumber": "string",
-    "position": "string",
-    "primaryEmailAddress": "string",
-    "primaryMobilePhone": "string",
-    "secondaryEmailAddress": "string",
-    "secondaryMobilePhone": "string",
-    "state": {
-      "abbreviation": "string",
-      "id": 0,
-      "state": "string"
-    },
-    "zip": "string"
-  },
-  "merchants": 0,
-  "note": "string",
-  "partners": 0,
-  "phone": "string",
-  "posCount": 0,
-  "saleVolume": 0,
-  "state": {
-    "abbreviation": "string",
-    "id": 0,
-    "state": "string"
-  },
-  "usBankAccount": "string",
-  "user": {
-    "email": "string",
-    "firstName": "string",
-    "lastName": "string",
-    "login": "string"
-  },
-  "vendors": 0,
-  "zip": "string"
-}';
-
-const headers = {
-  'Content-Type':'application/json',
-  'Accept':'application/json'
-};
-
-fetch('http://example.com/api/externalpartner/merchant',
-{
-  method: 'POST',
-  body: inputBody,
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
 ```
 
 ```ruby
@@ -472,10 +334,11 @@ require 'json'
 headers = {
   'Content-Type' => 'application/json',
   'Accept' => 'application/json'
+  'Authorization'=>'Bearer <token>'
 }
 
 result = RestClient.post 'http://example.com/api/externalpartner/merchant',
-         params: {}, headers: headers
+         payload:<body_here>, headers: headers
 
 p JSON.parse(result)
 ```
@@ -485,11 +348,13 @@ import requests
 
 headers = {
   'Content-Type': 'application/json',
-  'Accept': 'application/json'
+  'Accept': 'application/json',
+  'Authorization': 'Bearer <token>'
+
 }
 
 r = requests.post('http://example.com/api/externalpartner/merchant',
-                   params={}, headers = headers)
+                  data=<body_here>, params={}, headers = headers)
 
 print r.json()
 ```
@@ -497,17 +362,31 @@ print r.json()
 ```java
 URL obj = new URL("http://example.com/api/externalpartner/merchant");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Accept", "application/json");
+con.setRequestProperty("Content-Type", "application/json");
+con.setRequestProperty("Authorization", "Bearer <token>");
+con.setDoOutput(true);
 con.setRequestMethod("POST");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
+OutputStream os = con.getOutputStream();
+OutputStreamWriter osw = new OutputStreamWriter(os, "UTF-8");
+osw.write("<body_here>");
+osw.flush();
+osw.close();
+os.close();  //don't forget to close the OutputStream
+httpCon.connect();
+
+
+//read the inputstream and print it
+String result;
+BufferedInputStream bis = new BufferedInputStream(con.getInputStream());
+ByteArrayOutputStream buf = new ByteArrayOutputStream();
+int result2 = bis.read();
+while(result2 != -1) {
+    buf.write((byte) result2);
+    result2 = bis.read();
 }
-in.close();
-System.out.println(response.toString());
+result = buf.toString();
+System.out.println(result);
 ```
 
 `POST /api/externalpartner/merchant`
@@ -1428,106 +1307,53 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X POST http://example.com/api/externalpartner/locations \
+curl -X POST http://example.com/api/externalpartner/locations\
   -H 'Content-Type: application/json' \
-  -H 'Accept: */*'
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer <token>'
+  -D '<body_here>'
 ```
 
-```http
-POST http://example.com/api/externalpartner/locations HTTP/1.1
-Host: null
-Content-Type: application/json
-Accept: */*
+```php
+<?php
+    $body="<body_here>";
+    $opts = array('http' =>
+      array(
+        'method'  => 'POST',
+        'header'  => "Authorization: Bearer <token>\r\nContent-Type: application/json\r\nAccept: application/json\r\n",
+        'content' => $body
+      )
+    );
+    $context  = stream_context_create($opts);
+    $URL = "http://example.com/api/externalpartner/locations";
+    $result = file_get_contents($url, false, $context, -1, 40000);
+);
+
+
+$context = stream_context_create($aHTTP);
+    $response = file_get_contents($URL, false, $context);
+?>
+
 ```
 
 ```javascript
 var headers = {
   'Content-Type':'application/json',
-  'Accept':'*/*'
+  'Accept':'application/json',
+  'Authorization': 'Bearer <token>'
 };
+
+var requestBody=<body_here>
 
 $.ajax({
   url: 'http://example.com/api/externalpartner/locations',
-  method: 'post',
+  method: 'POST',
   headers: headers,
+  data: requestBody,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-```
-
-```javascript--nodejs
-const request = require('node-fetch');
-const inputBody = '{
-  "address": "string",
-  "address2": "string",
-  "city": "string",
-  "contact": {
-    "address": "string",
-    "address2": "string",
-    "beneficiaryPercent": 0,
-    "birthDate": "2018-01-08",
-    "city": "string",
-    "contactType": "MAIN",
-    "file": "string",
-    "firstName": "string",
-    "gender": "MALE",
-    "id": 0,
-    "lastName": "string",
-    "nationality": "string",
-    "note": "string",
-    "notificationCronSchedule": "string",
-    "notificationEvent": "INBOUND_TRANSACTION",
-    "notifyByEmail": true,
-    "notifyByTextMessage": true,
-    "passportExpiryDate": "2018-01-08",
-    "passportIssueDate": "2018-01-08",
-    "passportNumber": "string",
-    "position": "string",
-    "primaryEmailAddress": "string",
-    "primaryMobilePhone": "string",
-    "secondaryEmailAddress": "string",
-    "secondaryMobilePhone": "string",
-    "zip": "string"
-  },
-  "country": "string",
-  "emailAddress": "string",
-  "file": "string",
-  "fileBytes": "string",
-  "fileContentType": "string",
-  "geoLocation": "string",
-  "id": 0,
-  "merchantId": 0,
-  "name": "string",
-  "noOfPos": 0,
-  "note": "string",
-  "parentLocationId": 0,
-  "phone": "string",
-  "state": {
-    "abbreviation": "string",
-    "id": 0,
-    "state": "string"
-  },
-  "website": "string",
-  "zip": "string"
-}';
-
-const headers = {
-  'Content-Type':'application/json',
-  'Accept':'*/*'
-};
-
-fetch('http://example.com/api/externalpartner/locations',
-{
-  method: 'POST',
-  body: inputBody,
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
 ```
 
 ```ruby
@@ -1536,11 +1362,12 @@ require 'json'
 
 headers = {
   'Content-Type' => 'application/json',
-  'Accept' => '*/*'
+  'Accept' => 'application/json'
+  'Authorization'=>'Bearer <token>'
 }
 
 result = RestClient.post 'http://example.com/api/externalpartner/locations',
-         params: {}, headers: headers
+         payload:<body_here>, headers: headers
 
 p JSON.parse(result)
 ```
@@ -1550,11 +1377,13 @@ import requests
 
 headers = {
   'Content-Type': 'application/json',
-  'Accept': '*/*'
+  'Accept': 'application/json',
+  'Authorization': 'Bearer <token>'
+
 }
 
 r = requests.post('http://example.com/api/externalpartner/locations',
-                   params={}, headers = headers)
+                  data=<body_here>, params={}, headers = headers)
 
 print r.json()
 ```
@@ -1562,17 +1391,31 @@ print r.json()
 ```java
 URL obj = new URL("http://example.com/api/externalpartner/locations");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Accept", "application/json");
+con.setRequestProperty("Content-Type", "application/json");
+con.setRequestProperty("Authorization", "Bearer <token>");
+con.setDoOutput(true);
 con.setRequestMethod("POST");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
+OutputStream os = con.getOutputStream();
+OutputStreamWriter osw = new OutputStreamWriter(os, "UTF-8");
+osw.write("<body_here>");
+osw.flush();
+osw.close();
+os.close();  //don't forget to close the OutputStream
+httpCon.connect();
+
+
+//read the inputstream and print it
+String result;
+BufferedInputStream bis = new BufferedInputStream(con.getInputStream());
+ByteArrayOutputStream buf = new ByteArrayOutputStream();
+int result2 = bis.read();
+while(result2 != -1) {
+    buf.write((byte) result2);
+    result2 = bis.read();
 }
-in.close();
-System.out.println(response.toString());
+result = buf.toString();
+System.out.println(result);
 ```
 
 `POST /api/externalpartner/locations`
@@ -2230,127 +2073,53 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-# You can also use wget
 curl -X POST http://example.com/api/externalpartner/point-of-sales \
   -H 'Content-Type: application/json' \
-  -H 'Accept: */*'
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer <token>'
+  -D '<body_here>'
 ```
 
-```http
-POST http://example.com/api/externalpartner/point-of-sales HTTP/1.1
-Host: null
-Content-Type: application/json
-Accept: */*
+```php
+<?php
+    $body="<body_here>";
+    $opts = array('http' =>
+      array(
+        'method'  => 'POST',
+        'header'  => "Authorization: Bearer <token>\r\nContent-Type: application/json\r\nAccept: application/json\r\n",
+        'content' => $body
+      )
+    );
+    $context  = stream_context_create($opts);
+    $URL = "http://example.com/api/externalpartner/point-of-sales";
+    $result = file_get_contents($url, false, $context, -1, 40000);
+);
+
+
+$context = stream_context_create($aHTTP);
+    $response = file_get_contents($URL, false, $context);
+?>
+
 ```
 
 ```javascript
 var headers = {
   'Content-Type':'application/json',
-  'Accept':'*/*'
+  'Accept':'application/json',
+  'Authorization': 'Bearer <token>'
 };
+
+var requestBody=<body_here>
 
 $.ajax({
   url: 'http://example.com/api/externalpartner/point-of-sales',
-  method: 'post',
+  method: 'POST',
   headers: headers,
+  data: requestBody,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-```
-
-```javascript--nodejs
-const request = require('node-fetch');
-const inputBody = '{
-  "active": true,
-  "deletedDate": "2018-01-08T16:57:22Z",
-  "id": 0,
-  "inventoryNumber": "string",
-  "location": {
-    "address": "string",
-    "address2": "string",
-    "associate": {
-      "address": "string",
-      "altAutosellInternal": true,
-      "associateType": "ALT36",
-      "autosell": true,
-      "beneficiaryPercent": 0,
-      "canEditOnboarded": true,
-      "city": "string",
-      "coinaPultApiKey": "string",
-      "commissionFee": 0,
-      "companyEIN": "string",
-      "companyWebsite": "string",
-      "createdDate": "2018-01-08T16:57:22Z",
-      "cryptoCapitalApiKey": "string",
-      "customers": 0,
-      "deletedDate": "2018-01-08T16:57:22Z",
-      "emailAddress": "string",
-      "enabled": true,
-      "enrolledBy": null,
-      "id": 0,
-      "incorporationDate": "2018-01-08",
-      "internalFee": 0,
-      "legalBusinessName": "string",
-      "locationsCount": 0,
-      "merchants": 0,
-      "note": "string",
-      "partners": 0,
-      "phone": "string",
-      "posCount": 0,
-      "state": {
-        "abbreviation": "string",
-        "id": 0,
-        "state": "string"
-      },
-      "usBankAccount": "string",
-      "vendors": 0,
-      "zip": "string"
-    },
-    "city": "string",
-    "country": "string",
-    "deletedDate": "2018-01-08T16:57:22Z",
-    "emailAddress": "string",
-    "file": "string",
-    "geoLocation": "string",
-    "id": 0,
-    "name": "string",
-    "note": "string",
-    "parentLocation": null,
-    "phone": "string",
-    "pointOfSales": [
-      null
-    ],
-    "state": {
-      "abbreviation": "string",
-      "id": 0,
-      "state": "string"
-    },
-    "website": "string",
-    "zip": "string"
-  },
-  "name": "string",
-  "note": "string",
-  "pointOfSaleType": "GREENBITS",
-  "virtualPointOfSalesEnabled": true
-}';
-
-const headers = {
-  'Content-Type':'application/json',
-  'Accept':'*/*'
-};
-
-fetch('http://example.com/api/externalpartner/point-of-sales',
-{
-  method: 'POST',
-  body: inputBody,
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
 ```
 
 ```ruby
@@ -2359,11 +2128,12 @@ require 'json'
 
 headers = {
   'Content-Type' => 'application/json',
-  'Accept' => '*/*'
+  'Accept' => 'application/json'
+  'Authorization'=>'Bearer <token>'
 }
 
 result = RestClient.post 'http://example.com/api/externalpartner/point-of-sales',
-         params: {}, headers: headers
+         payload:<body_here>, headers: headers
 
 p JSON.parse(result)
 ```
@@ -2373,11 +2143,13 @@ import requests
 
 headers = {
   'Content-Type': 'application/json',
-  'Accept': '*/*'
+  'Accept': 'application/json',
+  'Authorization': 'Bearer <token>'
+
 }
 
 r = requests.post('http://example.com/api/externalpartner/point-of-sales',
-                   params={}, headers = headers)
+                  data=<body_here>, params={}, headers = headers)
 
 print r.json()
 ```
@@ -2385,17 +2157,31 @@ print r.json()
 ```java
 URL obj = new URL("http://example.com/api/externalpartner/point-of-sales");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Accept", "application/json");
+con.setRequestProperty("Content-Type", "application/json");
+con.setRequestProperty("Authorization", "Bearer <token>");
+con.setDoOutput(true);
 con.setRequestMethod("POST");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
+OutputStream os = con.getOutputStream();
+OutputStreamWriter osw = new OutputStreamWriter(os, "UTF-8");
+osw.write("<body_here>");
+osw.flush();
+osw.close();
+os.close();  //don't forget to close the OutputStream
+httpCon.connect();
+
+
+//read the inputstream and print it
+String result;
+BufferedInputStream bis = new BufferedInputStream(con.getInputStream());
+ByteArrayOutputStream buf = new ByteArrayOutputStream();
+int result2 = bis.read();
+while(result2 != -1) {
+    buf.write((byte) result2);
+    result2 = bis.read();
 }
-in.close();
-System.out.println(response.toString());
+result = buf.toString();
+System.out.println(result);
 ```
 
 `POST /api/externalpartner/point-of-sales`
