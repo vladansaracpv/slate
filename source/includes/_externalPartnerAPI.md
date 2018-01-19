@@ -21,7 +21,7 @@ $URL = "http://example.com/api/externalpartner/merchants";
 
 $aHTTP['http']['method']  = 'GET';
 
-$aHTTP['http']['header']  = "Authorization: <token>";
+$aHTTP['http']['header']  = "Authorization: Bearer <token>";
 
 $context = stream_context_create($aHTTP);
 
@@ -177,7 +177,7 @@ $URL = "http://example.com/api/externalpartner/merchants/<id>";
 
 $aHTTP['http']['method']  = 'GET';
 
-$aHTTP['http']['header']  = "Authorization: <token>";
+$aHTTP['http']['header']  = "Authorization: Bearer <token>";
 
 $context = stream_context_create($aHTTP);
 
@@ -1213,7 +1213,7 @@ $URL = "http://example.com/api/externalpartner/locations";
 
 $aHTTP['http']['method']  = 'GET';
 
-$aHTTP['http']['header']  = "Authorization: <token>";
+$aHTTP['http']['header']  = "Authorization: Bearer <token>";
 
 $context = stream_context_create($aHTTP);
 
@@ -1327,7 +1327,7 @@ $URL = "http://example.com/api/externalpartner/locations/<id>";
 
 $aHTTP['http']['method']  = 'GET';
 
-$aHTTP['http']['header']  = "Authorization: <token>";
+$aHTTP['http']['header']  = "Authorization: Bearer <token>";
 
 $context = stream_context_create($aHTTP);
 
@@ -2014,7 +2014,7 @@ $URL = "http://example.com/api/externalpartner/point-of-sales";
 
 $aHTTP['http']['method']  = 'GET';
 
-$aHTTP['http']['header']  = "Authorization: <token>";
+$aHTTP['http']['header']  = "Authorization: Bearer <token>";
 
 $context = stream_context_create($aHTTP);
 
@@ -2129,7 +2129,7 @@ $URL = "http://example.com/api/externalpartner/point-of-sales/<id>";
 
 $aHTTP['http']['method']  = 'GET';
 
-$aHTTP['http']['header']  = "Authorization: <token>";
+$aHTTP['http']['header']  = "Authorization: Bearer <token>";
 
 $context = stream_context_create($aHTTP);
 

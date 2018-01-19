@@ -730,47 +730,36 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/partners/{id} -H 'Accept: */*'
+curl -X GET http://example.com/api/partners/<id> -H Authorization: Bearer <token>'
 ```
 
-```http
-GET http://example.com/api/partners/{id} HTTP/1.1
-Host: null
-Accept: */*
-```
+```php
+<?php
+$URL = "http://example.com/api/partners/<id>";
 
+$aHTTP['http']['method']  = 'GET';
+
+$aHTTP['http']['header']  = "Authorization: Bearer <token>";
+
+$context = stream_context_create($aHTTP);
+
+$response = file_get_contents($URL, false, $context);
+?>
+
+```
 
 ```javascript
 var headers = {
-  'Accept':'*/*'
+  'Authorization':'Bearer <token>'
 };
 
 $.ajax({
-  url: 'http://example.com/api/partners/{id}',
+  url: 'http://example.com/api/partners/<id>',
   method: 'get',
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
-})
-```
-
-```javascript--nodejs
-const request = require('node-fetch');
-
-const headers = {
-  'Accept':'*/*'
-};
-
-fetch('http://example.com/api/partners/{id}',
-{
-  method: 'GET',
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
 });
 ```
 
@@ -779,10 +768,10 @@ require 'rest-client'
 require 'json'
 
 headers = {
-  'Accept' => '*/*'
+  'Authorization' => 'Bearer <token>'
 }
 
-result = RestClient.get 'http://example.com/api/partners/{id}',
+result = RestClient.get 'http://example.com/api/partners/<id>',
          params: {}, headers: headers
 
 p JSON.parse(result)
@@ -792,18 +781,19 @@ p JSON.parse(result)
 import requests
 
 headers = {
-  'Accept': '*/*'
+  'Authorization': 'Bearer <token>'
 }
 
-r = requests.get('http://example.com/api/partners/{id}',
+r = requests.get('http://example.com/api/partners/<id>',
                   params={}, headers = headers)
 
 print r.json()
 ```
 
 ```java
-URL obj = new URL("http://example.com/api/partners/{id}");
+URL obj = new URL("http://example.com/api/partners/<id>");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Authorization", "Bearer <token>");
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
 BufferedReader in = new BufferedReader(
@@ -817,7 +807,7 @@ in.close();
 System.out.println(response.toString());
 ```
 
-`GET /api/partners/{id}`
+`GET /api/partners/<id>`
 
 *Get the partner by ID*
 
