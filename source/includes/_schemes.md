@@ -1312,7 +1312,7 @@
 |---|---|---|---|
 |active|boolean|false|No description|
 |deletedDate|string(date-time)|false|No description|
-|id|integer(int64)|false|No description|
+|id|integer(int64)|false|Mandatory on update|
 |inventoryNumber|string|false|No description|
 |location|[Location](#schemalocation)|true|No description|
 |name|string|false|No description|
@@ -4474,7 +4474,7 @@
 |fileBytes|string(byte)|false|No description|
 |fileContentType|string|false|No description|
 |geoLocation|string|false|No description|
-|id|integer(int64)|false|No description|
+|id|integer(int64)|false|Mandatory on update|
 |name|string|true|No description|
 |noOfPos|integer(int32)|false|No description|
 |note|string|false|No description|
