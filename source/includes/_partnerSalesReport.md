@@ -644,7 +644,7 @@ System.out.println(response.toString());
 
 <a id="opIdcreateAnalyticReports-location-list"></a>
 
-`GET /api/v1/analytics/merchant/<merchantid>/location`
+`GET /api/v1/analytics/merchant/<merchant_id>/location`
 
 *Fetch list of all locations for a specific Merchant with sales summary info.*
 
@@ -657,6 +657,7 @@ System.out.println(response.toString());
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
+|merchant_id|path|integer|true|Merchant identifier for whom data is requested|
 |timerange_from|query|string|true|start date/datetime in ISO format|
 |timerange_to|query|string|true|end date/datetime in ISO format|
 |page|query|integer|true|Page of data in “data” section. Note that this is not offset, because server calculates offset based on current page value and sent pageSize. Page counting starts with 0.|
@@ -827,6 +828,8 @@ System.out.println(response.toString());
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
+|merchant_id|path|integer|true|Merchant identifier for whom data is requested|
+|location_id|path|integer|true|Location identifier for which data is requested|
 |timerange_from|query|string|true|start date/datetime in ISO format|
 |timerange_to|query|string|true|end date/datetime in ISO format|
 |page|query|integer|true|Page of data in “data” section. Note that this is not offset, because server calculates offset based on current page value and sent pageSize. Page counting starts with 0.|
@@ -997,6 +1000,7 @@ System.out.println(response.toString());
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
+|location_id|path|integer|true|Location identifier for which data is requested|
 |timerange_from|query|string|true|start date/datetime in ISO format|
 |timerange_to|query|string|true|end date/datetime in ISO format|
 |page|query|integer|true|Page of data in “data” section. Note that this is not offset, because server calculates offset based on current page value and sent pageSize. Page counting starts with 0.|

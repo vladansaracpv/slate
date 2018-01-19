@@ -4,7 +4,7 @@
 
 <a id="opIdcreateTaxReport"></a>
 
-`GET /api/v1/analytics/reports/tax/{associateId}`
+`GET /api/v1/analytics/reports/tax/<associate_id>`
 
 *Get tax report for your associate ID for a period of time.*
 
@@ -16,6 +16,7 @@
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
+|associate_id|path|integer|true|Associate identifier for whom data is requested|
 |timerange_from|query|string|true|start date/datetime in ISO format|
 |timerange_to|query|string|true|end date/datetime in ISO format|
 

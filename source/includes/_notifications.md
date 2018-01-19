@@ -27,6 +27,7 @@ A user may pay more or less than the amount requested simply by altering the amo
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
+|internal_tx_id|path|string|true|Internal transaction identifier for which data is requested|
 |body|body|[InternalRequest](#tocInternalRequest)|false|InternalRequest object|
 
 >Body parameter

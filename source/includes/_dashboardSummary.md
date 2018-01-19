@@ -269,7 +269,7 @@ System.out.println(response.toString());
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[RolePerformanceResponse](#tocRolePerformanceResponse)|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[SalesSummaryResponse](#tocSalesSummaryResponse)|
 |500|Internal server error|Internal server error|[ErrorMessage](#schemareporterrormessage)|
 |403|Forbidden|Forbidden|[ErrorMessage](#schemareporterrormessage)|
 

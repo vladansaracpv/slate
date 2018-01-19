@@ -331,6 +331,7 @@ System.out.println(response.toString());
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
+|location_id|path|integer|true|Location identifier for which data is requested|
 |timerange_from|query|string|true|start date/datetime in ISO format|
 |timerange_to|query|string|true|end date/datetime in ISO format|
 |page|query|integer|true|Page of data in “data” section. Note that this is not offset, because server calculates offset based on current page value and sent pageSize. Page counting starts with 0.|
