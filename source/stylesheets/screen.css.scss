@@ -58,7 +58,7 @@ html, body {
   left: 0;
   bottom: 0;
   width: $nav-width;
-  background-color: #1a1a1a;//$nav-bg;
+  background-color: $nav-bg;
   font-size: 13px;
   font-weight: bold;
 
@@ -81,11 +81,10 @@ html, body {
     position: relative;
 
     input {
-      background: #1a1a1a;
-      //background: $nav-bg;
+      background: $nav-bg;
       border-width: 0 0 1px 0;
       border-color: $search-box-border-color;
-      padding: 6px 0 6px 20px;
+      padding: 6px 0 6px 0;
       box-sizing: border-box;
       margin: $nav-v-padding $nav-padding;
       width: $nav-width - 30;
@@ -93,16 +92,16 @@ html, body {
       color: $nav-text;
       border-radius: 0; /* ios has a default border radius */
       font-size: 14px;
-line-height: 12px;
-color: rgb(152,152,152);
+      line-height: 12px;
+      color: rgb(152,152,152);
 // font-family: "Roboto-Regular";
 // text-align: center;
     }
 
-    &:before {
+    &:after {
       position: absolute;
       top: 17px;
-      left: $nav-padding;
+      right: $nav-padding;
       color: $nav-text;
       @extend %icon-search;
     }
@@ -162,28 +161,45 @@ color: rgb(152,152,152);
 
   // This is the currently selected ToC entry
   .toc-link.active {
+    //CHANGED
+    background-color: #000;
     // background-color: $nav-active-bg;
-    border-bottom:1px solid;
-    color: $nav-active-text;
+    
+    // color: $nav-active-text;
+
+    span {
+      position: relative;
+      padding-bottom: 5px;
+      border-bottom:1px solid #fff;
+    }
+    span:after {
+      position: absolute; 
+      left: 0; 
+      bottom: 0; 
+      width: 100%; 
+      height: 1px; 
+      border-bottom: 1px solid #000; 
+      content: ""
+    }
   }
 
   // this is parent links of the currently selected ToC entry
   .toc-link.active-parent {
-    background-color: $nav-active-parent-bg;
+    // background-color: $nav-active-parent-bg;
     color: $nav-active-parent-text;
   }
 
   .toc-list-h2 {
     display: none;
-    // background-color: $nav-subitem-bg;
-    background-color: #1a1a1a;
+    background-color: $nav-subitem-bg;
     font-weight: 500;
   }
 
-  .toc-h2, .toc-h3 {
+  .toc-h2 {
     padding-left: $nav-padding + $nav-indent;
     font-size: 12px;
-    color: rgb(114,114,114);
+    // color: rgb(114,114,114);
+    color: rgb(243,247,249);
   }
 
   .toc-list-h3 {
@@ -194,6 +210,7 @@ color: rgb(152,152,152);
   .toc-h3 {
     padding-left: $nav-padding + $nav-padding + $nav-indent;
     font-size: 12px;
+    color:rgb(162,162,162);
   }
 
   .toc-list-h4 {
@@ -204,6 +221,7 @@ color: rgb(152,152,152);
   .toc-h4 {
     padding-left: $nav-padding + $nav-padding + $nav-padding + $nav-indent;
     font-size: 12px;
+    color:rgba(162, 162, 162, 0.707);
   }
 
   .toc-footer {
@@ -305,22 +323,31 @@ color: rgb(152,152,152);
   .lang-selector {
     position: fixed;
     z-index: 50;
-    border-bottom: 5px solid $lang-select-active-bg;
+    //CHANGED
+    // border-bottom: 5px solid $lang-select-active-bg;
   }
 }
 
 .lang-selector {
   background-color: $lang-select-bg;
   width: 100%;
+  padding:10px;
   font-weight: bold;
   a {
     display: block;
     float:left;
     color: $lang-select-text;
     text-decoration: none;
-    padding: 0 10px;
+    //CHANGED
+    // padding: 0 10px;
+    padding: 5px 20px;
     line-height: 30px;
     outline: 0;
+    //CHANGED
+    text-transform: capitalize;
+    //CHANGED - ADDED
+    border: 1px solid #595959;
+    margin: 0px 5px;
 
     &:active, &:focus {
       background-color: $lang-select-pressed-bg;
@@ -328,7 +355,10 @@ color: rgb(152,152,152);
     }
 
     &.active {
-      background-color: $lang-select-active-bg;
+      //CHANGED
+      // background-color: $lang-select-active-bg;
+      border:none;
+      background-color: #000;
       color: $lang-select-active-text;
     }
   }
@@ -385,7 +415,9 @@ color: rgb(152,152,152);
     margin-top: 2em;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-    background-color: #fdfdfd;
+    //CHANGED
+    // background-color: #fdfdfd;
+    background-color: #FFFFFF;
     
   }
 
@@ -451,16 +483,21 @@ color: rgb(152,152,152);
       padding: 10px;
     }
 
-    tr:last-child {
-      border-bottom: 1px solid #ccc;
-    }
+    //CHANGED
+    // tr:last-child { 
+    //   border-bottom: 1px solid #ccc;
+    // }
 
     tr:nth-child(odd)>td {
-      background-color: lighten($main-bg,4.2%);
+      //CHANGED
+      // background-color: lighten($main-bg,4.2%);
+      background-color: #F5F5F5;
     }
 
     tr:nth-child(even)>td {
-      background-color: lighten($main-bg,2.4%);
+      //CHANGED
+      // background-color: lighten($main-bg,2.4%);
+      background-color: #F1F2F3;
     }
   }
 
