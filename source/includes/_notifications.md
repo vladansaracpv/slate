@@ -11,26 +11,66 @@ The base URL for Sandbox environment is:
 
 ### Payment Notification
 
-`GET /api/pos/payment/notification/<internal_tx_id>`
+> Code samples
 
-**Important**: This is not simple GET request, event source object has to be used as specified [here](https://developer.mozilla.org/en-US/docs/Web/API/EventSource). For other clients there are appropriate libraries provided.
+```shell
+curl -X GET http://example.com/api/pos/payment/notification/<internal_tx_id>
+```
 
-**Required authentication:**
+```php
 
-   * `No authentication is required`
+```
 
-**Important usage notice**
+```javascript
+var evtSource = new EventSource("http://example.com/api/pos/payment/notification/<internal_tx_id>", { withCredentials: true } );
 
-A user may pay more or less than the amount requested simply by altering the amount to be paid from their mobile wallet after they scan the presented QR code. Therefore an addition parameter `warning_msg` is provided which includes a message with the exact difference. If the amount paid is equal as the requested amount, this parameter is omitted or empty.
+evtSource.onmessage = function(e) {
+  var newElement = document.createElement("li");
 
-<!--<h3 id="getAllPaginatedUsingGET_4-internal_fiat_to_crypto">Parameters</h3>-->
+  newElement.innerHTML = "message: " + e.data;
+  eventList.appendChild(newElement);
+}
 
-|Parameter|In|Type|Required|Description|
-|---|---|---|---|---|
-|internal_tx_id|path|string|true|Internal transaction identifier for which data is requested|
-|body|body|[InternalRequest](#tocInternalRequest)|false|InternalRequest object|
+evtSource.onerror = function(e) {
+  console.log("EventSource failed.");
+};
+```
 
->Body parameter
+```ruby
+require "em-eventsource"
+EM.run do
+  source = EventMachine::EventSource.new("http://example.com/api/pos/payment/notification/<internal_tx_id>")
+  source.message do |message|
+    puts "new message #{message}"
+  end
+  source.start # Start listening
+end
+```
+
+```python
+from sseclient import SSEClient
+
+messages = SSEClient('http://example.com/api/pos/payment/notification/<internal_tx_id>')
+for msg in messages:
+    do_something_useful(msg)
+```
+
+```java
+   URI streamdataUri = new URI("http://example.com/api/pos/payment/notification/<internal_tx_id>");  
+   ResolvableType type = forClassWithGenerics(ServerSentEvent.class, JsonNode.class);
+   WebClient client = WebClient.create();
+   Flux<ServerSentEvent<JsonNode>> events =
+             client.get()
+                   .uri(streamdataUri)
+                   .accept(TEXT_EVENT_STREAM)
+                   .exchange()
+             .flatMapMany(response -> response.body(toFlux(type)));
+
+    events.subscribe(System.out::println,Throwable::printStackTrace);
+```
+
+
+> Example response
 
 ```json
 {
@@ -49,3 +89,22 @@ A user may pay more or less than the amount requested simply by altering the amo
   }
 }
 ```
+
+`GET /api/pos/payment/notification/<internal_tx_id>`
+
+**Important**: This is not simple GET request, event source object has to be used as specified [here](https://developer.mozilla.org/en-US/docs/Web/API/EventSource). For other clients there are appropriate libraries provided.
+
+**Required authentication:**
+
+   * `No authentication is required`
+
+**Important usage notice**
+
+A user may pay more or less than the amount requested simply by altering the amount to be paid from their mobile wallet after they scan the presented QR code. Therefore an addition parameter `warning_msg` is provided which includes a message with the exact difference. If the amount paid is equal as the requested amount, this parameter is omitted or empty.
+
+<!--<h3 id="getAllPaginatedUsingGET_4-internal_fiat_to_crypto">Parameters</h3>-->
+
+|Parameter|In|Type|Required|Description|
+|---|---|---|---|---|
+|internal_tx_id|path|string|true|Internal transaction identifier for which data is requested|
+|body|body|[InternalRequest](#tocInternalRequest)|false|InternalRequest object|
