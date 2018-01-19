@@ -320,24 +320,120 @@ System.out.println(result);
 
 ### Send DASH to External wallet
 
-<a id="opIdcreate_intenal_crypto_2_external_crypto"></a>
+> Code samples
 
-`POST /api/transfer/internal_crypto/2/external_crypto`
+```shell
+curl -X POST http://example.com/api/transfer/internal_crypto/2/external_crypto \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer <token>'
+  -D '<body_here>'
+```
 
-*Send DASH to an external wallet by providing destination address.*
+```php
+<?php
+    $body="<body_here>";
+    $opts = array('http' =>
+      array(
+        'method'  => 'POST',
+        'header'  => "Authorization: Bearer <token>\r\nContent-Type: application/json\r\nAccept: application/json\r\n",
+        'content' => $body
+      )
+    );
+    $context  = stream_context_create($opts);
+    $URL = "http://example.com/api/transfer/internal_crypto/2/external_crypto";
+    $result = file_get_contents($url, false, $context, -1, 40000);
+);
 
-**Required user role:**
 
-   * `ROLE_PARTNER_ADMIN`
-   * `ROLE_MERCHANT_ADMIN`
-   * `ROLE_VENDOR_ADMIN`
-   * `ROLE_CUSTOMER_ADMIN`
+$context = stream_context_create($aHTTP);
+    $response = file_get_contents($URL, false, $context);
+?>
 
-<!--<h3 id="getAllPaginatedUsingGET_4-internal_crypto_to_extenal_crypto">Parameters</h3>-->
+```
 
-|Parameter|In|Type|Required|Description|
-|---|---|---|---|---|
-|body|body|[InternalRequest](#tocInternalRequest)|false|InternalRequest object|
+```javascript
+var headers = {
+  'Content-Type':'application/json',
+  'Accept':'application/json',
+  'Authorization': 'Bearer <token>'
+};
+
+var requestBody=<body_here>
+
+$.ajax({
+  url: 'http://example.com/api/transfer/internal_crypto/2/external_crypto',
+  method: 'POST',
+  headers: headers,
+  data: requestBody,
+  success: function(data) {
+    console.log(JSON.stringify(data));
+  }
+})
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'application/json'
+  'Authorization'=>'Bearer <token>'
+}
+
+result = RestClient.post 'http://example.com/api/transfer/internal_crypto/2/external_crypto',
+         payload:<body_here>, headers: headers
+
+p JSON.parse(result)
+```
+
+```python
+import requests
+
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer <token>'
+
+}
+
+r = requests.post('http://example.com/api/transfer/internal_crypto/2/external_crypto',
+                  data=<body_here>, params={}, headers = headers)
+
+print r.json()
+```
+
+```java
+URL obj = new URL("http://example.com/api/transfer/internal_crypto/2/external_crypto");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Accept", "application/json");
+con.setRequestProperty("Content-Type", "application/json");
+con.setRequestProperty("Authorization", "Bearer <token>");
+con.setDoOutput(true);
+con.setRequestMethod("POST");
+OutputStream os = con.getOutputStream();
+OutputStreamWriter osw = new OutputStreamWriter(os, "UTF-8");
+osw.write("<body_here>");
+osw.flush();
+osw.close();
+os.close();  //don't forget to close the OutputStream
+httpCon.connect();
+
+
+//read the inputstream and print it
+String result;
+BufferedInputStream bis = new BufferedInputStream(con.getInputStream());
+ByteArrayOutputStream buf = new ByteArrayOutputStream();
+int result2 = bis.read();
+while(result2 != -1) {
+    buf.write((byte) result2);
+    result2 = bis.read();
+}
+result = buf.toString();
+System.out.println(result);
+```
+
 
 >Body parameter
 
@@ -354,13 +450,6 @@ System.out.println(result);
 }
 ```
 
-<h3 id="poscreatenewpaymentrequest-responses">Responses</h3>
-
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[InternalResponse](#tocInternalResponse)|
-|401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 > Example responses
 
@@ -384,13 +473,11 @@ System.out.println(result);
 }
 ```
 
-### Convert DASH
+<a id="opIdcreate_intenal_crypto_2_external_crypto"></a>
 
-<a id="opIdcreate_intenal_crypto_2_fiat"></a>
+`POST /api/transfer/internal_crypto/2/external_crypto`
 
-`POST /api/convert/crypto/2/fiat`
-
-*Internal conversion from cryptocurrency (DASH) to FIAT (USD).*
+*Send DASH to an external wallet by providing destination address.*
 
 **Required user role:**
 
@@ -399,11 +486,137 @@ System.out.println(result);
    * `ROLE_VENDOR_ADMIN`
    * `ROLE_CUSTOMER_ADMIN`
 
-<!--<h3 id="getAllPaginatedUsingGET_4-internal_crypto_to_fiat">Parameters</h3>-->
+<!--<h3 id="getAllPaginatedUsingGET_4-internal_crypto_to_extenal_crypto">Parameters</h3>-->
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|[InternalRequest](#tocInternalRequest)|false|InternalRequest object|
+
+
+<h3 id="poscreatenewpaymentrequest-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[InternalResponse](#tocInternalResponse)|
+|401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+
+### Convert DASH
+
+> Code samples
+
+```shell
+curl -X POST http://example.com/api/convert/crypto/2/fiat \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer <token>'
+  -D '<body_here>'
+```
+
+```php
+<?php
+    $body="<body_here>";
+    $opts = array('http' =>
+      array(
+        'method'  => 'POST',
+        'header'  => "Authorization: Bearer <token>\r\nContent-Type: application/json\r\nAccept: application/json\r\n",
+        'content' => $body
+      )
+    );
+    $context  = stream_context_create($opts);
+    $URL = "http://example.com/api/convert/crypto/2/fiat";
+    $result = file_get_contents($url, false, $context, -1, 40000);
+);
+
+
+$context = stream_context_create($aHTTP);
+    $response = file_get_contents($URL, false, $context);
+?>
+
+```
+
+```javascript
+var headers = {
+  'Content-Type':'application/json',
+  'Accept':'application/json',
+  'Authorization': 'Bearer <token>'
+};
+
+var requestBody=<body_here>
+
+$.ajax({
+  url: 'http://example.com/api/convert/crypto/2/fiat',
+  method: 'POST',
+  headers: headers,
+  data: requestBody,
+  success: function(data) {
+    console.log(JSON.stringify(data));
+  }
+})
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'application/json'
+  'Authorization'=>'Bearer <token>'
+}
+
+result = RestClient.post 'http://example.com/api/convert/crypto/2/fiat',
+         payload:<body_here>, headers: headers
+
+p JSON.parse(result)
+```
+
+```python
+import requests
+
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer <token>'
+
+}
+
+r = requests.post('http://example.com/api/convert/crypto/2/fiat',
+                  data=<body_here>, params={}, headers = headers)
+
+print r.json()
+```
+
+```java
+URL obj = new URL("http://example.com/api/convert/crypto/2/fiat");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Accept", "application/json");
+con.setRequestProperty("Content-Type", "application/json");
+con.setRequestProperty("Authorization", "Bearer <token>");
+con.setDoOutput(true);
+con.setRequestMethod("POST");
+OutputStream os = con.getOutputStream();
+OutputStreamWriter osw = new OutputStreamWriter(os, "UTF-8");
+osw.write("<body_here>");
+osw.flush();
+osw.close();
+os.close();  //don't forget to close the OutputStream
+httpCon.connect();
+
+
+//read the inputstream and print it
+String result;
+BufferedInputStream bis = new BufferedInputStream(con.getInputStream());
+ByteArrayOutputStream buf = new ByteArrayOutputStream();
+int result2 = bis.read();
+while(result2 != -1) {
+    buf.write((byte) result2);
+    result2 = bis.read();
+}
+result = buf.toString();
+System.out.println(result);
+```
 
 >Body parameter
 
@@ -418,14 +631,6 @@ System.out.println(result);
     "note":"Some transaction note string"
 }
 ```
-
-<h3 id="poscreatenewpaymentrequest-responses">Responses</h3>
-
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[InternalResponse](#tocInternalResponse)|
-|401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 > Example responses
 
@@ -445,14 +650,11 @@ System.out.println(result);
     }
 }
 ```
+<a id="opIdcreate_intenal_crypto_2_fiat"></a>
 
-### Buy DASH
+`POST /api/convert/crypto/2/fiat`
 
-<a id="opIdcreate_fiat_to_crypto"></a>
-
-`POST /api/convert/fiat/2/crypto`
-
-*Internal conversion from FIAT (USD) to cryptocurrency (DASH) - Buy DASH.*
+*Internal conversion from cryptocurrency (DASH) to FIAT (USD).*
 
 **Required user role:**
 
@@ -461,11 +663,137 @@ System.out.println(result);
    * `ROLE_VENDOR_ADMIN`
    * `ROLE_CUSTOMER_ADMIN`
 
-<!--<h3 id="getAllPaginatedUsingGET_4-internal_fiat_to_crypto">Parameters</h3>-->
+<!--<h3 id="getAllPaginatedUsingGET_4-internal_crypto_to_fiat">Parameters</h3>-->
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |body|body|[InternalRequest](#tocInternalRequest)|false|InternalRequest object|
+
+<h3 id="poscreatenewpaymentrequest-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[InternalResponse](#tocInternalResponse)|
+|401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+
+### Buy DASH
+
+> Code samples
+
+```shell
+curl -X POST http://example.com/api/convert/fiat/2/crypto \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer <token>'
+  -D '<body_here>'
+```
+
+```php
+<?php
+    $body="<body_here>";
+    $opts = array('http' =>
+      array(
+        'method'  => 'POST',
+        'header'  => "Authorization: Bearer <token>\r\nContent-Type: application/json\r\nAccept: application/json\r\n",
+        'content' => $body
+      )
+    );
+    $context  = stream_context_create($opts);
+    $URL = "http://example.com/api/convert/fiat/2/crypto";
+    $result = file_get_contents($url, false, $context, -1, 40000);
+);
+
+
+$context = stream_context_create($aHTTP);
+    $response = file_get_contents($URL, false, $context);
+?>
+
+```
+
+```javascript
+var headers = {
+  'Content-Type':'application/json',
+  'Accept':'application/json',
+  'Authorization': 'Bearer <token>'
+};
+
+var requestBody=<body_here>
+
+$.ajax({
+  url: 'http://example.com/api/convert/fiat/2/crypto',
+  method: 'POST',
+  headers: headers,
+  data: requestBody,
+  success: function(data) {
+    console.log(JSON.stringify(data));
+  }
+})
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'application/json'
+  'Authorization'=>'Bearer <token>'
+}
+
+result = RestClient.post 'http://example.com/api/convert/fiat/2/crypto',
+         payload:<body_here>, headers: headers
+
+p JSON.parse(result)
+```
+
+```python
+import requests
+
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer <token>'
+
+}
+
+r = requests.post('http://example.com/api/convert/fiat/2/crypto',
+                  data=<body_here>, params={}, headers = headers)
+
+print r.json()
+```
+
+```java
+URL obj = new URL("http://example.com/api/convert/fiat/2/crypto");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Accept", "application/json");
+con.setRequestProperty("Content-Type", "application/json");
+con.setRequestProperty("Authorization", "Bearer <token>");
+con.setDoOutput(true);
+con.setRequestMethod("POST");
+OutputStream os = con.getOutputStream();
+OutputStreamWriter osw = new OutputStreamWriter(os, "UTF-8");
+osw.write("<body_here>");
+osw.flush();
+osw.close();
+os.close();  //don't forget to close the OutputStream
+httpCon.connect();
+
+
+//read the inputstream and print it
+String result;
+BufferedInputStream bis = new BufferedInputStream(con.getInputStream());
+ByteArrayOutputStream buf = new ByteArrayOutputStream();
+int result2 = bis.read();
+while(result2 != -1) {
+    buf.write((byte) result2);
+    result2 = bis.read();
+}
+result = buf.toString();
+System.out.println(result);
+```
+
 
 >Body parameter
 
@@ -481,13 +809,6 @@ System.out.println(result);
 }
 ```
 
-<h3 id="poscreatenewpaymentrequest-responses">Responses</h3>
-
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[InternalResponse](#tocInternalResponse)|
-|401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
 > Example responses
 
@@ -508,7 +829,167 @@ System.out.println(result);
 }
 ```
 
+<a id="opIdcreate_fiat_to_crypto"></a>
+
+`POST /api/convert/fiat/2/crypto`
+
+*Internal conversion from FIAT (USD) to cryptocurrency (DASH) - Buy DASH.*
+
+**Required user role:**
+
+   * `ROLE_PARTNER_ADMIN`
+   * `ROLE_MERCHANT_ADMIN`
+   * `ROLE_VENDOR_ADMIN`
+   * `ROLE_CUSTOMER_ADMIN`
+
+<!--<h3 id="getAllPaginatedUsingGET_4-internal_fiat_to_crypto">Parameters</h3>-->
+
+|Parameter|In|Type|Required|Description|
+|---|---|---|---|---|
+|body|body|[InternalRequest](#tocInternalRequest)|false|InternalRequest object|
+
+
+<h3 id="poscreatenewpaymentrequest-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[InternalResponse](#tocInternalResponse)|
+|401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+
 ### List bank accounts
+
+> Code samples
+
+```shell
+curl -X POST http://example.com/api/account/bank_account \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer <token>'
+  -D '<body_here>'
+```
+
+```php
+<?php
+    $body="<body_here>";
+    $opts = array('http' =>
+      array(
+        'method'  => 'POST',
+        'header'  => "Authorization: Bearer <token>\r\nContent-Type: application/json\r\nAccept: application/json\r\n",
+        'content' => $body
+      )
+    );
+    $context  = stream_context_create($opts);
+    $URL = "http://example.com/api/account/bank_account";
+    $result = file_get_contents($url, false, $context, -1, 40000);
+);
+
+
+$context = stream_context_create($aHTTP);
+    $response = file_get_contents($URL, false, $context);
+?>
+
+```
+
+```javascript
+var headers = {
+  'Content-Type':'application/json',
+  'Accept':'application/json',
+  'Authorization': 'Bearer <token>'
+};
+
+var requestBody=<body_here>
+
+$.ajax({
+  url: 'http://example.com/api/account/bank_account',
+  method: 'POST',
+  headers: headers,
+  data: requestBody,
+  success: function(data) {
+    console.log(JSON.stringify(data));
+  }
+})
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'application/json'
+  'Authorization'=>'Bearer <token>'
+}
+
+result = RestClient.post 'http://example.com/api/account/bank_account',
+         payload:<body_here>, headers: headers
+
+p JSON.parse(result)
+```
+
+```python
+import requests
+
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer <token>'
+
+}
+
+r = requests.post('http://example.com/api/account/bank_account',
+                  data=<body_here>, params={}, headers = headers)
+
+print r.json()
+```
+
+```java
+URL obj = new URL("http://example.com/api/account/bank_account");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Accept", "application/json");
+con.setRequestProperty("Content-Type", "application/json");
+con.setRequestProperty("Authorization", "Bearer <token>");
+con.setDoOutput(true);
+con.setRequestMethod("POST");
+OutputStream os = con.getOutputStream();
+OutputStreamWriter osw = new OutputStreamWriter(os, "UTF-8");
+osw.write("<body_here>");
+osw.flush();
+osw.close();
+os.close();  //don't forget to close the OutputStream
+httpCon.connect();
+
+
+//read the inputstream and print it
+String result;
+BufferedInputStream bis = new BufferedInputStream(con.getInputStream());
+ByteArrayOutputStream buf = new ByteArrayOutputStream();
+int result2 = bis.read();
+while(result2 != -1) {
+    buf.write((byte) result2);
+    result2 = bis.read();
+}
+result = buf.toString();
+System.out.println(result);
+```
+
+
+> Example responses
+
+```json
+{
+  "accounts": [
+    {
+      "currency": "USD",
+      "number": "9000000000",
+      "description": "my account",
+      "institution": "Crypto Capital"
+    }
+  ]
+}
+```
+
 <a id="opIdcreate_bank_account_list"></a>
 
 `POST /api/account/bank_account`
@@ -527,22 +1008,154 @@ System.out.println(result);
 |401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
+### FIAT cash out
+
+> Code samples
+
+```shell
+curl -X POST http://example.com/api/transfer/internalfiat/2/externalfiat \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer <token>'
+  -D '<body_here>'
+```
+
+```php
+<?php
+    $body="<body_here>";
+    $opts = array('http' =>
+      array(
+        'method'  => 'POST',
+        'header'  => "Authorization: Bearer <token>\r\nContent-Type: application/json\r\nAccept: application/json\r\n",
+        'content' => $body
+      )
+    );
+    $context  = stream_context_create($opts);
+    $URL = "http://example.com/api/transfer/internalfiat/2/externalfiat";
+    $result = file_get_contents($url, false, $context, -1, 40000);
+);
+
+
+$context = stream_context_create($aHTTP);
+    $response = file_get_contents($URL, false, $context);
+?>
+
+```
+
+```javascript
+var headers = {
+  'Content-Type':'application/json',
+  'Accept':'application/json',
+  'Authorization': 'Bearer <token>'
+};
+
+var requestBody=<body_here>
+
+$.ajax({
+  url: 'http://example.com/api/transfer/internalfiat/2/externalfiat',
+  method: 'POST',
+  headers: headers,
+  data: requestBody,
+  success: function(data) {
+    console.log(JSON.stringify(data));
+  }
+})
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'application/json'
+  'Authorization'=>'Bearer <token>'
+}
+
+result = RestClient.post 'http://example.com/api/transfer/internalfiat/2/externalfiat',
+         payload:<body_here>, headers: headers
+
+p JSON.parse(result)
+```
+
+```python
+import requests
+
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer <token>'
+
+}
+
+r = requests.post('http://example.com/api/transfer/internalfiat/2/externalfiat',
+                  data=<body_here>, params={}, headers = headers)
+
+print r.json()
+```
+
+```java
+URL obj = new URL("http://example.com/api/transfer/internalfiat/2/externalfiat");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Accept", "application/json");
+con.setRequestProperty("Content-Type", "application/json");
+con.setRequestProperty("Authorization", "Bearer <token>");
+con.setDoOutput(true);
+con.setRequestMethod("POST");
+OutputStream os = con.getOutputStream();
+OutputStreamWriter osw = new OutputStreamWriter(os, "UTF-8");
+osw.write("<body_here>");
+osw.flush();
+osw.close();
+os.close();  //don't forget to close the OutputStream
+httpCon.connect();
+
+
+//read the inputstream and print it
+String result;
+BufferedInputStream bis = new BufferedInputStream(con.getInputStream());
+ByteArrayOutputStream buf = new ByteArrayOutputStream();
+int result2 = bis.read();
+while(result2 != -1) {
+    buf.write((byte) result2);
+    result2 = bis.read();
+}
+result = buf.toString();
+System.out.println(result);
+```
+
+
+>Body parameter
+
+```json
+{
+    "type": "INTERNAL_FIAT_TO_EXTERNAL_FIAT",
+    "timestamp_req":"1506895789",
+    "bank_account": "9000000000",
+    "amount":  1,
+    "currency_out": "USD",
+    "note":"Some transaction note string"
+}
+```
+
 > Example responses
 
 ```json
 {
-  "accounts": [
-    {
-      "currency": "USD",
-      "number": "9000000000",
-      "description": "my account",
-      "institution": "Crypto Capital"
+    "timestamp_accepted": 152345465566,
+    "tx_id": "TXtbbSjB4HdQ",
+    "status": "PENDING",
+    "request_was":{
+        "type": "INTERNAL_FIAT_TO_EXTERNAL_FIAT",
+        "timestamp_req":"1506895789",
+        "bank_account": "9000000000",
+        "amount":  1,
+        "currency_out": "USD",
+        "note":"Some transaction note string"
     }
-  ]
 }
 ```
 
-### FIAT cash out
 
 <a id="opIdcreate_fiat_to_external_fiat"></a>
 
@@ -563,18 +1176,6 @@ System.out.println(result);
 |---|---|---|---|---|
 |body|body|[InternalRequest](#tocInternalRequest)|false|InternalRequest object|
 
->Body parameter
-
-```json
-{
-    "type": "INTERNAL_FIAT_TO_EXTERNAL_FIAT",
-    "timestamp_req":"1506895789",
-    "bank_account": "9000000000",
-    "amount":  1,
-    "currency_out": "USD",
-    "note":"Some transaction note string"
-}
-```
 
 <h3 id="poscreatenewpaymentrequest-responses">Responses</h3>
 
@@ -584,49 +1185,88 @@ System.out.println(result);
 |401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
-> Example responses
-
-```json
-{
-    "timestamp_accepted": 152345465566,
-    "tx_id": "TXtbbSjB4HdQ",
-    "status": "PENDING",
-    "request_was":{
-        "type": "INTERNAL_FIAT_TO_EXTERNAL_FIAT",
-        "timestamp_req":"1506895789",
-        "bank_account": "9000000000",
-        "amount":  1,
-        "currency_out": "USD",
-        "note":"Some transaction note string"
-    }
-}
-```
-
 ### Exchange rates
 
-<a id="opIdcoinapult-currency-exchange-rate"></a>
+> Code samples
 
-`GET /api/pos/exchange_rates`
+```shell
+curl -X GET http://example.com/api/pos/exchange_rates -H Authorization: Bearer <token>'
+```
 
-*Get current market rate from Coinapult for DASH*
+```php
+<?php
+$URL = "http://example.com/api/pos/exchange_rates";
 
-**Parameters**
+$aHTTP['http']['method']  = 'GET';
 
-`None`
+$aHTTP['http']['header']  = "Authorization: YOUR_API_KEY_HERE";
 
-**Required user role:**
+$context = stream_context_create($aHTTP);
 
-   * `Available to all user roles`
+$response = file_get_contents($URL, false, $context);
+?>
 
-**Responses**
+```
 
-Response result is passed-through from Coinapult and the system does not either store or processes it.
+```javascript
+var headers = {
+  'Authorization':'Bearer <token>'
+};
 
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[string])|
-|500|Internal server error|Internal server error|[ErrorMessage](#schemareporterrormessage)|
-|403|Forbidden|Forbidden|[ErrorMessage](#schemareporterrormessage)|
+$.ajax({
+  url: 'http://example.com/api/pos/exchange_rates',
+  method: 'get',
+  headers: headers,
+  success: function(data) {
+    console.log(JSON.stringify(data));
+  }
+});
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Authorization' => 'Bearer <token>'
+}
+
+result = RestClient.get 'http://example.com/api/pos/exchange_rates',
+         params: {}, headers: headers
+
+p JSON.parse(result)
+```
+
+```python
+import requests
+
+headers = {
+  'Authorization': 'Bearer <token>'
+}
+
+r = requests.get('http://example.com/api/pos/exchange_rates',
+                  params={}, headers = headers)
+
+print r.json()
+```
+
+```java
+URL obj = new URL("http://example.com/api/pos/exchange_rates");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Authorization", "Bearer <token>");
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+```
+
 
 > Example responses
 
@@ -677,8 +1317,175 @@ Response result is passed-through from Coinapult and the system does not either 
    "market": "USD_DASH"
 }
 ```
+<a id="opIdcoinapult-currency-exchange-rate"></a>
+
+`GET /api/pos/exchange_rates`
+
+*Get current market rate from Coinapult for DASH*
+
+**Parameters**
+
+`None`
+
+**Required user role:**
+
+   * `Available to all user roles`
+
+**Responses**
+
+Response result is passed-through from Coinapult and the system does not either store or processes it.
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[string])|
+|500|Internal server error|Internal server error|[ErrorMessage](#schemareporterrormessage)|
+|403|Forbidden|Forbidden|[ErrorMessage](#schemareporterrormessage)|
+
 
 ### POS
+
+> Code samples
+
+```shell
+curl -X POST http://example.com/api/pos/payment \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer <token>'
+  -D '<body_here>'
+```
+
+```php
+<?php
+    $body="<body_here>";
+    $opts = array('http' =>
+      array(
+        'method'  => 'POST',
+        'header'  => "Authorization: Bearer <token>\r\nContent-Type: application/json\r\nAccept: application/json\r\n",
+        'content' => $body
+      )
+    );
+    $context  = stream_context_create($opts);
+    $URL = "http://example.com/api/pos/payment";
+    $result = file_get_contents($url, false, $context, -1, 40000);
+);
+
+
+$context = stream_context_create($aHTTP);
+    $response = file_get_contents($URL, false, $context);
+?>
+
+```
+
+```javascript
+var headers = {
+  'Content-Type':'application/json',
+  'Accept':'application/json',
+  'Authorization': 'Bearer <token>'
+};
+
+var requestBody=<body_here>
+
+$.ajax({
+  url: 'http://example.com/api/pos/payment',
+  method: 'POST',
+  headers: headers,
+  data: requestBody,
+  success: function(data) {
+    console.log(JSON.stringify(data));
+  }
+})
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'application/json'
+  'Authorization'=>'Bearer <token>'
+}
+
+result = RestClient.post 'http://example.com/api/pos/payment',
+         payload:<body_here>, headers: headers
+
+p JSON.parse(result)
+```
+
+```python
+import requests
+
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer <token>'
+
+}
+
+r = requests.post('http://example.com/api/pos/payment',
+                  data=<body_here>, params={}, headers = headers)
+
+print r.json()
+```
+
+```java
+URL obj = new URL("http://example.com/api/pos/payment");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Accept", "application/json");
+con.setRequestProperty("Content-Type", "application/json");
+con.setRequestProperty("Authorization", "Bearer <token>");
+con.setDoOutput(true);
+con.setRequestMethod("POST");
+OutputStream os = con.getOutputStream();
+OutputStreamWriter osw = new OutputStreamWriter(os, "UTF-8");
+osw.write("<body_here>");
+osw.flush();
+osw.close();
+os.close();  //don't forget to close the OutputStream
+httpCon.connect();
+
+
+//read the inputstream and print it
+String result;
+BufferedInputStream bis = new BufferedInputStream(con.getInputStream());
+ByteArrayOutputStream buf = new ByteArrayOutputStream();
+int result2 = bis.read();
+while(result2 != -1) {
+    buf.write((byte) result2);
+    result2 = bis.read();
+}
+result = buf.toString();
+System.out.println(result);
+```
+
+
+>Body parameter
+
+```json
+{
+  "timestamp_req":"1503913839",
+  "amount":"25.00",
+  "currency":"USD",
+  "convert_to": "DASH",
+  "user_id":"ke2309s2399d"
+}
+```
+
+> Example responses
+
+```json
+{
+"tx_id": "TXtbbSjB4HdQ",
+"requested_amount": 25,
+"requested_currency": "USD",
+"converted_amount": 0.06778558065128386,
+"converted_currency": "DASH",
+"conversion_rate": 368.81,
+"timetamp_system": 1504047876,
+"pay_to_address": "msJfkM8XmwTxwVVV9EvWLXb4fjCpSvbKWT"
+}
+```
+
 <a id="opIdcreateNewPaymentRequestPOS_1"></a>
 
 `POST /api/pos/payment`
@@ -697,17 +1504,6 @@ Response result is passed-through from Coinapult and the system does not either 
 |---|---|---|---|---|
 |body|body|[POSRequest](#schemaposrequest)|false|Page number of the requested page|
 
->Body parameter
-
-```json
-{
-  "timestamp_req":"1503913839",
-  "amount":"25.00",
-  "currency":"USD",
-  "convert_to": "DASH",
-  "user_id":"ke2309s2399d"
-}
-```
 
 <h3 id="poscreatenewpaymentrequest-responses">Responses</h3>
 
@@ -716,6 +1512,134 @@ Response result is passed-through from Coinapult and the system does not either 
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[POSResponse](#schemaposresponse)|
 |401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
+
+### Virtual POS
+> Code samples
+
+```shell
+curl -X POST http://example.com/api/pos/payment/vpos \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer <token>'
+  -D '<body_here>'
+```
+
+```php
+<?php
+    $body="<body_here>";
+    $opts = array('http' =>
+      array(
+        'method'  => 'POST',
+        'header'  => "Authorization: Bearer <token>\r\nContent-Type: application/json\r\nAccept: application/json\r\n",
+        'content' => $body
+      )
+    );
+    $context  = stream_context_create($opts);
+    $URL = "http://example.com/api/pos/payment/vpos";
+    $result = file_get_contents($url, false, $context, -1, 40000);
+);
+
+
+$context = stream_context_create($aHTTP);
+    $response = file_get_contents($URL, false, $context);
+?>
+
+```
+
+```javascript
+var headers = {
+  'Content-Type':'application/json',
+  'Accept':'application/json',
+  'Authorization': 'Bearer <token>'
+};
+
+var requestBody=<body_here>
+
+$.ajax({
+  url: 'http://example.com/api/pos/payment/vpos',
+  method: 'POST',
+  headers: headers,
+  data: requestBody,
+  success: function(data) {
+    console.log(JSON.stringify(data));
+  }
+})
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'application/json'
+  'Authorization'=>'Bearer <token>'
+}
+
+result = RestClient.post 'http://example.com/api/pos/payment/vpos',
+         payload:<body_here>, headers: headers
+
+p JSON.parse(result)
+```
+
+```python
+import requests
+
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  'Authorization': 'Bearer <token>'
+
+}
+
+r = requests.post('http://example.com/api/pos/payment/vpos',
+                  data=<body_here>, params={}, headers = headers)
+
+print r.json()
+```
+
+```java
+URL obj = new URL("http://example.com/api/pos/payment/vpos");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Accept", "application/json");
+con.setRequestProperty("Content-Type", "application/json");
+con.setRequestProperty("Authorization", "Bearer <token>");
+con.setDoOutput(true);
+con.setRequestMethod("POST");
+OutputStream os = con.getOutputStream();
+OutputStreamWriter osw = new OutputStreamWriter(os, "UTF-8");
+osw.write("<body_here>");
+osw.flush();
+osw.close();
+os.close();  //don't forget to close the OutputStream
+httpCon.connect();
+
+
+//read the inputstream and print it
+String result;
+BufferedInputStream bis = new BufferedInputStream(con.getInputStream());
+ByteArrayOutputStream buf = new ByteArrayOutputStream();
+int result2 = bis.read();
+while(result2 != -1) {
+    buf.write((byte) result2);
+    result2 = bis.read();
+}
+result = buf.toString();
+System.out.println(result);
+```
+
+>Body parameter
+
+```json
+{
+  "timestamp_req":"1503913839",
+  "amount":"25.00",
+  "currency":"USD",
+  "convert_to": "DASH",
+  "location_id":123,
+  "user_id":"ke2309s2399d"
+}
+```
 
 > Example responses
 
@@ -731,117 +1655,6 @@ Response result is passed-through from Coinapult and the system does not either 
 "pay_to_address": "msJfkM8XmwTxwVVV9EvWLXb4fjCpSvbKWT"
 }
 ```
-
-> Code samples
-
-```shell
-# You can also use wget
-curl -X POST http://example.com/api/pos/payment \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: application/json'
-```
-
-```http
-POST http://example.com/api/pos/payment HTTP/1.1
-Host: null
-Content-Type: application/json
-Accept: application/json
-```
-
-```javascript
-
-var headers = {
-  'Content-Type':'application/json',
-  'Accept':'application/json'
-};
-
-$.ajax({
-  url: 'http://example.com/api/pos/payment',
-  method: 'post',
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-})
-```
-
-```javascript--nodejs
-const request = require('node-fetch');
-const inputBody = '{
-{
-  "timestamp_req":"1503913839",
-  "amount":"25.00",
-  "currency":"USD",
-  "convert_to": "DASH",
-  "location_id”:123,
-  "user_id":"ke2309s2399d"
-};
-
-fetch('http://example.com/api/pos/payment',
-{
-  method: 'POST',
-  body: inputBody,
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-```
-
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Content-Type' => 'application/json',
-  'Accept' => 'application/json'
-}
-
-result = RestClient.post 'http://example.com/api/pos/payment',
-  params: {
-  }, headers: headers
-
-p JSON.parse(result)
-```
-
-```python
-import requests
-
-headers = {
-  'Content-Type': 'application/json',
-  'Accept': 'application/json'
-}
-
-r = requests.post('http://example.com/api/vendor', params={
-'timestamp_req':'1503913839',
-'amount':'25.00',
-'currency':'USD',
-'convert_to': 'DASH',
-'location_id':123,
-'user_id':'ke2309s2399d'
-}, headers = headers)
-
-print r.json()
-```
-```java
-URL obj = new URL("http://example.com/api/vendor");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("POST");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
-```
-
-### Virtual POS
 
 <!-- VIRTUAL POS SECTION-->
 
@@ -860,18 +1673,6 @@ System.out.println(response.toString());
 |---|---|---|---|---|
 |body|body|[POSRequest](#schemaposrequest)|false|Page number of the requested page|
 
->Body parameter
-
-```json
-{
-  "timestamp_req":"1503913839",
-  "amount":"25.00",
-  "currency":"USD",
-  "convert_to": "DASH",
-  "location_id":123,
-  "user_id":"ke2309s2399d"
-}
-```
 
 <h3 id="poscreatenewpaymentrequest-responses">Responses</h3>
 
@@ -880,126 +1681,3 @@ System.out.println(response.toString());
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[POSResponse](#schemaposresponse)|
 |401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
-
-> Example responses
-
-```json
-{
-"tx_id": "TXtbbSjB4HdQ",
-"requested_amount": 25,
-"requested_currency": "USD",
-"converted_amount": 0.06778558065128386,
-"converted_currency": "DASH",
-"conversion_rate": 368.81,
-"timetamp_system": 1504047876,
-"pay_to_address": "msJfkM8XmwTxwVVV9EvWLXb4fjCpSvbKWT"
-}
-```
-
-> Code samples
-
-```shell
-# You can also use wget
-curl -X POST http://example.com/api/pos/payment \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: application/json'
-```
-
-```http
-POST http://example.com/api/pos/payment HTTP/1.1
-Host: null
-Content-Type: application/json
-Accept: application/json
-```
-
-```javascript
-var headers = {
-  'Content-Type':'application/json',
-  'Accept':'application/json'
-};
-$.ajax({
-  url: 'http://example.com/api/pos/payment',
-  method: 'post',
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-})
-```
-
-```javascript--nodejs
-const request = require('node-fetch');
-const inputBody = '{
-{
-  "timestamp_req":"1503913839",
-  "amount":"25.00",
-  "currency":"USD",
-  "convert_to": "DASH",
-  "location_id”:123,
-  "user_id":"ke2309s2399d"
-};
-
-fetch('http://example.com/api/pos/payment',
-{
-  method: 'POST',
-  body: inputBody,
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
-```
-
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Content-Type' => 'application/json',
-  'Accept' => 'application/json'
-}
-
-result = RestClient.post 'http://example.com/api/pos/payment',
-  params: {
-  }, headers: headers
-
-p JSON.parse(result)
-```
-
-```python
-import requests
-
-headers = {
-  'Content-Type': 'application/json',
-  'Accept': 'application/json'
-}
-
-r = requests.post('http://example.com/api/vendor', params={
-'timestamp_req':'1503913839',
-'amount':'25.00',
-'currency':'USD',
-'convert_to': 'DASH',
-'location_id':123,
-'user_id':'ke2309s2399d'
-}, headers = headers)
-
-print r.json()
-```
-
-```java
-URL obj = new URL("http://example.com/api/vendor");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("POST");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
-```
