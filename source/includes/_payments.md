@@ -131,7 +131,7 @@ Response result is passed-through from Coinapult and the system does not either 
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[string])|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[string] Received from Coinapult|
 |500|Internal server error|Internal server error|[ErrorMessage](#schemareporterrormessage)|
 |403|Forbidden|Forbidden|[ErrorMessage](#schemareporterrormessage)|
 
@@ -1004,7 +1004,7 @@ System.out.println(result);
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[string]|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[string] Received from Coinapult|
 |401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
 |401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
 
@@ -1337,7 +1337,7 @@ Response result is passed-through from Coinapult and the system does not either 
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[string])|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[string] Received from Coinapult|
 |500|Internal server error|Internal server error|[ErrorMessage](#schemareporterrormessage)|
 |403|Forbidden|Forbidden|[ErrorMessage](#schemareporterrormessage)|
 
@@ -1502,7 +1502,7 @@ System.out.println(result);
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|[POSRequest](#schemaposrequest)|false|Page number of the requested page|
+|body|body|[POSRequest](#schemaposrequest)|false|POSRequest object|
 
 
 <h3 id="poscreatenewpaymentrequest-responses">Responses</h3>
@@ -1671,7 +1671,7 @@ System.out.println(result);
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|[POSRequest](#schemaposrequest)|false|Page number of the requested page|
+|body|body|[POSRequest](#schemaposrequest)|false|POSRequest object|
 
 
 <h3 id="poscreatenewpaymentrequest-responses">Responses</h3>
