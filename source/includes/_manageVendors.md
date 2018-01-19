@@ -1137,188 +1137,49 @@ System.out.println(result);
 ```shell
 curl -X PUT http://example.com/api/vendors \
   -H 'Content-Type: application/json' \
-  -H 'Accept: */*'
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer <token>'
+  -D '<body_here>'
 ```
 
-```http
-PUT http://example.com/api/vendors HTTP/1.1
-Host: null
-Content-Type: application/json
-Accept: */*
+```php
+<?php
+    $body="<body_here>";
+    $opts = array('http' =>
+      array(
+        'method'  => 'PUT',
+        'header'  => "Authorization: Bearer <token>\r\nContent-Type: application/json\r\nAccept: application/json\r\n",
+        'content' => $body
+      )
+    );
+    $context  = stream_context_create($opts);
+    $URL = "http://example.com/api/vendors";
+    $result = file_get_contents($url, false, $context, -1, 40000);
+
+    $context = stream_context_create($aHTTP);
+    $response = file_get_contents($URL, false, $context);
+?>
+
 ```
 
 ```javascript
 var headers = {
   'Content-Type':'application/json',
-  'Accept':'*/*'
+  'Accept':'application/json',
+  'Authorization': 'Bearer <token>'
 };
+
+var requestBody=<body_here>
 
 $.ajax({
   url: 'http://example.com/api/vendors',
-  method: 'put',
+  method: 'PUT',
   headers: headers,
+  data: requestBody,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-```
-
-```javascript--nodejs
-const request = require('node-fetch');
-const inputBody = '{
-  "address": "string",
-  "address2": "string",
-  "altAutosellInternal": true,
-  "authorizedSignerContact": {
-    "address": "string",
-    "address2": "string",
-    "beneficiaryPercent": 0,
-    "birthDate": "2018-01-08",
-    "city": "string",
-    "file": "string",
-    "fileBytes": "string",
-    "fileContentType": "string",
-    "firstName": "string",
-    "gender": "MALE",
-    "id": 0,
-    "lastName": "string",
-    "nationality": "string",
-    "note": "string",
-    "passportExpiryDate": "2018-01-08",
-    "passportIssueDate": "2018-01-08",
-    "passportNumber": "string",
-    "position": "string",
-    "primaryEmailAddress": "string",
-    "primaryMobilePhone": "string",
-    "secondaryEmailAddress": "string",
-    "secondaryMobilePhone": "string",
-    "state": {
-      "abbreviation": "string",
-      "id": 0,
-      "state": "string"
-    },
-    "zip": "string"
-  },
-  "autosell": true,
-  "canEditOnboarded": true,
-  "city": "string",
-  "commissionFee": 0,
-  "companyEIN": "string",
-  "companyWebsite": "string",
-  "createdDate": "2018-01-08T16:57:22Z",
-  "customers": 0,
-  "emailAddress": "string",
-  "enabled": true,
-  "enroledBy": {
-    "address": "string",
-    "altAutosellInternal": true,
-    "associateType": "ALT36",
-    "autosell": true,
-    "beneficiaryPercent": 0,
-    "canEditOnboarded": true,
-    "city": "string",
-    "coinaPultApiKey": "string",
-    "commissionFee": 0,
-    "companyEIN": "string",
-    "companyWebsite": "string",
-    "createdDate": "2018-01-08T16:57:22Z",
-    "cryptoCapitalApiKey": "string",
-    "customers": 0,
-    "deletedDate": "2018-01-08T16:57:22Z",
-    "emailAddress": "string",
-    "enabled": true,
-    "enrolledBy": null,
-    "id": 0,
-    "incorporationDate": "2018-01-08",
-    "internalFee": 0,
-    "legalBusinessName": "string",
-    "locationsCount": 0,
-    "merchants": 0,
-    "note": "string",
-    "partners": 0,
-    "phone": "string",
-    "posCount": 0,
-    "state": {
-      "abbreviation": "string",
-      "id": 0,
-      "state": "string"
-    },
-    "usBankAccount": "string",
-    "vendors": 0,
-    "zip": "string"
-  },
-  "id": 0,
-  "incorporationDate": "2018-01-08",
-  "legalBusinessName": "string",
-  "locationsCount": 0,
-  "mainContact": {
-    "address": "string",
-    "address2": "string",
-    "beneficiaryPercent": 0,
-    "birthDate": "2018-01-08",
-    "city": "string",
-    "file": "string",
-    "fileBytes": "string",
-    "fileContentType": "string",
-    "firstName": "string",
-    "gender": "MALE",
-    "id": 0,
-    "lastName": "string",
-    "nationality": "string",
-    "note": "string",
-    "passportExpiryDate": "2018-01-08",
-    "passportIssueDate": "2018-01-08",
-    "passportNumber": "string",
-    "position": "string",
-    "primaryEmailAddress": "string",
-    "primaryMobilePhone": "string",
-    "secondaryEmailAddress": "string",
-    "secondaryMobilePhone": "string",
-    "state": {
-      "abbreviation": "string",
-      "id": 0,
-      "state": "string"
-    },
-    "zip": "string"
-  },
-  "merchants": 0,
-  "note": "string",
-  "partners": 0,
-  "phone": "string",
-  "posCount": 0,
-  "saleVolume": 0,
-  "state": {
-    "abbreviation": "string",
-    "id": 0,
-    "state": "string"
-  },
-  "usBankAccount": "string",
-  "user": {
-    "email": "string",
-    "firstName": "string",
-    "lastName": "string",
-    "login": "string"
-  },
-  "vendors": 0,
-  "zip": "string"
-}';
-
-const headers = {
-  'Content-Type':'application/json',
-  'Accept':'*/*'
-};
-
-fetch('http://example.com/api/vendors',
-{
-  method: 'PUT',
-  body: inputBody,
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
 ```
 
 ```ruby
@@ -1327,11 +1188,12 @@ require 'json'
 
 headers = {
   'Content-Type' => 'application/json',
-  'Accept' => '*/*'
+  'Accept' => 'application/json'
+  'Authorization'=>'Bearer <token>'
 }
 
 result = RestClient.put 'http://example.com/api/vendors',
-         params: {}, headers: headers
+         payload:<body_here>, headers: headers
 
 p JSON.parse(result)
 ```
@@ -1341,11 +1203,13 @@ import requests
 
 headers = {
   'Content-Type': 'application/json',
-  'Accept': '*/*'
+  'Accept': 'application/json',
+  'Authorization': 'Bearer <token>'
+
 }
 
 r = requests.put('http://example.com/api/vendors',
-                  params={}, headers = headers)
+                  data=<body_here>, params={}, headers = headers)
 
 print r.json()
 ```
@@ -1353,18 +1217,33 @@ print r.json()
 ```java
 URL obj = new URL("http://example.com/api/vendors");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Accept", "application/json");
+con.setRequestProperty("Content-Type", "application/json");
+con.setRequestProperty("Authorization", "Bearer <token>");
+con.setDoOutput(true);
 con.setRequestMethod("PUT");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
+OutputStream os = con.getOutputStream();
+OutputStreamWriter osw = new OutputStreamWriter(os, "UTF-8");
+osw.write("<body_here>");
+osw.flush();
+osw.close();
+os.close();  //don't forget to close the OutputStream
+httpCon.connect();
+
+
+//read the inputstream and print it
+String result;
+BufferedInputStream bis = new BufferedInputStream(con.getInputStream());
+ByteArrayOutputStream buf = new ByteArrayOutputStream();
+int result2 = bis.read();
+while(result2 != -1) {
+    buf.write((byte) result2);
+    result2 = bis.read();
 }
-in.close();
-System.out.println(response.toString());
+result = buf.toString();
+System.out.println(result);
 ```
+
 
 `PUT /api/vendors`
 
@@ -1543,35 +1422,31 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X DELETE http://example.com/api/vendor/{id}
+curl -X DELETE http://example.com/api/vendor/<id> -H Authorization: Bearer <token>
 ```
 
-```http
-DELETE http://example.com/api/vendor/{id} HTTP/1.1
-Host: null
+```php
+<?php
+$URL = "http://example.com/api/vendor/<id>";
+$aHTTP['http']['method']  = 'DELETE';
+$aHTTP['http']['header']  = "Authorization: <token>";
+$context = stream_context_create($aHTTP);
+$response = file_get_contents($URL, false, $context);
+?>
 ```
 
 ```javascript
+var headers = {
+  'Authorization':'Bearer <token>'
+};
+
 $.ajax({
-  url: 'http://example.com/api/vendor/{id}',
-  method: 'delete',
+  url: 'http://example.com/api/vendor/<id>',
+  method: 'DELETE',
+  headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
-})
-```
-
-```javascript--nodejs
-const request = require('node-fetch');
-
-fetch('http://example.com/api/vendor/{id}',
-{
-  method: 'DELETE'
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
 });
 ```
 
@@ -1579,25 +1454,33 @@ fetch('http://example.com/api/vendor/{id}',
 require 'rest-client'
 require 'json'
 
-result = RestClient.delete 'http://example.com/api/vendor/{id}',
-         params: {}
+headers = {
+  'Authorization' => 'Bearer <token>'
+}
+
+result = RestClient.delete 'http://example.com/api/vendor/<id>',
+         params: {}, headers: headers
 
 p JSON.parse(result)
 ```
 
 ```python
-
 import requests
 
-r = requests.delete('http://example.com/api/vendor/{id}',
-                     params={})
+headers = {
+  'Authorization': 'Bearer <token>'
+}
+
+r = requests.delete('http://example.com/api/vendor/<id>',
+                  params={}, headers = headers)
 
 print r.json()
 ```
 
 ```java
-URL obj = new URL("http://example.com/api/vendor/{id}");
+URL obj = new URL("http://example.com/api/vendor/<id>");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Authorization", "Bearer <token>");
 con.setRequestMethod("DELETE");
 int responseCode = con.getResponseCode();
 BufferedReader in = new BufferedReader(
@@ -1611,7 +1494,8 @@ in.close();
 System.out.println(response.toString());
 ```
 
-`DELETE /api/vendor/{id}`
+
+`DELETE /api/vendor/<id>`
 
 *Delete the Vendor with ID*
 

@@ -461,124 +461,49 @@ System.out.println(result);
 ```shell
 curl -X PUT http://example.com/api/point-of-sales \
   -H 'Content-Type: application/json' \
-  -H 'Accept: */*'
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer <token>'
+  -D '<body_here>'
 ```
 
-```http
-PUT http://example.com/api/point-of-sales HTTP/1.1
-Host: null
-Content-Type: application/json
-Accept: */*
+```php
+<?php
+    $body="<body_here>";
+    $opts = array('http' =>
+      array(
+        'method'  => 'PUT',
+        'header'  => "Authorization: Bearer <token>\r\nContent-Type: application/json\r\nAccept: application/json\r\n",
+        'content' => $body
+      )
+    );
+    $context  = stream_context_create($opts);
+    $URL = "http://example.com/api/point-of-sales";
+    $result = file_get_contents($url, false, $context, -1, 40000);
+
+    $context = stream_context_create($aHTTP);
+    $response = file_get_contents($URL, false, $context);
+?>
+
 ```
 
 ```javascript
 var headers = {
   'Content-Type':'application/json',
-  'Accept':'*/*'
+  'Accept':'application/json',
+  'Authorization': 'Bearer <token>'
 };
+
+var requestBody=<body_here>
 
 $.ajax({
   url: 'http://example.com/api/point-of-sales',
-  method: 'put',
+  method: 'PUT',
   headers: headers,
+  data: requestBody,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-```
-
-```javascript--nodejs
-const request = require('node-fetch');
-const inputBody = '{
-  "active": true,
-  "deletedDate": "2018-01-08T16:57:23Z",
-  "id": 0,
-  "inventoryNumber": "string",
-  "location": {
-    "address": "string",
-    "address2": "string",
-    "associate": {
-      "address": "string",
-      "altAutosellInternal": true,
-      "associateType": "ALT36",
-      "autosell": true,
-      "beneficiaryPercent": 0,
-      "canEditOnboarded": true,
-      "city": "string",
-      "coinaPultApiKey": "string",
-      "commissionFee": 0,
-      "companyEIN": "string",
-      "companyWebsite": "string",
-      "createdDate": "2018-01-08T16:57:23Z",
-      "cryptoCapitalApiKey": "string",
-      "customers": 0,
-      "deletedDate": "2018-01-08T16:57:23Z",
-      "emailAddress": "string",
-      "enabled": true,
-      "enrolledBy": null,
-      "id": 0,
-      "incorporationDate": "2018-01-08",
-      "internalFee": 0,
-      "legalBusinessName": "string",
-      "locationsCount": 0,
-      "merchants": 0,
-      "note": "string",
-      "partners": 0,
-      "phone": "string",
-      "posCount": 0,
-      "state": {
-        "abbreviation": "string",
-        "id": 0,
-        "state": "string"
-      },
-      "usBankAccount": "string",
-      "vendors": 0,
-      "zip": "string"
-    },
-    "city": "string",
-    "country": "string",
-    "deletedDate": "2018-01-08T16:57:23Z",
-    "emailAddress": "string",
-    "file": "string",
-    "geoLocation": "string",
-    "id": 0,
-    "name": "string",
-    "note": "string",
-    "parentLocation": null,
-    "phone": "string",
-    "pointOfSales": [
-      null
-    ],
-    "state": {
-      "abbreviation": "string",
-      "id": 0,
-      "state": "string"
-    },
-    "website": "string",
-    "zip": "string"
-  },
-  "name": "string",
-  "note": "string",
-  "pointOfSaleType": "GREENBITS",
-  "virtualPointOfSalesEnabled": true
-}';
-
-const headers = {
-  'Content-Type':'application/json',
-  'Accept':'*/*'
-};
-
-fetch('http://example.com/api/point-of-sales',
-{
-  method: 'PUT',
-  body: inputBody,
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
 ```
 
 ```ruby
@@ -587,11 +512,12 @@ require 'json'
 
 headers = {
   'Content-Type' => 'application/json',
-  'Accept' => '*/*'
+  'Accept' => 'application/json'
+  'Authorization'=>'Bearer <token>'
 }
 
 result = RestClient.put 'http://example.com/api/point-of-sales',
-         params: {}, headers: headers
+         payload:<body_here>, headers: headers
 
 p JSON.parse(result)
 ```
@@ -601,11 +527,13 @@ import requests
 
 headers = {
   'Content-Type': 'application/json',
-  'Accept': '*/*'
+  'Accept': 'application/json',
+  'Authorization': 'Bearer <token>'
+
 }
 
 r = requests.put('http://example.com/api/point-of-sales',
-                 params={}, headers = headers)
+                  data=<body_here>, params={}, headers = headers)
 
 print r.json()
 ```
@@ -613,17 +541,31 @@ print r.json()
 ```java
 URL obj = new URL("http://example.com/api/point-of-sales");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Accept", "application/json");
+con.setRequestProperty("Content-Type", "application/json");
+con.setRequestProperty("Authorization", "Bearer <token>");
+con.setDoOutput(true);
 con.setRequestMethod("PUT");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
+OutputStream os = con.getOutputStream();
+OutputStreamWriter osw = new OutputStreamWriter(os, "UTF-8");
+osw.write("<body_here>");
+osw.flush();
+osw.close();
+os.close();  //don't forget to close the OutputStream
+httpCon.connect();
+
+
+//read the inputstream and print it
+String result;
+BufferedInputStream bis = new BufferedInputStream(con.getInputStream());
+ByteArrayOutputStream buf = new ByteArrayOutputStream();
+int result2 = bis.read();
+while(result2 != -1) {
+    buf.write((byte) result2);
+    result2 = bis.read();
 }
-in.close();
-System.out.println(response.toString());
+result = buf.toString();
+System.out.println(result);
 ```
 
 `PUT /api/point-of-sales`
@@ -737,36 +679,31 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X DELETE http://example.com/api/point-of-sales/{id}
+curl -X DELETE http://example.com/api/point-of-sales/<id> -H Authorization: Bearer <token>
 ```
 
-```http
-DELETE http://example.com/api/point-of-sales/{id} HTTP/1.1
-Host: null
+```php
+<?php
+$URL = "http://example.com/api/point-of-sales/<id>";
+$aHTTP['http']['method']  = 'DELETE';
+$aHTTP['http']['header']  = "Authorization: <token>";
+$context = stream_context_create($aHTTP);
+$response = file_get_contents($URL, false, $context);
+?>
 ```
-
 
 ```javascript
+var headers = {
+  'Authorization':'Bearer <token>'
+};
+
 $.ajax({
-  url: 'http://example.com/api/point-of-sales/{id}',
-  method: 'delete',
+  url: 'http://example.com/api/point-of-sales/<id>',
+  method: 'DELETE',
+  headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
-})
-```
-
-```javascript--nodejs
-const request = require('node-fetch');
-
-fetch('http://example.com/api/point-of-sales/{id}',
-{
-  method: 'DELETE'
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
 });
 ```
 
@@ -774,8 +711,12 @@ fetch('http://example.com/api/point-of-sales/{id}',
 require 'rest-client'
 require 'json'
 
-result = RestClient.delete 'http://example.com/api/point-of-sales/{id}',
-         params: {}
+headers = {
+  'Authorization' => 'Bearer <token>'
+}
+
+result = RestClient.delete 'http://example.com/api/point-of-sales/<id>',
+         params: {}, headers: headers
 
 p JSON.parse(result)
 ```
@@ -783,15 +724,20 @@ p JSON.parse(result)
 ```python
 import requests
 
-r = requests.delete('http://example.com/api/point-of-sales/{id}',
-                     params={})
+headers = {
+  'Authorization': 'Bearer <token>'
+}
+
+r = requests.delete('http://example.com/api/point-of-sales/<id>',
+                  params={}, headers = headers)
 
 print r.json()
 ```
 
 ```java
-URL obj = new URL("http://example.com/api/point-of-sales/{id}");
+URL obj = new URL("http://example.com/api/point-of-sales/<id>");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Authorization", "Bearer <token>");
 con.setRequestMethod("DELETE");
 int responseCode = con.getResponseCode();
 BufferedReader in = new BufferedReader(
@@ -805,7 +751,7 @@ in.close();
 System.out.println(response.toString());
 ```
 
-`DELETE /api/point-of-sales/{id}`
+`DELETE /api/point-of-sales/<id>`
 
 *Delete POS by ID*
 
@@ -1177,46 +1123,31 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X DELETE http://example.com/api/point-of-sales/{id}/token -H 'Accept: */*'
+curl -X DELETE http://example.com/api/point-of-sales/<id>/token -H Authorization: Bearer <token>
 ```
 
-```http
-DELETE http://example.com/api/point-of-sales/{id}/token HTTP/1.1
-Host: null
-Accept: */*
+```php
+<?php
+$URL = "http://example.com/api/point-of-sales/<id>/token";
+$aHTTP['http']['method']  = 'DELETE';
+$aHTTP['http']['header']  = "Authorization: <token>";
+$context = stream_context_create($aHTTP);
+$response = file_get_contents($URL, false, $context);
+?>
 ```
 
 ```javascript
 var headers = {
-  'Accept':'*/*'
+  'Authorization':'Bearer <token>'
 };
 
 $.ajax({
-  url: 'http://example.com/api/point-of-sales/{id}/token',
-  method: 'delete',
+  url: 'http://example.com/api/point-of-sales/<id>/token',
+  method: 'DELETE',
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
-})
-```
-
-```javascript--nodejs
-const request = require('node-fetch');
-
-const headers = {
-  'Accept':'*/*'
-};
-
-fetch('http://example.com/api/point-of-sales/{id}/token',
-{
-  method: 'DELETE',
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
 });
 ```
 
@@ -1225,10 +1156,10 @@ require 'rest-client'
 require 'json'
 
 headers = {
-  'Accept' => '*/*'
+  'Authorization' => 'Bearer <token>'
 }
 
-result = RestClient.delete 'http://example.com/api/point-of-sales/{id}/token',
+result = RestClient.delete 'http://example.com/api/point-of-sales/<id>/token',
          params: {}, headers: headers
 
 p JSON.parse(result)
@@ -1238,18 +1169,19 @@ p JSON.parse(result)
 import requests
 
 headers = {
-  'Accept': '*/*'
+  'Authorization': 'Bearer <token>'
 }
 
-r = requests.delete('http://example.com/api/point-of-sales/{id}/token',
-                     params={}, headers = headers)
+r = requests.delete('http://example.com/api/point-of-sales/<id>/token',
+                  params={}, headers = headers)
 
 print r.json()
 ```
 
 ```java
-URL obj = new URL("http://example.com/api/point-of-sales/{id}/token");
+URL obj = new URL("http://example.com/api/point-of-sales/<id>/token");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Authorization", "Bearer <token>");
 con.setRequestMethod("DELETE");
 int responseCode = con.getResponseCode();
 BufferedReader in = new BufferedReader(
@@ -1263,7 +1195,7 @@ in.close();
 System.out.println(response.toString());
 ```
 
-`DELETE /api/point-of-sales/{id}/token`
+`DELETE /api/point-of-sales/<id>/token`
 
 *Deactivate POS token*
 
