@@ -10,7 +10,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - java
 
 toc_footers:
-  - <a href='#'>Sign Up/Login</a>
+  - <a href='https://product36.com/login'>Sign Up/Login</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
