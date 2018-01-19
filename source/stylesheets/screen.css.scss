@@ -104,11 +104,14 @@ html, body {
       right: $nav-padding;
       color: $nav-text;
       @extend %icon-search;
+      color: rgb(152,152,152);
     }
   }
 
   .logo {
     margin-bottom: $logo-margin;
+    margin-left: 16px;
+    margin-top: 18px;
   }
 
   .search-results {
