@@ -35,7 +35,7 @@ includes:
   - manageVendors
   - manageCustomers
   - manageAccount
-  - mywallet
+  - myWallet
   - common
   - payments
   - notifications
