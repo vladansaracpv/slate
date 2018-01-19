@@ -1401,7 +1401,7 @@ System.out.println(result);
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|[NewVendorVM](#schemanewvendorvm)|true|associate|
+|body|body|[NewVendorVM2](#schemanewvendorvm2)|true|associate|
 
 > Example responses
 

@@ -1814,6 +1814,40 @@
 |phone|string|true|No description|
 |user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|true|No description|
 
+<h2 id="tocSnewcustomervm2">NewCustomerVM2</h2>
+
+
+<a id="schemanewcustomervm2"></a>
+
+
+```json
+{
+  "id": "integer",
+  "emailAddress": "string",
+  "id": 0,
+  "legalBusinessName": "string",
+  "phone": "string",
+  "user": {
+    "email": "john.doe@example.com",
+    "firstName": "string",
+    "lastName": "string",
+    "login": "string"
+  }
+}
+```
+
+
+### Properties
+
+
+|Name|Type|Required|Description|
+|---|---|---|---|
+|id|integer|true|No description|
+|emailAddress|string|true|No description|
+|id|integer(int64)|false|No description|
+|legalBusinessName|string|true|No description|
+|phone|string|true|No description|
+|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|true|No description|
 
 <h2 id="tocSnewmerchantvm">NewMerchantVM</h2>
 
@@ -2558,6 +2592,192 @@
 |vendors|integer(int32)|false|No description|
 |zip|string|true|No description|
 
+
+<h2 id="tocSnewvendorvm2">NewVendorVM2</h2>
+
+
+<a id="schemanewvendorvm2"></a>
+
+
+```json
+{
+  "id": "integer",
+  "address": "string",
+  "address2": "string",
+  "altAutosellInternal": true,
+  "authorizedSignerContact": {
+    "address": "string",
+    "address2": "string",
+    "beneficiaryPercent": 0,
+    "birthDate": "2018-01-08",
+    "city": "string",
+    "file": "string",
+    "fileBytes": "string",
+    "fileContentType": "string",
+    "firstName": "string",
+    "gender": "MALE",
+    "id": 0,
+    "lastName": "string",
+    "nationality": "string",
+    "note": "string",
+    "passportExpiryDate": "2018-01-08",
+    "passportIssueDate": "2018-01-08",
+    "passportNumber": "string",
+    "position": "string",
+    "primaryEmailAddress": "string",
+    "primaryMobilePhone": "string",
+    "secondaryEmailAddress": "string",
+    "secondaryMobilePhone": "string",
+    "state": {
+      "abbreviation": "string",
+      "id": 0,
+      "state": "string"
+    },
+    "zip": "string"
+  },
+  "autosell": true,
+  "canEditOnboarded": true,
+  "city": "string",
+  "commissionFee": 0,
+  "companyEIN": "string",
+  "companyWebsite": "string",
+  "createdDate": "2018-01-08T16:57:23Z",
+  "customers": 0,
+  "emailAddress": "string",
+  "enabled": true,
+  "enroledBy": {
+    "address": "string",
+    "altAutosellInternal": true,
+    "associateType": "ALT36",
+    "autosell": true,
+    "beneficiaryPercent": 0,
+    "canEditOnboarded": true,
+    "city": "string",
+    "coinaPultApiKey": "string",
+    "commissionFee": 0,
+    "companyEIN": "string",
+    "companyWebsite": "string",
+    "createdDate": "2018-01-08T16:57:23Z",
+    "cryptoCapitalApiKey": "string",
+    "customers": 0,
+    "deletedDate": "2018-01-08T16:57:23Z",
+    "emailAddress": "string",
+    "enabled": true,
+    "enrolledBy": null,
+    "id": 0,
+    "incorporationDate": "2018-01-08",
+    "internalFee": 0,
+    "legalBusinessName": "string",
+    "locationsCount": 0,
+    "merchants": 0,
+    "note": "string",
+    "partners": 0,
+    "phone": "string",
+    "posCount": 0,
+    "state": {
+      "abbreviation": "string",
+      "id": 0,
+      "state": "string"
+    },
+    "usBankAccount": "string",
+    "vendors": 0,
+    "zip": "string"
+  },
+  "id": 0,
+  "incorporationDate": "2018-01-08",
+  "legalBusinessName": "string",
+  "locationsCount": 0,
+  "mainContact": {
+    "address": "string",
+    "address2": "string",
+    "beneficiaryPercent": 0,
+    "birthDate": "2018-01-08",
+    "city": "string",
+    "file": "string",
+    "fileBytes": "string",
+    "fileContentType": "string",
+    "firstName": "string",
+    "gender": "MALE",
+    "id": 0,
+    "lastName": "string",
+    "nationality": "string",
+    "note": "string",
+    "passportExpiryDate": "2018-01-08",
+    "passportIssueDate": "2018-01-08",
+    "passportNumber": "string",
+    "position": "string",
+    "primaryEmailAddress": "string",
+    "primaryMobilePhone": "string",
+    "secondaryEmailAddress": "string",
+    "secondaryMobilePhone": "string",
+    "state": {
+      "abbreviation": "string",
+      "id": 0,
+      "state": "string"
+    },
+    "zip": "string"
+  },
+  "merchants": 0,
+  "note": "string",
+  "partners": 0,
+  "phone": "string",
+  "posCount": 0,
+  "saleVolume": 0,
+  "state": {
+    "abbreviation": "string",
+    "id": 0,
+    "state": "string"
+  },
+  "usBankAccount": "string",
+  "user": {
+    "email": "john.doe@example.com",
+    "firstName": "string",
+    "lastName": "string",
+    "login": "string"
+  },
+  "vendors": 0,
+  "zip": "string"
+}
+```
+
+
+### Properties
+
+
+|Name|Type|Required|Description|
+|---|---|---|---|
+|id|integer|tru|No description|
+|address|string|true|No description|
+|address2|string|false|No description|
+|altAutosellInternal|boolean|false|No description|
+|authorizedSignerContact|[ContactVM](#schemacontactvm)|true|No description|
+|autosell|boolean|false|No description|
+|canEditOnboarded|boolean|false|No description|
+|city|string|true|No description|
+|commissionFee|number|false|No description|
+|companyEIN|string|true|No description|
+|companyWebsite|string|true|No description|
+|createdDate|string(date-time)|false|No description|
+|customers|integer(int32)|false|No description|
+|emailAddress|string|true|No description|
+|enabled|boolean|false|No description|
+|enroledBy|[Associate](#schemaassociate)|false|No description|
+|id|integer(int64)|false|No description|
+|incorporationDate|string(date)|false|No description|
+|legalBusinessName|string|true|No description|
+|locationsCount|integer(int32)|false|No description|
+|mainContact|[ContactVM](#schemacontactvm)|true|No description|
+|merchants|integer(int32)|false|No description|
+|note|string|false|No description|
+|partners|integer(int32)|false|No description|
+|phone|string|true|No description|
+|posCount|integer(int32)|false|No description|
+|saleVolume|number(double)|false|No description|
+|state|[CountryState](#schemacountrystate)|true|No description|
+|usBankAccount|string|false|No description|
+|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|false|No description|
+|vendors|integer(int32)|false|No description|
+|zip|string|true|No description|
 
 <h2 id="tocSpageofassociate">PageOfAssociate</h2>
 

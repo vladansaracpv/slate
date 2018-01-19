@@ -929,7 +929,7 @@ System.out.println(result);
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|[NewCustomerVM](#schemanewcustomervm)|true|associate|
+|body|body|[NewCustomerVM2](#schemanewcustomervm2)|true|associate|
 
 > Example responses
 
