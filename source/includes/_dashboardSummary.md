@@ -3,6 +3,103 @@
 
 #### General summary data
 
+> Code samples
+
+```shell
+curl -X GET http://example.com/api/v1/analytics/summary/general -H Authorization: Bearer <token>'
+```
+
+```php
+<?php
+$URL = "http://example.com/api/v1/analytics/summary/general";
+
+$aHTTP['http']['method']  = 'GET';
+
+$aHTTP['http']['header']  = "Authorization: YOUR_API_KEY_HERE";
+
+$context = stream_context_create($aHTTP);
+
+$response = file_get_contents($URL, false, $context);
+?>
+
+```
+
+```javascript
+var headers = {
+  'Authorization':'Bearer <token>'
+};
+
+$.ajax({
+  url: 'http://example.com/api/v1/analytics/summary/general',
+  method: 'get',
+  headers: headers,
+  success: function(data) {
+    console.log(JSON.stringify(data));
+  }
+});
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Authorization' => 'Bearer <token>'
+}
+
+result = RestClient.get 'http://example.com/api/v1/analytics/summary/general',
+         params: {}, headers: headers
+
+p JSON.parse(result)
+```
+
+```python
+import requests
+
+headers = {
+  'Authorization': 'Bearer <token>'
+}
+
+r = requests.get('http://example.com/api/v1/analytics/summary/general',
+                  params={}, headers = headers)
+
+print r.json()
+```
+
+```java
+URL obj = new URL("http://example.com/api/v1/analytics/summary/general");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Authorization", "Bearer <token>");
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+```
+
+> Example responses
+
+```json
+{
+  "timerange_from": "2017-11-01T00:00:00.0Z",
+  "timerange_to": "2018-01-11T23:59:59.1Z",
+  "number_of_sales": 84,
+  "avg_tx_amount": 0.12657074607143,
+  "avg_tx_amount_fiat": 88.72505512713,
+  "total_sales": 10.63194267,
+  "total_sales_fiat": 7452.9046306789,
+  "total_commission_fee_charged": 0.85386515,
+  "total_commission_fee_charged_fiat": 602.6705777301
+}
+```
+
+
 <a id="opIdcreateDashboard_general"></a>
 
 `GET /api/v1/analytics/summary/general`
@@ -29,53 +126,90 @@
 |500|Internal server error|Internal server error|[ErrorMessage](#schemareporterrormessage)|
 |403|Forbidden|Forbidden|[ErrorMessage](#schemareporterrormessage)|
 
-> Example responses
-
-```json
-{
-  "timerange_from": "2017-11-01T00:00:00.0Z",
-  "timerange_to": "2018-01-11T23:59:59.1Z",
-  "number_of_sales": 84,
-  "avg_tx_amount": 0.12657074607143,
-  "avg_tx_amount_fiat": 88.72505512713,
-  "total_sales": 10.63194267,
-  "total_sales_fiat": 7452.9046306789,
-  "total_commission_fee_charged": 0.85386515,
-  "total_commission_fee_charged_fiat": 602.6705777301
-}
-```
 #### General sales summary
 
-<a id="opIdcreateDashboard_total_sales_by_timerange"></a>
+> Code samples
 
-`GET /api/v1/analytics/summary/sales`
+```shell
+curl -X GET http://example.com/api/v1/analytics/summary/sales -H Authorization: Bearer <token>'
+```
 
-*Total sales by time-range which is further divided on one hour interval. Note that the time intervals are rounded in hours. All values within hour intervals are aggregated.*
+```php
+<?php
+$URL = "http://example.com/api/v1/analytics/summary/sales";
 
-**Required user role:**
+$aHTTP['http']['method']  = 'GET';
 
-   * `ROLE_PARTNER_ADMIN`
-   * `ROLE_PARTNER_USER`
-   * `ROLE_MERCHANT_ADMIN`
-   * `ROLE_MERCHANT_USER`
+$aHTTP['http']['header']  = "Authorization: YOUR_API_KEY_HERE";
 
-<!--<h3 id="opIdcreateDashboard_total_sales_by_timerange-parameters">Parameters</h3>-->
+$context = stream_context_create($aHTTP);
 
-|Parameter|In|Type|Required|Description|
-|---|---|---|---|---|
-|currency|query|string|false|which currency result should respond (currently ignored)|
-|timerange_from|query|string|true|start date/datetime in ISO format|
-|timerange_to|query|string|true|end date/datetime in ISO format|
-|page_number|integer|string|true| represents requested page number (currently ignored)|
+$response = file_get_contents($URL, false, $context);
+?>
+
+```
+
+```javascript
+var headers = {
+  'Authorization':'Bearer <token>'
+};
+
+$.ajax({
+  url: 'http://example.com/api/v1/analytics/summary/sales',
+  method: 'get',
+  headers: headers,
+  success: function(data) {
+    console.log(JSON.stringify(data));
+  }
+});
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Authorization' => 'Bearer <token>'
+}
+
+result = RestClient.get 'http://example.com/api/v1/analytics/summary/sales',
+         params: {}, headers: headers
+
+p JSON.parse(result)
+```
+
+```python
+import requests
+
+headers = {
+  'Authorization': 'Bearer <token>'
+}
+
+r = requests.get('http://example.com/api/v1/analytics/summary/sales',
+                  params={}, headers = headers)
+
+print r.json()
+```
+
+```java
+URL obj = new URL("http://example.com/api/v1/analytics/summary/sales");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Authorization", "Bearer <token>");
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+```
 
 
-<h3 id="opIdcreateDashboard_performance_merchant-responses">Responses</h3>
 
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[RolePerformanceResponse](#tocRolePerformanceResponse)|
-|500|Internal server error|Internal server error|[ErrorMessage](#schemareporterrormessage)|
-|403|Forbidden|Forbidden|[ErrorMessage](#schemareporterrormessage)|
 
 > Example responses
 
@@ -108,19 +242,20 @@
 }
 ```
 
-#### General tax summary
+<a id="opIdcreateDashboard_total_sales_by_timerange"></a>
 
-<a id="opIdcreateDashboard_total_tax_by_timerange"></a>
+`GET /api/v1/analytics/summary/sales`
 
-`GET /api/v1/analytics/summary/tax`
-
-*Total tax by time-range which is further divided on one day interval. Note that the time intervals are rounded in days. All values within day intervals are aggregated.*
+*Total sales by time-range which is further divided on one hour interval. Note that the time intervals are rounded in hours. All values within hour intervals are aggregated.*
 
 **Required user role:**
 
-   * `Available to all user roles`
+   * `ROLE_PARTNER_ADMIN`
+   * `ROLE_PARTNER_USER`
+   * `ROLE_MERCHANT_ADMIN`
+   * `ROLE_MERCHANT_USER`
 
-<!--<h3 id="opIdcreateDashboard_total_tax_by_timerange-parameters">Parameters</h3>-->
+<!--<h3 id="opIdcreateDashboard_total_sales_by_timerange-parameters">Parameters</h3>-->
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
@@ -134,9 +269,95 @@
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[TaxSummaryResponse](#tocTaxSummaryResponse)|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[RolePerformanceResponse](#tocRolePerformanceResponse)|
 |500|Internal server error|Internal server error|[ErrorMessage](#schemareporterrormessage)|
 |403|Forbidden|Forbidden|[ErrorMessage](#schemareporterrormessage)|
+
+
+#### General tax summary
+
+> Code samples
+
+```shell
+curl -X GET http://example.com/api/v1/analytics/summary/tax -H Authorization: Bearer <token>'
+```
+
+```php
+<?php
+$URL = "http://example.com/api/v1/analytics/summary/tax";
+
+$aHTTP['http']['method']  = 'GET';
+
+$aHTTP['http']['header']  = "Authorization: YOUR_API_KEY_HERE";
+
+$context = stream_context_create($aHTTP);
+
+$response = file_get_contents($URL, false, $context);
+?>
+
+```
+
+```javascript
+var headers = {
+  'Authorization':'Bearer <token>'
+};
+
+$.ajax({
+  url: 'http://example.com/api/v1/analytics/summary/tax',
+  method: 'get',
+  headers: headers,
+  success: function(data) {
+    console.log(JSON.stringify(data));
+  }
+});
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Authorization' => 'Bearer <token>'
+}
+
+result = RestClient.get 'http://example.com/api/v1/analytics/summary/tax',
+         params: {}, headers: headers
+
+p JSON.parse(result)
+```
+
+```python
+import requests
+
+headers = {
+  'Authorization': 'Bearer <token>'
+}
+
+r = requests.get('http://example.com/api/v1/analytics/summary/tax',
+                  params={}, headers = headers)
+
+print r.json()
+```
+
+```java
+URL obj = new URL("http://example.com/api/v1/analytics/summary/tax");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Authorization", "Bearer <token>");
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+```
+
+
+
 
 > Example responses
 
@@ -168,3 +389,31 @@
     ]
 }
 ```
+
+<a id="opIdcreateDashboard_total_tax_by_timerange"></a>
+
+`GET /api/v1/analytics/summary/tax`
+
+*Total tax by time-range which is further divided on one day interval. Note that the time intervals are rounded in days. All values within day intervals are aggregated.*
+
+**Required user role:**
+
+   * `Available to all user roles`
+
+<!--<h3 id="opIdcreateDashboard_total_tax_by_timerange-parameters">Parameters</h3>-->
+
+|Parameter|In|Type|Required|Description|
+|---|---|---|---|---|
+|currency|query|string|false|which currency result should respond (currently ignored)|
+|timerange_from|query|string|true|start date/datetime in ISO format|
+|timerange_to|query|string|true|end date/datetime in ISO format|
+|page_number|integer|string|true| represents requested page number (currently ignored)|
+
+
+<h3 id="opIdcreateDashboard_performance_merchant-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[TaxSummaryResponse](#tocTaxSummaryResponse)|
+|500|Internal server error|Internal server error|[ErrorMessage](#schemareporterrormessage)|
+|403|Forbidden|Forbidden|[ErrorMessage](#schemareporterrormessage)|
