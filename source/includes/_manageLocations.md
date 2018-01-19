@@ -10,7 +10,7 @@ Location Resource
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/locations -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/locations -H Authorization: Bearer <token>
 ```
 
 ```php
@@ -295,7 +295,7 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/dashboard-locations -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/dashboard-locations -H Authorization: Bearer <token>
 ```
 
 ```php
@@ -422,7 +422,7 @@ Status Code **200**
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/locations/<id> -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/locations/<id> -H Authorization: Bearer <token>
 ```
 
 ```php
@@ -1087,7 +1087,7 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/location/search -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/location/search -H Authorization: Bearer <token>
 ```
 
 ```php

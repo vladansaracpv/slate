@@ -661,7 +661,7 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/partners/<id> -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/partners/<id> -H Authorization: Bearer <token>
 ```
 
 ```php

@@ -9,7 +9,7 @@ Point Of Sale Resource
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/point-of-sales -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/point-of-sales -H Authorization: Bearer <token>
 ```
 
 ```php
@@ -123,8 +123,9 @@ System.out.println(response.toString());
 <a id="opIdgetPointOfSaleUsingGET_1"></a>
 
 > Code samples
+
 ```shell
-curl -X GET http://example.com/api/point-of-sales/<id> -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/point-of-sales/<id> -H Authorization: Bearer <token>
 ```
 
 ```php
@@ -890,46 +891,36 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/point-of-sales/{id}/token -H 'Accept: */*'
+curl -X GET http://example.com/api/point-of-sales/<id>/token -H Authorization: Bearer <token>
 ```
 
-```http
-GET http://example.com/api/point-of-sales/{id}/token HTTP/1.1
-Host: null
-Accept: */*
+```php
+<?php
+$URL = "http://example.com/api/point-of-sales/<id>/token";
+
+$aHTTP['http']['method']  = 'GET';
+
+$aHTTP['http']['header']  = "Authorization: Bearer <token>";
+
+$context = stream_context_create($aHTTP);
+
+$response = file_get_contents($URL, false, $context);
+?>
+
 ```
 
 ```javascript
 var headers = {
-  'Accept':'*/*'
+  'Authorization':'Bearer <token>'
 };
 
 $.ajax({
-  url: 'http://example.com/api/point-of-sales/{id}/token',
+  url: 'http://example.com/api/point-of-sales/<id>/token',
   method: 'get',
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
-})
-```
-
-```javascript--nodejs
-const request = require('node-fetch');
-
-const headers = {
-  'Accept':'*/*'
-};
-
-fetch('http://example.com/api/point-of-sales/{id}/token',
-{
-  method: 'GET',
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
 });
 ```
 
@@ -937,12 +928,11 @@ fetch('http://example.com/api/point-of-sales/{id}/token',
 require 'rest-client'
 require 'json'
 
-
 headers = {
-  'Accept' => '*/*'
+  'Authorization' => 'Bearer <token>'
 }
 
-result = RestClient.get 'http://example.com/api/point-of-sales/{id}/token',
+result = RestClient.get 'http://example.com/api/point-of-sales/<id>/token',
          params: {}, headers: headers
 
 p JSON.parse(result)
@@ -952,18 +942,19 @@ p JSON.parse(result)
 import requests
 
 headers = {
-  'Accept': '*/*'
+  'Authorization': 'Bearer <token>'
 }
 
-r = requests.get('http://example.com/api/point-of-sales/{id}/token',
+r = requests.get('http://example.com/api/point-of-sales/<id>/token',
                   params={}, headers = headers)
 
 print r.json()
 ```
 
 ```java
-URL obj = new URL("http://example.com/api/point-of-sales/{id}/token");
+URL obj = new URL("http://example.com/api/point-of-sales/<id>/token");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Authorization", "Bearer <token>");
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
 BufferedReader in = new BufferedReader(
@@ -977,7 +968,7 @@ in.close();
 System.out.println(response.toString());
 ```
 
-`GET /api/point-of-sales/{id}/token`
+`GET /api/point-of-sales/<id>/token`
 
 *Generate POS request token code*
 
@@ -1130,46 +1121,36 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/point-of-sales/{id}/isActive -H 'Accept: */*'
+curl -X GET http://example.com/api/point-of-sales/<id>/isActive -H Authorization: Bearer <token>
 ```
 
-```http
-GET http://example.com/api/point-of-sales/{id}/isActive HTTP/1.1
-Host: null
-Accept: */*
+```php
+<?php
+$URL = "http://example.com/api/point-of-sales/<id>/isActive";
+
+$aHTTP['http']['method']  = 'GET';
+
+$aHTTP['http']['header']  = "Authorization: Bearer <token>";
+
+$context = stream_context_create($aHTTP);
+
+$response = file_get_contents($URL, false, $context);
+?>
+
 ```
 
 ```javascript
 var headers = {
-  'Accept':'*/*'
+  'Authorization':'Bearer <token>'
 };
 
 $.ajax({
-  url: 'http://example.com/api/point-of-sales/{id}/isActive',
+  url: 'http://example.com/api/point-of-sales/<id>/isActive',
   method: 'get',
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
-})
-```
-
-```javascript--nodejs
-const request = require('node-fetch');
-
-const headers = {
-  'Accept':'*/*'
-};
-
-fetch('http://example.com/api/point-of-sales/{id}/isActive',
-{
-  method: 'GET',
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
 });
 ```
 
@@ -1178,10 +1159,10 @@ require 'rest-client'
 require 'json'
 
 headers = {
-  'Accept' => '*/*'
+  'Authorization' => 'Bearer <token>'
 }
 
-result = RestClient.get 'http://example.com/api/point-of-sales/{id}/isActive',
+result = RestClient.get 'http://example.com/api/point-of-sales/<id>/isActive',
          params: {}, headers: headers
 
 p JSON.parse(result)
@@ -1191,18 +1172,19 @@ p JSON.parse(result)
 import requests
 
 headers = {
-  'Accept': '*/*'
+  'Authorization': 'Bearer <token>'
 }
 
-r = requests.get('http://example.com/api/point-of-sales/{id}/isActive',
+r = requests.get('http://example.com/api/point-of-sales/<id>/isActive',
                   params={}, headers = headers)
 
 print r.json()
 ```
 
 ```java
-URL obj = new URL("http://example.com/api/point-of-sales/{id}/isActive");
+URL obj = new URL("http://example.com/api/point-of-sales/<id>/isActive");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Authorization", "Bearer <token>");
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
 BufferedReader in = new BufferedReader(
@@ -1216,7 +1198,7 @@ in.close();
 System.out.println(response.toString());
 ```
 
-`GET /api/point-of-sales/{id}/isActive`
+`GET /api/point-of-sales/<id>/isActive`
 
 *Get POS status*
 
@@ -1369,19 +1351,27 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/point-of-sale/search -H 'Accept: */*'
+curl -X GET http://example.com/api/point-of-sale/search -H Authorization: Bearer <token>
 ```
 
-```http
-GET http://example.com/api/point-of-sale/search HTTP/1.1
-Host: null
-Accept: */*
-```
+```php
+<?php
+$URL = "http://example.com/api/point-of-sale/search";
 
+$aHTTP['http']['method']  = 'GET';
+
+$aHTTP['http']['header']  = "Authorization: Bearer <token>";
+
+$context = stream_context_create($aHTTP);
+
+$response = file_get_contents($URL, false, $context);
+?>
+
+```
 
 ```javascript
 var headers = {
-  'Accept':'*/*'
+  'Authorization':'Bearer <token>'
 };
 
 $.ajax({
@@ -1391,25 +1381,6 @@ $.ajax({
   success: function(data) {
     console.log(JSON.stringify(data));
   }
-})
-```
-
-```javascript--nodejs
-const request = require('node-fetch');
-
-const headers = {
-  'Accept':'*/*'
-};
-
-fetch('http://example.com/api/point-of-sale/search',
-{
-  method: 'GET',
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
 });
 ```
 
@@ -1418,7 +1389,7 @@ require 'rest-client'
 require 'json'
 
 headers = {
-  'Accept' => '*/*'
+  'Authorization' => 'Bearer <token>'
 }
 
 result = RestClient.get 'http://example.com/api/point-of-sale/search',
@@ -1431,7 +1402,7 @@ p JSON.parse(result)
 import requests
 
 headers = {
-  'Accept': '*/*'
+  'Authorization': 'Bearer <token>'
 }
 
 r = requests.get('http://example.com/api/point-of-sale/search',
@@ -1443,6 +1414,7 @@ print r.json()
 ```java
 URL obj = new URL("http://example.com/api/point-of-sale/search");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Authorization", "Bearer <token>");
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
 BufferedReader in = new BufferedReader(

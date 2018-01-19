@@ -9,7 +9,7 @@
 
 
 ```shell
-curl -X GET http://example.com/api/merchants -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/merchants -H Authorization: Bearer <token>
 ```
 
 ```php
@@ -164,7 +164,7 @@ Status Code **200**
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/merchants/<id> -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/merchants/<id> -H Authorization: Bearer <token>
 ```
 
 ```php
@@ -1622,7 +1622,7 @@ System.out.println(result);
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/merchant-vendors -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/merchant-vendors -H Authorization: Bearer <token>
 ```
 
 ```php
@@ -1987,7 +1987,7 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/merchant/autosell -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/merchant/autosell -H Authorization: Bearer <token>
 ```
 
 ```php
@@ -2212,7 +2212,7 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/merchant/search -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/merchant/search -H Authorization: Bearer <token>
 ```
 
 ```php

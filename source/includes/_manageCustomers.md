@@ -9,18 +9,27 @@ Customer Resource
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/customers -H 'Accept: */*'
+curl -X GET http://example.com/api/customers -H Authorization: Bearer <token>
 ```
 
-```http
-GET http://example.com/api/customers HTTP/1.1
-Host: null
-Accept: */*
+```php
+<?php
+$URL = "http://example.com/api/customers";
+
+$aHTTP['http']['method']  = 'GET';
+
+$aHTTP['http']['header']  = "Authorization: Bearer <token>";
+
+$context = stream_context_create($aHTTP);
+
+$response = file_get_contents($URL, false, $context);
+?>
+
 ```
 
 ```javascript
 var headers = {
-  'Accept':'*/*'
+  'Authorization':'Bearer <token>'
 };
 
 $.ajax({
@@ -30,25 +39,6 @@ $.ajax({
   success: function(data) {
     console.log(JSON.stringify(data));
   }
-})
-```
-
-```javascript--nodejs
-const request = require('node-fetch');
-
-const headers = {
-  'Accept':'*/*'
-};
-
-fetch('http://example.com/api/customers',
-{
-  method: 'GET',
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
 });
 ```
 
@@ -57,7 +47,7 @@ require 'rest-client'
 require 'json'
 
 headers = {
-  'Accept' => '*/*'
+  'Authorization' => 'Bearer <token>'
 }
 
 result = RestClient.get 'http://example.com/api/customers',
@@ -70,7 +60,7 @@ p JSON.parse(result)
 import requests
 
 headers = {
-  'Accept': '*/*'
+  'Authorization': 'Bearer <token>'
 }
 
 r = requests.get('http://example.com/api/customers',
@@ -82,6 +72,7 @@ print r.json()
 ```java
 URL obj = new URL("http://example.com/api/customers");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Authorization", "Bearer <token>");
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
 BufferedReader in = new BufferedReader(
@@ -177,46 +168,36 @@ Status Code **200**
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/customers/{id} -H 'Accept: */*'
+curl -X GET http://example.com/api/customers/<id> -H Authorization: Bearer <token>
 ```
 
-```http
-GET http://example.com/api/customers/{id} HTTP/1.1
-Host: null
-Accept: */*
+```php
+<?php
+$URL = "http://example.com/api/customers/<id>";
+
+$aHTTP['http']['method']  = 'GET';
+
+$aHTTP['http']['header']  = "Authorization: Bearer <token>";
+
+$context = stream_context_create($aHTTP);
+
+$response = file_get_contents($URL, false, $context);
+?>
+
 ```
 
 ```javascript
 var headers = {
-  'Accept':'*/*'
+  'Authorization':'Bearer <token>'
 };
 
 $.ajax({
-  url: 'http://example.com/api/customers/{id}',
+  url: 'http://example.com/api/customers/<id>',
   method: 'get',
   headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
-})
-```
-
-```javascript--nodejs
-const request = require('node-fetch');
-
-const headers = {
-  'Accept':'*/*'
-};
-
-fetch('http://example.com/api/customers/{id}',
-{
-  method: 'GET',
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
 });
 ```
 
@@ -225,10 +206,10 @@ require 'rest-client'
 require 'json'
 
 headers = {
-  'Accept' => '*/*'
+  'Authorization' => 'Bearer <token>'
 }
 
-result = RestClient.get 'http://example.com/api/customers/{id}',
+result = RestClient.get 'http://example.com/api/customers/<id>',
          params: {}, headers: headers
 
 p JSON.parse(result)
@@ -238,18 +219,19 @@ p JSON.parse(result)
 import requests
 
 headers = {
-  'Accept': '*/*'
+  'Authorization': 'Bearer <token>'
 }
 
-r = requests.get('http://example.com/api/customers/{id}',
+r = requests.get('http://example.com/api/customers/<id>',
                   params={}, headers = headers)
 
 print r.json()
 ```
 
 ```java
-URL obj = new URL("http://example.com/api/customers/{id}");
+URL obj = new URL("http://example.com/api/customers/<id>");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Authorization", "Bearer <token>");
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
 BufferedReader in = new BufferedReader(
@@ -263,7 +245,7 @@ in.close();
 System.out.println(response.toString());
 ```
 
-`GET /api/customers/{id}`
+`GET /api/customers/<id>`
 
 *Get the customer by ID*
 
@@ -1043,18 +1025,27 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/customer/search -H 'Accept: */*'
+curl -X GET http://example.com/api/customer/search -H Authorization: Bearer <token>
 ```
 
-```http
-GET http://example.com/api/customer/search HTTP/1.1
-Host: null
-Accept: */*
+```php
+<?php
+$URL = "http://example.com/api/customer/search";
+
+$aHTTP['http']['method']  = 'GET';
+
+$aHTTP['http']['header']  = "Authorization: Bearer <token>";
+
+$context = stream_context_create($aHTTP);
+
+$response = file_get_contents($URL, false, $context);
+?>
+
 ```
 
 ```javascript
 var headers = {
-  'Accept':'*/*'
+  'Authorization':'Bearer <token>'
 };
 
 $.ajax({
@@ -1064,25 +1055,6 @@ $.ajax({
   success: function(data) {
     console.log(JSON.stringify(data));
   }
-})
-```
-
-```javascript--nodejs
-const request = require('node-fetch');
-
-const headers = {
-  'Accept':'*/*'
-};
-
-fetch('http://example.com/api/customer/search',
-{
-  method: 'GET',
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
 });
 ```
 
@@ -1091,7 +1063,7 @@ require 'rest-client'
 require 'json'
 
 headers = {
-  'Accept' => '*/*'
+  'Authorization' => 'Bearer <token>'
 }
 
 result = RestClient.get 'http://example.com/api/customer/search',
@@ -1104,11 +1076,11 @@ p JSON.parse(result)
 import requests
 
 headers = {
-  'Accept': '*/*'
+  'Authorization': 'Bearer <token>'
 }
 
 r = requests.get('http://example.com/api/customer/search',
-                 params={}, headers = headers)
+                  params={}, headers = headers)
 
 print r.json()
 ```
@@ -1116,6 +1088,7 @@ print r.json()
 ```java
 URL obj = new URL("http://example.com/api/customer/search");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Authorization", "Bearer <token>");
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
 BufferedReader in = new BufferedReader(

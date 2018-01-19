@@ -7,7 +7,7 @@
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/roles -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/roles -H Authorization: Bearer <token>
 ```
 
 ```php
@@ -110,7 +110,7 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/users -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/users -H Authorization: Bearer <token>
 ```
 
 ```php
@@ -285,7 +285,7 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/users/{login} -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/users/{login} -H Authorization: Bearer <token>
 ```
 
 ```php

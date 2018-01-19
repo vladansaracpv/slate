@@ -12,7 +12,7 @@ External Partner Resource
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/externalpartner/merchants -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/externalpartner/merchants -H Authorization: Bearer <token>
 ```
 
 ```php
@@ -168,7 +168,7 @@ Status Code **200**
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/externalpartner/merchants/<id> -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/externalpartner/merchants/<id> -H Authorization: Bearer <token>
 ```
 
 ```php
@@ -985,7 +985,6 @@ System.out.println(response.toString());
 curl -X DELETE http://example.com/api/externalpartner/merchant/{id}
 ```
 
-
 ```http
 DELETE http://example.com/api/externalpartner/merchant/{id} HTTP/1.1
 Host: null
@@ -1000,7 +999,6 @@ $.ajax({
   }
 })
 ```
-
 
 ```javascript--nodejs
 const request = require('node-fetch');
@@ -1083,7 +1081,7 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/externalpartner/locations -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/externalpartner/locations -H Authorization: Bearer <token>
 ```
 
 ```php
@@ -1197,7 +1195,7 @@ System.out.println(response.toString());
 
 
 ```shell
-curl -X GET http://example.com/api/externalpartner/locations/<id> -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/externalpartner/locations/<id> -H Authorization: Bearer <token>
 ```
 
 ```php
@@ -1848,7 +1846,7 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/externalpartner/point-of-sales -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/externalpartner/point-of-sales -H Authorization: Bearer <token>
 ```
 
 ```php
@@ -1963,7 +1961,7 @@ System.out.println(response.toString());
 
 
 ```shell
-curl -X GET http://example.com/api/externalpartner/point-of-sales/<id> -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/externalpartner/point-of-sales/<id> -H Authorization: Bearer <token>
 ```
 
 ```php

@@ -7,20 +7,23 @@
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/common/states/us -H 'Accept: */*'
+curl -X GET http://example.com/api/common/states/us
 ```
 
-```http
-GET http://example.com/api/common/states/us HTTP/1.1
-Host: null
-Accept: */*
+```php
+<?php
+$URL = "http://example.com/api/common/states/us";
+
+$aHTTP['http']['method']  = 'GET';
+
+$context = stream_context_create($aHTTP);
+
+$response = file_get_contents($URL, false, $context);
+?>
+
 ```
 
 ```javascript
-var headers = {
-  'Accept':'*/*'
-};
-
 $.ajax({
   url: 'http://example.com/api/common/states/us',
   method: 'get',
@@ -28,25 +31,6 @@ $.ajax({
   success: function(data) {
     console.log(JSON.stringify(data));
   }
-})
-```
-
-```javascript--nodejs
-const request = require('node-fetch');
-
-const headers = {
-  'Accept':'*/*'
-};
-
-fetch('http://example.com/api/common/states/us',
-{
-  method: 'GET',
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
 });
 ```
 
@@ -54,12 +38,8 @@ fetch('http://example.com/api/common/states/us',
 require 'rest-client'
 require 'json'
 
-headers = {
-  'Accept' => '*/*'
-}
-
 result = RestClient.get 'http://example.com/api/common/states/us',
-         params: {}, headers: headers
+         params: {}
 
 p JSON.parse(result)
 ```
@@ -67,12 +47,8 @@ p JSON.parse(result)
 ```python
 import requests
 
-headers = {
-  'Accept': '*/*'
-}
-
 r = requests.get('http://example.com/api/common/states/us',
-                  params={}, headers = headers)
+                  params={})
 
 print r.json()
 ```
@@ -413,18 +389,27 @@ Code | Type | Description
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/invitations -H 'Accept: */*'
+curl -X GET http://example.com/api/invitations -H Authorization: Bearer <token>
 ```
 
-```http
-GET http://example.com/api/invitations HTTP/1.1
-Host: null
-Accept: */*
+```php
+<?php
+$URL = "http://example.com/api/invitations";
+
+$aHTTP['http']['method']  = 'GET';
+
+$aHTTP['http']['header']  = "Authorization: Bearer <token>";
+
+$context = stream_context_create($aHTTP);
+
+$response = file_get_contents($URL, false, $context);
+?>
+
 ```
 
 ```javascript
 var headers = {
-  'Accept':'*/*'
+  'Authorization':'Bearer <token>'
 };
 
 $.ajax({
@@ -434,25 +419,6 @@ $.ajax({
   success: function(data) {
     console.log(JSON.stringify(data));
   }
-})
-```
-
-```javascript--nodejs
-const request = require('node-fetch');
-
-const headers = {
-  'Accept':'*/*'
-};
-
-fetch('http://example.com/api/invitations',
-{
-  method: 'GET',
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
 });
 ```
 
@@ -461,7 +427,7 @@ require 'rest-client'
 require 'json'
 
 headers = {
-  'Accept' => '*/*'
+  'Authorization' => 'Bearer <token>'
 }
 
 result = RestClient.get 'http://example.com/api/invitations',
@@ -474,7 +440,7 @@ p JSON.parse(result)
 import requests
 
 headers = {
-  'Accept': '*/*'
+  'Authorization': 'Bearer <token>'
 }
 
 r = requests.get('http://example.com/api/invitations',
@@ -486,6 +452,7 @@ print r.json()
 ```java
 URL obj = new URL("http://example.com/api/invitations");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Authorization", "Bearer <token>");
 con.setRequestMethod("GET");
 int responseCode = con.getResponseCode();
 BufferedReader in = new BufferedReader(
