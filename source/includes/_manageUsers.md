@@ -590,69 +590,49 @@ System.out.println(result);
 ```shell
 curl -X PUT http://example.com/api/users \
   -H 'Content-Type: application/json' \
-  -H 'Accept: */*'
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer <token>'
+  -D '<body_here>'
 ```
 
-```http
-PUT http://example.com/api/users HTTP/1.1
-Host: null
-Content-Type: application/json
-Accept: */*
+```php
+<?php
+    $body="<body_here>";
+    $opts = array('http' =>
+      array(
+        'method'  => 'PUT',
+        'header'  => "Authorization: Bearer <token>\r\nContent-Type: application/json\r\nAccept: application/json\r\n",
+        'content' => $body
+      )
+    );
+    $context  = stream_context_create($opts);
+    $URL = "http://example.com/api/users";
+    $result = file_get_contents($url, false, $context, -1, 40000);
+
+    $context = stream_context_create($aHTTP);
+    $response = file_get_contents($URL, false, $context);
+?>
+
 ```
 
 ```javascript
 var headers = {
   'Content-Type':'application/json',
-  'Accept':'*/*'
+  'Accept':'application/json',
+  'Authorization': 'Bearer <token>'
 };
+
+var requestBody=<body_here>
 
 $.ajax({
   url: 'http://example.com/api/users',
-  method: 'put',
+  method: 'PUT',
   headers: headers,
+  data: requestBody,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
 })
-```
-
-```javascript--nodejs
-const request = require('node-fetch');
-const inputBody = '{
-  "activated": true,
-  "authorities": [
-    "string"
-  ],
-  "createdBy": "string",
-  "createdDate": "2018-01-08T16:57:23Z",
-  "email": "string",
-  "firstName": "string",
-  "id": 0,
-  "imageUrl": "string",
-  "langKey": "strin",
-  "lastLoginDateTime": "2018-01-08T16:57:23Z",
-  "lastModifiedBy": "string",
-  "lastModifiedDate": "2018-01-08T16:57:23Z",
-  "lastName": "string",
-  "login": "string",
-  "splashscreenEnabled": true,
-  "using2fa": true
-}';
-const headers = {
-  'Content-Type':'application/json',
-  'Accept':'*/*'
-};
-fetch('http://example.com/api/users',
-{
-  method: 'PUT',
-  body: inputBody,
-  headers: headers
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
-});
 ```
 
 ```ruby
@@ -661,11 +641,12 @@ require 'json'
 
 headers = {
   'Content-Type' => 'application/json',
-  'Accept' => '*/*'
+  'Accept' => 'application/json'
+  'Authorization'=>'Bearer <token>'
 }
 
 result = RestClient.put 'http://example.com/api/users',
-         params: {}, headers: headers
+         payload:<body_here>, headers: headers
 
 p JSON.parse(result)
 ```
@@ -675,11 +656,13 @@ import requests
 
 headers = {
   'Content-Type': 'application/json',
-  'Accept': '*/*'
+  'Accept': 'application/json',
+  'Authorization': 'Bearer <token>'
+
 }
 
 r = requests.put('http://example.com/api/users',
-                  params={}, headers = headers)
+                  data=<body_here>, params={}, headers = headers)
 
 print r.json()
 ```
@@ -687,17 +670,31 @@ print r.json()
 ```java
 URL obj = new URL("http://example.com/api/users");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Accept", "application/json");
+con.setRequestProperty("Content-Type", "application/json");
+con.setRequestProperty("Authorization", "Bearer <token>");
+con.setDoOutput(true);
 con.setRequestMethod("PUT");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
+OutputStream os = con.getOutputStream();
+OutputStreamWriter osw = new OutputStreamWriter(os, "UTF-8");
+osw.write("<body_here>");
+osw.flush();
+osw.close();
+os.close();  //don't forget to close the OutputStream
+httpCon.connect();
+
+
+//read the inputstream and print it
+String result;
+BufferedInputStream bis = new BufferedInputStream(con.getInputStream());
+ByteArrayOutputStream buf = new ByteArrayOutputStream();
+int result2 = bis.read();
+while(result2 != -1) {
+    buf.write((byte) result2);
+    result2 = bis.read();
 }
-in.close();
-System.out.println(response.toString());
+result = buf.toString();
+System.out.println(result);
 ```
 
 `PUT /api/users`
@@ -777,34 +774,31 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X DELETE http://example.com/api/users/{login}
+curl -X DELETE http://example.com/api/users/<login> -H Authorization: Bearer <token>
 ```
 
-```http
-DELETE http://example.com/api/users/{login} HTTP/1.1
-Host: null
+```php
+<?php
+$URL = "http://example.com/api/users/<login>";
+$aHTTP['http']['method']  = 'DELETE';
+$aHTTP['http']['header']  = "Authorization: <token>";
+$context = stream_context_create($aHTTP);
+$response = file_get_contents($URL, false, $context);
+?>
 ```
 
 ```javascript
+var headers = {
+  'Authorization':'Bearer <token>'
+};
+
 $.ajax({
-  url: 'http://example.com/api/users/{login}',
-  method: 'delete',
+  url: 'http://example.com/api/users/<login>',
+  method: 'DELETE',
+  headers: headers,
   success: function(data) {
     console.log(JSON.stringify(data));
   }
-})
-```
-
-```javascript--nodejs
-const request = require('node-fetch');
-fetch('http://example.com/api/users/{login}',
-{
-  method: 'DELETE'
-})
-.then(function(res) {
-    return res.json();
-}).then(function(body) {
-    console.log(body);
 });
 ```
 
@@ -812,8 +806,12 @@ fetch('http://example.com/api/users/{login}',
 require 'rest-client'
 require 'json'
 
-result = RestClient.delete 'http://example.com/api/users/{login}',
-         params: {}
+headers = {
+  'Authorization' => 'Bearer <token>'
+}
+
+result = RestClient.delete 'http://example.com/api/users/<login>',
+         params: {}, headers: headers
 
 p JSON.parse(result)
 ```
@@ -821,15 +819,20 @@ p JSON.parse(result)
 ```python
 import requests
 
-r = requests.delete('http://example.com/api/users/{login}',
-                     params={})
+headers = {
+  'Authorization': 'Bearer <token>'
+}
+
+r = requests.delete('http://example.com/api/users/<login>',
+                  params={}, headers = headers)
 
 print r.json()
 ```
 
 ```java
-URL obj = new URL("http://example.com/api/users/{login}");
+URL obj = new URL("http://example.com/api/users/<login>");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestProperty("Authorization", "Bearer <token>");
 con.setRequestMethod("DELETE");
 int responseCode = con.getResponseCode();
 BufferedReader in = new BufferedReader(
@@ -843,7 +846,7 @@ in.close();
 System.out.println(response.toString());
 ```
 
-`DELETE /api/users/{login}`
+`DELETE /api/users/<login>`
 
 *Delete User*
 

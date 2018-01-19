@@ -9,7 +9,11 @@ The base URL for Sandbox environment is:
 
 * `https://reporting-dot-sandboxaltthirtysixproduct36.appspot.com`
 
-**Important notice:** There is a uniform date format which is used for time bound results. Generally, all ISO formats can be used. Nevertheless, following format is commonly used on the platform:
+**Important notices:**
+
+Please replace `http://example.com` from Code samples with corresponding base URL.
+
+There is a uniform date format which is used for time bound results. Generally, all ISO formats can be used. Nevertheless, following format is commonly used on the platform:
 
 * *epoch_second* - A formatter for the number of seconds since the epoch
 * *date or strict_date* - A formatter for a full date as four digit year, two digit month of year, and two digit day of month: yyyy-MM-dd.

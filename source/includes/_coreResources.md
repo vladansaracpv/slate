@@ -11,3 +11,7 @@ The base URL for Production environment is:
 The base URL for Sandbox environment is:
 
   * `https://backend-dot-sandboxaltthirtysixproduct36.appspot.com`
+
+**Important notice**
+
+Please replace `http://example.com` from Code samples with corresponding base URL.
