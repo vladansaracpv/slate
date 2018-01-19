@@ -104,8 +104,16 @@ The base URL for Sandbox environment is:
 
 A user may pay more or less than the amount requested simply by altering the amount to be paid from their mobile wallet after they scan the presented QR code. Therefore an addition parameter `warning_msg` is provided which includes a message with the exact difference. If the amount paid is equal as the requested amount, this parameter is omitted or empty.
 
-<!--<h3 id="getAllPaginatedUsingGET_4-internal_fiat_to_crypto">Parameters</h3>-->
+<h3 id="getAllPaginatedUsingGET_4-internal_fiat_to_crypto">Parameters</h3>
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |internal_tx_id|path|string|true|Internal transaction identifier for which data is requested|
+
+<h3 id="poscreatenewpaymentrequest-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|OK|[NotificationMessage](#tocNotificationMessage)|
+|401|[Bad request](https://tools.ietf.org/html/rfc7235#section-3.1)|Bad request|None|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|None|
