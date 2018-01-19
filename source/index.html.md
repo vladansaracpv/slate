@@ -27,6 +27,7 @@ includes:
   - versioning
   - coreResources
   - externalPartnerAPI
+  - manageUsers
   - managePartners
   - manageMerchants
   - manageLocations

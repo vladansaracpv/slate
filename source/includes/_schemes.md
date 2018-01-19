@@ -136,7 +136,7 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|reason|string|true|No description|
+|reason|string|true|Reason for closing an account|
 
 
 <h2 id="tocSsort">Sort</h2>
@@ -355,22 +355,22 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|activated|boolean|false|No description|
-|authorities|[string]|false|No description|
-|createdBy|string|false|No description|
-|createdDate|string(date-time)|false|No description|
-|email|string|false|No description|
-|firstName|string|false|No description|
-|id|integer(int64)|false|No description|
+|activated|boolean|false|Is user Activated|
+|authorities|[string]|false|User roles|
+|createdBy|string|false|User created|
+|createdDate|string(date-time)|false|Date created|
+|email|string|false|Email address|
+|firstName|string|false|First Name|
+|id|integer(int64)|false|Last Name|
 |imageUrl|string|false|No description|
 |langKey|string|false|No description|
-|lastLoginDateTime|string(date-time)|false|No description|
+|lastLoginDateTime|string(date-time)|false|Last Login datetime|
 |lastModifiedBy|string|false|No description|
 |lastModifiedDate|string(date-time)|false|No description|
-|lastName|string|false|No description|
-|login|string|true|No description|
-|splashscreenEnabled|boolean|false|No description|
-|using2fa|boolean|false|No description|
+|lastName|string|false|Last Name|
+|login|string|true|Username|
+|splashscreenEnabled|boolean|false|Is splash screen enabled|
+|using2fa|boolean|false|Is 2FA enabled|
 
 
 <h2 id="tocSuserdtoextended">UserDTOExtended</h2>
@@ -422,8 +422,8 @@
 |lastModifiedDate|string(date-time)|false|No description|
 |lastName|string|false|No description|
 |login|string|true|No description|
-|splashscreenEnabled|boolean|false|No description|
-|using2fa|boolean|false|No description|
+|splashscreenEnabled|boolean|false|Is splash screen enabled|
+|using2fa|boolean|false|Is 2FA enabled|
 
 
 <h2 id="tocSwithdrawalstransactionsvm">WithdrawalsTransactionsVm</h2>
