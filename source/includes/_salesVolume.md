@@ -6,25 +6,21 @@ Summary endpoints are used for sales summary information. These endpoints are us
 > Code samples
 
 ```shell
-curl -X GET http://example.com> Code samples
-
-```shell
-curl -X GET http://example.com/api/pos/payment -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/v1/analytics/salesvolume/associate/<associate_id> -H Authorization: Bearer <token>
 ```
 
 ```php
 <?php
-$URL = "http://example.com/api/pos/payment";
+$URL = "http://example.com/api/v1/analytics/salesvolume/associate/<associate_id>";
 
 $aHTTP['http']['method']  = 'GET';
 
-$aHTTP['http']['header']  = "Authorization: YOUR_API_KEY_HERE";
+$aHTTP['http']['header']  = "Bearer <token>";
 
 $context = stream_context_create($aHTTP);
 
 $response = file_get_contents($URL, false, $context);
 ?>
-
 ```
 
 ```javascript
@@ -33,7 +29,7 @@ var headers = {
 };
 
 $.ajax({
-  url: 'http://example.com/api/pos/payment',
+  url: 'http://example.com/api/v1/analytics/salesvolume/associate/<associate_id>',
   method: 'get',
   headers: headers,
   success: function(data) {
@@ -50,7 +46,7 @@ headers = {
   'Authorization' => 'Bearer <token>'
 }
 
-result = RestClient.get 'http://example.com/api/pos/payment',
+result = RestClient.get 'http://example.com/api/v1/analytics/salesvolume/associate/<associate_id>',
          params: {}, headers: headers
 
 p JSON.parse(result)
@@ -63,14 +59,14 @@ headers = {
   'Authorization': 'Bearer <token>'
 }
 
-r = requests.get('http://example.com/api/pos/payment',
+r = requests.get('http://example.com/api/v1/analytics/salesvolume/associate/<associate_id>',
                   params={}, headers = headers)
 
 print r.json()
 ```
 
 ```java
-URL obj = new URL("http://example.com/api/pos/payment");
+URL obj = new URL("http://example.com/api/v1/analytics/salesvolume/associate/<associate_id>");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestProperty("Authorization", "Bearer <token>");
 con.setRequestMethod("GET");
@@ -84,488 +80,6 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-```
- -H Authorization: Bearer <token>'
-```
-
-```php
-<?php
-$URL = "http://example.com> Code samples
-
-```shell
-curl -X GET http://example.com/api/pos/payment -H Authorization: Bearer <token>'
-```
-
-```php
-<?php
-$URL = "http://example.com/api/pos/payment";
-
-$aHTTP['http']['method']  = 'GET';
-
-$aHTTP['http']['header']  = "Authorization: YOUR_API_KEY_HERE";
-
-$context = stream_context_create($aHTTP);
-
-$response = file_get_contents($URL, false, $context);
-?>
-
-```
-
-```javascript
-var headers = {
-  'Authorization':'Bearer <token>'
-};
-
-$.ajax({
-  url: 'http://example.com/api/pos/payment',
-  method: 'get',
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-});
-```
-
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Authorization' => 'Bearer <token>'
-}
-
-result = RestClient.get 'http://example.com/api/pos/payment',
-         params: {}, headers: headers
-
-p JSON.parse(result)
-```
-
-```python
-import requests
-
-headers = {
-  'Authorization': 'Bearer <token>'
-}
-
-r = requests.get('http://example.com/api/pos/payment',
-                  params={}, headers = headers)
-
-print r.json()
-```
-
-```java
-URL obj = new URL("http://example.com/api/pos/payment");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestProperty("Authorization", "Bearer <token>");
-con.setRequestMethod("GET");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
-```
-";
-
-$aHTTP['http']['method']  = 'GET';
-
-$aHTTP['http']['header']  = "Authorization: YOUR_API_KEY_HERE";
-
-$context = stream_context_create($aHTTP);
-
-$response = file_get_contents($URL, false, $context);
-?>
-
-```
-
-```javascript
-var headers = {
-  'Authorization':'Bearer <token>'
-};
-
-$.ajax({
-  url: 'http://example.com> Code samples
-
-  ```shell
-  curl -X GET http://example.com/api/pos/payment -H Authorization: Bearer <token>'
-  ```
-
-  ```php
-  <?php
-  $URL = "http://example.com/api/pos/payment";
-
-  $aHTTP['http']['method']  = 'GET';
-
-  $aHTTP['http']['header']  = "Authorization: YOUR_API_KEY_HERE";
-
-  $context = stream_context_create($aHTTP);
-
-  $response = file_get_contents($URL, false, $context);
-  ?>
-
-  ```
-
-  ```javascript
-  var headers = {
-    'Authorization':'Bearer <token>'
-  };
-
-  $.ajax({
-    url: 'http://example.com/api/pos/payment',
-    method: 'get',
-    headers: headers,
-    success: function(data) {
-      console.log(JSON.stringify(data));
-    }
-  });
-  ```
-
-  ```ruby
-  require 'rest-client'
-  require 'json'
-
-  headers = {
-    'Authorization' => 'Bearer <token>'
-  }
-
-  result = RestClient.get 'http://example.com/api/pos/payment',
-           params: {}, headers: headers
-
-  p JSON.parse(result)
-  ```
-
-  ```python
-  import requests
-
-  headers = {
-    'Authorization': 'Bearer <token>'
-  }
-
-  r = requests.get('http://example.com/api/pos/payment',
-                    params={}, headers = headers)
-
-  print r.json()
-  ```
-
-  ```java
-  URL obj = new URL("http://example.com/api/pos/payment");
-  HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-  con.setRequestProperty("Authorization", "Bearer <token>");
-  con.setRequestMethod("GET");
-  int responseCode = con.getResponseCode();
-  BufferedReader in = new BufferedReader(
-      new InputStreamReader(con.getInputStream()));
-  String inputLine;
-  StringBuffer response = new StringBuffer();
-  while ((inputLine = in.readLine()) != null) {
-      response.append(inputLine);
-  }
-  in.close();
-  System.out.println(response.toString());
-  ```
-',
-  method: 'get',
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-});
-```
-
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Authorization' => 'Bearer <token>'
-}
-
-result = RestClient.get 'http://example.com> Code samples
-
-```shell
-curl -X GET http://example.com/api/pos/payment -H Authorization: Bearer <token>'
-```
-
-```php
-<?php
-$URL = "http://example.com/api/pos/payment";
-
-$aHTTP['http']['method']  = 'GET';
-
-$aHTTP['http']['header']  = "Authorization: YOUR_API_KEY_HERE";
-
-$context = stream_context_create($aHTTP);
-
-$response = file_get_contents($URL, false, $context);
-?>
-
-```
-
-```javascript
-var headers = {
-  'Authorization':'Bearer <token>'
-};
-
-$.ajax({
-  url: 'http://example.com/api/pos/payment',
-  method: 'get',
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-});
-```
-
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Authorization' => 'Bearer <token>'
-}
-
-result = RestClient.get 'http://example.com/api/pos/payment',
-         params: {}, headers: headers
-
-p JSON.parse(result)
-```
-
-```python
-import requests
-
-headers = {
-  'Authorization': 'Bearer <token>'
-}
-
-r = requests.get('http://example.com/api/pos/payment',
-                  params={}, headers = headers)
-
-print r.json()
-```
-
-```java
-URL obj = new URL("http://example.com/api/pos/payment");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestProperty("Authorization", "Bearer <token>");
-con.setRequestMethod("GET");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
-```
-',
-         params: {}, headers: headers
-
-p JSON.parse(result)
-```
-
-```python
-import requests
-
-headers = {
-  'Authorization': 'Bearer <token>'
-}
-
-r = requests.get('http://example.com> Code samples
-
-```shell
-curl -X GET http://example.com/api/pos/payment -H Authorization: Bearer <token>'
-```
-
-```php
-<?php
-$URL = "http://example.com/api/pos/payment";
-
-$aHTTP['http']['method']  = 'GET';
-
-$aHTTP['http']['header']  = "Authorization: YOUR_API_KEY_HERE";
-
-$context = stream_context_create($aHTTP);
-
-$response = file_get_contents($URL, false, $context);
-?>
-
-```
-
-```javascript
-var headers = {
-  'Authorization':'Bearer <token>'
-};
-
-$.ajax({
-  url: 'http://example.com/api/pos/payment',
-  method: 'get',
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-});
-```
-
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Authorization' => 'Bearer <token>'
-}
-
-result = RestClient.get 'http://example.com/api/pos/payment',
-         params: {}, headers: headers
-
-p JSON.parse(result)
-```
-
-```python
-import requests
-
-headers = {
-  'Authorization': 'Bearer <token>'
-}
-
-r = requests.get('http://example.com/api/pos/payment',
-                  params={}, headers = headers)
-
-print r.json()
-```
-
-```java
-URL obj = new URL("http://example.com/api/pos/payment");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestProperty("Authorization", "Bearer <token>");
-con.setRequestMethod("GET");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
-```
-',
-                  params={}, headers = headers)
-
-print r.json()
-```
-
-```java
-URL obj = new URL("http://example.com> Code samples
-
-```shell
-curl -X GET http://example.com/api/pos/payment -H Authorization: Bearer <token>'
-```
-
-```php
-<?php
-$URL = "http://example.com/api/pos/payment";
-
-$aHTTP['http']['method']  = 'GET';
-
-$aHTTP['http']['header']  = "Authorization: YOUR_API_KEY_HERE";
-
-$context = stream_context_create($aHTTP);
-
-$response = file_get_contents($URL, false, $context);
-?>
-
-```
-
-```javascript
-var headers = {
-  'Authorization':'Bearer <token>'
-};
-
-$.ajax({
-  url: 'http://example.com/api/pos/payment',
-  method: 'get',
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-});
-```
-
-```ruby
-require 'rest-client'
-require 'json'
-
-headers = {
-  'Authorization' => 'Bearer <token>'
-}
-
-result = RestClient.get 'http://example.com/api/pos/payment',
-         params: {}, headers: headers
-
-p JSON.parse(result)
-```
-
-```python
-import requests
-
-headers = {
-  'Authorization': 'Bearer <token>'
-}
-
-r = requests.get('http://example.com/api/pos/payment',
-                  params={}, headers = headers)
-
-print r.json()
-```
-
-```java
-URL obj = new URL("http://example.com/api/pos/payment");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestProperty("Authorization", "Bearer <token>");
-con.setRequestMethod("GET");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
-```
-");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestProperty("Authorization", "Bearer <token>");
-con.setRequestMethod("GET");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
-```
-
-
-> Example responses
-
-```json
-{
-"associate_id": 2102,
-"sales_crypto": 11.52008667,
-"sales_fiat": 7947.5531215589
-}
 ```
 
 <a id="opIdcreate_merchant_sales_volume"></a>
@@ -600,7 +114,7 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/v1/analytics/salesvolume/location/<location_id> -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/v1/analytics/salesvolume/location/<location_id> -H Authorization: Bearer <token>
 ```
 
 ```php
@@ -609,13 +123,12 @@ $URL = "http://example.com/api/v1/analytics/salesvolume/location/<location_id>";
 
 $aHTTP['http']['method']  = 'GET';
 
-$aHTTP['http']['header']  = "Authorization: YOUR_API_KEY_HERE";
+$aHTTP['http']['header']  = "Authorization: <token>";
 
 $context = stream_context_create($aHTTP);
 
 $response = file_get_contents($URL, false, $context);
 ?>
-
 ```
 
 ```javascript
@@ -723,7 +236,7 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/v1/analytics/salesvolume/location/<location_id>/pos/<pos_id> -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/v1/analytics/salesvolume/location/<location_id>/pos/<pos_id> -H Authorization: Bearer <token>
 ```
 
 ```php
@@ -732,13 +245,12 @@ $URL = "http://example.com/api/v1/analytics/salesvolume/location/<location_id>/p
 
 $aHTTP['http']['method']  = 'GET';
 
-$aHTTP['http']['header']  = "Authorization: YOUR_API_KEY_HERE";
+$aHTTP['http']['header']  = "Authorization: <token>";
 
 $context = stream_context_create($aHTTP);
 
 $response = file_get_contents($URL, false, $context);
 ?>
-
 ```
 
 ```javascript

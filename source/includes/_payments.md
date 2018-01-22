@@ -19,7 +19,7 @@ Please replace `http://example.com` from Code samples with corresponding base UR
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/account/cpaccountinfo -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/account/cpaccountinfo -H Authorization: Bearer <token>
 ```
 
 ```php
@@ -28,7 +28,7 @@ $URL = "http://example.com/api/account/cpaccountinfo";
 
 $aHTTP['http']['method']  = 'GET';
 
-$aHTTP['http']['header']  = "Authorization: YOUR_API_KEY_HERE";
+$aHTTP['http']['header']  = "Authorization: <token>";
 
 $context = stream_context_create($aHTTP);
 
@@ -1194,7 +1194,7 @@ System.out.println(result);
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/pos/exchange_rates -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/pos/exchange_rates -H Authorization: Bearer <token>
 ```
 
 ```php
@@ -1203,7 +1203,7 @@ $URL = "http://example.com/api/pos/exchange_rates";
 
 $aHTTP['http']['method']  = 'GET';
 
-$aHTTP['http']['header']  = "Authorization: YOUR_API_KEY_HERE";
+$aHTTP['http']['header']  = "Authorization: <token>";
 
 $context = stream_context_create($aHTTP);
 
@@ -1461,7 +1461,6 @@ while(result2 != -1) {
 result = buf.toString();
 System.out.println(result);
 ```
-
 
 >Body parameter
 

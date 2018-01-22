@@ -143,7 +143,6 @@ Status Code **200**
 |» emailAddress|string|true|No description|
 |» enabled|boolean|false|No description|
 |» enrolledBy|[Associate](#schemaassociate)|false|No description|
-|» id|integer(int64)|false|No description|
 |» incorporationDate|string(date)|false|No description|
 |» internalFee|number(double)|false|No description|
 |» legalBusinessName|string|true|No description|
@@ -2411,7 +2410,7 @@ headers = {
 }
 
 r = requests.delete('http://example.com/api/externalpartner/point-of-sales/<id>',
-                  params={}, headers = headers)
+                     params={}, headers = headers)
 
 print r.json()
 ```

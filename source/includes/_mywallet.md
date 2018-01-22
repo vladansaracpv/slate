@@ -254,7 +254,6 @@ $context = stream_context_create($aHTTP);
 
 $response = file_get_contents($URL, false, $context);
 ?>
-
 ```
 
 ```javascript
@@ -421,7 +420,6 @@ $context = stream_context_create($aHTTP);
 
 $response = file_get_contents($URL, false, $context);
 ?>
-
 ```
 
 ```javascript
@@ -536,7 +534,6 @@ $context = stream_context_create($aHTTP);
 
 $response = file_get_contents($URL, false, $context);
 ?>
-
 ```
 
 ```javascript
@@ -601,7 +598,6 @@ System.out.println(response.toString());
 `GET /api/transactions/mylasttransaction`
 
 *Get my (current user associate) last successful transaction *
-
 
 **Required user role:**
 
@@ -708,7 +704,7 @@ System.out.println(response.toString());
 
 **Required user role:**
 
-  * All roles
+  * Available to all user roles
 
 <!-- <h3 id="getPaymentsTransactionsUsingGET-parameters">Parameters</h3> -->
 
@@ -1284,6 +1280,10 @@ System.out.println(response.toString());
 `GET /api/transactions/withdrawals`
 
 *Get Withdrawals Transactions*
+
+**Required user role:**
+
+  * Available to all user roles
 
 <!-- <h3 id="getWithdrawalsTransactionsUsingGET-parameters">Parameters</h3> -->
 

@@ -7,7 +7,7 @@
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/v1/analytics/performance/merchant -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/v1/analytics/performance/merchant -H Authorization: Bearer <token>
 ```
 
 ```php
@@ -171,7 +171,7 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/v1/analytics/performance/location -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/v1/analytics/performance/location -H Authorization: Bearer <token>
 ```
 
 ```php
@@ -180,7 +180,7 @@ $URL = "http://example.com/api/v1/analytics/performance/location";
 
 $aHTTP['http']['method']  = 'GET';
 
-$aHTTP['http']['header']  = "Authorization: YOUR_API_KEY_HERE";
+$aHTTP['http']['header']  = "Authorization: <token>";
 
 $context = stream_context_create($aHTTP);
 

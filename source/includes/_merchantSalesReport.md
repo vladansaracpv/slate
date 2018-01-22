@@ -5,7 +5,7 @@
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/v1/analytics/reports/location -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/v1/analytics/reports/location -H Authorization: Bearer <token>
 ```
 
 ```php
@@ -14,13 +14,12 @@ $URL = "http://example.com/api/v1/analytics/reports/location";
 
 $aHTTP['http']['method']  = 'GET';
 
-$aHTTP['http']['header']  = "Authorization: YOUR_API_KEY_HERE";
+$aHTTP['http']['header']  = "Authorization: <token>";
 
 $context = stream_context_create($aHTTP);
 
 $response = file_get_contents($URL, false, $context);
 ?>
-
 ```
 
 ```javascript
@@ -107,7 +106,7 @@ System.out.println(response.toString());
       "totalSalesCommission": 0.9985645,
       "totalSalesCommissionFiat": 1026.25,
       "totalInternalCommissions": 0.22554123,
-      "totalInternalCommissionsFiat":1562.1233554
+      "totalInternalCommissionsFiat":1562.1233554,
       "income":0.03541,
       "incomeFiat": 180.365
     },
@@ -178,7 +177,7 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/v1/analytics/reports/location/<location_id>/pos -H Authorization: Bearer <token>'
+curl -X GET http://example.com/api/v1/analytics/reports/location/<location_id>/pos -H Authorization: Bearer <token>
 ```
 
 ```php
@@ -187,7 +186,7 @@ $URL = "http://example.com/api/v1/analytics/reports/location/<location_id>/pos";
 
 $aHTTP['http']['method']  = 'GET';
 
-$aHTTP['http']['header']  = "Authorization: YOUR_API_KEY_HERE";
+$aHTTP['http']['header']  = "Authorization: <token>";
 
 $context = stream_context_create($aHTTP);
 
@@ -280,7 +279,7 @@ System.out.println(response.toString());
       "totalSalesCommission": 0.9985645,
       "totalSalesCommissionFiat": 1026.25,
       "totalInternalCommissions": 0.22554123,
-      "totalInternalCommissionsFiat":1562.1233554
+      "totalInternalCommissionsFiat":1562.1233554,
       "income":0.03541,
       "incomeFiat": 180.365
     },
@@ -353,7 +352,7 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X GET http://example.com /api/v1/analytics/reports/pos -H Authorization: Bearer <token>'
+curl -X GET http://example.com /api/v1/analytics/reports/pos -H Authorization: Bearer <token>
 ```
 
 ```php
@@ -362,13 +361,12 @@ $URL = "http://example.com /api/v1/analytics/reports/pos";
 
 $aHTTP['http']['method']  = 'GET';
 
-$aHTTP['http']['header']  = "Authorization: YOUR_API_KEY_HERE";
+$aHTTP['http']['header']  = "Authorization: <token>";
 
 $context = stream_context_create($aHTTP);
 
 $response = file_get_contents($URL, false, $context);
 ?>
-
 ```
 
 ```javascript
@@ -452,7 +450,7 @@ System.out.println(response.toString());
       "totalSalesCommission": 0.9985645,
       "totalSalesCommissionFiat": 1026.25,
       "totalInternalCommissions": 0.22554123,
-      "totalInternalCommissionsFiat":1562.1233554
+      "totalInternalCommissionsFiat":1562.1233554,
       "income":0.03541,
       "incomeFiat": 180.365
     },

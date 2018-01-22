@@ -2189,7 +2189,6 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|id|integer|true|No description|
 |address|string|true|No description|
 |address2|string|false|No description|
 |altAutosellInternal|boolean|false|No description|
@@ -2206,7 +2205,7 @@
 |emailAddress|string|true|No description|
 |enabled|boolean|false|No description|
 |enroledBy|[Associate](#schemaassociate)|false|No description|
-|id|integer(int64)|false|No description|
+|id|integer(int64)|true|No description|
 |incorporationDate|string(date)|true|No description|
 |legalBusinessName|string|true|No description|
 |locationsCount|integer(int32)|false|No description|

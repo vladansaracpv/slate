@@ -285,12 +285,12 @@ System.out.println(response.toString());
 > Code samples
 
 ```shell
-curl -X GET http://example.com/api/users/{login} -H Authorization: Bearer <token>
+curl -X GET http://example.com/api/users/<login> -H Authorization: Bearer <token>
 ```
 
 ```php
 <?php
-$URL = "http://example.com/api/users/{login}";
+$URL = "http://example.com/api/users/<login>";
 
 $aHTTP['http']['method']  = 'GET';
 
@@ -309,7 +309,7 @@ var headers = {
 };
 
 $.ajax({
-  url: 'http://example.com/api/users/{login}',
+  url: 'http://example.com/api/users/<login>',
   method: 'get',
   headers: headers,
   success: function(data) {
@@ -326,7 +326,7 @@ headers = {
   'Authorization' => 'Bearer <token>'
 }
 
-result = RestClient.get 'http://example.com/api/users/{login}',
+result = RestClient.get 'http://example.com/api/users/<login>',
          params: {}, headers: headers
 
 p JSON.parse(result)
@@ -339,14 +339,14 @@ headers = {
   'Authorization': 'Bearer <token>'
 }
 
-r = requests.get('http://example.com/api/users/{login}',
+r = requests.get('http://example.com/api/users/<login>',
                   params={}, headers = headers)
 
 print r.json()
 ```
 
 ```java
-URL obj = new URL("http://example.com/api/users/{login}");
+URL obj = new URL("http://example.com/api/users/<login>");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestProperty("Authorization", "Bearer <token>");
 con.setRequestMethod("GET");
@@ -362,7 +362,7 @@ in.close();
 System.out.println(response.toString());
 ```
 
-`GET /api/users/{login}`
+`GET /api/users/<login>`
 
 *Get User*
 

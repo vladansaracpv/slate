@@ -363,7 +363,7 @@ Status Code **200**
 
 ##### HTTP Request
 
-`GET /api/get/file/{uuid}`
+`GET /api/get/file/<uuid>`
 
 **Required user role:**
 
