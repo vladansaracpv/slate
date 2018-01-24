@@ -303,7 +303,6 @@ curl -X POST http://example.com/api/externalpartner/merchant \
 $context = stream_context_create($aHTTP);
     $response = file_get_contents($URL, false, $context);
 ?>
-
 ```
 
 ```javascript
@@ -401,141 +400,47 @@ System.out.println(result);
 
 ```json
 {
-  "address": "string",
-  "address2": "string",
-  "altAutosellInternal": true,
-  "authorizedSignerContact": {
-    "address": "string",
-    "address2": "string",
-    "beneficiaryPercent": 0,
-    "birthDate": "2018-01-08",
-    "city": "string",
-    "file": "string",
-    "fileBytes": "string",
-    "fileContentType": "string",
-    "firstName": "string",
-    "gender": "MALE",
-    "id": 0,
-    "lastName": "string",
-    "nationality": "string",
-    "note": "string",
-    "passportExpiryDate": "2018-01-08",
-    "passportIssueDate": "2018-01-08",
-    "passportNumber": "string",
-    "position": "string",
-    "primaryEmailAddress": "string",
-    "primaryMobilePhone": "string",
-    "secondaryEmailAddress": "string",
-    "secondaryMobilePhone": "string",
-    "state": {
-      "abbreviation": "string",
-      "id": 0,
-      "state": "string"
-    },
-    "zip": "string"
-  },
-  "autosell": true,
-  "beneficiaryPercent": 0,
-  "canEditOnboarded": true,
-  "city": "string",
-  "commissionFee": 0,
-  "companyEIN": "string",
-  "companyWebsite": "string",
-  "createdDate": "2018-01-08T16:57:22Z",
-  "customers": 0,
-  "emailAddress": "string",
-  "enabled": true,
-  "enroledBy": {
-    "address": "string",
-    "altAutosellInternal": true,
-    "associateType": "ALT36",
-    "autosell": true,
-    "beneficiaryPercent": 0,
-    "canEditOnboarded": true,
-    "city": "string",
-    "coinaPultApiKey": "string",
-    "commissionFee": 0,
-    "companyEIN": "string",
-    "companyWebsite": "string",
-    "createdDate": "2018-01-08T16:57:22Z",
-    "cryptoCapitalApiKey": "string",
-    "customers": 0,
-    "deletedDate": "2018-01-08T16:57:22Z",
-    "emailAddress": "string",
-    "enabled": true,
-    "enrolledBy": null,
-    "id": 0,
-    "incorporationDate": "2018-01-08",
-    "internalFee": 0,
-    "legalBusinessName": "string",
-    "locationsCount": 0,
-    "merchants": 0,
-    "note": "string",
-    "partners": 0,
-    "phone": "string",
-    "posCount": 0,
-    "state": {
-      "abbreviation": "string",
-      "id": 0,
-      "state": "string"
-    },
-    "usBankAccount": "string",
-    "vendors": 0,
-    "zip": "string"
-  },
-  "id": 0,
-  "incorporationDate": "2018-01-08",
-  "legalBusinessName": "string",
-  "locationsCount": 0,
-  "mainContact": {
-    "address": "string",
-    "address2": "string",
-    "beneficiaryPercent": 0,
-    "birthDate": "2018-01-08",
-    "city": "string",
-    "file": "string",
-    "fileBytes": "string",
-    "fileContentType": "string",
-    "firstName": "string",
-    "gender": "MALE",
-    "id": 0,
-    "lastName": "string",
-    "nationality": "string",
-    "note": "string",
-    "passportExpiryDate": "2018-01-08",
-    "passportIssueDate": "2018-01-08",
-    "passportNumber": "string",
-    "position": "string",
-    "primaryEmailAddress": "string",
-    "primaryMobilePhone": "string",    "secondaryEmailAddress": "string",
-    "secondaryMobilePhone": "string",
-    "state": {
-      "abbreviation": "string",
-      "id": 0,
-      "state": "string"
-    },
-    "zip": "string"
-  },
-  "merchants": 0,
-  "note": "string",
-  "partners": 0,
-  "phone": "string",
-  "posCount": 0,
-  "saleVolume": 0,
+  "legalBusinessName": "Company",
+  "companyEIN": "00-55555",
+  "incorporationDate": "2017-09-19",
+  "phone": "0645566777",
+  "companyWebsite": "http://www.examplesite.com/",
+  "address": "CompanyAddress",
+  "emailAddress": "email@localhost",
+  "city": "City",
   "state": {
-    "abbreviation": "string",
-    "id": 0,
-    "state": "string"
+    "id": 1,
+    "state": "Alabama",
+    "abbreviation": "AL"
   },
-  "usBankAccount": "string",
+  "zip": "00000",
+  "authorizedSignerContact":{
+    "firstName": "First name",
+    "lastName": "Last Name",
+    "birthDate": "1987-01-19",
+    "primaryMobilePhone": "0645566777",
+    "primaryEmailAddress": "email@localhost",
+    "nationality": "NN",
+    "beneficiaryPercent": 100,
+    "passportNumber": "111-15152626-333",
+    "passportExpiryDate": "2020-09-19",
+    "passportIssueDate": "2017-09-19",
+    "fileBytes": "",
+    "fileContentType": "application/pdf"
+  },
+  "mainContact":{
+    "firstName": "First name",
+    "lastName": "Last Name",
+    "primaryMobilePhone": "0645566777",
+    "primaryEmailAddress": "email@localhost",
+    "position": "PR"
+  },
   "user": {
-    "email": "string",
-    "firstName": "string",
-    "lastName": "string",
-    "login": "string"
-  },
-  "vendors": 0,
-  "zip": "string"
+    "email": "email@localhost",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "login": "email@localhost"
+  }
 }
 ```
 
@@ -694,142 +599,42 @@ System.out.println(result);
 
 ```json
 {
-  "address": "string",
-  "address2": "string",
-  "altAutosellInternal": true,
-  "authorizedSignerContact": {
-    "address": "string",
-    "address2": "string",
-    "beneficiaryPercent": 0,
-    "birthDate": "2018-01-08",
-    "city": "string",
-    "file": "string",
-    "fileBytes": "string",
-    "fileContentType": "string",
-    "firstName": "string",
-    "gender": "MALE",
-    "id": 0,
-    "lastName": "string",
-    "nationality": "string",
-    "note": "string",
-    "passportExpiryDate": "2018-01-08",
-    "passportIssueDate": "2018-01-08",
-    "passportNumber": "string",
-    "position": "string",
-    "primaryEmailAddress": "string",
-    "primaryMobilePhone": "string",
-    "secondaryEmailAddress": "string",
-    "secondaryMobilePhone": "string",
-    "state": {
-      "abbreviation": "string",
-      "id": 0,
-      "state": "string"
-    },
-    "zip": "string"
-  },
-  "autosell": true,
-  "beneficiaryPercent": 0,
-  "canEditOnboarded": true,
-  "city": "string",
-  "commissionFee": 0,
-  "companyEIN": "string",
-  "companyWebsite": "string",
-  "createdDate": "2018-01-08T16:57:22Z",
-  "customers": 0,
-  "emailAddress": "string",
-  "enabled": true,
-  "enroledBy": {
-    "address": "string",
-    "altAutosellInternal": true,
-    "associateType": "ALT36",
-    "autosell": true,
-    "beneficiaryPercent": 0,
-    "canEditOnboarded": true,
-    "city": "string",
-    "coinaPultApiKey": "string",
-    "commissionFee": 0,
-    "companyEIN": "string",
-    "companyWebsite": "string",
-    "createdDate": "2018-01-08T16:57:22Z",
-    "cryptoCapitalApiKey": "string",
-    "customers": 0,
-    "deletedDate": "2018-01-08T16:57:22Z",
-    "emailAddress": "string",
-    "enabled": true,
-    "enrolledBy": null,
-    "id": 0,
-    "incorporationDate": "2018-01-08",
-    "internalFee": 0,
-    "legalBusinessName": "string",
-    "locationsCount": 0,
-    "merchants": 0,
-    "note": "string",
-    "partners": 0,
-    "phone": "string",
-    "posCount": 0,
-    "state": {
-      "abbreviation": "string",
-      "id": 0,
-      "state": "string"
-    },
-    "usBankAccount": "string",
-    "vendors": 0,
-    "zip": "string"
-  },
-  "id": 0,
-  "incorporationDate": "2018-01-08",
-  "legalBusinessName": "string",
-  "locationsCount": 0,
-  "mainContact": {
-    "address": "string",
-    "address2": "string",
-    "beneficiaryPercent": 0,
-    "birthDate": "2018-01-08",
-    "city": "string",
-    "file": "string",
-    "fileBytes": "string",
-    "fileContentType": "string",
-    "firstName": "string",
-    "gender": "MALE",
-    "id": 0,
-    "lastName": "string",
-    "nationality": "string",
-    "note": "string",
-    "passportExpiryDate": "2018-01-08",
-    "passportIssueDate": "2018-01-08",
-    "passportNumber": "string",
-    "position": "string",
-    "primaryEmailAddress": "string",
-    "primaryMobilePhone": "string",
-    "secondaryEmailAddress": "string",
-    "secondaryMobilePhone": "string",
-    "state": {
-      "abbreviation": "string",
-      "id": 0,
-      "state": "string"
-    },
-    "zip": "string"
-  },
-  "merchants": 0,
-  "note": "string",
-  "partners": 0,
-  "phone": "string",
-  "posCount": 0,
-  "saleVolume": 0,
+  "id": 1,
+  "legalBusinessName": "Company",
+  "companyEIN": "00-55555",
+  "incorporationDate": "2017-09-19",
+  "phone": "0645566777",
+  "companyWebsite": "http://www.examplesite.com/",
+  "address": "CompanyAddress",
+  "emailAddress": "email@localhost",
+  "city": "City",
   "state": {
-    "abbreviation": "string",
-    "id": 0,
-    "state": "string"
+    "id": 1,
+    "state": "Alabama",
+    "abbreviation": "AL"
   },
-  "usBankAccount": "string",
-  "user": {
-    "email": "string",
-    "firstName": "string",
-    "lastName": "string",
-    "login": "string"
+  "zip": "00000",
+  "authorizedSignerContact":{
+    "firstName": "First name",
+    "lastName": "Last Name",
+    "birthDate": "1987-01-19",
+    "primaryMobilePhone": "0645566777",
+    "primaryEmailAddress": "email@localhost",
+    "nationality": "NN",
+    "beneficiaryPercent": 100,
+    "passportNumber": "111-15152626-333",
+    "passportExpiryDate": "2020-09-19",
+    "passportIssueDate": "2017-09-19",
+    "fileBytes": "",
+    "fileContentType": "application/pdf"
   },
-  "vendors": 0,
-  "zip": "string"
+  "mainContact":{
+    "firstName": "First name",
+    "lastName": "Last Name",
+    "primaryMobilePhone": "0645566777",
+    "primaryEmailAddress": "email@localhost",
+    "position": "PR"
+  }
 }
 ```
 
@@ -1309,57 +1114,30 @@ System.out.println(result);
 
 ```json
 {
-  "address": "string",
-  "address2": "string",
-  "city": "string",
-  "contact": {
-    "address": "string",
-    "address2": "string",
-    "beneficiaryPercent": 0,
-    "birthDate": "2018-01-08",
-    "city": "string",
-    "contactType": "MAIN",
-    "file": "string",
-    "firstName": "string",
-    "gender": "MALE",
-    "id": 0,
-    "lastName": "string",
-    "nationality": "string",
-    "note": "string",
-    "notificationCronSchedule": "string",
-    "notificationEvent": "INBOUND_TRANSACTION",
-    "notifyByEmail": true,
-    "notifyByTextMessage": true,
-    "passportExpiryDate": "2018-01-08",
-    "passportIssueDate": "2018-01-08",
-    "passportNumber": "string",
-    "position": "string",
-    "primaryEmailAddress": "string",
-    "primaryMobilePhone": "string",
-    "secondaryEmailAddress": "string",
-    "secondaryMobilePhone": "string",
-    "zip": "string"
-  },
-  "country": "string",
-  "emailAddress": "string",
-  "file": "string",
-  "fileBytes": "string",
-  "fileContentType": "string",
-  "geoLocation": "string",
-  "id": 0,
-  "merchantId": 0,
-  "name": "string",
-  "noOfPos": 0,
-  "note": "string",
-  "parentLocationId": 0,
-  "phone": "string",
+  "name": "New location",
+  "phone": "+18267246776",
+  "website": "http://mysite.com",
+  "address": "751 S Weir Canyon Rd # 173",
+  "city": "Anaheim",
+  "zip": "92808",
   "state": {
-    "abbreviation": "string",
-    "id": 0,
-    "state": "string"
+    "id": 5,
+    "state": "California",
+    "abbreviation": "CA"
   },
-  "website": "string",
-  "zip": "string"
+  "geoLocation": "33.8608908,-117.7381407",
+  "country": "Alabama",
+  "file": "data:image/png;base64,image_in_base_64",
+  "fileContentType": "image/png",
+  "contact": {
+    "firstName": "John",
+    "lastName": "Dale",
+    "primaryMobilePhone": "+18267246776",
+    "primaryEmailAddress": "example@gmail.com",
+    "position": "some position",
+    "contactType": "LOCATION"
+  },
+  "merchantId": 1
 }
 ```
 
@@ -1510,56 +1288,31 @@ System.out.println(result);
 
 ```json
 {
-  "address": "string",
-  "address2": "string",
-  "city": "string",
-  "contact": {
-    "address": "string",
-    "address2": "string",
-    "beneficiaryPercent": 0,
-    "birthDate": "2018-01-08",
-    "city": "string",
-    "contactType": "MAIN",
-    "file": "string",
-    "firstName": "string",
-    "gender": "MALE",
-    "id": 0,
-    "lastName": "string",
-    "nationality": "string",
-    "note": "string",
-    "notificationCronSchedule": "string",
-    "notificationEvent": "INBOUND_TRANSACTION",
-    "notifyByEmail": true,
-    "notifyByTextMessage": true,
-    "passportExpiryDate": "2018-01-08",
-    "passportIssueDate": "2018-01-08",
-    "passportNumber": "string",
-    "position": "string",
-    "primaryEmailAddress": "string",
-    "primaryMobilePhone": "string",
-    "secondaryEmailAddress": "string",
-    "secondaryMobilePhone": "string",
-    "zip": "string"
-  },
-  "country": "string",
-  "emailAddress": "string",
-  "file": "string",
-  "fileBytes": "string",
-  "fileContentType": "string",
-  "geoLocation": "string",
-  "id": 0,
-  "name": "string",
-  "noOfPos": 0,
-  "note": "string",
-  "parentLocationId": 0,
-  "phone": "string",
+  "id": 1,
+  "name": "New location",
+  "phone": "+18267246776",
+  "website": "http://mysite.com",
+  "address": "751 S Weir Canyon Rd # 173",
+  "city": "Anaheim",
+  "zip": "92808",
   "state": {
-    "abbreviation": "string",
-    "id": 0,
-    "state": "string"
+    "id": 5,
+    "state": "California",
+    "abbreviation": "CA"
   },
-  "website": "string",
-  "zip": "string"
+  "geoLocation": "33.8608908,-117.7381407",
+  "country": "Alabama",
+  "file": "data:image/png;base64,image_in_base_64",
+  "fileContentType": "image/png",
+  "contact": {
+    "firstName": "John",
+    "lastName": "Dale",
+    "primaryMobilePhone": "+18267246776",
+    "primaryEmailAddress": "example@gmail.com",
+    "position": "some position",
+    "contactType": "LOCATION"
+  },
+  "merchantId": 1
 }
 ```
 
@@ -1567,7 +1320,7 @@ System.out.println(result);
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|[LocationVm](#schemalocationvm)|true|locationVm|
+|body|body|[LocationExternalVm](#schemalocationexternalvm)|true|locationVm|
 
 > Example responses
 

@@ -408,15 +408,14 @@ System.out.println(result);
 
 ```json
 {
-  "emailAddress": "string",
-  "id": 0,
-  "legalBusinessName": "string",
-  "phone": "string",
+  "emailAddress": "email@localhost",
+  "legalBusinessName": "Customer",
+  "phone": "0646623344",
   "user": {
-    "email": "string",
-    "firstName": "string",
-    "lastName": "string",
-    "login": "string"
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "email@localhost",
+    "login": "email@localhost"
   }
 }
 ```
@@ -744,15 +743,15 @@ System.out.println(result);
 
 ```json
 {
-  "emailAddress": "string",
-  "legalBusinessName": "string",
-  "phone": "string",
+  "emailAddress": "email@localhost",
+  "legalBusinessName": "Customer",
+  "phone": "0646623344",
   "user": {
-    "email": "string",
-    "firstName": "string",
-    "lastName": "string",
-    "login": "string",
-    "password": "string"
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "email@localhost",
+    "login": "email@localhost",
+    "password": "Password123"
   }
 }
 ```
@@ -762,7 +761,7 @@ System.out.println(result);
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
 |key|query|string|false|key|
-|body|body|[SelfRegisterCustomerVM](#schemaselfregistercustomervm)|true|partner|
+|body|body|[SelfRegisterCustomerVM](#schemaselfregistercustomervm)|true|customer|
 
 > Example responses
 
@@ -912,15 +911,15 @@ System.out.println(result);
 
 ```json
 {
-  "emailAddress": "string",
-  "id": 0,
-  "legalBusinessName": "string",
-  "phone": "string",
+  "id": 1,
+  "emailAddress": "email@localhost",
+  "legalBusinessName": "Customer",
+  "phone": "0646623344",
   "user": {
-    "email": "string",
-    "firstName": "string",
-    "lastName": "string",
-    "login": "string"
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "email@localhost",
+    "login": "email@localhost"
   }
 }
 ```

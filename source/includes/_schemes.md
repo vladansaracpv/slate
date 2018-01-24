@@ -97,17 +97,15 @@
 
 ### Properties
 
-
 |Name|Type|Required|Description|
 |---|---|---|---|
 |address|string|true|No description|
-|address2|string|false|No description|
-|authorizedSignerContact|[ContactVM](#schemacontactvm)|true|No description|
+|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|No description|
 |city|string|true|No description|
 |companyEIN|string|true|No description|
 |companyWebsite|string|true|No description|
 |emailAddress|string|true|No description|
-|incorporationDate|string(date)|false|No description|
+|incorporationDate|string(date)|false|YYYY-MM-DD|
 |legalBusinessName|string|true|No description|
 |mainContact|[ContactVM](#schemacontactvm)|true|No description|
 |note|string|false|No description|
@@ -1790,7 +1788,6 @@
 ```json
 {
   "emailAddress": "string",
-  "id": 0,
   "legalBusinessName": "string",
   "phone": "string",
   "user": {
@@ -1809,8 +1806,7 @@
 |Name|Type|Required|Description|
 |---|---|---|---|
 |emailAddress|string|true|No description|
-|id|integer(int64)|false|No description|
-|legalBusinessName|string|true|No description|
+|legalBusinessName|string|true|Populate with "Customer"|
 |phone|string|true|No description|
 |user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|true|No description|
 
@@ -1822,9 +1818,8 @@
 
 ```json
 {
-  "id": "integer",
+  "id": 1,
   "emailAddress": "string",
-  "id": 0,
   "legalBusinessName": "string",
   "phone": "string",
   "user": {
@@ -1842,10 +1837,9 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|id|integer|true|No description|
+|id|integer(int64)|true|No description|
 |emailAddress|string|true|No description|
-|id|integer(int64)|false|No description|
-|legalBusinessName|string|true|No description|
+|legalBusinessName|string|true|Populate with "Customer"|
 |phone|string|true|No description|
 |user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|true|No description|
 
@@ -2005,12 +1999,12 @@
 |address|string|true|No description|
 |address2|string|false|No description|
 |altAutosellInternal|boolean|false|No description|
-|authorizedSignerContact|[ContactVM](#schemacontactvm)|true|No description|
+|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|No description|
 |autosell|boolean|false|No description|
 |beneficiaryPercent|integer(int64)|false|No description|
 |canEditOnboarded|boolean|false|No description|
 |city|string|true|No description|
-|commissionFee|number|false|No description|
+|commissionFee|number(double)|false|(0,1)|
 |companyEIN|string|true|No description|
 |companyWebsite|string|true|No description|
 |createdDate|string(date-time)|false|No description|
@@ -2019,7 +2013,7 @@
 |enabled|boolean|false|No description|
 |enroledBy|[Associate](#schemaassociate)|false|No description|
 |id|integer(int64)|false|No description|
-|incorporationDate|string(date)|true|No description|
+|incorporationDate|string(date)|true|YYYY-MM-DD|
 |legalBusinessName|string|true|No description|
 |locationsCount|integer(int32)|false|No description|
 |mainContact|[ContactVM](#schemacontactvm)|true|No description|
@@ -2031,7 +2025,7 @@
 |saleVolume|number(double)|false|No description|
 |state|[CountryState](#schemacountrystate)|true|No description|
 |usBankAccount|string|false|No description|
-|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|false|No description|
+|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|true|No description|
 |vendors|integer(int32)|false|No description|
 |zip|string|true|No description|
 
@@ -2189,15 +2183,16 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
+|id|integer(int64)|true|No description|
 |address|string|true|No description|
 |address2|string|false|No description|
 |altAutosellInternal|boolean|false|No description|
-|authorizedSignerContact|[ContactVM](#schemacontactvm)|true|No description|
+|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|No description|
 |autosell|boolean|false|No description|
 |beneficiaryPercent|integer(int64)|false|No description|
 |canEditOnboarded|boolean|false|No description|
 |city|string|true|No description|
-|commissionFee|number|false|No description|
+|commissionFee|number(double)|false|(0,1)|
 |companyEIN|string|true|No description|
 |companyWebsite|string|true|No description|
 |createdDate|string(date-time)|false|No description|
@@ -2205,8 +2200,7 @@
 |emailAddress|string|true|No description|
 |enabled|boolean|false|No description|
 |enroledBy|[Associate](#schemaassociate)|false|No description|
-|id|integer(int64)|true|No description|
-|incorporationDate|string(date)|true|No description|
+|incorporationDate|string(date)|true|YYYY-MM-DD|
 |legalBusinessName|string|true|No description|
 |locationsCount|integer(int32)|false|No description|
 |mainContact|[ContactVM](#schemacontactvm)|true|No description|
@@ -2358,7 +2352,7 @@
   },
   "usBankAccount": "string",
   "user": {
-    "email": "john.doe@example.com",
+    "email": "string",
     "firstName": "string",
     "lastName": "string",
     "login": "string"
@@ -2368,20 +2362,21 @@
 }
 ```
 
-
 ### Properties
 
 
 |Name|Type|Required|Description|
 |---|---|---|---|
+|id|integer(int64)|true|No description|
 |address|string|true|No description|
 |address2|string|false|No description|
 |altAutosellInternal|boolean|false|No description|
-|authorizedSignerContact|[ContactVM](#schemacontactvm)|true|No description|
+|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|No description|
 |autosell|boolean|false|No description|
+|beneficiaryPercent|integer(int64)|false|No description|
 |canEditOnboarded|boolean|false|No description|
 |city|string|true|No description|
-|commissionFee|number|false|No description|
+|commissionFee|number(double)|false|(0,1)|
 |companyEIN|string|true|No description|
 |companyWebsite|string|true|No description|
 |createdDate|string(date-time)|false|No description|
@@ -2389,8 +2384,7 @@
 |emailAddress|string|true|No description|
 |enabled|boolean|false|No description|
 |enroledBy|[Associate](#schemaassociate)|false|No description|
-|id|integer(int64)|false|No description|
-|incorporationDate|string(date)|false|No description|
+|incorporationDate|string(date)|true|YYYY-MM-DD|
 |legalBusinessName|string|true|No description|
 |locationsCount|integer(int32)|false|No description|
 |mainContact|[ContactVM](#schemacontactvm)|true|No description|
@@ -2556,17 +2550,18 @@
 
 ### Properties
 
-
 |Name|Type|Required|Description|
 |---|---|---|---|
+|id|integer(int64)|false|No description|
 |address|string|true|No description|
 |address2|string|false|No description|
 |altAutosellInternal|boolean|false|No description|
-|authorizedSignerContact|[ContactVM](#schemacontactvm)|true|No description|
+|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|No description|
 |autosell|boolean|false|No description|
+|beneficiaryPercent|integer(int64)|false|No description|
 |canEditOnboarded|boolean|false|No description|
 |city|string|true|No description|
-|commissionFee|number|false|No description|
+|commissionFee|number(double)|false|(0,1)|
 |companyEIN|string|true|No description|
 |companyWebsite|string|true|No description|
 |createdDate|string(date-time)|false|No description|
@@ -2574,8 +2569,7 @@
 |emailAddress|string|true|No description|
 |enabled|boolean|false|No description|
 |enroledBy|[Associate](#schemaassociate)|false|No description|
-|id|integer(int64)|false|No description|
-|incorporationDate|string(date)|false|No description|
+|incorporationDate|string(date)|true|YYYY-MM-DD|
 |legalBusinessName|string|true|No description|
 |locationsCount|integer(int32)|false|No description|
 |mainContact|[ContactVM](#schemacontactvm)|true|No description|
@@ -2587,7 +2581,7 @@
 |saleVolume|number(double)|false|No description|
 |state|[CountryState](#schemacountrystate)|true|No description|
 |usBankAccount|string|false|No description|
-|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|false|No description|
+|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|true|No description|
 |vendors|integer(int32)|false|No description|
 |zip|string|true|No description|
 
@@ -2745,15 +2739,16 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|id|integer|tru|No description|
+|id|integer(int64)|true|No description|
 |address|string|true|No description|
 |address2|string|false|No description|
 |altAutosellInternal|boolean|false|No description|
-|authorizedSignerContact|[ContactVM](#schemacontactvm)|true|No description|
+|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|No description|
 |autosell|boolean|false|No description|
+|beneficiaryPercent|integer(int64)|false|No description|
 |canEditOnboarded|boolean|false|No description|
 |city|string|true|No description|
-|commissionFee|number|false|No description|
+|commissionFee|number(double)|false|(0,1)|
 |companyEIN|string|true|No description|
 |companyWebsite|string|true|No description|
 |createdDate|string(date-time)|false|No description|
@@ -2761,8 +2756,7 @@
 |emailAddress|string|true|No description|
 |enabled|boolean|false|No description|
 |enroledBy|[Associate](#schemaassociate)|false|No description|
-|id|integer(int64)|false|No description|
-|incorporationDate|string(date)|false|No description|
+|incorporationDate|string(date)|true|YYYY-MM-DD|
 |legalBusinessName|string|true|No description|
 |locationsCount|integer(int32)|false|No description|
 |mainContact|[ContactVM](#schemacontactvm)|true|No description|
@@ -4380,19 +4374,18 @@
 |contact|[Contact](#schemacontact)|true|No description|
 |country|string|true|No description|
 |emailAddress|string|false|No description|
-|file|string|false|No description|
-|fileBytes|string(byte)|false|No description|
-|fileContentType|string|false|No description|
-|geoLocation|string|true|No description|
-|id|integer(int64)|false|No description|
-|merchantId|integer(int64)|true|No description|
+|file|string|true|Location license with format: data:image/png;base64,image_in_base_64|
+|fileContentType|string|true|[FileContentType](#tocFileContentType)|
+|geoLocation|string|true|Example 33.8608908,-117.7381407|
+|id|integer(int64)|false|Mandatory on update|
+|merchantId|integer(int64)|true|ID of a merchant for which location needs to be created|
 |name|string|true|No description|
 |noOfPos|integer(int32)|false|No description|
 |note|string|false|No description|
 |parentLocationId|integer(int64)|false|No description|
-|phone|string|false|No description|
+|phone|string|true|No description|
 |state|[CountryState](#schemacountrystate)|true|No description|
-|website|string|false|No description|
+|website|string|true|No description|
 |zip|string|true|No description|
 
 
@@ -4460,7 +4453,6 @@
 
 ### Properties
 
-
 |Name|Type|Required|Description|
 |---|---|---|---|
 |address|string|true|No description|
@@ -4469,18 +4461,17 @@
 |contact|[Contact](#schemacontact)|true|No description|
 |country|string|true|No description|
 |emailAddress|string|false|No description|
-|file|string|false|No description|
-|fileBytes|string(byte)|false|No description|
-|fileContentType|string|false|No description|
-|geoLocation|string|false|No description|
+|file|string|true|Location license with format: data:image/png;base64,image_in_base_64|
+|fileContentType|string|true|[FileContentType](#tocFileContentType)|
+|geoLocation|string|true|Example 33.8608908,-117.7381407|
 |id|integer(int64)|false|Mandatory on update|
 |name|string|true|No description|
 |noOfPos|integer(int32)|false|No description|
 |note|string|false|No description|
 |parentLocationId|integer(int64)|false|No description|
-|phone|string|false|No description|
+|phone|string|true|No description|
 |state|[CountryState](#schemacountrystate)|true|No description|
-|website|string|false|No description|
+|website|string|true|No description|
 |zip|string|true|No description|
 
 
@@ -4644,30 +4635,6 @@
 |id|integer(int64)|true|No description|
 |reason|string|false|No description|
 
-<h2 id="tocScountrystatedto">CountryStateDTO</h2>
-
-
-<a id="schemacountrystatedto"></a>
-
-
-```json
-{
-  "abbreviation": "string",
-  "id": 0,
-  "state": "string"
-}
-```
-
-
-### Properties
-
-
-|Name|Type|Required|Description|
-|---|---|---|---|
-|abbreviation|string|false|No description|
-|id|integer(int64)|false|No description|
-|state|string|false|No description|
-
 <h2 id="tocScountrystate">CountryState</h2>
 
 
@@ -4677,7 +4644,7 @@
 ```json
 {
   "abbreviation": "string",
-  "id": 0,
+  "id": 1,
   "state": "string"
 }
 ```
@@ -4689,7 +4656,7 @@
 |Name|Type|Required|Description|
 |---|---|---|---|
 |abbreviation|string|false|No description|
-|id|integer(int64)|false|No description|
+|id|integer(int64)|true|[Get all states](#opIdgetAllCountryStatesUsingGET)|
 |state|string|false|No description|
 
 
@@ -4741,19 +4708,19 @@
 |address|string|false|No description|
 |address2|string|false|No description|
 |beneficiaryPercent|integer(int64)|false|No description|
-|birthDate|string(date)|false|No description|
+|birthDate|string(date)|false|YYYY-MM-DD|
 |city|string|false|No description|
 |file|string|false|No description|
-|fileBytes|string(byte)|true|No description|
-|fileContentType|string|true|No description|
+|fileBytes|string(byte)|false|No description|
+|fileContentType|string|false|No description|
 |firstName|string|true|No description|
 |gender|string|false|No description|
 |id|integer(int64)|false|No description|
 |lastName|string|true|No description|
 |nationality|string|false|No description|
 |note|string|false|No description|
-|passportExpiryDate|string(date)|false|No description|
-|passportIssueDate|string(date)|false|No description|
+|passportExpiryDate|string(date)|false|YYYY-MM-DD|
+|passportIssueDate|string(date)|false|YYYY-MM-DD|
 |passportNumber|string|false|No description|
 |position|string|true|No description|
 |primaryEmailAddress|string|true|No description|
@@ -4763,6 +4730,75 @@
 |state|[CountryState](#schemacountrystate)|false|No description|
 |zip|string|false|No description|
 
+<h2 id="tocSchemaAuthorizedSignervm">AuthorizedSignerVM</h2>
+
+
+<a id="schemaauthorizedsignervm"></a>
+
+
+```json
+{
+  "address": "string",
+  "address2": "string",
+  "beneficiaryPercent": 0,
+  "birthDate": "2018-01-08",
+  "city": "string",
+  "file": "string",
+  "fileBytes": "string",
+  "fileContentType": "string",
+  "firstName": "string",
+  "gender": "MALE",
+  "id": 0,
+  "lastName": "string",
+  "nationality": "string",
+  "note": "string",
+  "passportExpiryDate": "2018-01-08",
+  "passportIssueDate": "2018-01-08",
+  "passportNumber": "string",
+  "position": "string",
+  "primaryEmailAddress": "string",
+  "primaryMobilePhone": "string",
+  "secondaryEmailAddress": "string",
+  "secondaryMobilePhone": "string",
+  "state": {
+    "abbreviation": "string",
+    "id": 0,
+    "state": "string"
+  },
+  "zip": "string"
+}
+```
+
+
+### Properties
+
+
+|Name|Type|Required|Description|
+|---|---|---|---|
+|address|string|false|No description|
+|address2|string|false|No description|
+|beneficiaryPercent|integer(int64)|false|No description|
+|birthDate|string(date)|true|YYYY-MM-DD|
+|city|string|false|No description|
+|file|string|false|UUID of the file once it's uploaded. Provided only within GET method.|
+|fileBytes|string(byte)|true|Base64 encoded file content Max 5.000.000 bytes|
+|fileContentType|string|true|[Allowed types](#tocFileContentType)|
+|firstName|string|true|No description|
+|gender|string|false|No description|
+|id|integer(int64)|false|No description|
+|lastName|string|true|No description|
+|nationality|string|true|No description|
+|note|string|false|No description|
+|passportExpiryDate|string(date)|true|YYYY-MM-DD|
+|passportIssueDate|string(date)|true|YYYY-MM-DD|
+|passportNumber|string|true|No description|
+|position|string|false|No description|
+|primaryEmailAddress|string|true|No description|
+|primaryMobilePhone|string|true|No description|
+|secondaryEmailAddress|string|false|No description|
+|secondaryMobilePhone|string|false|No description|
+|state|[CountryState](#schemacountrystate)|false|No description|
+|zip|string|false|No description|
 
 #### Enumerated Values
 
@@ -4772,6 +4808,21 @@
 |gender|MALE|
 |gender|FEMALE|
 |gender|OTHER|
+
+
+<h2 id="tocFileContentType">FileContentType</h2>
+
+
+<a id="schemafilecontenttype"></a>
+
+|Property|Value|
+|---|---|
+|fileContentType|image/jpeg|
+|fileContentType|image/png|
+|fileContentType|application/pdf|
+|fileContentType|application/msword|
+|fileContentType|text/csv|
+
 
 <h2 id="tocScontact">Contact</h2>
 
@@ -4821,7 +4872,7 @@
 |beneficiaryPercent|integer(int64)|false|No description|
 |birthDate|string(date)|false|No description|
 |city|string|false|No description|
-|contactType|string|true|No description|
+|contactType|string|true|[Enumerated Values](#tocenumeratedvalues)|
 |file|string|false|No description|
 |firstName|string|true|No description|
 |gender|string|false|No description|
@@ -4843,9 +4894,7 @@
 |secondaryMobilePhone|string|false|No description|
 |zip|string|false|No description|
 
-
-#### Enumerated Values
-
+<h3 id="tocenumeratedvalues">Enumerated Values</h3>
 
 |Property|Value|
 |---|---|
@@ -6046,14 +6095,11 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 |firstName|string|true|No description|
 |lastName|string|true|No description|
 |login|string|true|No description|
-|password|string|true|No description|
-
+|password|string|true|Min requirements: 8 characters long, uppercase, digits and lower case letters|
 
 <h2 id="tocScreateassociateadminuservm">CreateAssociateAdminUserVM</h2>
 
-
 <a id="schemacreateassociateadminuservm"></a>
-
 
 ```json
 {
