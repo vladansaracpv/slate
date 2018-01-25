@@ -1312,7 +1312,7 @@
 |deletedDate|string(date-time)|false|No description|
 |id|integer(int64)|false|Mandatory on update|
 |inventoryNumber|string|false|No description|
-|location|[Location](#schemalocation)|true|No description|
+|location|[LocationPOS](#schemalocationpos)|true|No description|
 |name|string|false|No description|
 |note|string|false|No description|
 |pointOfSaleType|string|true|No description|
@@ -4299,6 +4299,26 @@
 |website|string|false|No description|
 |zip|string|true|No description|
 
+
+<h2 id="tocSlocationpos">LocationPOS</h2>
+
+
+<a id="schemalocationpos"></a>
+
+
+```json
+{
+  "id": 1
+}
+```
+
+
+### Properties
+
+
+|Name|Type|Required|Description|
+|---|---|---|---|
+|id|integer(int64)|false|No description|
 
 <h2 id="tocSlocationexternalvm">LocationExternalVm</h2>
 

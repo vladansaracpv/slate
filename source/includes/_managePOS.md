@@ -360,75 +360,9 @@ System.out.println(result);
 
 ```json
 {
-  "active": true,
-  "deletedDate": "2018-01-08T16:57:23Z",
-  "id": 0,
-  "inventoryNumber": "string",
   "location": {
-    "address": "string",
-    "address2": "string",
-    "associate": {
-      "address": "string",
-      "altAutosellInternal": true,
-      "associateType": "ALT36",
-      "autosell": true,
-      "beneficiaryPercent": 0,
-      "canEditOnboarded": true,
-      "city": "string",
-      "coinaPultApiKey": "string",
-      "commissionFee": 0,
-      "companyEIN": "string",
-      "companyWebsite": "string",
-      "createdDate": "2018-01-08T16:57:23Z",
-      "cryptoCapitalApiKey": "string",
-      "customers": 0,
-      "deletedDate": "2018-01-08T16:57:23Z",
-      "emailAddress": "string",
-      "enabled": true,
-      "enrolledBy": null,
-      "id": 0,
-      "incorporationDate": "2018-01-08",
-      "internalFee": 0,
-      "legalBusinessName": "string",
-      "locationsCount": 0,
-      "merchants": 0,
-      "note": "string",
-      "partners": 0,
-      "phone": "string",
-      "posCount": 0,
-      "state": {
-        "abbreviation": "string",
-        "id": 0,
-        "state": "string"
-      },
-      "usBankAccount": "string",
-      "vendors": 0,
-      "zip": "string"
-    },
-    "city": "string",
-    "country": "string",
-    "deletedDate": "2018-01-08T16:57:23Z",
-    "emailAddress": "string",
-    "file": "string",
-    "geoLocation": "string",
-    "id": 0,
-    "name": "string",
-    "note": "string",
-    "parentLocation": null,
-    "phone": "string",
-    "pointOfSales": [
-      null
-    ],
-    "state": {
-      "abbreviation": "string",
-      "id": 0,
-      "state": "string"
-    },
-    "website": "string",
-    "zip": "string"
+    "id": 1
   },
-  "name": "string",
-  "note": "string",
   "pointOfSaleType": "GREENBITS",
   "virtualPointOfSalesEnabled": true
 }
@@ -580,78 +514,13 @@ System.out.println(result);
 
 ```json
 {
-  "active": true,
-  "deletedDate": "2018-01-08T16:57:23Z",
-  "id": 0,
-  "inventoryNumber": "string",
+  "id": 1,
   "location": {
-    "address": "string",
-    "address2": "string",
-    "associate": {
-      "address": "string",
-      "altAutosellInternal": true,
-      "associateType": "ALT36",
-      "autosell": true,
-      "beneficiaryPercent": 0,
-      "canEditOnboarded": true,
-      "city": "string",
-      "coinaPultApiKey": "string",
-      "commissionFee": 0,
-      "companyEIN": "string",
-      "companyWebsite": "string",
-      "createdDate": "2018-01-08T16:57:23Z",
-      "cryptoCapitalApiKey": "string",
-      "customers": 0,
-      "deletedDate": "2018-01-08T16:57:23Z",
-      "emailAddress": "string",
-      "enabled": true,
-      "enrolledBy": null,
-      "id": 0,
-      "incorporationDate": "2018-01-08",
-      "internalFee": 0,
-      "legalBusinessName": "string",
-      "locationsCount": 0,
-      "merchants": 0,
-      "note": "string",
-      "partners": 0,
-      "phone": "string",
-      "posCount": 0,
-      "state": {
-        "abbreviation": "string",
-        "id": 0,
-        "state": "string"
-      },
-      "usBankAccount": "string",
-      "vendors": 0,
-      "zip": "string"
-    },
-    "city": "string",
-    "country": "string",
-    "deletedDate": "2018-01-08T16:57:23Z",
-    "emailAddress": "string",
-    "file": "string",
-    "geoLocation": "string",
-    "id": 0,
-    "name": "string",
-    "note": "string",
-    "parentLocation": null,
-    "phone": "string",
-    "pointOfSales": [
-      null
-    ],
-    "state": {
-      "abbreviation": "string",
-      "id": 0,
-      "state": "string"
-    },
-    "website": "string",
-    "zip": "string"
+    "id": 1
   },
-  "name": "string",
-  "note": "string",
   "pointOfSaleType": "GREENBITS",
   "virtualPointOfSalesEnabled": true
-}
+	}
 ```
 
 <!-- <h3 id="updatePointOfSaleUsingPUT_1-parameters">Parameters</h3> -->
