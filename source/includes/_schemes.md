@@ -99,21 +99,21 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|address|string|true|No description|
-|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|No description|
-|city|string|true|No description|
-|companyEIN|string|true|No description|
-|companyWebsite|string|true|No description|
-|emailAddress|string|true|No description|
-|incorporationDate|string(date)|false|YYYY-MM-DD|
-|legalBusinessName|string|true|No description|
-|mainContact|[ContactVM](#schemacontactvm)|true|No description|
-|note|string|false|No description|
-|phone|string|true|No description|
-|state|[CountryState](#schemacountrystate)|true|No description|
-|usBankAccount|string|false|No description|
-|user|[CreateAssociateAdminUserWithPasswordVM](#schemacreateassociateadminuserwithpasswordvm)|false|No description|
-|zip|string|true|No description|
+|address|string|true|Address of the company|
+|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|Object containing info regarding authorized signer in the company|
+|city|string|true|City where company is located|
+|companyEIN|string|true|Employer Identification Number of the company|
+|companyWebsite|string|true|Website of the company|
+|emailAddress|string|true|Email address for creating account|
+|incorporationDate|string(date)|false|Company incorporation date with format YYYY-MM-DD|
+|legalBusinessName|string|true|Company legal business name|
+|mainContact|[ContactVM](#schemacontactvm)|true|Object containig info regarding main contact in the company|
+|note|string|false|Any additional note|
+|phone|string|true|Business phone|
+|state|[CountryState](#schemacountrystate)|true|Object containing info about the state where company is located|
+|usBankAccount|string|false|A bank account of the company|
+|user|[CreateAssociateAdminUserWithPasswordVM](#schemacreateassociateadminuserwithpasswordvm)|false|Object containing info regarding user account.|
+|zip|string|true|Zip code as part of company's address|
 
 
 <h2 id="tocSshutdownaccountrequestvm">ShutDownAccountRequestVM</h2>
@@ -142,17 +142,17 @@
 
 <a id="schemasort"></a>
 
+### Values
 
-```json
-{}
-```
+|Name|In|Required|Description|
+|---|---|---|---|
+|id|query|false|Sort list by id|
+|asc|query|false|Sort list in ascending order|
+|desc|query|true|Sort list in descending order|
 
+Example
 
-### Properties
-
-
-*None*
-
+`http//example.com/api/exampleResource?sort=id,asc`
 
 <h2 id="tocSuser">User</h2>
 
@@ -353,22 +353,22 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|activated|boolean|false|Is user Activated|
-|authorities|[string]|false|User roles|
-|createdBy|string|false|User created|
-|createdDate|string(date-time)|false|Date created|
-|email|string|false|Email address|
-|firstName|string|false|First Name|
-|id|integer(int64)|false|Last Name|
-|imageUrl|string|false|No description|
-|langKey|string|false|No description|
-|lastLoginDateTime|string(date-time)|false|Last Login datetime|
-|lastModifiedBy|string|false|No description|
-|lastModifiedDate|string(date-time)|false|No description|
+|activated|boolean|false|Is user account verified|
+|authorities|Array[string]|false|User authorization roles|
+|createdBy|string|false|Who created the user account|
+|createdDate|string(date-time)|false|The date when user account has been created|
+|email|string|false|Email address of the account|
+|firstName|string|false|First name|
 |lastName|string|false|Last Name|
+|id|integer(int64)|false|User account id, read-only|
 |login|string|true|Username|
-|splashscreenEnabled|boolean|false|Is splash screen enabled|
-|using2fa|boolean|false|Is 2FA enabled|
+|imageUrl|string|false|Image URL - not used at the moment|
+|langKey|string|false|Language - not used at the moment|
+|lastLoginDateTime|string(date-time)|false|Datetime when user has logged in last time|
+|lastModifiedBy|string|false|Who modified the user account last time (not used at the moment)|
+|lastModifiedDate|string(date-time)|false|When was the user account modified last time (not used at the moment)|
+|splashscreenEnabled|boolean|false|Is splash screen for web app enabled|
+|using2fa|boolean|false|Is two step authentication enabled for this user - read-only|
 
 
 <h2 id="tocSuserdtoextended">UserDTOExtended</h2>
@@ -406,22 +406,22 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|activated|boolean|false|No description|
-|associateActive|boolean|false|No description|
-|authorities|[string]|false|No description|
-|createdBy|string|false|No description|
-|createdDate|string(date-time)|false|No description|
-|email|string|false|No description|
-|firstName|string|false|No description|
-|id|integer(int64)|false|No description|
-|imageUrl|string|false|No description|
-|langKey|string|false|No description|
-|lastModifiedBy|string|false|No description|
-|lastModifiedDate|string(date-time)|false|No description|
-|lastName|string|false|No description|
-|login|string|true|No description|
-|splashscreenEnabled|boolean|false|Is splash screen enabled|
-|using2fa|boolean|false|Is 2FA enabled|
+|activated|boolean|false|Is user account verified|
+|authorities|Array[string]|false|User authorization roles|
+|createdBy|string|false|Who created the user account|
+|createdDate|string(date-time)|false|The date when user account has been created|
+|email|string|false|Email address of the account|
+|firstName|string|false|First name|
+|lastName|string|false|Last Name|
+|id|integer(int64)|false|User account id, read-only|
+|login|string|true|Username|
+|imageUrl|string|false|Image URL - not used at the moment|
+|langKey|string|false|Language - not used at the moment|
+|lastLoginDateTime|string(date-time)|false|Datetime when user has logged in last time|
+|lastModifiedBy|string|false|Who modified the user account last time (not used at the moment)|
+|lastModifiedDate|string(date-time)|false|When was the user account modified last time (not used at the moment)|
+|splashscreenEnabled|boolean|false|Is splash screen for web app enabled|
+|using2fa|boolean|false|Is two step authentication enabled for this user - read-only|
 
 
 <h2 id="tocSwithdrawalstransactionsvm">WithdrawalsTransactionsVm</h2>
@@ -446,11 +446,11 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|amount|string|false|No description|
-|id|integer(int64)|false|No description|
-|status|string|false|No description|
-|timeAndDate|string(date-time)|false|No description|
-|transactionId|string|false|No description|
+|amount|string|false|Withdrawal amount in USD|
+|id|integer(int64)|false|Database id for transaction|
+|status|string|false|Transaction status|
+|timeAndDate|string(date-time)|false|Date and time of the transaction YYYY-MM-DDTHH:MM:SSZ|
+|transactionId|string|false|Internal transaction id|
 
 
 <h2 id="tocSpageofuserdto">PageOfUserDTO</h2>
@@ -500,15 +500,15 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|content|[[UserDTO](#schemauserdto)]|false|No description|
-|first|boolean|false|No description|
-|last|boolean|false|No description|
-|number|integer(int32)|false|No description|
-|numberOfElements|integer(int32)|false|No description|
-|size|integer(int32)|false|No description|
-|sort|[Sort](#schemasort)|false|No description|
-|totalElements|integer(int64)|false|No description|
-|totalPages|integer(int32)|false|No description|
+|content|[[UserDTO](#schemauserdto)]|false|UserDTO object|
+|first|boolean|false|Is the current page first page - read-only|
+|last|boolean|false|Is the current page last page - read-only|
+|number|integer(int32)|false|Page index (starts from 0)|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
+|size|integer(int32)|false|Number of elements to be returned |
+|sort|[Sort](#schemasort)|false|Sorting parameters|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|
+|totalPages|integer(int32)|false|Total number of pages - read-only|
 
 
 <h2 id="tocSpageofwithdrawalstransactionsvm">PageOfWithdrawalsTransactionsVm</h2>
@@ -545,15 +545,15 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|content|[[WithdrawalsTransactionsVm](#schemawithdrawalstransactionsvm)]|false|No description|
-|first|boolean|false|No description|
-|last|boolean|false|No description|
-|number|integer(int32)|false|No description|
-|numberOfElements|integer(int32)|false|No description|
-|size|integer(int32)|false|No description|
-|sort|[Sort](#schemasort)|false|No description|
-|totalElements|integer(int64)|false|No description|
-|totalPages|integer(int32)|false|No description|
+|content|[[WithdrawalsTransactionsVm](#schemawithdrawalstransactionsvm)]|false|WithdrawlsTransactionsVm object|
+|first|boolean|false|Is the current page first page - read-only|
+|last|boolean|false|Is the current page last page - read-only|
+|number|integer(int32)|false|Page index (starts from 0)|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
+|size|integer(int32)|false|Number of elements to be returned |
+|sort|[Sort](#schemasort)|false|Sorting parameters|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|
+|totalPages|integer(int32)|false|Total number of pages - read-only|
 
 
 <h2 id="tocSpartnerpage">PartnerPage</h2>
@@ -721,17 +721,16 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|approved|integer(int64)|false|No description|
-|content|[[NewPartnerVM](#schemanewpartnervm)]|false|No description|
-|first|boolean|false|No description|
-|last|boolean|false|No description|
-|number|integer(int32)|false|No description|
-|numberOfElements|integer(int32)|false|No description|
-|pending|integer(int64)|false|No description|
-|size|integer(int32)|false|No description|
-|totalElements|integer(int64)|false|No description|
-|totalPages|integer(int32)|false|No description|
-
+|approved|integer(int64)|false|Number of approved entities|
+|content|[[NewPartnerVM](#schemanewpartnervm)]|false|NewPartnerVM object|
+|first|boolean|false|Is the current page first page - read-only|
+|last|boolean|false|Is the current page last page - read-only|
+|number|integer(int32)|false|Page index (starts from 0)|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
+|size|integer(int32)|false|Number of elements to be returned |
+|totalElements|integer(int64)|false|Total number of available elements - read-only|
+|totalPages|integer(int32)|false|Total number of pages - read-only|
+|pending|integer(int64)|false|Number of pending entities|
 
 <h2 id="tocSpaymentstransactionvm">PaymentsTransactionVm</h2>
 
@@ -759,15 +758,15 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|amount|string|false|No description|
-|id|integer(int64)|false|No description|
-|receiver|string|false|No description|
-|receiverType|string|false|No description|
-|sender|string|false|No description|
-|senderType|string|false|No description|
-|status|string|false|No description|
-|timeAndDate|string(date-time)|false|No description|
-|transactionId|string|false|No description|
+|amount|string|false|Amount in DASH|
+|id|integer(int64)|false|Database ID of the transaction|
+|receiver|string|false|Receiver business name|
+|receiverType|string|false|Receiver type {PARTNER, MERCHANT, VENDOR, CUSTOMER, ALT36}|
+|sender|string|false|Sender business name|
+|senderType|string|false|Sender type {PARTNER, MERCHANT, VENDOR, CUSTOMER, ALT36}|
+|status|string|false|Transaction status|
+|timeAndDate|string(date-time)|false|Date and time of the transaction YYYY-MM-DDTHH:MM:SSZ|
+|transactionId|string|false|Internal transaction ID|
 
 
 <h2 id="tocSpendingtransaction">PendingTransaction</h2>
@@ -1362,10 +1361,10 @@
 |state|string|false|No description|
 
 
-<h2 id="tocSrequestfordeleteacssociate">RequestForDeleteAcssociate</h2>
+<h2 id="tocSrequestfordeleteassociate">RequestForDeleteAssociate</h2>
 
 
-<a id="schemarequestfordeleteacssociate"></a>
+<a id="schemarequestfordeleteassociate"></a>
 
 
 ```json
@@ -1458,11 +1457,11 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|associateDelete|[Associate](#schemaassociate)|true|No description|
-|dateRequested|string(date-time)|false|No description|
-|id|integer(int64)|false|No description|
-|reason|string|true|No description|
-|requestedBy|[Associate](#schemaassociate)|false|No description|
+|associateDelete|[Associate](#schemaassociate)|true|Associate object - for which the request was sent|
+|dateRequested|string(date-time)|false|Date when request was made. |
+|id|integer(int64)|false|ID of the request|
+|reason|string|true|Reason for delete|
+|requestedBy|[Associate](#schemaassociate)|false|Associate object - who has sent the request|
 
 
 <h2 id="tocSresetpasswordvm">ResetPasswordVM</h2>
@@ -1483,7 +1482,7 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|email|string|true|No description|
+|email|string|true|Email for password reset init.|
 
 
 <h2 id="tocSresponseentity">ResponseEntity</h2>
@@ -1506,9 +1505,9 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|body|object|false|No description|
-|statusCode|string|false|No description|
-|statusCodeValue|integer(int32)|false|No description|
+|body|object|false|Empty body|
+|statusCode|string|false|Status code|
+|statusCodeValue|integer(int32)|false|Status code value (HTTP codes)|
 
 
 #### Enumerated Values
@@ -1609,16 +1608,16 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|amountInDash|string|false|No description|
-|amountInUSD|string|false|No description|
-|commisionFeeinDash|string|false|No description|
-|commisionFeeinUSD|string|false|No description|
-|id|integer(int64)|false|No description|
-|location|string|false|No description|
-|pointOfSale|string|false|No description|
-|status|string|false|No description|
-|timeAndDate|string(date-time)|false|No description|
-|transactionId|string|false|No description|
+|amountInDash|string|false|Amount in DASH|
+|amountInUSD|string|false|Amount in USD|
+|commisionFeeinDash|string|false|Commission fee charged in DASH|
+|commisionFeeinUSD|string|false|Commission fee charged in USD|
+|id|integer(int64)|false|Database transaction ID|
+|location|string|false|Location name|
+|pointOfSale|string|false|Point of sale name|
+|status|string|false|status {Pending, Succeded, Failed}|
+|timeAndDate|string(date-time)|false|Date and time of the transaction YYY-MM-DDTHH:MM:SSZ|
+|transactionId|string|false|Internal transaction ID|
 
 
 <h2 id="tocSselfregistercustomervm">SelfRegisterCustomerVM</h2>
@@ -1648,10 +1647,10 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|emailAddress|string|true|No description|
-|legalBusinessName|string|true|No description|
-|phone|string|true|No description|
-|user|[CreateAssociateAdminUserWithPasswordVM](#schemacreateassociateadminuserwithpasswordvm)|true|No description|
+|emailAddress|string|true|Customer's email address|
+|legalBusinessName|string|true|Please populate with "CUSTOMER"|
+|phone|string|true|Phone number of a customer|
+|user|[CreateAssociateAdminUserWithPasswordVM](#schemacreateassociateadminuserwithpasswordvm)|true|User object|
 
 <h2 id="tocSloginvm">LoginVM</h2>
 
@@ -1673,9 +1672,9 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|password|string|false|No description|
-|rememberMe|boolean|false|No description|
-|username|string|true|No description|
+|password|string|true|Password for login|
+|rememberMe|boolean|false|If enabled, authorization token will last for 30 days. If not token will last for 24 hours|
+|username|string|true|Username/email for login|
 
 
 <h2 id="tocSmerchantvendor">MerchantVendor</h2>
@@ -1805,10 +1804,10 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|emailAddress|string|true|No description|
-|legalBusinessName|string|true|Populate with "Customer"|
-|phone|string|true|No description|
-|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|true|No description|
+|emailAddress|string|true|Customer's email|
+|legalBusinessName|string|true|Please populate with "CUSTOMER"|
+|phone|string|true|Customer's phone number|
+|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|true|CreateAssociateAdminUserVM object|
 
 <h2 id="tocSnewcustomervm2">NewCustomerVM2</h2>
 
@@ -1837,11 +1836,11 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|id|integer(int64)|true|No description|
-|emailAddress|string|true|No description|
-|legalBusinessName|string|true|Populate with "Customer"|
-|phone|string|true|No description|
-|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|true|No description|
+|id|integer(int64)|true|ID of the customer - read-only|
+|emailAddress|string|true|Email address of the customer.|
+|legalBusinessName|string|true|Please populate with "CUSTOMER"|
+|phone|string|true|Customer's phone number|
+|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|true|CreateAssociateAdminUserVM object|
 
 <h2 id="tocSnewmerchantvm">NewMerchantVM</h2>
 
@@ -1996,38 +1995,37 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|address|string|true|No description|
-|address2|string|false|No description|
-|altAutosellInternal|boolean|false|No description|
-|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|No description|
-|autosell|boolean|false|No description|
-|beneficiaryPercent|integer(int64)|false|No description|
-|canEditOnboarded|boolean|false|No description|
-|city|string|true|No description|
-|commissionFee|number(double)|false|(0,1)|
-|companyEIN|string|true|No description|
-|companyWebsite|string|true|No description|
-|createdDate|string(date-time)|false|No description|
-|customers|integer(int32)|false|No description|
-|emailAddress|string|true|No description|
-|enabled|boolean|false|No description|
-|enroledBy|[Associate](#schemaassociate)|false|No description|
-|id|integer(int64)|false|No description|
-|incorporationDate|string(date)|true|YYYY-MM-DD|
-|legalBusinessName|string|true|No description|
-|locationsCount|integer(int32)|false|No description|
-|mainContact|[ContactVM](#schemacontactvm)|true|No description|
-|merchants|integer(int32)|false|No description|
-|note|string|false|No description|
-|partners|integer(int32)|false|No description|
-|phone|string|true|No description|
-|posCount|integer(int32)|false|No description|
-|saleVolume|number(double)|false|No description|
-|state|[CountryState](#schemacountrystate)|true|No description|
-|usBankAccount|string|false|No description|
-|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|true|No description|
-|vendors|integer(int32)|false|No description|
-|zip|string|true|No description|
+|address|string|true|Address of the company|
+|address2|string|false|Address of the company (line2)|
+|altAutosellInternal|boolean|false|For internal use - read-only|
+|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|Object containing info regarding authorized signer in the company|
+|autosell|boolean|false|Enable/disable autosell feature for merchants. Enabled means funds will be converted in USD immediately|
+|canEditOnboarded|boolean|false|Provides info if a partner can edit his merchants and vendors - read-only|
+|city|string|true|City where company is located|
+|commissionFee|number(double)|false|Commission fee for the company - read-only (0,1)|
+|companyEIN|string|true|Employer Identification Number of the company|
+|companyWebsite|string|true|Website of the company|
+|createdDate|string(date-time)|false|Provides info when the entity has been created - read-only|
+|customers|integer(int32)|false|Number of customers - read-only|
+|emailAddress|string|true|Email address for creating account|
+|enabled|boolean|false|Provides info if the entity has been approved by AltThirtySix Admin - read-only|
+|enroledBy|[Associate](#schemaassociate)|false|Provides info about the parent of an entity - read-only|
+|id|integer(int64)|false|ID of the entity assigned by system - read-only|
+|incorporationDate|string(date)|true|Company incorporation date with format YYYY-MM-DD|
+|legalBusinessName|string|true|Company legal business name|
+|locationsCount|integer(int32)|false|Number of locations - read-only|
+|mainContact|[ContactVM](#schemacontactvm)|true|Object containing info regarding main contact in the company|
+|merchants|integer(int32)|false|Number of merchants - read-only|
+|note|string|false|Any additional note|
+|partners|integer(int32)|false|Number of partners - read-only|
+|phone|string|true|Company's business phone|
+|posCount|integer(int32)|false|Number of pos - read-only|
+|saleVolume|number(double)|false|Sales volume of an entity|
+|state|[CountryState](#schemacountrystate)|true|Object containing info about the state where company is located|
+|usBankAccount|string|false|A bank account of the company|
+|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|true|Object containing info regarding user account.|
+|vendors|integer(int32)|false|Number of vendors - read-only|
+|zip|string|true|Zip code as part of company's address|
 
 <h2 id="tocSnewmerchantvm2">UpdateMerchantVM</h2>
 
@@ -2183,38 +2181,37 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|id|integer(int64)|true|No description|
-|address|string|true|No description|
-|address2|string|false|No description|
-|altAutosellInternal|boolean|false|No description|
-|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|No description|
-|autosell|boolean|false|No description|
-|beneficiaryPercent|integer(int64)|false|No description|
-|canEditOnboarded|boolean|false|No description|
-|city|string|true|No description|
-|commissionFee|number(double)|false|(0,1)|
-|companyEIN|string|true|No description|
-|companyWebsite|string|true|No description|
-|createdDate|string(date-time)|false|No description|
-|customers|integer(int32)|false|No description|
-|emailAddress|string|true|No description|
-|enabled|boolean|false|No description|
-|enroledBy|[Associate](#schemaassociate)|false|No description|
-|incorporationDate|string(date)|true|YYYY-MM-DD|
-|legalBusinessName|string|true|No description|
-|locationsCount|integer(int32)|false|No description|
-|mainContact|[ContactVM](#schemacontactvm)|true|No description|
-|merchants|integer(int32)|false|No description|
-|note|string|false|No description|
-|partners|integer(int32)|false|No description|
-|phone|string|true|No description|
-|posCount|integer(int32)|false|No description|
-|saleVolume|number(double)|false|No description|
-|state|[CountryState](#schemacountrystate)|true|No description|
-|usBankAccount|string|false|No description|
-|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|false|No description|
-|vendors|integer(int32)|false|No description|
-|zip|string|true|No description|
+|id|integer(int64)|true|ID of the entity assigned by system - read-only|
+|address|string|true|Address of the company|
+|address2|string|false|Address of the company (line2)|
+|altAutosellInternal|boolean|false|For internal use - read-only|
+|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|Object containing info regarding authorized signer in the company|
+|autosell|boolean|false|Enable/disable autosell feature for merchants. Enabled means funds will be converted in USD immediately|
+|canEditOnboarded|boolean|false|Provides info if a partner can edit his merchants and vendors - read-only|
+|city|string|true|City where company is located|
+|commissionFee|number(double)|false|Commission fee for the company - read-only (0,1)|
+|companyEIN|string|true|Employer Identification Number of the company|
+|companyWebsite|string|true|Website of the company|
+|createdDate|string(date-time)|false|Provides info when the entity has been created - read-only|
+|customers|integer(int32)|false|Number of customers - read-only|
+|emailAddress|string|true|Email address for creating account|
+|enabled|boolean|false|Provides info if the entity has been approved by AltThirtySix Admin - read-only|
+|enroledBy|[Associate](#schemaassociate)|false|Provides info about the parent of an entity - read-only|
+|incorporationDate|string(date)|true|Company incorporation date with format YYYY-MM-DD|
+|legalBusinessName|string|true|Company legal business name|
+|locationsCount|integer(int32)|false|Number of locations - read-only|
+|mainContact|[ContactVM](#schemacontactvm)|true|Object containing info regarding main contact in the company|
+|merchants|integer(int32)|false|Number of merchants - read-only|
+|note|string|false|Any additional note|
+|partners|integer(int32)|false|Number of partners - read-only|
+|phone|string|true|Company's business phone|
+|posCount|integer(int32)|false|Number of pos - read-only|
+|saleVolume|number(double)|false|Sales volume of an entity|
+|state|[CountryState](#schemacountrystate)|true|Object containing info about the state where company is located|
+|usBankAccount|string|false|A bank account of the company|
+|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|false|Object containing info regarding user account.|
+|vendors|integer(int32)|false|Number of vendors - read-only|
+|zip|string|true|Zip code as part of company's address|
 
 <h2 id="tocSnewpartnervm">NewPartnerVM</h2>
 
@@ -2367,38 +2364,37 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|id|integer(int64)|true|No description|
-|address|string|true|No description|
-|address2|string|false|No description|
-|altAutosellInternal|boolean|false|No description|
-|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|No description|
-|autosell|boolean|false|No description|
-|beneficiaryPercent|integer(int64)|false|No description|
-|canEditOnboarded|boolean|false|No description|
-|city|string|true|No description|
-|commissionFee|number(double)|false|(0,1)|
-|companyEIN|string|true|No description|
-|companyWebsite|string|true|No description|
-|createdDate|string(date-time)|false|No description|
-|customers|integer(int32)|false|No description|
-|emailAddress|string|true|No description|
-|enabled|boolean|false|No description|
-|enroledBy|[Associate](#schemaassociate)|false|No description|
-|incorporationDate|string(date)|true|YYYY-MM-DD|
-|legalBusinessName|string|true|No description|
-|locationsCount|integer(int32)|false|No description|
-|mainContact|[ContactVM](#schemacontactvm)|true|No description|
-|merchants|integer(int32)|false|No description|
-|note|string|false|No description|
-|partners|integer(int32)|false|No description|
-|phone|string|true|No description|
-|posCount|integer(int32)|false|No description|
-|saleVolume|number(double)|false|No description|
-|state|[CountryState](#schemacountrystate)|true|No description|
-|usBankAccount|string|false|No description|
-|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|false|No description|
-|vendors|integer(int32)|false|No description|
-|zip|string|true|No description|
+|id|integer(int64)|true|ID of the entity - assigned by system|
+|address|string|true|Address of the company|
+|address2|string|false|Address of the company (line2)|
+|altAutosellInternal|boolean|false|For internal use - read-only|
+|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|Object containing info regarding authorized signer in the company|
+|autosell|boolean|false|Enable/disable autosell feature for merchants. Enabled means funds will be converted in USD immediately|
+|canEditOnboarded|boolean|false|Provides info if a partner can edit his merchants and vendors - read-only|
+|city|string|true|City where company is located|
+|commissionFee|number(double)|false|Commission fee for the company - read-only (0,1)|
+|companyEIN|string|true|Employer Identification Number of the company|
+|companyWebsite|string|true|Website of the company|
+|createdDate|string(date-time)|false|Provides info when the entity has been created - read-only|
+|customers|integer(int32)|false|Number of customers - read-only|
+|emailAddress|string|true|Email address for creating account|
+|enabled|boolean|false|Provides info if the entity has been approved by AltThirtySix Admin - read-only|
+|enroledBy|[Associate](#schemaassociate)|false|Provides info about the parent of an entity - read-only|
+|incorporationDate|string(date)|true|Company incorporation date with format YYYY-MM-DD|
+|legalBusinessName|string|true|Company legal business name|
+|locationsCount|integer(int32)|false|Number of locations|
+|mainContact|[ContactVM](#schemacontactvm)|true|Object containing info regarding main contact in the company|
+|merchants|integer(int32)|false|Number of merchants - read-only|
+|note|string|false|Any additional note|
+|partners|integer(int32)|false|Number of partners - read-only|
+|phone|string|true|Company's business phone|
+|posCount|integer(int32)|false|Number of pos - read-only|
+|saleVolume|number(double)|false|Sales volume of an entity|
+|state|[CountryState](#schemacountrystate)|true|Object containing info about the state where company is located|
+|usBankAccount|string|false|A bank account of the company|
+|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|false|Object containing info regarding user account.|
+|vendors|integer(int32)|false|Number of vendors - read-only|
+|zip|string|true|Zip code as part of company's address|
 
 
 <h2 id="tocSnewvendorvm">NewVendorVM</h2>
@@ -2552,38 +2548,37 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|id|integer(int64)|false|No description|
-|address|string|true|No description|
-|address2|string|false|No description|
-|altAutosellInternal|boolean|false|No description|
-|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|No description|
-|autosell|boolean|false|No description|
-|beneficiaryPercent|integer(int64)|false|No description|
-|canEditOnboarded|boolean|false|No description|
-|city|string|true|No description|
-|commissionFee|number(double)|false|(0,1)|
-|companyEIN|string|true|No description|
-|companyWebsite|string|true|No description|
-|createdDate|string(date-time)|false|No description|
-|customers|integer(int32)|false|No description|
-|emailAddress|string|true|No description|
-|enabled|boolean|false|No description|
-|enroledBy|[Associate](#schemaassociate)|false|No description|
-|incorporationDate|string(date)|true|YYYY-MM-DD|
-|legalBusinessName|string|true|No description|
-|locationsCount|integer(int32)|false|No description|
-|mainContact|[ContactVM](#schemacontactvm)|true|No description|
-|merchants|integer(int32)|false|No description|
-|note|string|false|No description|
-|partners|integer(int32)|false|No description|
-|phone|string|true|No description|
-|posCount|integer(int32)|false|No description|
-|saleVolume|number(double)|false|No description|
-|state|[CountryState](#schemacountrystate)|true|No description|
-|usBankAccount|string|false|No description|
-|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|true|No description|
-|vendors|integer(int32)|false|No description|
-|zip|string|true|No description|
+|address|string|true|Address of the company|
+|address2|string|false|Address of the company (line2)|
+|altAutosellInternal|boolean|false|For internal use - read-only|
+|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|Object containing info regarding authorized signer in the company|
+|autosell|boolean|false|Enable/disable autosell feature for merchants. Enabled means funds will be converted in USD immediately|
+|canEditOnboarded|boolean|false|Provides info if a partner can edit his merchants and vendors - read-only|
+|city|string|true|City where company is located|
+|commissionFee|number(double)|false|Commission fee for the company - read-only (0,1)|
+|companyEIN|string|true|Employer Identification Number of the company|
+|companyWebsite|string|true|Website of the company|
+|createdDate|string(date-time)|false|Provides info when the entity has been created - read-only|
+|customers|integer(int32)|false|Number of customers - read-only|
+|emailAddress|string|true|Email address for creating account|
+|enabled|boolean|false|Provides info if the entity has been approved by AltThirtySix Admin - read-only|
+|enroledBy|[Associate](#schemaassociate)|false|Provides info about the parent of an entity - read-only|
+|id|integer(int64)|false|ID of the entity assigned by system - read-only|
+|incorporationDate|string(date)|true|Company incorporation date with format YYYY-MM-DD|
+|legalBusinessName|string|true|Company legal business name|
+|locationsCount|integer(int32)|false|Number of locations - read-only|
+|mainContact|[ContactVM](#schemacontactvm)|true|Object containing info regarding main contact in the company|
+|merchants|integer(int32)|false|Number of merchants - read-only|
+|note|string|false|Any additional note|
+|partners|integer(int32)|false|Number of partners - read-only|
+|phone|string|true|Company's business phone|
+|posCount|integer(int32)|false|Number of pos - read-only|
+|saleVolume|number(double)|false|Sales volume of an entity|
+|state|[CountryState](#schemacountrystate)|true|Object containing info about the state where company is located|
+|usBankAccount|string|false|A bank account of the company|
+|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|true|Object containing info regarding user account.|
+|vendors|integer(int32)|false|Number of vendors - read-only|
+|zip|string|true|Zip code as part of company's address|
 
 
 <h2 id="tocSnewvendorvm2">NewVendorVM2</h2>
@@ -2739,38 +2734,37 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|id|integer(int64)|true|No description|
-|address|string|true|No description|
-|address2|string|false|No description|
-|altAutosellInternal|boolean|false|No description|
-|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|No description|
-|autosell|boolean|false|No description|
-|beneficiaryPercent|integer(int64)|false|No description|
-|canEditOnboarded|boolean|false|No description|
-|city|string|true|No description|
-|commissionFee|number(double)|false|(0,1)|
-|companyEIN|string|true|No description|
-|companyWebsite|string|true|No description|
-|createdDate|string(date-time)|false|No description|
-|customers|integer(int32)|false|No description|
-|emailAddress|string|true|No description|
-|enabled|boolean|false|No description|
-|enroledBy|[Associate](#schemaassociate)|false|No description|
-|incorporationDate|string(date)|true|YYYY-MM-DD|
-|legalBusinessName|string|true|No description|
-|locationsCount|integer(int32)|false|No description|
-|mainContact|[ContactVM](#schemacontactvm)|true|No description|
-|merchants|integer(int32)|false|No description|
-|note|string|false|No description|
-|partners|integer(int32)|false|No description|
-|phone|string|true|No description|
-|posCount|integer(int32)|false|No description|
-|saleVolume|number(double)|false|No description|
-|state|[CountryState](#schemacountrystate)|true|No description|
-|usBankAccount|string|false|No description|
-|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|false|No description|
-|vendors|integer(int32)|false|No description|
-|zip|string|true|No description|
+|id|integer(int64)|true|ID of the entity assigned by system - read-only|
+|address|string|true|Address of the company|
+|address2|string|false|Address of the company (line2)|
+|altAutosellInternal|boolean|false|For internal use - read-only|
+|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|Object containing info regarding authorized signer in the company|
+|autosell|boolean|false|Enable/disable autosell feature for merchants. Enabled means funds will be converted in USD immediately|
+|canEditOnboarded|boolean|false|Provides info if a partner can edit his merchants and vendors - read-only|
+|city|string|true|City where company is located|
+|commissionFee|number(double)|false|Commission fee for the company - read-only (0,1)|
+|companyEIN|string|true|Employer Identification Number of the company|
+|companyWebsite|string|true|Website of the company|
+|createdDate|string(date-time)|false|Provides info when the entity has been created - read-only|
+|customers|integer(int32)|false|Number of customers - read-only|
+|emailAddress|string|true|Email address for creating account|
+|enabled|boolean|false|Provides info if the entity has been approved by AltThirtySix Admin - read-only|
+|enroledBy|[Associate](#schemaassociate)|false|Provides info about the parent of an entity - read-only|
+|incorporationDate|string(date)|true|Company incorporation date with format YYYY-MM-DD|
+|legalBusinessName|string|true|Company legal business name|
+|locationsCount|integer(int32)|false|Number of locations - read-only|
+|mainContact|[ContactVM](#schemacontactvm)|true|Object containing info regarding main contact in the company|
+|merchants|integer(int32)|false|Number of merchants - read-only|
+|note|string|false|Any additional note|
+|partners|integer(int32)|false|Number of partners - read-only|
+|phone|string|true|Company's business phone|
+|posCount|integer(int32)|false|Number of pos - read-only|
+|saleVolume|number(double)|false|Sales volume of an entity|
+|state|[CountryState](#schemacountrystate)|true|Object containing info about the state where company is located|
+|usBankAccount|string|false|A bank account of the company|
+|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|false|Object containing info regarding user account.|
+|vendors|integer(int32)|false|Number of vendors - read-only|
+|zip|string|true|Zip code as part of company's address|
 
 <h2 id="tocSpageofassociate">PageOfAssociate</h2>
 
@@ -2837,15 +2831,15 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|content|[[Associate](#schemaassociate)]|false|No description|
-|first|boolean|false|No description|
-|last|boolean|false|No description|
-|number|integer(int32)|false|No description|
-|numberOfElements|integer(int32)|false|No description|
-|size|integer(int32)|false|No description|
-|sort|[Sort](#schemasort)|false|No description|
-|totalElements|integer(int64)|false|No description|
-|totalPages|integer(int32)|false|No description|
+|content|[[Associate](#schemaassociate)]|false|Associate object|
+|first|boolean|false|Is the current page first page - read-only|
+|last|boolean|false|Is the current page last page - read-only|
+|number|integer(int32)|false|Page index (starts from 0)|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
+|size|integer(int32)|false|Number of elements to be returned |
+|sort|[Sort](#schemasort)|false|Sorting parameters|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|
+|totalPages|integer(int32)|false|Total number of pages - read-only|
 
 
 <h2 id="tocSpageofconversionstransactionsvm">PageOfConversionsTransactionsVM</h2>
@@ -2886,15 +2880,15 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|content|[[ConversionsTransactionsVM](#schemaconversionstransactionsvm)]|false|No description|
-|first|boolean|false|No description|
-|last|boolean|false|No description|
-|number|integer(int32)|false|No description|
-|numberOfElements|integer(int32)|false|No description|
-|size|integer(int32)|false|No description|
-|sort|[Sort](#schemasort)|false|No description|
-|totalElements|integer(int64)|false|No description|
-|totalPages|integer(int32)|false|No description|
+|content|[[ConversionsTransactionsVM](#schemaconversionstransactionsvm)]|false|ConversionTransaction Object|
+|first|boolean|false|Is the current page first page - read-only|
+|last|boolean|false|Is the current page last page - read-only|
+|number|integer(int32)|false|Page index (starts from 0)|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
+|size|integer(int32)|false|Number of elements to be returned |
+|sort|[Sort](#schemasort)|false|Sorting parameters|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|
+|totalPages|integer(int32)|false|Total number of pages - read-only|
 
 
 <h2 id="tocSpageofinvitation">PageOfInvitation</h2>
@@ -2933,15 +2927,15 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|content|[[Invitation](#schemainvitation)]|false|No description|
-|first|boolean|false|No description|
-|last|boolean|false|No description|
-|number|integer(int32)|false|No description|
-|numberOfElements|integer(int32)|false|No description|
-|size|integer(int32)|false|No description|
-|sort|[Sort](#schemasort)|false|No description|
-|totalElements|integer(int64)|false|No description|
-|totalPages|integer(int32)|false|No description|
+|content|[[Invitation](#schemainvitation)]|false|Invitation object|
+|first|boolean|false|Is the current page first page - read-only|
+|last|boolean|false|Is the current page last page - read-only|
+|number|integer(int32)|false|Page index (starts from 0)|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
+|size|integer(int32)|false|Number of elements to be returned |
+|sort|[Sort](#schemasort)|false|Sorting parameters|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|
+|totalPages|integer(int32)|false|Total number of pages - read-only|
 
 
 <h2 id="tocSpageoflocation">PageOfLocation</h2>
@@ -3044,15 +3038,15 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|content|[[Location](#schemalocation)]|false|No description|
-|first|boolean|false|No description|
-|last|boolean|false|No description|
-|number|integer(int32)|false|No description|
-|numberOfElements|integer(int32)|false|No description|
-|size|integer(int32)|false|No description|
-|sort|[Sort](#schemasort)|false|No description|
-|totalElements|integer(int64)|false|No description|
-|totalPages|integer(int32)|false|No description|
+|content|[[Location](#schemalocation)]|false|Location object|
+|first|boolean|false|Is the current page first page - read-only|
+|last|boolean|false|Is the current page last page - read-only|
+|number|integer(int32)|false|Page index (starts from 0)|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
+|size|integer(int32)|false|Number of elements to be returned |
+|sort|[Sort](#schemasort)|false|Sorting parameters|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|
+|totalPages|integer(int32)|false|Total number of pages - read-only|
 
 
 <h2 id="tocSpageofmerchantvendor">PageOfMerchantVendor</h2>
@@ -3162,15 +3156,15 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|content|[[MerchantVendor](#schemamerchantvendor)]|false|No description|
-|first|boolean|false|No description|
-|last|boolean|false|No description|
-|number|integer(int32)|false|No description|
-|numberOfElements|integer(int32)|false|No description|
-|size|integer(int32)|false|No description|
-|sort|[Sort](#schemasort)|false|No description|
-|totalElements|integer(int64)|false|No description|
-|totalPages|integer(int32)|false|No description|
+|content|[[MerchantVendor](#schemamerchantvendor)]|false|Merchant's favorite Vendor object|
+|first|boolean|false|Is the current page first page - read-only|
+|last|boolean|false|Is the current page last page - read-only|
+|number|integer(int32)|false|Page index (starts from 0)|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
+|size|integer(int32)|false|Number of elements to be returned |
+|sort|[Sort](#schemasort)|false|Sorting parameters|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|
+|totalPages|integer(int32)|false|Total number of pages - read-only|
 
 
 <h2 id="tocSpageofnewpartnervm">PageOfNewPartnerVM</h2>
@@ -3337,15 +3331,15 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|content|[[NewPartnerVM](#schemanewpartnervm)]|false|No description|
-|first|boolean|false|No description|
-|last|boolean|false|No description|
-|number|integer(int32)|false|No description|
-|numberOfElements|integer(int32)|false|No description|
-|size|integer(int32)|false|No description|
-|sort|[Sort](#schemasort)|false|No description|
-|totalElements|integer(int64)|false|No description|
-|totalPages|integer(int32)|false|No description|
+|content|[[NewPartnerVM](#schemanewpartnervm)]|false|NewPartnerVM object|
+|first|boolean|false|Is the current page first page - read-only|
+|last|boolean|false|Is the current page last page - read-only|
+|number|integer(int32)|false|Page index (starts from 0)|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
+|size|integer(int32)|false|Number of elements to be returned |
+|sort|[Sort](#schemasort)|false|Sorting parameters|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|
+|totalPages|integer(int32)|false|Total number of pages - read-only|
 
 
 <h2 id="tocSpageofpaymentstransactionvm">PageOfPaymentsTransactionVm</h2>
@@ -3386,15 +3380,15 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|content|[[PaymentsTransactionVm](#schemapaymentstransactionvm)]|false|No description|
-|first|boolean|false|No description|
-|last|boolean|false|No description|
-|number|integer(int32)|false|No description|
-|numberOfElements|integer(int32)|false|No description|
-|size|integer(int32)|false|No description|
-|sort|[Sort](#schemasort)|false|No description|
-|totalElements|integer(int64)|false|No description|
-|totalPages|integer(int32)|false|No description|
+|content|[[PaymentsTransactionVm](#schemapaymentstransactionvm)]|false|PaymentTransaction object|
+|first|boolean|false|Is the current page first page - read-only|
+|last|boolean|false|Is the current page last page - read-only|
+|number|integer(int32)|false|Page index (starts from 0)|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
+|size|integer(int32)|false|Number of elements to be returned |
+|sort|[Sort](#schemasort)|false|Sorting parameters|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|
+|totalPages|integer(int32)|false|Total number of pages - read-only|
 
 
 <h2 id="tocSpageofpendingtransaction">PageOfPendingTransaction</h2>
@@ -3832,15 +3826,15 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|content|[[PendingTransaction](#schemapendingtransaction)]|false|No description|
-|first|boolean|false|No description|
-|last|boolean|false|No description|
-|number|integer(int32)|false|No description|
-|numberOfElements|integer(int32)|false|No description|
-|size|integer(int32)|false|No description|
-|sort|[Sort](#schemasort)|false|No description|
-|totalElements|integer(int64)|false|No description|
-|totalPages|integer(int32)|false|No description|
+|content|[[PendingTransaction](#schemapendingtransaction)]|false|PendingTransaction object|
+|first|boolean|false|Is the current page first page - read-only|
+|last|boolean|false|Is the current page last page - read-only|
+|number|integer(int32)|false|Page index (starts from 0)|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
+|size|integer(int32)|false|Number of elements to be returned |
+|sort|[Sort](#schemasort)|false|Sorting parameters|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|
+|totalPages|integer(int32)|false|Total number of pages - read-only|
 
 
 <h2 id="tocSpageofpointofsale">PageOfPointOfSale</h2>
@@ -3943,21 +3937,21 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|content|[[PointOfSale](#schemapointofsale)]|false|No description|
-|first|boolean|false|No description|
-|last|boolean|false|No description|
-|number|integer(int32)|false|No description|
-|numberOfElements|integer(int32)|false|No description|
-|size|integer(int32)|false|No description|
-|sort|[Sort](#schemasort)|false|No description|
-|totalElements|integer(int64)|false|No description|
-|totalPages|integer(int32)|false|No description|
+|content|[[PointOfSale](#schemapointofsale)]|false|Point of Sale object|
+|first|boolean|false|Is the current page first page - read-only|
+|last|boolean|false|Is the current page last page - read-only|
+|number|integer(int32)|false|Page index (starts from 0)|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
+|size|integer(int32)|false|Number of elements to be returned |
+|sort|[Sort](#schemasort)|false|Sorting parameters|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|
+|totalPages|integer(int32)|false|Total number of pages - read-only|
 
 
-<h2 id="tocSpageofrequestfordeleteacssociate">PageOfRequestForDeleteAcssociate</h2>
+<h2 id="tocSpageofrequestfordeleteassociate">PageOfRequestForDeleteAssociate</h2>
 
 
-<a id="schemapageofrequestfordeleteacssociate"></a>
+<a id="schemapageofrequestfordeleteassociate"></a>
 
 
 ```json
@@ -4062,15 +4056,15 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|content|[[RequestForDeleteAcssociate](#schemarequestfordeleteacssociate)]|false|No description|
-|first|boolean|false|No description|
-|last|boolean|false|No description|
-|number|integer(int32)|false|No description|
-|numberOfElements|integer(int32)|false|No description|
-|size|integer(int32)|false|No description|
-|sort|[Sort](#schemasort)|false|No description|
-|totalElements|integer(int64)|false|No description|
-|totalPages|integer(int32)|false|No description|
+|content|[[RequestForDeleteAssociate](#schemarequestfordeleteassociate)]|false|RequestForDeleteAssociate object|
+|first|boolean|false|Is the current page first page - read-only|
+|last|boolean|false|Is the current page last page - read-only|
+|number|integer(int32)|false|Page index (starts from 0)|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
+|size|integer(int32)|false|Number of elements to be returned |
+|sort|[Sort](#schemasort)|false|Sorting parameters|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|
+|totalPages|integer(int32)|false|Total number of pages - read-only|
 
 
 <h2 id="tocSpageofsalestransactionvm">PageOfSalesTransactionVM</h2>
@@ -4112,15 +4106,15 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|content|[[SalesTransactionVM](#schemasalestransactionvm)]|false|No description|
-|first|boolean|false|No description|
-|last|boolean|false|No description|
-|number|integer(int32)|false|No description|
-|numberOfElements|integer(int32)|false|No description|
-|size|integer(int32)|false|No description|
-|sort|[Sort](#schemasort)|false|No description|
-|totalElements|integer(int64)|false|No description|
-|totalPages|integer(int32)|false|No description|
+|content|[[SalesTransactionVM](#schemasalestransactionvm)]|false|SalesTransaction object|
+|first|boolean|false|Is the current page first page - read-only|
+|last|boolean|false|Is the current page last page - read-only|
+|number|integer(int32)|false|Page index (starts from 0)|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
+|size|integer(int32)|false|Number of elements to be returned |
+|sort|[Sort](#schemasort)|false|Sorting parameters|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|
+|totalPages|integer(int32)|false|Total number of pages - read-only|
 
 
 <h2 id="tocSinviteassociateviaemail">InviteAssociateViaEmail</h2>
@@ -4141,7 +4135,7 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|email|string|true|No description|
+|email|string|true|Email to which the invitation will be sent|
 
 
 <h2 id="tocSkeyandpasswordvm">KeyAndPasswordVM</h2>
@@ -4163,8 +4157,8 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|key|string|true|No description|
-|newPassword|string|false|No description|
+|key|string|true|Key for password reset - read-only|
+|newPassword|string|true|New password, min 8 characters long, min one uppercase letter one lowercase letter one digit|
 
 
 <h2 id="tocSlasttransactionvm">LastTransactionVm</h2>
@@ -4187,9 +4181,9 @@
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|amountInDASH|number(double)|false|No description|
-|amountInUSD|number(double)|false|No description|
-|dateTime|string(date-time)|false|No description|
+|amountInDASH|number(double)|false|Last transaction amount in DASH - read-only|
+|amountInUSD|number(double)|false|Last transaction amount in USD - read-only|
+|dateTime|string(date-time)|false|Last transaction date and time YYY-MM-DDTHH:MM:SSZ- read-only|
 
 
 <h2 id="tocSlocation">Location</h2>
