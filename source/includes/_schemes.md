@@ -6105,7 +6105,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 
 |Name|Type|Required|Description|
 |---|---|---|---|
-|email|string|true|No description|
+|email|string|true|Account |
 |firstName|string|true|No description|
 |lastName|string|true|No description|
 |login|string|true|No description|
