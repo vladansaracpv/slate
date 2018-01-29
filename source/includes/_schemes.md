@@ -498,17 +498,17 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|content|[[UserDTO](#schemauserdto)]|false|UserDTO object|
-|first|boolean|false|Is the current page first page - read-only|
-|last|boolean|false|Is the current page last page - read-only|
-|number|integer(int32)|false|Page index (starts from 0)|
-|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
-|size|integer(int32)|false|Number of elements to be returned |
-|sort|[Sort](#schemasort)|false|Sorting parameters|
-|totalElements|integer(int64)|false|Total number of available elements - read-only|
-|totalPages|integer(int32)|false|Total number of pages - read-only|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|content|[[UserDTO](#schemauserdto)]|false|UserDTO object|output|
+|first|boolean|false|Is the current page first page - read-only|output|
+|last|boolean|false|Is the current page last page - read-only|output|
+|number|integer(int32)|false|Page index (starts from 0)|output|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|output|
+|size|integer(int32)|false|Number of elements to be returned |output|
+|sort|[Sort](#schemasort)|false|Sorting parameters|output|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|output|
+|totalPages|integer(int32)|false|Total number of pages - read-only|output|
 
 
 <h2 id="tocSpageofwithdrawalstransactionsvm">PageOfWithdrawalsTransactionsVm</h2>
@@ -543,17 +543,17 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|content|[[WithdrawalsTransactionsVm](#schemawithdrawalstransactionsvm)]|false|WithdrawlsTransactionsVm object|
-|first|boolean|false|Is the current page first page - read-only|
-|last|boolean|false|Is the current page last page - read-only|
-|number|integer(int32)|false|Page index (starts from 0)|
-|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
-|size|integer(int32)|false|Number of elements to be returned |
-|sort|[Sort](#schemasort)|false|Sorting parameters|
-|totalElements|integer(int64)|false|Total number of available elements - read-only|
-|totalPages|integer(int32)|false|Total number of pages - read-only|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|content|[[WithdrawalsTransactionsVm](#schemawithdrawalstransactionsvm)]|false|WithdrawlsTransactionsVm object|output|
+|first|boolean|false|Is the current page first page - read-only|output|
+|last|boolean|false|Is the current page last page - read-only|output|
+|number|integer(int32)|false|Page index (starts from 0)|output|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|output|
+|size|integer(int32)|false|Number of elements to be returned |output|
+|sort|[Sort](#schemasort)|false|Sorting parameters|output|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|output|
+|totalPages|integer(int32)|false|Total number of pages - read-only|output|
 
 
 <h2 id="tocSpartnerpage">PartnerPage</h2>
@@ -719,18 +719,18 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|approved|integer(int64)|false|Number of approved entities|
-|content|[[NewPartnerVM](#schemanewpartnervm)]|false|NewPartnerVM object|
-|first|boolean|false|Is the current page first page - read-only|
-|last|boolean|false|Is the current page last page - read-only|
-|number|integer(int32)|false|Page index (starts from 0)|
-|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
-|size|integer(int32)|false|Number of elements to be returned |
-|totalElements|integer(int64)|false|Total number of available elements - read-only|
-|totalPages|integer(int32)|false|Total number of pages - read-only|
-|pending|integer(int64)|false|Number of pending entities|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|approved|integer(int64)|false|Number of approved entities|output|
+|content|[[NewPartnerVM](#schemanewpartnervm)]|false|NewPartnerVM object|output|
+|first|boolean|false|Is the current page first page - read-only|output|
+|last|boolean|false|Is the current page last page - read-only|output|
+|number|integer(int32)|false|Page index (starts from 0)|output|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|output|
+|size|integer(int32)|false|Number of elements to be returned |output|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|output|
+|totalPages|integer(int32)|false|Total number of pages - read-only|output|
+|pending|integer(int64)|false|Number of pending entities|output|
 
 <h2 id="tocSpaymentstransactionvm">PaymentsTransactionVm</h2>
 
@@ -2362,39 +2362,39 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|id|integer(int64)|true|ID of the entity - assigned by system|
-|address|string|true|Address of the company|
-|address2|string|false|Address of the company (line2)|
-|altAutosellInternal|boolean|false|For internal use - read-only|
-|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|Object containing info regarding authorized signer in the company|
-|autosell|boolean|false|Enable/disable autosell feature for merchants. Enabled means funds will be converted in USD immediately|
-|canEditOnboarded|boolean|false|Provides info if a partner can edit his merchants and vendors - read-only|
-|city|string|true|City where company is located|
-|commissionFee|number(double)|false|Commission fee for the company - read-only (0,1)|
-|companyEIN|string|true|Employer Identification Number of the company|
-|companyWebsite|string|true|Website of the company|
-|createdDate|string(date-time)|false|Provides info when the entity has been created - read-only|
-|customers|integer(int32)|false|Number of customers - read-only|
-|emailAddress|string|true|Email address for creating account|
-|enabled|boolean|false|Provides info if the entity has been approved by AltThirtySix Admin - read-only|
-|enroledBy|[Associate](#schemaassociate)|false|Provides info about the parent of an entity - read-only|
-|incorporationDate|string(date)|true|Company incorporation date with format YYYY-MM-DD|
-|legalBusinessName|string|true|Company legal business name|
-|locationsCount|integer(int32)|false|Number of locations|
-|mainContact|[ContactVM](#schemacontactvm)|true|Object containing info regarding main contact in the company|
-|merchants|integer(int32)|false|Number of merchants - read-only|
-|note|string|false|Any additional note|
-|partners|integer(int32)|false|Number of partners - read-only|
-|phone|string|true|Company's business phone|
-|posCount|integer(int32)|false|Number of pos - read-only|
-|saleVolume|number(double)|false|Sales volume of an entity|
-|state|[CountryState](#schemacountrystate)|true|Object containing info about the state where company is located|
-|usBankAccount|string|false|A bank account of the company|
-|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|false|Object containing info regarding user account.|
-|vendors|integer(int32)|false|Number of vendors - read-only|
-|zip|string|true|Zip code as part of company's address|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|id|integer(int64)|true|ID of the entity - assigned by system|both|
+|address|string|true|Address of the company|both|
+|address2|string|false|Address of the company (line2)|both|
+|altAutosellInternal|boolean|false|For internal use - read-only|output|
+|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|Object containing info regarding authorized signer in the company|both|
+|autosell|boolean|false|Enable/disable autosell feature for merchants. Enabled means funds will be converted in USD immediately|both|
+|canEditOnboarded|boolean|false|Provides info if a partner can edit his merchants and vendors - read-only|output|
+|city|string|true|City where company is located|both|
+|commissionFee|number(double)|false|Commission fee for the company - read-only (0,1)|both|
+|companyEIN|string|true|Employer Identification Number of the company|both|
+|companyWebsite|string|true|Website of the company|both|
+|createdDate|string(date-time)|false|Provides info when the entity has been created - read-only|output|
+|customers|integer(int32)|false|Number of customers - read-only|output|
+|emailAddress|string|true|Email address for creating account|both|
+|enabled|boolean|false|Provides info if the entity has been approved by AltThirtySix Admin - read-only|output|
+|enroledBy|[Associate](#schemaassociate)|false|Provides info about the parent of an entity - read-only|output|
+|incorporationDate|string(date)|true|Company incorporation date with format YYYY-MM-DD|both|
+|legalBusinessName|string|true|Company legal business name|output|
+|locationsCount|integer(int32)|false|Number of locations|output|
+|mainContact|[ContactVM](#schemacontactvm)|true|Object containing info regarding main contact in the company|both|
+|merchants|integer(int32)|false|Number of merchants - read-only|output|
+|note|string|false|Any additional note|both|
+|partners|integer(int32)|false|Number of partners - read-only|output|
+|phone|string|true|Company's business phone|both|
+|posCount|integer(int32)|false|Number of pos - read-only|output|
+|saleVolume|number(double)|false|Sales volume of an entity|output|
+|state|[CountryState](#schemacountrystate)|true|Object containing info about the state where company is located|both|
+|usBankAccount|string|false|A bank account of the company|both|
+|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|false|Object containing info regarding user account.|both|
+|vendors|integer(int32)|false|Number of vendors - read-only|output|
+|zip|string|true|Zip code as part of company's address|both|
 
 
 <h2 id="tocSnewvendorvm">NewVendorVM</h2>
@@ -2546,39 +2546,39 @@ Example
 
 ### Properties
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|address|string|true|Address of the company|
-|address2|string|false|Address of the company (line2)|
-|altAutosellInternal|boolean|false|For internal use - read-only|
-|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|Object containing info regarding authorized signer in the company|
-|autosell|boolean|false|Enable/disable autosell feature for merchants. Enabled means funds will be converted in USD immediately|
-|canEditOnboarded|boolean|false|Provides info if a partner can edit his merchants and vendors - read-only|
-|city|string|true|City where company is located|
-|commissionFee|number(double)|false|Commission fee for the company - read-only (0,1)|
-|companyEIN|string|true|Employer Identification Number of the company|
-|companyWebsite|string|true|Website of the company|
-|createdDate|string(date-time)|false|Provides info when the entity has been created - read-only|
-|customers|integer(int32)|false|Number of customers - read-only|
-|emailAddress|string|true|Email address for creating account|
-|enabled|boolean|false|Provides info if the entity has been approved by AltThirtySix Admin - read-only|
-|enroledBy|[Associate](#schemaassociate)|false|Provides info about the parent of an entity - read-only|
-|id|integer(int64)|false|ID of the entity assigned by system - read-only|
-|incorporationDate|string(date)|true|Company incorporation date with format YYYY-MM-DD|
-|legalBusinessName|string|true|Company legal business name|
-|locationsCount|integer(int32)|false|Number of locations - read-only|
-|mainContact|[ContactVM](#schemacontactvm)|true|Object containing info regarding main contact in the company|
-|merchants|integer(int32)|false|Number of merchants - read-only|
-|note|string|false|Any additional note|
-|partners|integer(int32)|false|Number of partners - read-only|
-|phone|string|true|Company's business phone|
-|posCount|integer(int32)|false|Number of pos - read-only|
-|saleVolume|number(double)|false|Sales volume of an entity|
-|state|[CountryState](#schemacountrystate)|true|Object containing info about the state where company is located|
-|usBankAccount|string|false|A bank account of the company|
-|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|true|Object containing info regarding user account.|
-|vendors|integer(int32)|false|Number of vendors - read-only|
-|zip|string|true|Zip code as part of company's address|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|address|string|true|Address of the company|both|
+|address2|string|false|Address of the company (line2)|both|
+|altAutosellInternal|boolean|false|For internal use - read-only|output|
+|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|Object containing info regarding authorized signer in the company|both|
+|autosell|boolean|false|Enable/disable autosell feature for merchants. Enabled means funds will be converted in USD immediately|output|
+|canEditOnboarded|boolean|false|Provides info if a partner can edit his merchants and vendors - read-only|output|
+|city|string|true|City where company is located|both|
+|commissionFee|number(double)|false|Commission fee for the company - read-only (0,1)|output|
+|companyEIN|string|true|Employer Identification Number of the company|both|
+|companyWebsite|string|true|Website of the company|both|
+|createdDate|string(date-time)|false|Provides info when the entity has been created - read-only|output|
+|customers|integer(int32)|false|Number of customers - read-only|output|
+|emailAddress|string|true|Email address for creating account|both|
+|enabled|boolean|false|Provides info if the entity has been approved by AltThirtySix Admin - read-only|output|
+|enroledBy|[Associate](#schemaassociate)|false|Provides info about the parent of an entity - read-only|output|
+|id|integer(int64)|false|ID of the entity assigned by system - read-only|output|
+|incorporationDate|string(date)|true|Company incorporation date with format YYYY-MM-DD|both|
+|legalBusinessName|string|true|Company legal business name|both|
+|locationsCount|integer(int32)|false|Number of locations - read-only|output|
+|mainContact|[ContactVM](#schemacontactvm)|true|Object containing info regarding main contact in the company|both|
+|merchants|integer(int32)|false|Number of merchants - read-only|output|
+|note|string|false|Any additional note|both|
+|partners|integer(int32)|false|Number of partners - read-only|output|
+|phone|string|true|Company's business phone|both|
+|posCount|integer(int32)|false|Number of pos - read-only|output|
+|saleVolume|number(double)|false|Sales volume of an entity|output|
+|state|[CountryState](#schemacountrystate)|true|Object containing info about the state where company is located|both|
+|usBankAccount|string|false|A bank account of the company|both|
+|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|true|Object containing info regarding user account.|both|
+|vendors|integer(int32)|false|Number of vendors - read-only|output|
+|zip|string|true|Zip code as part of company's address|both|
 
 
 <h2 id="tocSnewvendorvm2">NewVendorVM2</h2>
