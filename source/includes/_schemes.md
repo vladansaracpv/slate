@@ -3824,17 +3824,17 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|content|[[PendingTransaction](#schemapendingtransaction)]|false|PendingTransaction object|
-|first|boolean|false|Is the current page first page - read-only|
-|last|boolean|false|Is the current page last page - read-only|
-|number|integer(int32)|false|Page index (starts from 0)|
-|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
-|size|integer(int32)|false|Number of elements to be returned |
-|sort|[Sort](#schemasort)|false|Sorting parameters|
-|totalElements|integer(int64)|false|Total number of available elements - read-only|
-|totalPages|integer(int32)|false|Total number of pages - read-only|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|content|[[PendingTransaction](#schemapendingtransaction)]|false|PendingTransaction object|output|
+|first|boolean|false|Is the current page first page - read-only|output|
+|last|boolean|false|Is the current page last page - read-only|output|
+|number|integer(int32)|false|Page index (starts from 0)|output|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|output|
+|size|integer(int32)|false|Number of elements to be returned |output|
+|sort|[Sort](#schemasort)|false|Sorting parameters|output|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|output|
+|totalPages|integer(int32)|false|Total number of pages - read-only|output|
 
 
 <h2 id="tocSpageofpointofsale">PageOfPointOfSale</h2>
@@ -3935,17 +3935,17 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|content|[[PointOfSale](#schemapointofsale)]|false|Point of Sale object|
-|first|boolean|false|Is the current page first page - read-only|
-|last|boolean|false|Is the current page last page - read-only|
-|number|integer(int32)|false|Page index (starts from 0)|
-|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
-|size|integer(int32)|false|Number of elements to be returned |
-|sort|[Sort](#schemasort)|false|Sorting parameters|
-|totalElements|integer(int64)|false|Total number of available elements - read-only|
-|totalPages|integer(int32)|false|Total number of pages - read-only|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|content|[[PointOfSale](#schemapointofsale)]|false|Point of Sale object|output|
+|first|boolean|false|Is the current page first page - read-only|output|
+|last|boolean|false|Is the current page last page - read-only|output|
+|number|integer(int32)|false|Page index (starts from 0)|output|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|output|
+|size|integer(int32)|false|Number of elements to be returned |output|
+|sort|[Sort](#schemasort)|false|Sorting parameters|output|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|output|
+|totalPages|integer(int32)|false|Total number of pages - read-only|output|
 
 
 <h2 id="tocSpageofrequestfordeleteassociate">PageOfRequestForDeleteAssociate</h2>
@@ -4054,17 +4054,17 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|content|[[RequestForDeleteAssociate](#schemarequestfordeleteassociate)]|false|RequestForDeleteAssociate object|
-|first|boolean|false|Is the current page first page - read-only|
-|last|boolean|false|Is the current page last page - read-only|
-|number|integer(int32)|false|Page index (starts from 0)|
-|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
-|size|integer(int32)|false|Number of elements to be returned |
-|sort|[Sort](#schemasort)|false|Sorting parameters|
-|totalElements|integer(int64)|false|Total number of available elements - read-only|
-|totalPages|integer(int32)|false|Total number of pages - read-only|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|content|[[RequestForDeleteAssociate](#schemarequestfordeleteassociate)]|false|RequestForDeleteAssociate object|output|
+|first|boolean|false|Is the current page first page - read-only|output|
+|last|boolean|false|Is the current page last page - read-only|output|
+|number|integer(int32)|false|Page index (starts from 0)|output|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|output|
+|size|integer(int32)|false|Number of elements to be returned |output|
+|sort|[Sort](#schemasort)|false|Sorting parameters|output|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|output|
+|totalPages|integer(int32)|false|Total number of pages - read-only|output|
 
 
 <h2 id="tocSpageofsalestransactionvm">PageOfSalesTransactionVM</h2>
@@ -4104,17 +4104,17 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|content|[[SalesTransactionVM](#schemasalestransactionvm)]|false|SalesTransaction object|
-|first|boolean|false|Is the current page first page - read-only|
-|last|boolean|false|Is the current page last page - read-only|
-|number|integer(int32)|false|Page index (starts from 0)|
-|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
-|size|integer(int32)|false|Number of elements to be returned |
-|sort|[Sort](#schemasort)|false|Sorting parameters|
-|totalElements|integer(int64)|false|Total number of available elements - read-only|
-|totalPages|integer(int32)|false|Total number of pages - read-only|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|content|[[SalesTransactionVM](#schemasalestransactionvm)]|false|SalesTransaction object|output|
+|first|boolean|false|Is the current page first page - read-only|output|
+|last|boolean|false|Is the current page last page - read-only|output|
+|number|integer(int32)|false|Page index (starts from 0)|output|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|output|
+|size|integer(int32)|false|Number of elements to be returned |output|
+|sort|[Sort](#schemasort)|false|Sorting parameters|output|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|output|
+|totalPages|integer(int32)|false|Total number of pages - read-only|output|
 
 
 <h2 id="tocSinviteassociateviaemail">InviteAssociateViaEmail</h2>
@@ -4133,9 +4133,9 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|email|string|true|Email to which the invitation will be sent|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|email|string|true|Email to which the invitation will be sent|input|
 
 
 <h2 id="tocSkeyandpasswordvm">KeyAndPasswordVM</h2>
@@ -4155,10 +4155,10 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|key|string|true|Key for password reset - read-only|
-|newPassword|string|true|New password, min 8 characters long, min one uppercase letter one lowercase letter one digit|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|key|string|true|Key for password reset - read-only|output|
+|newPassword|string|true|New password, min 8 characters long, min one uppercase letter one lowercase letter one digit|output|
 
 
 <h2 id="tocSlasttransactionvm">LastTransactionVm</h2>
@@ -4179,11 +4179,11 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|amountInDASH|number(double)|false|Last transaction amount in DASH - read-only|
-|amountInUSD|number(double)|false|Last transaction amount in USD - read-only|
-|dateTime|string(date-time)|false|Last transaction date and time YYY-MM-DDTHH:MM:SSZ- read-only|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|amountInDASH|number(double)|false|Last transaction amount in DASH - read-only|output|
+|amountInUSD|number(double)|false|Last transaction amount in USD - read-only|output|
+|dateTime|string(date-time)|false|Last transaction date and time YYY-MM-DDTHH:MM:SSZ- read-only|output|
 
 
 <h2 id="tocSlocation">Location</h2>
@@ -4272,26 +4272,26 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|address|string|true|No description|
-|address2|string|false|No description|
-|associate|[Associate](#schemaassociate)|false|No description|
-|city|string|true|No description|
-|country|string|true|No description|
-|deletedDate|string(date-time)|false|No description|
-|emailAddress|string|false|No description|
-|file|string|false|No description|
-|geoLocation|string|false|No description|
-|id|integer(int64)|false|No description|
-|name|string|true|No description|
-|note|string|false|No description|
-|parentLocation|[Location](#schemalocation)|false|No description|
-|phone|string|false|No description|
-|pointOfSales|[[PointOfSale](#schemapointofsale)]|false|No description|
-|state|[CountryState](#schemacountrystate)|true|No description|
-|website|string|false|website URL|
-|zip|string|true|Zip code|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|address|string|true|No description|output|
+|address2|string|false|No description|output|
+|associate|[Associate](#schemaassociate)|false|No description|output|
+|city|string|true|No description|output|
+|country|string|true|No description|output|
+|deletedDate|string(date-time)|false|No description|output|
+|emailAddress|string|false|No description|output|
+|file|string|false|No description|output|
+|geoLocation|string|false|No description|output|
+|id|integer(int64)|false|No description|output|
+|name|string|true|No description|output|
+|note|string|false|No description|output|
+|parentLocation|[Location](#schemalocation)|false|No description|output|
+|phone|string|false|No description|output|
+|pointOfSales|[[PointOfSale](#schemapointofsale)]|false|No description|output|
+|state|[CountryState](#schemacountrystate)|true|No description|both|
+|website|string|false|website URL|output|
+|zip|string|true|Zip code|output|
 
 
 <h2 id="tocSlocationpos">LocationPOS</h2>
@@ -4310,9 +4310,9 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|id|integer(int64)|false|No description|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|id|integer(int64)|false|No description|both|
 
 <h2 id="tocSlocationexternalvm">LocationExternalVm</h2>
 
@@ -4380,27 +4380,27 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|address|string|true|No description|
-|address2|string|false|No description|
-|city|string|true|No description|
-|contact|[Contact](#schemacontact)|true|No description|
-|country|string|true|No description|
-|emailAddress|string|false|No description|
-|file|string|true|Location license with format: data:image/png;base64,image_in_base_64|
-|fileContentType|string|true|[FileContentType](#tocFileContentType)|
-|geoLocation|string|true|Example 33.8608908,-117.7381407|
-|id|integer(int64)|false|Mandatory on update|
-|merchantId|integer(int64)|true|ID of a merchant for which location needs to be created|
-|name|string|true|No description|
-|noOfPos|integer(int32)|false|No description|
-|note|string|false|No description|
-|parentLocationId|integer(int64)|false|For future use|
-|phone|string|true|No description|
-|state|[CountryState](#schemacountrystate)|true|No description|
-|website|string|true|No description|
-|zip|string|true|Zip code|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|address|string|true|No description|both|
+|address2|string|false|No description|both|
+|city|string|true|No description|both|
+|contact|[Contact](#schemacontact)|true|No description|both|
+|country|string|true|No description|both|
+|emailAddress|string|false|No description|both|
+|file|string|true|Location license with format: data:image/png;base64,image_in_base_64|input|
+|fileContentType|string|true|[FileContentType](#tocFileContentType)|input|
+|geoLocation|string|true|Example 33.8608908,-117.7381407|both|
+|id|integer(int64)|false|Mandatory on update|both|
+|merchantId|integer(int64)|true|ID of a merchant for which location needs to be created|both|
+|name|string|true|No description|both|
+|noOfPos|integer(int32)|false|No description|both|
+|note|string|false|No description|both|
+|parentLocationId|integer(int64)|false|For future use|both|
+|phone|string|true|No description|both|
+|state|[CountryState](#schemacountrystate)|true|No description|both|
+|website|string|true|No description|both|
+|zip|string|true|Zip code|both|
 
 
 <h2 id="tocSlocationvm">LocationVm</h2>
@@ -4467,26 +4467,26 @@ Example
 
 ### Properties
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|address|string|true|No description|
-|address2|string|false|No description|
-|city|string|true|No description|
-|contact|[Contact](#schemacontact)|true|No description|
-|country|string|true|No description|
-|emailAddress|string|false|No description|
-|file|string|true|Location license with format: data:image/png;base64,image_in_base_64|
-|fileContentType|string|true|[FileContentType](#tocFileContentType)|
-|geoLocation|string|true|Example 33.8608908,-117.7381407|
-|id|integer(int64)|false|Mandatory on update|
-|name|string|true|No description|
-|noOfPos|integer(int32)|false|No description|
-|note|string|false|No description|
-|parentLocationId|integer(int64)|false|For future use|
-|phone|string|true|No description|
-|state|[CountryState](#schemacountrystate)|true|No description|
-|website|string|true|No description|
-|zip|string|true|Zip code|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|address|string|true|No description|both|
+|address2|string|false|No description|both|
+|city|string|true|No description|both|
+|contact|[Contact](#schemacontact)|true|No description|both|
+|country|string|true|No description|both|
+|emailAddress|string|false|No description|both|
+|file|string|true|Location license with format: data:image/png;base64,image_in_base_64|input|
+|fileContentType|string|true|[FileContentType](#tocFileContentType)|input|
+|geoLocation|string|true|Example 33.8608908,-117.7381407|both|
+|id|integer(int64)|false|Mandatory on update|both|
+|name|string|true|No description|both|
+|noOfPos|integer(int32)|false|No description|both|
+|note|string|false|No description|both|
+|parentLocationId|integer(int64)|false|For future use|both|
+|phone|string|true|No description|both|
+|state|[CountryState](#schemacountrystate)|true|No description|both|
+|website|string|true|No description|both|
+|zip|string|true|Zip code|both|
 
 
 <h2 id="tocSlocationwithtransactionvm">LocationWithTransactionVm</h2>
@@ -4559,28 +4559,28 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|address|string|true|No description|
-|address2|string|false|No description|
-|city|string|true|No description|
-|contact|[Contact](#schemacontact)|true|No description|
-|country|string|true|No description|
-|emailAddress|string|false|No description|
-|file|string|false|No description|
-|fileBytes|string(byte)|false|No description|
-|fileContentType|string|false|No description|
-|geoLocation|string|false|No description|
-|id|integer(int64)|false|No description|
-|lastTransaction|[LastTransactionVm](#schemalasttransactionvm)|false|No description|
-|name|string|true|No description|
-|noOfPos|integer(int32)|false|No description|
-|note|string|false|No description|
-|parentLocationId|integer(int64)|false|For future use|
-|phone|string|false|No description|
-|state|[CountryState](#schemacountrystate)|true|No description|
-|website|string|false|website URL|
-|zip|string|true|Zip code|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|address|string|true|No description|output|
+|address2|string|false|No description|output|
+|city|string|true|No description|output|
+|contact|[Contact](#schemacontact)|true|No description|output|
+|country|string|true|No description|output|
+|emailAddress|string|false|No description|output|
+|file|string|false|No description|output|
+|fileBytes|string(byte)|false|No description|output|
+|fileContentType|string|false|No description|output|
+|geoLocation|string|false|No description|output|
+|id|integer(int64)|false|No description|output|
+|lastTransaction|[LastTransactionVm](#schemalasttransactionvm)|false|No description|output|
+|name|string|true|No description|output|
+|noOfPos|integer(int32)|false|No description|output|
+|note|string|false|No description|output|
+|parentLocationId|integer(int64)|false|For future use|output|
+|phone|string|false|No description|output|
+|state|[CountryState](#schemacountrystate)|true|No description|output|
+|website|string|false|website URL|output|
+|zip|string|true|Zip code|output|
 
 
 <h2 id="tocSinvitation">Invitation</h2>
@@ -4605,15 +4605,15 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|acceptedDateTime|string(date-time)|false|No description|
-|associateType|string|false|No description|
-|id|integer(int64)|false|No description|
-|inviteKey|string|false|No description|
-|invitedMail|string|true|No description|
-|ivitationDateTime|string(date-time)|false|No description|
-|mailSent|boolean|false|No description|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|acceptedDateTime|string(date-time)|false|No description|output|
+|associateType|string|false|No description|output|
+|id|integer(int64)|false|No description|output|
+|inviteKey|string|false|No description|output|
+|invitedMail|string|true|No description|output|
+|ivitationDateTime|string(date-time)|false|No description|output|
+|mailSent|boolean|false|No description|output|
 
 
 #### Enumerated Values
@@ -6336,7 +6336,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 
 
 |Name|Type|Required|Description|input/output parameter|
-|---|---|---|---|
+|---|---|---|---|---|
 |password|string|true|New password|input|
 
 
