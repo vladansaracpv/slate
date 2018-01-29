@@ -97,23 +97,23 @@
 
 ### Properties
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|address|string|true|Address of the company|
-|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|Object containing info regarding authorized signer in the company|
-|city|string|true|City where company is located|
-|companyEIN|string|true|Employer Identification Number of the company|
-|companyWebsite|string|true|Website of the company|
-|emailAddress|string|true|Email address for creating account|
-|incorporationDate|string(date)|false|Company incorporation date with format YYYY-MM-DD|
-|legalBusinessName|string|true|Company legal business name|
-|mainContact|[ContactVM](#schemacontactvm)|true|Object containig info regarding main contact in the company|
-|note|string|false|Any additional note|
-|phone|string|true|Business phone|
-|state|[CountryState](#schemacountrystate)|true|Object containing info about the state where company is located|
-|usBankAccount|string|false|A bank account of the company|
-|user|[CreateAssociateAdminUserWithPasswordVM](#schemacreateassociateadminuserwithpasswordvm)|false|Object containing info regarding user account.|
-|zip|string|true|Zip code as part of company's address|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|address|string|true|Address of the company|input|
+|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|Object containing info regarding authorized signer in the company|input|
+|city|string|true|City where company is located|input|
+|companyEIN|string|true|Employer Identification Number of the company|input|
+|companyWebsite|string|true|Website of the company|input|
+|emailAddress|string|true|Email address for creating account|input|
+|incorporationDate|string(date)|false|Company incorporation date with format YYYY-MM-DD|input|
+|legalBusinessName|string|true|Company legal business name|input|
+|mainContact|[ContactVM](#schemacontactvm)|true|Object containig info regarding main contact in the company|input|
+|note|string|false|Any additional note|input|
+|phone|string|true|Business phone|input|
+|state|[CountryState](#schemacountrystate)|true|Object containing info about the state where company is located|input|
+|usBankAccount|string|false|A bank account of the company|input|
+|user|[CreateAssociateAdminUserWithPasswordVM](#schemacreateassociateadminuserwithpasswordvm)|false|Object containing info regarding user account.|input|
+|zip|string|true|Zip code as part of company's address|input|
 
 
 <h2 id="tocSshutdownaccountrequestvm">ShutDownAccountRequestVM</h2>
@@ -132,9 +132,9 @@
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|reason|string|true|Reason for closing an account|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|reason|string|true|Reason for closing an account|input|
 
 
 <h2 id="tocSsort">Sort</h2>
@@ -296,26 +296,26 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|accountNonExpired|boolean|false|No description|
-|accountNonLocked|boolean|false|No description|
-|activated|boolean|true|No description|
-|associate|[Associate](#schemaassociate)|true|No description|
-|credentialsNonExpired|boolean|false|No description|
-|email|string|false|No description|
-|enabled|boolean|false|No description|
-|firstName|string|false|No description|
-|id|integer(int64)|false|No description|
-|imageUrl|string|false|No description|
-|langKey|string|false|No description|
-|lastLoginDateTime|string(date-time)|false|No description|
-|lastName|string|false|No description|
-|location|[Location](#schemalocation)|false|No description|
-|login|string|true|No description|
-|resetDate|string(date-time)|false|No description|
-|splashscreenEnabled|boolean|false|No description|
-|using2fa|boolean|false|No description|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|accountNonExpired|boolean|false|No description|output|
+|accountNonLocked|boolean|false|No description|output|
+|activated|boolean|true|No description|output|
+|associate|[Associate](#schemaassociate)|true|No description|output|
+|credentialsNonExpired|boolean|false|No description|output|
+|email|string|false|No description|both|
+|enabled|boolean|false|No description|output|
+|firstName|string|false|No description|both|
+|id|integer(int64)|false|No description|both|
+|imageUrl|string|false|No description|both|
+|langKey|string|false|No description|both|
+|lastLoginDateTime|string(date-time)|false|No description|output|
+|lastName|string|false|No description|both|
+|location|[Location](#schemalocation)|false|No description|both|
+|login|string|true|No description|both|
+|resetDate|string(date-time)|false|No description|output|
+|splashscreenEnabled|boolean|false|No description|both|
+|using2fa|boolean|false|Is two step authentication enabled for this user - read-only|output|
 
 
 <h2 id="tocSuserdto">UserDTO</h2>
@@ -351,24 +351,24 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|activated|boolean|false|Is user account verified|
-|authorities|Array[string]|false|User authorization roles|
-|createdBy|string|false|Who created the user account|
-|createdDate|string(date-time)|false|The date when user account has been created|
-|email|string|false|Email address of the account|
-|firstName|string|false|First name|
-|lastName|string|false|Last Name|
-|id|integer(int64)|false|User account id, read-only|
-|login|string|true|Username|
-|imageUrl|string|false|Image URL - not used at the moment|
-|langKey|string|false|Language - not used at the moment|
-|lastLoginDateTime|string(date-time)|false|Datetime when user has logged in last time|
-|lastModifiedBy|string|false|Who modified the user account last time (not used at the moment)|
-|lastModifiedDate|string(date-time)|false|When was the user account modified last time (not used at the moment)|
-|splashscreenEnabled|boolean|false|Is splash screen for web app enabled|
-|using2fa|boolean|false|Is two step authentication enabled for this user - read-only|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|activated|boolean|false|Is user account verified|output|
+|authorities|Array[string]|false|User authorization roles|both|
+|createdBy|string|false|Who created the user account|output|
+|createdDate|string(date-time)|false|The date when user account has been created|output|
+|email|string|false|Email address of the account|both|
+|firstName|string|false|First name|both|
+|lastName|string|false|Last Name|both|
+|id|integer(int64)|false|User account id, read-only|both|
+|login|string|true|Username|both|
+|imageUrl|string|false|Image URL - not used at the moment|both|
+|langKey|string|false|Language - not used at the moment|both|
+|lastLoginDateTime|string(date-time)|false|Datetime when user has logged in last time|output|
+|lastModifiedBy|string|false|Who modified the user account last time (not used at the moment)|output|
+|lastModifiedDate|string(date-time)|false|When was the user account modified last time (not used at the moment)|output|
+|splashscreenEnabled|boolean|false|Is splash screen for web app enabled|both|
+|using2fa|boolean|false|Is two step authentication enabled for this user - read-only|output|
 
 
 <h2 id="tocSuserdtoextended">UserDTOExtended</h2>
@@ -404,24 +404,24 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|activated|boolean|false|Is user account verified|
-|authorities|Array[string]|false|User authorization roles|
-|createdBy|string|false|Who created the user account|
-|createdDate|string(date-time)|false|The date when user account has been created|
-|email|string|false|Email address of the account|
-|firstName|string|false|First name|
-|lastName|string|false|Last Name|
-|id|integer(int64)|false|User account id, read-only|
-|login|string|true|Username|
-|imageUrl|string|false|Image URL - not used at the moment|
-|langKey|string|false|Language - not used at the moment|
-|lastLoginDateTime|string(date-time)|false|Datetime when user has logged in last time|
-|lastModifiedBy|string|false|Who modified the user account last time (not used at the moment)|
-|lastModifiedDate|string(date-time)|false|When was the user account modified last time (not used at the moment)|
-|splashscreenEnabled|boolean|false|Is splash screen for web app enabled|
-|using2fa|boolean|false|Is two step authentication enabled for this user - read-only|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|activated|boolean|false|Is user account verified|output|
+|authorities|Array[string]|false|User authorization roles|both|
+|createdBy|string|false|Who created the user account|output|
+|createdDate|string(date-time)|false|The date when user account has been created|output|
+|email|string|false|Email address of the account|both|
+|firstName|string|false|First name|both|
+|lastName|string|false|Last Name|both|
+|id|integer(int64)|false|User account id, read-only|both|
+|login|string|true|Username|both|
+|imageUrl|string|false|Image URL - not used at the moment|both|
+|langKey|string|false|Language - not used at the moment|both|
+|lastLoginDateTime|string(date-time)|false|Datetime when user has logged in last time|output|
+|lastModifiedBy|string|false|Who modified the user account last time (not used at the moment)|output|
+|lastModifiedDate|string(date-time)|false|When was the user account modified last time (not used at the moment)|output|
+|splashscreenEnabled|boolean|false|Is splash screen for web app enabled|both|
+|using2fa|boolean|false|Is two step authentication enabled for this user - read-only|output|
 
 
 <h2 id="tocSwithdrawalstransactionsvm">WithdrawalsTransactionsVm</h2>
@@ -444,13 +444,13 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|amount|string|false|Withdrawal amount in USD|
-|id|integer(int64)|false|Database id for transaction|
-|status|string|false|Transaction status|
-|timeAndDate|string(date-time)|false|Date and time of the transaction YYYY-MM-DDTHH:MM:SSZ|
-|transactionId|string|false|Internal transaction id|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|amount|string|false|Withdrawal amount in USD|output|
+|id|integer(int64)|false|Database id for transaction|output|
+|status|string|false|Transaction status|output|
+|timeAndDate|string(date-time)|false|Date and time of the transaction YYYY-MM-DDTHH:MM:SSZ|output|
+|transactionId|string|false|Internal transaction id|output|
 
 
 <h2 id="tocSpageofuserdto">PageOfUserDTO</h2>
@@ -756,17 +756,17 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|amount|string|false|Amount in DASH|
-|id|integer(int64)|false|Database ID of the transaction|
-|receiver|string|false|Receiver business name|
-|receiverType|string|false|Receiver type {PARTNER, MERCHANT, VENDOR, CUSTOMER, ALT36}|
-|sender|string|false|Sender business name|
-|senderType|string|false|Sender type {PARTNER, MERCHANT, VENDOR, CUSTOMER, ALT36}|
-|status|string|false|Transaction status|
-|timeAndDate|string(date-time)|false|Date and time of the transaction YYYY-MM-DDTHH:MM:SSZ|
-|transactionId|string|false|Internal transaction ID|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|amount|string|false|Amount in DASH|output|
+|id|integer(int64)|false|Database ID of the transaction|output|
+|receiver|string|false|Receiver business name|output|
+|receiverType|string|false|Receiver type {PARTNER, MERCHANT, VENDOR, CUSTOMER, ALT36}|output|
+|sender|string|false|Sender business name|output|
+|senderType|string|false|Sender type {PARTNER, MERCHANT, VENDOR, CUSTOMER, ALT36}|output|
+|status|string|false|Transaction status|output|
+|timeAndDate|string(date-time)|false|Date and time of the transaction YYYY-MM-DDTHH:MM:SSZ|output|
+|transactionId|string|false|Internal transaction ID|output|
 
 
 <h2 id="tocSpendingtransaction">PendingTransaction</h2>
@@ -1190,24 +1190,24 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|accompliceAssociate|[Associate](#schemaassociate)|false|No description|
-|commissionFee|integer(int64)|false|No description|
-|dateTime|string(date-time)|false|No description|
-|destinationAddress|string|false|No description|
-|direction|string|false|No description|
-|externalWallet|[ExternalWallet](#schemaexternalwallet)|false|No description|
-|id|integer(int64)|false|No description|
-|location|[Location](#schemalocation)|false|No description|
-|note|string|false|No description|
-|originalAmount|integer(int64)|false|No description|
-|ownerAssociate|[Associate](#schemaassociate)|false|No description|
-|pointOfSale|[PointOfSale](#schemapointofsale)|false|No description|
-|rawTransaction|string|false|No description|
-|rawTxId|string|false|No description|
-|type|string|false|No description|
-|user|[User](#schemauser)|false|No description|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|accompliceAssociate|[Associate](#schemaassociate)|false|No description|output|
+|commissionFee|integer(int64)|false|No description|output|
+|dateTime|string(date-time)|false|No description|output|
+|destinationAddress|string|false|No description|output|
+|direction|string|false|No description|output|
+|externalWallet|[ExternalWallet](#schemaexternalwallet)|false|No description|output|
+|id|integer(int64)|false|No description|output|
+|location|[Location](#schemalocation)|false|No description|output|
+|note|string|false|No description|output|
+|originalAmount|integer(int64)|false|No description|output|
+|ownerAssociate|[Associate](#schemaassociate)|false|No description|output|
+|pointOfSale|[PointOfSale](#schemapointofsale)|false|No description|output|
+|rawTransaction|string|false|No description|output|
+|rawTxId|string|false|No description|output|
+|type|string|false|No description|output|
+|user|[User](#schemauser)|false|No description|output|
 
 
 #### Enumerated Values
@@ -1305,17 +1305,17 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|active|boolean|false|No description|
-|deletedDate|string(date-time)|false|No description|
-|id|integer(int64)|false|Mandatory on update|
-|inventoryNumber|string|false|No description|
-|location|[LocationPOS](#schemalocationpos)|true|No description|
-|name|string|false|No description|
-|note|string|false|No description|
-|pointOfSaleType|string|true|No description|
-|virtualPointOfSalesEnabled|boolean|true|No description|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|active|boolean|false|No description|output|
+|deletedDate|string(date-time)|false|No description|output|
+|id|integer(int64)|false|Mandatory on update|both|
+|inventoryNumber|string|false|No description|both|
+|location|[LocationPOS](#schemalocationpos)|true|No description|both|
+|name|string|false|No description|both|
+|note|string|false|No description|both|
+|pointOfSaleType|string|true|No description|both|
+|virtualPointOfSalesEnabled|boolean|true|No description|both|
 
 
 #### Enumerated Values
@@ -1350,15 +1350,15 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|address|string|false|No description|
-|city|string|false|No description|
-|geolocation|string|false|No description|
-|id|integer(int64)|false|No description|
-|name|string|false|No description|
-|noofpos|integer(int64)|false|No description|
-|state|string|false|No description|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|address|string|false|No description|output|
+|city|string|false|No description|output|
+|geolocation|string|false|No description|output|
+|id|integer(int64)|false|No description|output|
+|name|string|false|No description|output|
+|noofpos|integer(int64)|false|No description|output|
+|state|string|false|No description|output|
 
 
 <h2 id="tocSrequestfordeleteassociate">RequestForDeleteAssociate</h2>
@@ -1455,13 +1455,13 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|associateDelete|[Associate](#schemaassociate)|true|Associate object - for which the request was sent|
-|dateRequested|string(date-time)|false|Date when request was made. |
-|id|integer(int64)|false|ID of the request|
-|reason|string|true|Reason for delete|
-|requestedBy|[Associate](#schemaassociate)|false|Associate object - who has sent the request|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|associateDelete|[Associate](#schemaassociate)|true|Associate object - for which the request was sent|both|
+|dateRequested|string(date-time)|false|Date when request was made. |output|
+|id|integer(int64)|false|ID of the request|both|
+|reason|string|true|Reason for delete|output|
+|requestedBy|[Associate](#schemaassociate)|false|Associate object - who has sent the request|output|
 
 
 <h2 id="tocSresetpasswordvm">ResetPasswordVM</h2>
@@ -1480,9 +1480,9 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|email|string|true|Email for password reset init.|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|email|string|true|Email for password reset init.|input|
 
 
 <h2 id="tocSresponseentity">ResponseEntity</h2>
@@ -1606,18 +1606,18 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|amountInDash|string|false|Amount in DASH|
-|amountInUSD|string|false|Amount in USD|
-|commisionFeeinDash|string|false|Commission fee charged in DASH|
-|commisionFeeinUSD|string|false|Commission fee charged in USD|
-|id|integer(int64)|false|Database transaction ID|
-|location|string|false|Location name|
-|pointOfSale|string|false|Point of sale name|
-|status|string|false|status {Pending, Succeded, Failed}|
-|timeAndDate|string(date-time)|false|Date and time of the transaction YYY-MM-DDTHH:MM:SSZ|
-|transactionId|string|false|Internal transaction ID|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|amountInDash|string|false|Amount in DASH|output|
+|amountInUSD|string|false|Amount in USD|output|
+|commisionFeeinDash|string|false|Commission fee charged in DASH|output|
+|commisionFeeinUSD|string|false|Commission fee charged in USD|output|
+|id|integer(int64)|false|Database transaction ID|output|
+|location|string|false|Location name|output|
+|pointOfSale|string|false|Point of sale name|output|
+|status|string|false|status {Pending, Succeded, Failed}|output|
+|timeAndDate|string(date-time)|false|Date and time of the transaction YYY-MM-DDTHH:MM:SSZ|output|
+|transactionId|string|false|Internal transaction ID|output|
 
 
 <h2 id="tocSselfregistercustomervm">SelfRegisterCustomerVM</h2>
@@ -1645,12 +1645,12 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|emailAddress|string|true|Customer's email address|
-|legalBusinessName|string|true|Please populate with "CUSTOMER"|
-|phone|string|true|Phone number of a customer|
-|user|[CreateAssociateAdminUserWithPasswordVM](#schemacreateassociateadminuserwithpasswordvm)|true|User object|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|emailAddress|string|true|Customer's email address|input|
+|legalBusinessName|string|true|Please populate with "CUSTOMER"|input|
+|phone|string|true|Phone number of a customer|input|
+|user|[CreateAssociateAdminUserWithPasswordVM](#schemacreateassociateadminuserwithpasswordvm)|true|User object|input|
 
 <h2 id="tocSloginvm">LoginVM</h2>
 
@@ -1670,11 +1670,11 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|password|string|true|Password for login|
-|rememberMe|boolean|false|If enabled, authorization token will last for 30 days. If not token will last for 24 hours|
-|username|string|true|Username/email for login|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|password|string|true|Password for login|input|
+|rememberMe|boolean|false|If enabled, authorization token will last for 30 days. If not token will last for 24 hours|input|
+|username|string|true|Username/email for login|input|
 
 
 <h2 id="tocSmerchantvendor">MerchantVendor</h2>
@@ -1770,12 +1770,12 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|id|integer(int64)|false|No description|
-|merchant|[Associate](#schemaassociate)|true|No description|
-|note|string|false|No description|
-|vendor|[Associate](#schemaassociate)|true|No description|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|id|integer(int64)|false|No description|output|
+|merchant|[Associate](#schemaassociate)|true|No description|input|
+|note|string|false|No description|both|
+|vendor|[Associate](#schemaassociate)|true|No description|input|
 
 
 <h2 id="tocSnewcustomervm">NewCustomerVM</h2>
@@ -1802,12 +1802,12 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|emailAddress|string|true|Customer's email|
-|legalBusinessName|string|true|Please populate with "CUSTOMER"|
-|phone|string|true|Customer's phone number|
-|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|true|CreateAssociateAdminUserVM object|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|emailAddress|string|true|Customer's email|input|
+|legalBusinessName|string|true|Please populate with "CUSTOMER"|input|
+|phone|string|true|Customer's phone number|input|
+|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|true|CreateAssociateAdminUserVM object|input|
 
 <h2 id="tocSnewcustomervm2">NewCustomerVM2</h2>
 
@@ -1834,13 +1834,13 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|id|integer(int64)|true|ID of the customer - read-only|
-|emailAddress|string|true|Email address of the customer.|
-|legalBusinessName|string|true|Please populate with "CUSTOMER"|
-|phone|string|true|Customer's phone number|
-|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|true|CreateAssociateAdminUserVM object|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|id|integer(int64)|true|ID of the customer - read-only|input|
+|emailAddress|string|true|Email address of the customer.|input|
+|legalBusinessName|string|true|Please populate with "CUSTOMER"|input|
+|phone|string|true|Customer's phone number|input|
+|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|true|CreateAssociateAdminUserVM object|input|
 
 <h2 id="tocSnewmerchantvm">NewMerchantVM</h2>
 
@@ -1993,39 +1993,39 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|address|string|true|Address of the company|
-|address2|string|false|Address of the company (line2)|
-|altAutosellInternal|boolean|false|For internal use - read-only|
-|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|Object containing info regarding authorized signer in the company|
-|autosell|boolean|false|Enable/disable autosell feature for merchants. Enabled means funds will be converted in USD immediately|
-|canEditOnboarded|boolean|false|Provides info if a partner can edit his merchants and vendors - read-only|
-|city|string|true|City where company is located|
-|commissionFee|number(double)|false|Commission fee for the company - read-only (0,1)|
-|companyEIN|string|true|Employer Identification Number of the company|
-|companyWebsite|string|true|Website of the company|
-|createdDate|string(date-time)|false|Provides info when the entity has been created - read-only|
-|customers|integer(int32)|false|Number of customers - read-only|
-|emailAddress|string|true|Email address for creating account|
-|enabled|boolean|false|Provides info if the entity has been approved by AltThirtySix Admin - read-only|
-|enroledBy|[Associate](#schemaassociate)|false|Provides info about the parent of an entity - read-only|
-|id|integer(int64)|false|ID of the entity assigned by system - read-only|
-|incorporationDate|string(date)|true|Company incorporation date with format YYYY-MM-DD|
-|legalBusinessName|string|true|Company legal business name|
-|locationsCount|integer(int32)|false|Number of locations - read-only|
-|mainContact|[ContactVM](#schemacontactvm)|true|Object containing info regarding main contact in the company|
-|merchants|integer(int32)|false|Number of merchants - read-only|
-|note|string|false|Any additional note|
-|partners|integer(int32)|false|Number of partners - read-only|
-|phone|string|true|Company's business phone|
-|posCount|integer(int32)|false|Number of pos - read-only|
-|saleVolume|number(double)|false|Sales volume of an entity|
-|state|[CountryState](#schemacountrystate)|true|Object containing info about the state where company is located|
-|usBankAccount|string|false|A bank account of the company|
-|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|true|Object containing info regarding user account.|
-|vendors|integer(int32)|false|Number of vendors - read-only|
-|zip|string|true|Zip code as part of company's address|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|address|string|true|Address of the company|both|
+|address2|string|false|Address of the company (line2)|both|
+|altAutosellInternal|boolean|false|For internal use - read-only|output|
+|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|Object containing info regarding authorized signer in the company|both|
+|autosell|boolean|false|Enable/disable autosell feature for merchants. Enabled means funds will be converted in USD immediately|output|
+|canEditOnboarded|boolean|false|Provides info if a partner can edit his merchants and vendors - read-only|output|
+|city|string|true|City where company is located|both|
+|commissionFee|number(double)|false|Commission fee for the company - read-only (0,1)|output|
+|companyEIN|string|true|Employer Identification Number of the company|both|
+|companyWebsite|string|true|Website of the company|both|
+|createdDate|string(date-time)|false|Provides info when the entity has been created - read-only|output|
+|customers|integer(int32)|false|Number of customers - read-only|output|
+|emailAddress|string|true|Email address for creating account|both|
+|enabled|boolean|false|Provides info if the entity has been approved by AltThirtySix Admin - read-only|output|
+|enroledBy|[Associate](#schemaassociate)|false|Provides info about the parent of an entity - read-only|output|
+|id|integer(int64)|false|ID of the entity assigned by system - read-only|both|
+|incorporationDate|string(date)|true|Company incorporation date with format YYYY-MM-DD|both|
+|legalBusinessName|string|true|Company legal business name|both|
+|locationsCount|integer(int32)|false|Number of locations - read-only|output|
+|mainContact|[ContactVM](#schemacontactvm)|true|Object containing info regarding main contact in the company|output|
+|merchants|integer(int32)|false|Number of merchants - read-only|output|
+|note|string|false|Any additional note|both|
+|partners|integer(int32)|false|Number of partners - read-only|output|
+|phone|string|true|Company's business phone|both|
+|posCount|integer(int32)|false|Number of pos - read-only|output|
+|saleVolume|number(double)|false|Sales volume of an entity|output|
+|state|[CountryState](#schemacountrystate)|true|Object containing info about the state where company is located|both|
+|usBankAccount|string|false|A bank account of the company|both|
+|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|true|Object containing info regarding user account.|both|
+|vendors|integer(int32)|false|Number of vendors - read-only|output|
+|zip|string|true|Zip code as part of company's address|both|
 
 <h2 id="tocSnewmerchantvm2">UpdateMerchantVM</h2>
 
@@ -2179,39 +2179,39 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|id|integer(int64)|true|ID of the entity assigned by system - read-only|
-|address|string|true|Address of the company|
-|address2|string|false|Address of the company (line2)|
-|altAutosellInternal|boolean|false|For internal use - read-only|
-|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|Object containing info regarding authorized signer in the company|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|id|integer(int64)|true|ID of the entity assigned by system - read-only|both|
+|address|string|true|Address of the company|both|
+|address2|string|false|Address of the company (line2)|both|
+|altAutosellInternal|boolean|false|For internal use - read-only|output|
+|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|Object containing info regarding authorized signer in the company|both|
 |autosell|boolean|false|Enable/disable autosell feature for merchants. Enabled means funds will be converted in USD immediately|
-|canEditOnboarded|boolean|false|Provides info if a partner can edit his merchants and vendors - read-only|
-|city|string|true|City where company is located|
-|commissionFee|number(double)|false|Commission fee for the company - read-only (0,1)|
-|companyEIN|string|true|Employer Identification Number of the company|
-|companyWebsite|string|true|Website of the company|
-|createdDate|string(date-time)|false|Provides info when the entity has been created - read-only|
-|customers|integer(int32)|false|Number of customers - read-only|
-|emailAddress|string|true|Email address for creating account|
-|enabled|boolean|false|Provides info if the entity has been approved by AltThirtySix Admin - read-only|
-|enroledBy|[Associate](#schemaassociate)|false|Provides info about the parent of an entity - read-only|
-|incorporationDate|string(date)|true|Company incorporation date with format YYYY-MM-DD|
-|legalBusinessName|string|true|Company legal business name|
-|locationsCount|integer(int32)|false|Number of locations - read-only|
-|mainContact|[ContactVM](#schemacontactvm)|true|Object containing info regarding main contact in the company|
-|merchants|integer(int32)|false|Number of merchants - read-only|
-|note|string|false|Any additional note|
-|partners|integer(int32)|false|Number of partners - read-only|
-|phone|string|true|Company's business phone|
-|posCount|integer(int32)|false|Number of pos - read-only|
-|saleVolume|number(double)|false|Sales volume of an entity|
-|state|[CountryState](#schemacountrystate)|true|Object containing info about the state where company is located|
-|usBankAccount|string|false|A bank account of the company|
-|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|false|Object containing info regarding user account.|
-|vendors|integer(int32)|false|Number of vendors - read-only|
-|zip|string|true|Zip code as part of company's address|
+|canEditOnboarded|boolean|false|Provides info if a partner can edit his merchants and vendors - read-only|output|
+|city|string|true|City where company is located|both|
+|commissionFee|number(double)|false|Commission fee for the company - read-only (0,1)|output|
+|companyEIN|string|true|Employer Identification Number of the company|both|
+|companyWebsite|string|true|Website of the company|both|
+|createdDate|string(date-time)|false|Provides info when the entity has been created - read-only|output|
+|customers|integer(int32)|false|Number of customers - read-only|output|
+|emailAddress|string|true|Email address for creating account|both|
+|enabled|boolean|false|Provides info if the entity has been approved by AltThirtySix Admin - read-only|output|
+|enroledBy|[Associate](#schemaassociate)|false|Provides info about the parent of an entity - read-only|output|
+|incorporationDate|string(date)|true|Company incorporation date with format YYYY-MM-DD|both|
+|legalBusinessName|string|true|Company legal business name|both|
+|locationsCount|integer(int32)|false|Number of locations - read-only|output|
+|mainContact|[ContactVM](#schemacontactvm)|true|Object containing info regarding main contact in the company|both|
+|merchants|integer(int32)|false|Number of merchants - read-only|output|
+|note|string|false|Any additional note|both|
+|partners|integer(int32)|false|Number of partners - read-only|output|
+|phone|string|true|Company's business phone|both|
+|posCount|integer(int32)|false|Number of pos - read-only|output|
+|saleVolume|number(double)|false|Sales volume of an entity|output|
+|state|[CountryState](#schemacountrystate)|true|Object containing info about the state where company is located|both|
+|usBankAccount|string|false|A bank account of the company|both|
+|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|false|Object containing info regarding user account.|both|
+|vendors|integer(int32)|false|Number of vendors - read-only|output|
+|zip|string|true|Zip code as part of company's address|both|
 
 <h2 id="tocSnewpartnervm">NewPartnerVM</h2>
 
@@ -4290,8 +4290,8 @@ Example
 |phone|string|false|No description|
 |pointOfSales|[[PointOfSale](#schemapointofsale)]|false|No description|
 |state|[CountryState](#schemacountrystate)|true|No description|
-|website|string|false|No description|
-|zip|string|true|No description|
+|website|string|false|website URL|
+|zip|string|true|Zip code|
 
 
 <h2 id="tocSlocationpos">LocationPOS</h2>
@@ -4396,11 +4396,11 @@ Example
 |name|string|true|No description|
 |noOfPos|integer(int32)|false|No description|
 |note|string|false|No description|
-|parentLocationId|integer(int64)|false|No description|
+|parentLocationId|integer(int64)|false|For future use|
 |phone|string|true|No description|
 |state|[CountryState](#schemacountrystate)|true|No description|
 |website|string|true|No description|
-|zip|string|true|No description|
+|zip|string|true|Zip code|
 
 
 <h2 id="tocSlocationvm">LocationVm</h2>
@@ -4482,11 +4482,11 @@ Example
 |name|string|true|No description|
 |noOfPos|integer(int32)|false|No description|
 |note|string|false|No description|
-|parentLocationId|integer(int64)|false|No description|
+|parentLocationId|integer(int64)|false|For future use|
 |phone|string|true|No description|
 |state|[CountryState](#schemacountrystate)|true|No description|
 |website|string|true|No description|
-|zip|string|true|No description|
+|zip|string|true|Zip code|
 
 
 <h2 id="tocSlocationwithtransactionvm">LocationWithTransactionVm</h2>
@@ -4576,11 +4576,11 @@ Example
 |name|string|true|No description|
 |noOfPos|integer(int32)|false|No description|
 |note|string|false|No description|
-|parentLocationId|integer(int64)|false|No description|
+|parentLocationId|integer(int64)|false|For future use|
 |phone|string|false|No description|
 |state|[CountryState](#schemacountrystate)|true|No description|
-|website|string|false|No description|
-|zip|string|true|No description|
+|website|string|false|website URL|
+|zip|string|true|Zip code|
 
 
 <h2 id="tocSinvitation">Invitation</h2>
@@ -5388,16 +5388,16 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
     "last": false
   }
 ```
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|timerange_from|string|true|Start date/datetime in ISO format|
-|timerange_to|string|true|End date/datetime in ISO format|
-|number|integer|true|Page number|
-|size|number|true|Page size|
-|numberOfElements|integer|true|Total number of elements|
-|totalPages|Integer|true|Total number of pages|
-|first|boolean|true|Is this the first page|
-|last|Integer|true|Is this the last page|
+|Parameter|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|---|
+|timerange_from|string|true|Start date/datetime in ISO format|output|
+|timerange_to|string|true|End date/datetime in ISO format|output|
+|number|integer|true|Page number|output|
+|size|number|true|Page size|output|
+|numberOfElements|integer|true|Total number of elements|output|
+|totalPages|Integer|true|Total number of pages|output|
+|first|boolean|true|Is this the first page|output|
+|last|Integer|true|Is this the last page|output|
 
 <!-- LocationPerformanceResponse -->
 <h2 id="tocLocationPerformanceResponse">LocationPerformanceResponse</h2>
@@ -5465,10 +5465,10 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
   ]
 }
 ```
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata
-|data|Array([LocationPerformanceItem](#schemarepotlocationperformanceitem))|true|Arary of location performance data
+|Parameter|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|---|
+|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata|output|
+|data|Array([LocationPerformanceItem](#schemarepotlocationperformanceitem))|true|Arary of location performance data|output|
 
 
 <!-- RolePerformanceResponse -->
@@ -5529,10 +5529,10 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 }
 
 ```
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata
-|data|Array([RolePerformanceItem](#schemareportroleperformanceitem))|true|Arary of location performance data
+|Parameter|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|---|
+|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata|output|
+|data|Array([RolePerformanceItem](#schemareportroleperformanceitem))|true|Arary of location performance data|output|
 
 <!-- TaxSummaryResponse -->
 <h2 id="tocTaxSummaryResponse">TaxSummaryResponse</h2>
@@ -5568,10 +5568,10 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
     ]
 }
 ```
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata
-|data|Array([TaxItem](#schemataxitem))|true|Array of tax items
+|Parameter|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|---|
+|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata|output|
+|data|Array([TaxItem](#schemataxitem))|true|Array of tax items|output|
 
 
 <!-- SalesSummaryResponse -->
@@ -5608,10 +5608,10 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 }
 
 ```
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata
-|data|Array([SalesItem](#schemasalesitem))|true|Array of sales items
+|Parameter|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|---|
+|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata|output|
+|data|Array([SalesItem](#schemasalesitem))|true|Array of sales items|output|
 
 <!-- ReportResponse -->
 <h2 id="tocReportResponse">PartnerReportResponse</h2>
@@ -5672,11 +5672,11 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 }
 
 ```
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata
-|summary|[SummaryItem](#tocSummaryItem)|true|Summary data - ralates to all pages of data.
-|data|Array([PartnerResponseItem](#tocPartnerResponseItem))|true|Array of objects
+|Parameter|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|---|
+|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata|output|
+|summary|[SummaryItem](#tocSummaryItem)|true|Summary data - ralates to all pages of data.|output|
+|data|Array([PartnerResponseItem](#tocPartnerResponseItem))|true|Array of objects|output|
 
 <!-- MerchantReportResponse -->
 <h2 id="tocMerchantReportResponse">MerchantReportResponse</h2>
@@ -5737,11 +5737,11 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
    ]
 }
 ```
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata
-|summary|[SummaryItem](#tocSummaryItem)|true|Summary data - ralates to all pages of data.
-|data|Array([MerchantResponseItem](#tocMerchantResponseItem))|true|Array of objects
+|Parameter|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|---|
+|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata|output|
+|summary|[SummaryItem](#tocSummaryItem)|true|Summary data - ralates to all pages of data.|output|
+|data|Array([MerchantResponseItem](#tocMerchantResponseItem))|true|Array of objects|output|
 
 <!-- LocationReportResponse -->
 <h2 id="tocLocationReportResponse">LocationReportResponse</h2>
@@ -5801,11 +5801,11 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
    ]
 }
 ```
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata
-|summary|[SummaryItem](#tocSummaryItem)|true|Summary data - ralates to all pages of data.
-|data|Array([LocationResponseItem](#tocLocationResponseItem))|true|Array of objects
+|Parameter|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|---|
+|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata|output|
+|summary|[SummaryItem](#tocSummaryItem)|true|Summary data - ralates to all pages of data.|output|
+|data|Array([LocationResponseItem](#tocLocationResponseItem))|true|Array of objects|output|
 
 
 <!-- PosReportResponse -->
@@ -5858,11 +5858,11 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
   ]
 }
 ```
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata
-|summary|[SummaryItem](#tocSummaryItem)|true|Summary data - ralates to all pages of data.
-|data|Array([POSResponseItem](#tocPOSResponseItem))|true|Array of objects
+|Parameter|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|---|
+|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata|output|
+|summary|[SummaryItem](#tocSummaryItem)|true|Summary data - ralates to all pages of data.|output|
+|data|Array([POSResponseItem](#tocPOSResponseItem))|true|Array of objects|output|
 
 
 <!-- TaxReportResponse -->
@@ -5890,10 +5890,10 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 }
 
 ```
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata
-|content|[TaxResponseItem](#tocTaxResposeItemItem)|true| Tax report item instance
+|Parameter|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|---|
+|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata|output|
+|content|[TaxResponseItem](#tocTaxResposeItemItem)|true| Tax report item instance|output|
 
 <!-- AltCommissionReportResponse -->
 <h2 id="tocAltCommissionReportResponse">AltCommissionReportResponse</h2>
@@ -5942,10 +5942,10 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 }
 
 ```
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata
-|content|Array([CommissionResponseItem])(#tocCommissionResposeItemItem)|true| Array of commission report intems
+|Parameter|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|---|
+|metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata|output|
+|content|Array([CommissionResponseItem])(#tocCommissionResposeItemItem)|true| Array of commission report intems|output|
 
 <!-- ErrorMessage -->
 <h2 id="tocErrorMessage">ErrorMessage</h2>
@@ -5958,9 +5958,9 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 }
 
 ```
-|Parameter|Type|Required|Description|
+|Parameter|Type|Required|Description|input/output parameter|
 |---|---|---|---|---|
-|message|string|true|Error message returned along with status code
+|message|string|true|Error message returned along with status code|output|
 
 
 <!-- Notification message -->
@@ -5986,17 +5986,17 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 }
 ```
 
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|tx_id|string|false|Internal transaction id, this is part of internal transaction storage.
-|tx_state|string|true|Current state of the transaction
-|requested_amount|number|true|Requested amount that system generated
-|requested_currency|string|true|Requested currency
-|converted_to_amount|number|true|To which mount value has been converted
-|converted_to_currency|string|true|Curency conversion
-|timestamp_resp|integer|true|Response timestamp created on server
-|pay_to_address|string|true|The address that has been payed to
-|warning_msg|[ErrorMessage](#tocErrorMessage)|true|Warning message (could be omitted)
+|Parameter|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|---|
+|tx_id|string|false|Internal transaction id, this is part of internal transaction storage.|output|
+|tx_state|string|true|Current state of the transaction|output|
+|requested_amount|number|true|Requested amount that system generated|output|
+|requested_currency|string|true|Requested currency|output|
+|converted_to_amount|number|true|To which mount value has been converted|output|
+|converted_to_currency|string|true|Curency conversion|output|
+|timestamp_resp|integer|true|Response timestamp created on server|output|
+|pay_to_address|string|true|The address that has been payed to|output|
+|warning_msg|[ErrorMessage](#tocErrorMessage)|true|Warning message (could be omitted)|output|
 
 
 <!-- AssociateAccount -->
@@ -6036,16 +6036,16 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 }
 ```
 
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|type|string|false| Enumeration (INTERNAL_CRYPTO_TO_INTERNAL_CRYPTO, INTERNAL_CRYPTO_TO_EXTERNAL_CRYPTO, INTERNAL_CRYPTO_TO_FIAT, FIAT_TO_INTERNAL_CRYPTO, INTERNAL_FIAT_TO_EXTERNAL_FIAT).
-|source_associate_id|integer|true|Internal associate Id of transaction initiator
-|destination_associate_id|integer|true|Internal associate id of transaction destination
-|amount|number|true|Amount to transfer
-|currency_in|string|true|Currency that is transfered
-|currency_out|string|true|Currency to which is transfered
-|timestamp_req|integer|true|Timestamp of the request
-|note|string|false|General note about transaction
+|Parameter|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|---|
+|type|string|false| Enumeration (INTERNAL_CRYPTO_TO_INTERNAL_CRYPTO, INTERNAL_CRYPTO_TO_EXTERNAL_CRYPTO, INTERNAL_CRYPTO_TO_FIAT, FIAT_TO_INTERNAL_CRYPTO, INTERNAL_FIAT_TO_EXTERNAL_FIAT).|input|
+|source_associate_id|integer|true|Internal associate Id of transaction initiator|input|
+|destination_associate_id|integer|true|Internal associate id of transaction destination|input|
+|amount|number|true|Amount to transfer|input|
+|currency_in|string|true|Currency that is transfered|input|
+|currency_out|string|true|Currency to which is transfered|input|
+|timestamp_req|integer|true|Timestamp of the request|input|
+|note|string|false|General note about transaction|input|
 
 
 <!-- InternalResponse -->
@@ -6073,13 +6073,13 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 }
 ```
 
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|timestamp_accepted|integer|false| timestamp when the transaction is accepted on service
-|tx_id|string|string|Internal transaction identifier
-|destination_address|string|true| Destination address
-|status|string|true|Current transaction status
-|request_was|[InternalRequest](#tocInternalRequest)|true|Original request
+|Parameter|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|---|
+|timestamp_accepted|integer|false| timestamp when the transaction is accepted on service| output|
+|tx_id|string|string|Internal transaction identifier| output|
+|destination_address|string|true| Destination address| output|
+|status|string|true|Current transaction status| output|
+|request_was|[InternalRequest](#tocInternalRequest)|true|Original request| output|
 
 
 
@@ -6103,13 +6103,13 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|email|string|true|Account |
-|firstName|string|true|No description|
-|lastName|string|true|No description|
-|login|string|true|No description|
-|password|string|true|Min requirements: 8 characters long, uppercase, digits and lower case letters|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|email|string|true|Account | input|
+|firstName|string|true|First name|input|
+|lastName|string|true|Last name|input|
+|login|string|true|Login|input|
+|password|string|true|Min requirements: 8 characters long, uppercase, digits and lower case letters|input|
 
 <h2 id="tocScreateassociateadminuservm">CreateAssociateAdminUserVM</h2>
 
@@ -6128,12 +6128,12 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|email|string|true|No description|
-|firstName|string|true|No description|
-|lastName|string|true|No description|
-|login|string|true|No description|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|email|string|true|valid Email|both|
+|firstName|string|true|First name|both|
+|lastName|string|true|Last name|both|
+|login|string|true|Login|both|
 
 
 <h2 id="tocSconversionstransactionsvm">ConversionsTransactionsVM</h2>
@@ -6160,17 +6160,17 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|amountDash|string|false|No description|
-|amountFiat|string|false|No description|
-|conversionFrom|string|false|No description|
-|conversionRate|string|false|No description|
-|conversionTo|string|false|No description|
-|id|integer(int64)|false|No description|
-|status|string|false|No description|
-|timeAndDate|string(date-time)|false|No description|
-|transactionId|string|false|No description|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|amountDash|string|false|No description|output|
+|amountFiat|string|false|No description|output|
+|conversionFrom|string|false|No description|output|
+|conversionRate|string|false|No description|output|
+|conversionTo|string|false|No description|output|
+|id|integer(int64)|false|No description|output|
+|status|string|false|No description|output|
+|timeAndDate|string(date-time)|false|No description|output|
+|transactionId|string|false|No description|output|
 
 
 <h2 id="tocScommissionfee">CommissionFee</h2>
@@ -6190,10 +6190,10 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|associateId|integer(int64)|true|No description|
-|commissionFee|number|true|No description|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|associateId|integer(int64)|true|No description|both|
+|commissionFee|number|true|No description|both|
 
 
 <h2 id="tocScoinfirm">Coinfirm</h2>
@@ -6263,60 +6263,60 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|address|string|false|No description|
-|addressSubtype|string|false|No description|
-|addressType|string|false|No description|
-|avgCcInflow|number(double)|false|No description|
-|avgCcInflowX|string|false|No description|
-|avgCcOutflow|number(double)|false|No description|
-|avgCcOutflowX|number(double)|false|No description|
-|avgTxFee|number(double)|false|No description|
-|avgTxSize|number(double)|false|No description|
-|balance|number(double)|false|No description|
-|ccInflowX|integer(int64)|false|No description|
-|ccOutflowX|integer(int64)|false|No description|
-|clusterSize|integer(int64)|false|No description|
-|cscore|integer(int64)|false|No description|
-|daysWithoutTx|integer(int64)|false|No description|
-|description|string|false|No description|
-|flags|string|false|No description|
-|id|integer(int64)|false|No description|
-|initialBlockHeight|integer(int64)|false|No description|
-|initialBlockTime|string|false|No description|
-|initialTxAmount|integer(int64)|false|No description|
-|initialTxHash|string|false|No description|
-|initialTxUsdValue|number(double)|false|No description|
-|lastInputTxAmount|integer(int64)|false|No description|
-|lastInputTxBlockHeight|integer(int64)|false|No description|
-|lastInputTxBlockTime|string|false|No description|
-|lastInputTxHash|string|false|No description|
-|lastInputTxUsdValue|number(double)|false|No description|
-|lastOutputTxAmount|integer(int64)|false|No description|
-|lastOutputTxBlockHeight|integer(int64)|false|No description|
-|lastOutputTxBlockTime|string|false|No description|
-|lastOutputTxHash|string|false|No description|
-|lastOutputTxUsdValue|number(double)|false|No description|
-|maxInflow|integer(int64)|false|No description|
-|maxOutflow|integer(int64)|false|No description|
-|minInflow|integer(int64)|false|No description|
-|minOutflow|integer(int64)|false|No description|
-|multisig|boolean|false|No description|
-|profiles|string|false|No description|
-|receiveCount|integer(int64)|false|No description|
-|receivePeak|integer(int64)|false|No description|
-|recommendation|integer(int64)|false|No description|
-|reportId|string|false|No description|
-|reportType|string|false|No description|
-|sentCount|integer(int64)|false|No description|
-|time|string|false|No description|
-|totalInflow|integer(int64)|false|No description|
-|totalOutflow|integer(int64)|false|No description|
-|txCount|integer(int64)|false|No description|
-|usdBalance|integer(int64)|false|No description|
-|usdExchangeRate|number(double)|false|No description|
-|whitelist|boolean|false|No description|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|address|string|false|No description|output|
+|addressSubtype|string|false|No description|output|
+|addressType|string|false|No description|output|
+|avgCcInflow|number(double)|false|No description|output|
+|avgCcInflowX|string|false|No description|output|
+|avgCcOutflow|number(double)|false|No description|output|
+|avgCcOutflowX|number(double)|false|No description|output|
+|avgTxFee|number(double)|false|No description|output|
+|avgTxSize|number(double)|false|No description|output|
+|balance|number(double)|false|No description|output|
+|ccInflowX|integer(int64)|false|No description|output|
+|ccOutflowX|integer(int64)|false|No description|output|
+|clusterSize|integer(int64)|false|No description|output|
+|cscore|integer(int64)|false|No description|output|
+|daysWithoutTx|integer(int64)|false|No description|output|
+|description|string|false|No description|output|
+|flags|string|false|No description|output|
+|id|integer(int64)|false|No description|output|
+|initialBlockHeight|integer(int64)|false|No description|output|
+|initialBlockTime|string|false|No description|output|
+|initialTxAmount|integer(int64)|false|No description|output|
+|initialTxHash|string|false|No description|output|
+|initialTxUsdValue|number(double)|false|No description|output|
+|lastInputTxAmount|integer(int64)|false|No description|output|
+|lastInputTxBlockHeight|integer(int64)|false|No description|output|
+|lastInputTxBlockTime|string|false|No description|output|
+|lastInputTxHash|string|false|No description|output|
+|lastInputTxUsdValue|number(double)|false|No description|output|
+|lastOutputTxAmount|integer(int64)|false|No description|output|
+|lastOutputTxBlockHeight|integer(int64)|false|No description|output|
+|lastOutputTxBlockTime|string|false|No description|output|
+|lastOutputTxHash|string|false|No description|output|
+|lastOutputTxUsdValue|number(double)|false|No description|output|
+|maxInflow|integer(int64)|false|No description|output|
+|maxOutflow|integer(int64)|false|No description|output|
+|minInflow|integer(int64)|false|No description|output|
+|minOutflow|integer(int64)|false|No description|output|
+|multisig|boolean|false|No description|output|
+|profiles|string|false|No description|output|
+|receiveCount|integer(int64)|false|No description|output|
+|receivePeak|integer(int64)|false|No description|output|
+|recommendation|integer(int64)|false|No description|output|
+|reportId|string|false|No description|output|
+|reportType|string|false|No description|output|
+|sentCount|integer(int64)|false|No description|output|
+|time|string|false|No description|output|
+|totalInflow|integer(int64)|false|No description|output|
+|totalOutflow|integer(int64)|false|No description|output|
+|txCount|integer(int64)|false|No description|output|
+|usdBalance|integer(int64)|false|No description|output|
+|usdExchangeRate|number(double)|false|No description|output|
+|whitelist|boolean|false|No description|output|
 
 
 <h2 id="tocSchangepasswordvm">ChangePasswordVM</h2>
@@ -6335,9 +6335,9 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 ### Properties
 
 
-|Name|Type|Required|Description|
+|Name|Type|Required|Description|input/output parameter|
 |---|---|---|---|
-|password|string|true|No description|
+|password|string|true|New password|input|
 
 
 <h2 id="tocSassociate">Associate</h2>
@@ -6391,40 +6391,40 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|address|string|true|No description|
-|altAutosellInternal|boolean|false|No description|
-|associateType|string|true|No description|
-|autosell|boolean|false|No description|
-|beneficiaryPercent|integer(int64)|false|No description|
-|canEditOnboarded|boolean|false|No description|
-|city|string|true|No description|
-|coinaPultApiKey|string|false|No description|
-|commissionFee|number|false|No description|
-|companyEIN|string|false|No description|
-|companyWebsite|string|true|No description|
-|createdDate|string(date-time)|false|No description|
-|cryptoCapitalApiKey|string|false|No description|
-|customers|integer(int32)|false|No description|
-|deletedDate|string(date-time)|false|No description|
-|emailAddress|string|true|No description|
-|enabled|boolean|false|No description|
-|enrolledBy|[Associate](#schemaassociate)|false|No description|
-|id|integer(int64)|false|No description|
-|incorporationDate|string(date)|false|No description|
-|internalFee|number(double)|false|No description|
-|legalBusinessName|string|true|No description|
-|locationsCount|integer(int32)|false|No description|
-|merchants|integer(int32)|false|No description|
-|note|string|false|No description|
-|partners|integer(int32)|false|No description|
-|phone|string|true|No description|
-|posCount|integer(int32)|false|No description|
-|state|[CountryState](#schemacountrystate)|true|No description|
-|usBankAccount|string|false|No description|
-|vendors|integer(int32)|false|No description|
-|zip|string|true|No description|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|address|string|true|No description|output|
+|altAutosellInternal|boolean|false|No description|output|
+|associateType|string|true|No description|output|
+|autosell|boolean|false|No description|output|
+|beneficiaryPercent|integer(int64)|false|No description|output|
+|canEditOnboarded|boolean|false|No description|output|
+|city|string|true|No description|output|
+|coinaPultApiKey|string|false|No description|output|
+|commissionFee|number|false|No description|output|
+|companyEIN|string|false|No description|output|
+|companyWebsite|string|true|No description|output|
+|createdDate|string(date-time)|false|No description|output|
+|cryptoCapitalApiKey|string|false|No description|output|
+|customers|integer(int32)|false|Number of associated customers|output|
+|deletedDate|string(date-time)|false|No description|output|
+|emailAddress|string|true|No description|output|
+|enabled|boolean|false|No description|output|
+|enrolledBy|[Associate](#schemaassociate)|false|No description|output|
+|id|integer(int64)|false|No description|output|
+|incorporationDate|string(date)|false|No description|output|
+|internalFee|number(double)|false|No description|output|
+|legalBusinessName|string|true|No description|output|
+|locationsCount|integer(int32)|false|No description|output|
+|merchants|integer(int32)|false|Number of associated merchants|output|
+|note|string|false|No description|output|
+|partners|integer(int32)|false|Number of associated partners|output|
+|phone|string|true|No description|output|
+|posCount|integer(int32)|false|Number of POS|output|
+|state|[CountryState](#schemacountrystate)|true|No description|output|
+|usBankAccount|string|false|No description|output|
+|vendors|integer(int32)|false|Number of associated vendors|output|
+|zip|string|true|Zip code|output|
 
 
 #### Enumerated Values
@@ -6456,11 +6456,11 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|apiKey|string|true|No description|
-|apiSecret|string|true|No description|
-|registeredEmail|string|true|No description|
+|Name|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|
+|apiKey|string|true|No description|both|
+|apiSecret|string|true|No description|input|
+|registeredEmail|string|true|No description|both|
 
 <!-- SalesVolume -->
 
@@ -6477,10 +6477,10 @@ Note that the given example is only for associate SalesVolume object
 }
 ```
 
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|associate_id|integer|false| Associate identifier (used with associate sales volume)
-|location_id|integer|false|Location idenfifier (used with location sales volume)
-|pos_id|integer|false|POS identifier (used with pos sales volume)
-|sales_crypto|number|true|Total sales in cryptocurrency
-|sales_fiat|string|true|Total sales in FIAT currency (USD)
+|Parameter|Type|Required|Description|input/output parameter|
+|---|---|---|---|---|---|
+|associate_id|integer|false| Associate identifier (used with associate sales volume)|output|
+|location_id|integer|false|Location idenfifier (used with location sales volume)|output|
+|pos_id|integer|false|POS identifier (used with pos sales volume)|output|
+|sales_crypto|number|true|Total sales in cryptocurrency|output|
+|sales_fiat|string|true|Total sales in FIAT currency (USD)|output|
