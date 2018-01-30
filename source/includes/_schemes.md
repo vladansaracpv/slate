@@ -97,7 +97,7 @@
 
 ### Properties
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |address|string|true|Address of the company|input|
 |authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|Object containing info regarding authorized signer in the company|input|
@@ -116,7 +116,7 @@
 |zip|string|true|Zip code as part of company's address|input|
 
 
-<h2 id="tocSshutdownaccountrequestvm">ShutDownAccountRequestVM</h2>
+<h2 id="tocSshutdownaccountrequestvm">CloseAccountRequestVM</h2>
 
 
 <a id="schemashutdownaccountrequestvm"></a>
@@ -132,7 +132,7 @@
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |reason|string|true|Reason for closing an account|input|
 
@@ -144,11 +144,11 @@
 
 ### Values
 
-|Name|In|Required|Description|
-|---|---|---|---|
-|id|query|false|Sort list by id|
-|asc|query|false|Sort list in ascending order|
-|desc|query|true|Sort list in descending order|
+|Name|In|Required|Description|I/O type|
+|---|---|---|---|---|
+|id|query|false|Sort list by id|input|
+|asc|query|false|Sort list in ascending order|input|
+|desc|query|true|Sort list in descending order|input|
 
 Example
 
@@ -296,25 +296,25 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
-|accountNonExpired|boolean|false|No description|output|
-|accountNonLocked|boolean|false|No description|output|
-|activated|boolean|true|No description|output|
-|associate|[Associate](#schemaassociate)|true|No description|output|
-|credentialsNonExpired|boolean|false|No description|output|
-|email|string|false|No description|both|
-|enabled|boolean|false|No description|output|
-|firstName|string|false|No description|both|
-|id|integer(int64)|false|No description|both|
-|imageUrl|string|false|No description|both|
-|langKey|string|false|No description|both|
-|lastLoginDateTime|string(date-time)|false|No description|output|
-|lastName|string|false|No description|both|
-|location|[Location](#schemalocation)|false|No description|both|
-|login|string|true|No description|both|
-|resetDate|string(date-time)|false|No description|output|
-|splashscreenEnabled|boolean|false|No description|both|
+|accountNonExpired|boolean|false|Is account expired or not (true - it's not expired)|output|
+|accountNonLocked|boolean|false|Is account locked (true - it's not locked)|output|
+|activated|boolean|true|Is user account verified|output|
+|associate|[Associate](#schemaassociate)|true|To which associate does the account belong|output|
+|credentialsNonExpired|boolean|false|Are credentials expired (true - they are not)|output|
+|email|string|false|Email address of the account|both|
+|enabled|boolean|false|Is the user account enabled, not used|output|
+|firstName|string|false|First name|both|
+|id|integer(int64)|false|Id of the account, read-only|both|
+|imageUrl|string|false|Image URL - not used at the moment|both|
+|langKey|string|false|Language - not used at the moment|both|
+|lastLoginDateTime|string(date-time)|false|Datetime when user has logged in last time|output|
+|lastName|string|false|Last name|both|
+|location|[Location](#schemalocation)|false|Location object, not used|both|
+|login|string|true|username|both|
+|resetDate|string(date-time)|false|Not used|output|
+|splashscreenEnabled|boolean|falseIs splash screen enabled|both|
 |using2fa|boolean|false|Is two step authentication enabled for this user - read-only|output|
 
 
@@ -351,7 +351,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |activated|boolean|false|Is user account verified|output|
 |authorities|Array[string]|false|User authorization roles|both|
@@ -404,7 +404,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |activated|boolean|false|Is user account verified|output|
 |authorities|Array[string]|false|User authorization roles|both|
@@ -444,7 +444,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |amount|string|false|Withdrawal amount in USD|output|
 |id|integer(int64)|false|Database id for transaction|output|
@@ -498,7 +498,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |content|[[UserDTO](#schemauserdto)]|false|UserDTO object|output|
 |first|boolean|false|Is the current page first page - read-only|output|
@@ -543,7 +543,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |content|[[WithdrawalsTransactionsVm](#schemawithdrawalstransactionsvm)]|false|WithdrawlsTransactionsVm object|output|
 |first|boolean|false|Is the current page first page - read-only|output|
@@ -719,7 +719,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |approved|integer(int64)|false|Number of approved entities|output|
 |content|[[NewPartnerVM](#schemanewpartnervm)]|false|NewPartnerVM object|output|
@@ -756,7 +756,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |amount|string|false|Amount in DASH|output|
 |id|integer(int64)|false|Database ID of the transaction|output|
@@ -1190,7 +1190,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |accompliceAssociate|[Associate](#schemaassociate)|false|No description|output|
 |commissionFee|integer(int64)|false|No description|output|
@@ -1305,7 +1305,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |active|boolean|false|No description|output|
 |deletedDate|string(date-time)|false|No description|output|
@@ -1350,7 +1350,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |address|string|false|No description|output|
 |city|string|false|No description|output|
@@ -1455,7 +1455,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |associateDelete|[Associate](#schemaassociate)|true|Associate object - for which the request was sent|both|
 |dateRequested|string(date-time)|false|Date when request was made. |output|
@@ -1480,7 +1480,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |email|string|true|Email for password reset init.|input|
 
@@ -1606,7 +1606,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |amountInDash|string|false|Amount in DASH|output|
 |amountInUSD|string|false|Amount in USD|output|
@@ -1645,7 +1645,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |emailAddress|string|true|Customer's email address|input|
 |legalBusinessName|string|true|Please populate with "CUSTOMER"|input|
@@ -1670,7 +1670,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |password|string|true|Password for login|input|
 |rememberMe|boolean|false|If enabled, authorization token will last for 30 days. If not token will last for 24 hours|input|
@@ -1770,7 +1770,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |id|integer(int64)|false|No description|output|
 |merchant|[Associate](#schemaassociate)|true|No description|input|
@@ -1802,7 +1802,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |emailAddress|string|true|Customer's email|input|
 |legalBusinessName|string|true|Please populate with "CUSTOMER"|input|
@@ -1834,7 +1834,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |id|integer(int64)|true|ID of the customer - read-only|input|
 |emailAddress|string|true|Email address of the customer.|input|
@@ -1993,7 +1993,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |address|string|true|Address of the company|both|
 |address2|string|false|Address of the company (line2)|both|
@@ -2179,7 +2179,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |id|integer(int64)|true|ID of the entity assigned by system - read-only|both|
 |address|string|true|Address of the company|both|
@@ -2362,7 +2362,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |id|integer(int64)|true|ID of the entity - assigned by system|both|
 |address|string|true|Address of the company|both|
@@ -2372,7 +2372,7 @@ Example
 |autosell|boolean|false|Enable/disable autosell feature for merchants. Enabled means funds will be converted in USD immediately|both|
 |canEditOnboarded|boolean|false|Provides info if a partner can edit his merchants and vendors - read-only|output|
 |city|string|true|City where company is located|both|
-|commissionFee|number(double)|false|Commission fee for the company - read-only (0,1)|both|
+|commissionFee|number(double)|false|Commission fee for the company - read-only (0,1)|output|
 |companyEIN|string|true|Employer Identification Number of the company|both|
 |companyWebsite|string|true|Website of the company|both|
 |createdDate|string(date-time)|false|Provides info when the entity has been created - read-only|output|
@@ -2546,7 +2546,7 @@ Example
 
 ### Properties
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |address|string|true|Address of the company|both|
 |address2|string|false|Address of the company (line2)|both|
@@ -2732,39 +2732,39 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|id|integer(int64)|true|ID of the entity assigned by system - read-only|
-|address|string|true|Address of the company|
-|address2|string|false|Address of the company (line2)|
-|altAutosellInternal|boolean|false|For internal use - read-only|
-|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|Object containing info regarding authorized signer in the company|
-|autosell|boolean|false|Enable/disable autosell feature for merchants. Enabled means funds will be converted in USD immediately|
-|canEditOnboarded|boolean|false|Provides info if a partner can edit his merchants and vendors - read-only|
-|city|string|true|City where company is located|
-|commissionFee|number(double)|false|Commission fee for the company - read-only (0,1)|
-|companyEIN|string|true|Employer Identification Number of the company|
-|companyWebsite|string|true|Website of the company|
-|createdDate|string(date-time)|false|Provides info when the entity has been created - read-only|
-|customers|integer(int32)|false|Number of customers - read-only|
-|emailAddress|string|true|Email address for creating account|
-|enabled|boolean|false|Provides info if the entity has been approved by AltThirtySix Admin - read-only|
-|enroledBy|[Associate](#schemaassociate)|false|Provides info about the parent of an entity - read-only|
-|incorporationDate|string(date)|true|Company incorporation date with format YYYY-MM-DD|
-|legalBusinessName|string|true|Company legal business name|
-|locationsCount|integer(int32)|false|Number of locations - read-only|
-|mainContact|[ContactVM](#schemacontactvm)|true|Object containing info regarding main contact in the company|
-|merchants|integer(int32)|false|Number of merchants - read-only|
-|note|string|false|Any additional note|
-|partners|integer(int32)|false|Number of partners - read-only|
-|phone|string|true|Company's business phone|
-|posCount|integer(int32)|false|Number of pos - read-only|
-|saleVolume|number(double)|false|Sales volume of an entity|
-|state|[CountryState](#schemacountrystate)|true|Object containing info about the state where company is located|
-|usBankAccount|string|false|A bank account of the company|
-|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|false|Object containing info regarding user account.|
-|vendors|integer(int32)|false|Number of vendors - read-only|
-|zip|string|true|Zip code as part of company's address|
+|Name|Type|Required|Description|I/O type|
+|---|---|---|---|---|
+|id|integer(int64)|true|ID of the entity assigned by system - read-only|both|
+|address|string|true|Address of the company|both|
+|address2|string|false|Address of the company (line2)|both|
+|altAutosellInternal|boolean|false|For internal use - read-only|output|
+|authorizedSignerContact|[AuthorizedSignerVM](#schemaauthorizedsignervm)|true|Object containing info regarding authorized signer in the company|both|
+|autosell|boolean|false|Enable/disable autosell feature for merchants. Enabled means funds will be converted in USD immediately|both|
+|canEditOnboarded|boolean|false|Provides info if a partner can edit his merchants and vendors - read-only|output|
+|city|string|true|City where company is located|both|
+|commissionFee|number(double)|false|Commission fee for the company - read-only (0,1)|output|
+|companyEIN|string|true|Employer Identification Number of the company|both|
+|companyWebsite|string|true|Website of the company|both|
+|createdDate|string(date-time)|false|Provides info when the entity has been created - read-only|output|
+|customers|integer(int32)|false|Number of customers - read-only|output|
+|emailAddress|string|true|Email address for creating account|both|
+|enabled|boolean|false|Provides info if the entity has been approved by AltThirtySix Admin - read-only|output|
+|enroledBy|[Associate](#schemaassociate)|false|Provides info about the parent of an entity - read-only|output|
+|incorporationDate|string(date)|true|Company incorporation date with format YYYY-MM-DD|both|
+|legalBusinessName|string|true|Company legal business name|both|
+|locationsCount|integer(int32)|false|Number of locations - read-only|output|
+|mainContact|[ContactVM](#schemacontactvm)|true|Object containing info regarding main contact in the company|both|
+|merchants|integer(int32)|false|Number of merchants - read-only|output|
+|note|string|false|Any additional note|both|
+|partners|integer(int32)|false|Number of partners - read-only|output|
+|phone|string|true|Company's business phone|both|
+|posCount|integer(int32)|false|Number of pos - read-only|output|
+|saleVolume|number(double)|false|Sales volume of an entity|output|
+|state|[CountryState](#schemacountrystate)|true|Object containing info about the state where company is located|both|
+|usBankAccount|string|false|A bank account of the company|both|
+|user|[CreateAssociateAdminUserVM](#schemacreateassociateadminuservm)|false|Object containing info regarding user account.|both|
+|vendors|integer(int32)|false|Number of vendors - read-only|output|
+|zip|string|true|Zip code as part of company's address|both|
 
 <h2 id="tocSpageofassociate">PageOfAssociate</h2>
 
@@ -2829,17 +2829,17 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|content|[[Associate](#schemaassociate)]|false|Associate object|
-|first|boolean|false|Is the current page first page - read-only|
-|last|boolean|false|Is the current page last page - read-only|
-|number|integer(int32)|false|Page index (starts from 0)|
-|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
-|size|integer(int32)|false|Number of elements to be returned |
-|sort|[Sort](#schemasort)|false|Sorting parameters|
-|totalElements|integer(int64)|false|Total number of available elements - read-only|
-|totalPages|integer(int32)|false|Total number of pages - read-only|
+|Name|Type|Required|Description|I/O type|
+|---|---|---|---|---|
+|content|[[Associate](#schemaassociate)]|false|Associate object|output|
+|first|boolean|false|Is the current page first page - read-only|output|
+|last|boolean|false|Is the current page last page - read-only|output|
+|number|integer(int32)|false|Page index (starts from 0)|output|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|output|
+|size|integer(int32)|false|Number of elements to be returned |output|
+|sort|[Sort](#schemasort)|false|Sorting parameters|output|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|output|
+|totalPages|integer(int32)|false|Total number of pages - read-only|output|
 
 
 <h2 id="tocSpageofconversionstransactionsvm">PageOfConversionsTransactionsVM</h2>
@@ -2878,17 +2878,17 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|content|[[ConversionsTransactionsVM](#schemaconversionstransactionsvm)]|false|ConversionTransaction Object|
-|first|boolean|false|Is the current page first page - read-only|
-|last|boolean|false|Is the current page last page - read-only|
-|number|integer(int32)|false|Page index (starts from 0)|
-|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
-|size|integer(int32)|false|Number of elements to be returned |
-|sort|[Sort](#schemasort)|false|Sorting parameters|
-|totalElements|integer(int64)|false|Total number of available elements - read-only|
-|totalPages|integer(int32)|false|Total number of pages - read-only|
+|Name|Type|Required|Description|I/O type|
+|---|---|---|---|---|
+|content|[[ConversionsTransactionsVM](#schemaconversionstransactionsvm)]|false|ConversionTransaction Object|output|
+|first|boolean|false|Is the current page first page - read-only|output|
+|last|boolean|false|Is the current page last page - read-only|output|
+|number|integer(int32)|false|Page index (starts from 0)|output|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|output|
+|size|integer(int32)|false|Number of elements to be returned |output|
+|sort|[Sort](#schemasort)|false|Sorting parameters|output|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|output|
+|totalPages|integer(int32)|false|Total number of pages - read-only|output|
 
 
 <h2 id="tocSpageofinvitation">PageOfInvitation</h2>
@@ -2925,18 +2925,17 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|content|[[Invitation](#schemainvitation)]|false|Invitation object|
-|first|boolean|false|Is the current page first page - read-only|
-|last|boolean|false|Is the current page last page - read-only|
-|number|integer(int32)|false|Page index (starts from 0)|
-|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
-|size|integer(int32)|false|Number of elements to be returned |
-|sort|[Sort](#schemasort)|false|Sorting parameters|
-|totalElements|integer(int64)|false|Total number of available elements - read-only|
-|totalPages|integer(int32)|false|Total number of pages - read-only|
-
+|Name|Type|Required|Description|I/O type|
+|---|---|---|---|---|
+|content|[[Invitation](#schemainvitation)]|false|Invitation object|output|
+|first|boolean|false|Is the current page first page - read-only|output|
+|last|boolean|false|Is the current page last page - read-only|output|
+|number|integer(int32)|false|Page index (starts from 0)|output|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|output|
+|size|integer(int32)|false|Number of elements to be returned |output|
+|sort|[Sort](#schemasort)|false|Sorting parameters|output|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|output|
+|totalPages|integer(int32)|false|Total number of pages - read-only|output|
 
 <h2 id="tocSpageoflocation">PageOfLocation</h2>
 
@@ -3036,17 +3035,17 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|content|[[Location](#schemalocation)]|false|Location object|
-|first|boolean|false|Is the current page first page - read-only|
-|last|boolean|false|Is the current page last page - read-only|
-|number|integer(int32)|false|Page index (starts from 0)|
-|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
-|size|integer(int32)|false|Number of elements to be returned |
-|sort|[Sort](#schemasort)|false|Sorting parameters|
-|totalElements|integer(int64)|false|Total number of available elements - read-only|
-|totalPages|integer(int32)|false|Total number of pages - read-only|
+|Name|Type|Required|Description|I/O type|
+|---|---|---|---|---|
+|content|[[Location](#schemalocation)]|false|Location object|output|
+|first|boolean|false|Is the current page first page - read-only|output|
+|last|boolean|false|Is the current page last page - read-only|output|
+|number|integer(int32)|false|Page index (starts from 0)|output|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|output|
+|size|integer(int32)|false|Number of elements to be returned |output|
+|sort|[Sort](#schemasort)|false|Sorting parameters|output|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|output|
+|totalPages|integer(int32)|false|Total number of pages - read-only|output|
 
 
 <h2 id="tocSpageofmerchantvendor">PageOfMerchantVendor</h2>
@@ -3154,17 +3153,17 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|content|[[MerchantVendor](#schemamerchantvendor)]|false|Merchant's favorite Vendor object|
-|first|boolean|false|Is the current page first page - read-only|
-|last|boolean|false|Is the current page last page - read-only|
-|number|integer(int32)|false|Page index (starts from 0)|
-|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
-|size|integer(int32)|false|Number of elements to be returned |
-|sort|[Sort](#schemasort)|false|Sorting parameters|
-|totalElements|integer(int64)|false|Total number of available elements - read-only|
-|totalPages|integer(int32)|false|Total number of pages - read-only|
+|Name|Type|Required|Description|I/O type|
+|---|---|---|---|---|
+|content|[[MerchantVendor](#schemamerchantvendor)]|false|Merchant's favorite Vendor object|output|
+|first|boolean|false|Is the current page first page - read-only|output|
+|last|boolean|false|Is the current page last page - read-only|output|
+|number|integer(int32)|false|Page index (starts from 0)|output|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|output|
+|size|integer(int32)|false|Number of elements to be returned |output|
+|sort|[Sort](#schemasort)|false|Sorting parameters|output|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|output|
+|totalPages|integer(int32)|false|Total number of pages - read-only|output|
 
 
 <h2 id="tocSpageofnewpartnervm">PageOfNewPartnerVM</h2>
@@ -3329,17 +3328,17 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|content|[[NewPartnerVM](#schemanewpartnervm)]|false|NewPartnerVM object|
-|first|boolean|false|Is the current page first page - read-only|
-|last|boolean|false|Is the current page last page - read-only|
-|number|integer(int32)|false|Page index (starts from 0)|
-|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
-|size|integer(int32)|false|Number of elements to be returned |
-|sort|[Sort](#schemasort)|false|Sorting parameters|
-|totalElements|integer(int64)|false|Total number of available elements - read-only|
-|totalPages|integer(int32)|false|Total number of pages - read-only|
+|Name|Type|Required|Description|I/O type|
+|---|---|---|---|---|
+|content|[[NewPartnerVM](#schemanewpartnervm)]|false|NewPartnerVM object|output|
+|first|boolean|false|Is the current page first page - read-only|output|
+|last|boolean|false|Is the current page last page - read-only|output|
+|number|integer(int32)|false|Page index (starts from 0)|output|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|output|
+|size|integer(int32)|false|Number of elements to be returned |output|
+|sort|[Sort](#schemasort)|false|Sorting parameters|output|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|output|
+|totalPages|integer(int32)|false|Total number of pages - read-only|output|
 
 
 <h2 id="tocSpageofpaymentstransactionvm">PageOfPaymentsTransactionVm</h2>
@@ -3378,17 +3377,17 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|content|[[PaymentsTransactionVm](#schemapaymentstransactionvm)]|false|PaymentTransaction object|
-|first|boolean|false|Is the current page first page - read-only|
-|last|boolean|false|Is the current page last page - read-only|
-|number|integer(int32)|false|Page index (starts from 0)|
-|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|
-|size|integer(int32)|false|Number of elements to be returned |
-|sort|[Sort](#schemasort)|false|Sorting parameters|
-|totalElements|integer(int64)|false|Total number of available elements - read-only|
-|totalPages|integer(int32)|false|Total number of pages - read-only|
+|Name|Type|Required|Description|I/O type|
+|---|---|---|---|---|
+|content|[[PaymentsTransactionVm](#schemapaymentstransactionvm)]|false|PaymentTransaction object|output|
+|first|boolean|false|Is the current page first page - read-only|output|
+|last|boolean|false|Is the current page last page - read-only|output|
+|number|integer(int32)|false|Page index (starts from 0)|output|
+|numberOfElements|integer(int32)|false|Number of elements on current page - read-only|output|
+|size|integer(int32)|false|Number of elements to be returned |output|
+|sort|[Sort](#schemasort)|false|Sorting parameters|output|
+|totalElements|integer(int64)|false|Total number of available elements - read-only|output|
+|totalPages|integer(int32)|false|Total number of pages - read-only|output|
 
 
 <h2 id="tocSpageofpendingtransaction">PageOfPendingTransaction</h2>
@@ -3824,7 +3823,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |content|[[PendingTransaction](#schemapendingtransaction)]|false|PendingTransaction object|output|
 |first|boolean|false|Is the current page first page - read-only|output|
@@ -3935,7 +3934,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |content|[[PointOfSale](#schemapointofsale)]|false|Point of Sale object|output|
 |first|boolean|false|Is the current page first page - read-only|output|
@@ -4054,7 +4053,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |content|[[RequestForDeleteAssociate](#schemarequestfordeleteassociate)]|false|RequestForDeleteAssociate object|output|
 |first|boolean|false|Is the current page first page - read-only|output|
@@ -4104,7 +4103,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |content|[[SalesTransactionVM](#schemasalestransactionvm)]|false|SalesTransaction object|output|
 |first|boolean|false|Is the current page first page - read-only|output|
@@ -4133,7 +4132,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |email|string|true|Email to which the invitation will be sent|input|
 
@@ -4155,10 +4154,10 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
-|key|string|true|Key for password reset - read-only|output|
-|newPassword|string|true|New password, min 8 characters long, min one uppercase letter one lowercase letter one digit|output|
+|key|string|true|Key for password reset|input|
+|newPassword|string|true|New password, min 8 characters long, min one uppercase letter one lowercase letter one digit|input|
 
 
 <h2 id="tocSlasttransactionvm">LastTransactionVm</h2>
@@ -4179,7 +4178,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |amountInDASH|number(double)|false|Last transaction amount in DASH - read-only|output|
 |amountInUSD|number(double)|false|Last transaction amount in USD - read-only|output|
@@ -4272,7 +4271,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |address|string|true|No description|output|
 |address2|string|false|No description|output|
@@ -4310,7 +4309,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |id|integer(int64)|false|No description|both|
 
@@ -4380,7 +4379,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |address|string|true|No description|both|
 |address2|string|false|No description|both|
@@ -4467,7 +4466,7 @@ Example
 
 ### Properties
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |address|string|true|No description|both|
 |address2|string|false|No description|both|
@@ -4559,7 +4558,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |address|string|true|No description|output|
 |address2|string|false|No description|output|
@@ -4605,7 +4604,7 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |acceptedDateTime|string(date-time)|false|No description|output|
 |associateType|string|false|No description|output|
@@ -5203,8 +5202,8 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 ```
 |Parameter|Type|Required|Description|
 |---|---|---|---|---|
-|id|integer|true|Merchant identifier
-|name|string|true|Merchant Name
+|id|integer|true|Partner identifier
+|name|string|true|Partner Name
 |commissionFee|number|true|Commission fee sum for this partner in cryptocurrency
 |commissionFeeFiat|number|true|Commission fee sum for this partner in FIAT
 |totalSales|number|true|Total sales for this partner in cryptocurrency
@@ -5388,7 +5387,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
     "last": false
   }
 ```
-|Parameter|Type|Required|Description|input/output parameter|
+|Parameter|Type|Required|Description|I/O type|
 |---|---|---|---|---|---|
 |timerange_from|string|true|Start date/datetime in ISO format|output|
 |timerange_to|string|true|End date/datetime in ISO format|output|
@@ -5465,7 +5464,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
   ]
 }
 ```
-|Parameter|Type|Required|Description|input/output parameter|
+|Parameter|Type|Required|Description|I/O type|
 |---|---|---|---|---|---|
 |metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata|output|
 |data|Array([LocationPerformanceItem](#schemarepotlocationperformanceitem))|true|Arary of location performance data|output|
@@ -5529,7 +5528,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 }
 
 ```
-|Parameter|Type|Required|Description|input/output parameter|
+|Parameter|Type|Required|Description|I/O type|
 |---|---|---|---|---|---|
 |metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata|output|
 |data|Array([RolePerformanceItem](#schemareportroleperformanceitem))|true|Arary of location performance data|output|
@@ -5568,7 +5567,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
     ]
 }
 ```
-|Parameter|Type|Required|Description|input/output parameter|
+|Parameter|Type|Required|Description|I/O type|
 |---|---|---|---|---|---|
 |metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata|output|
 |data|Array([TaxItem](#schemataxitem))|true|Array of tax items|output|
@@ -5608,7 +5607,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 }
 
 ```
-|Parameter|Type|Required|Description|input/output parameter|
+|Parameter|Type|Required|Description|I/O type|
 |---|---|---|---|---|---|
 |metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata|output|
 |data|Array([SalesItem](#schemasalesitem))|true|Array of sales items|output|
@@ -5672,7 +5671,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 }
 
 ```
-|Parameter|Type|Required|Description|input/output parameter|
+|Parameter|Type|Required|Description|I/O type|
 |---|---|---|---|---|---|
 |metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata|output|
 |summary|[SummaryItem](#tocSummaryItem)|true|Summary data - ralates to all pages of data.|output|
@@ -5737,7 +5736,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
    ]
 }
 ```
-|Parameter|Type|Required|Description|input/output parameter|
+|Parameter|Type|Required|Description|I/O type|
 |---|---|---|---|---|---|
 |metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata|output|
 |summary|[SummaryItem](#tocSummaryItem)|true|Summary data - ralates to all pages of data.|output|
@@ -5801,7 +5800,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
    ]
 }
 ```
-|Parameter|Type|Required|Description|input/output parameter|
+|Parameter|Type|Required|Description|I/O type|
 |---|---|---|---|---|---|
 |metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata|output|
 |summary|[SummaryItem](#tocSummaryItem)|true|Summary data - ralates to all pages of data.|output|
@@ -5858,7 +5857,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
   ]
 }
 ```
-|Parameter|Type|Required|Description|input/output parameter|
+|Parameter|Type|Required|Description|I/O type|
 |---|---|---|---|---|---|
 |metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata|output|
 |summary|[SummaryItem](#tocSummaryItem)|true|Summary data - ralates to all pages of data.|output|
@@ -5890,7 +5889,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 }
 
 ```
-|Parameter|Type|Required|Description|input/output parameter|
+|Parameter|Type|Required|Description|I/O type|
 |---|---|---|---|---|---|
 |metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata|output|
 |content|[TaxResponseItem](#tocTaxResposeItemItem)|true| Tax report item instance|output|
@@ -5942,7 +5941,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 }
 
 ```
-|Parameter|Type|Required|Description|input/output parameter|
+|Parameter|Type|Required|Description|I/O type|
 |---|---|---|---|---|---|
 |metadata|[ReportMetadata](#schemareportmetadata)|true|Response metadata|output|
 |content|Array([CommissionResponseItem])(#tocCommissionResposeItemItem)|true| Array of commission report intems|output|
@@ -5958,7 +5957,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 }
 
 ```
-|Parameter|Type|Required|Description|input/output parameter|
+|Parameter|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |message|string|true|Error message returned along with status code|output|
 
@@ -5986,7 +5985,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 }
 ```
 
-|Parameter|Type|Required|Description|input/output parameter|
+|Parameter|Type|Required|Description|I/O type|
 |---|---|---|---|---|---|
 |tx_id|string|false|Internal transaction id, this is part of internal transaction storage.|output|
 |tx_state|string|true|Current state of the transaction|output|
@@ -6036,7 +6035,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 }
 ```
 
-|Parameter|Type|Required|Description|input/output parameter|
+|Parameter|Type|Required|Description|I/O type|
 |---|---|---|---|---|---|
 |type|string|false| Enumeration (INTERNAL_CRYPTO_TO_INTERNAL_CRYPTO, INTERNAL_CRYPTO_TO_EXTERNAL_CRYPTO, INTERNAL_CRYPTO_TO_FIAT, FIAT_TO_INTERNAL_CRYPTO, INTERNAL_FIAT_TO_EXTERNAL_FIAT).|input|
 |source_associate_id|integer|true|Internal associate Id of transaction initiator|input|
@@ -6073,7 +6072,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 }
 ```
 
-|Parameter|Type|Required|Description|input/output parameter|
+|Parameter|Type|Required|Description|I/O type|
 |---|---|---|---|---|---|
 |timestamp_accepted|integer|false| timestamp when the transaction is accepted on service| output|
 |tx_id|string|string|Internal transaction identifier| output|
@@ -6103,7 +6102,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |email|string|true|Account | input|
 |firstName|string|true|First name|input|
@@ -6128,7 +6127,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |email|string|true|valid Email|both|
 |firstName|string|true|First name|both|
@@ -6160,7 +6159,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |amountDash|string|false|No description|output|
 |amountFiat|string|false|No description|output|
@@ -6190,7 +6189,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |associateId|integer(int64)|true|No description|both|
 |commissionFee|number|true|No description|both|
@@ -6263,7 +6262,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |address|string|false|No description|output|
 |addressSubtype|string|false|No description|output|
@@ -6335,7 +6334,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |password|string|true|New password|input|
 
@@ -6391,7 +6390,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |address|string|true|No description|output|
 |altAutosellInternal|boolean|false|No description|output|
@@ -6456,7 +6455,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 ### Properties
 
 
-|Name|Type|Required|Description|input/output parameter|
+|Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
 |apiKey|string|true|No description|both|
 |apiSecret|string|true|No description|input|
@@ -6477,7 +6476,7 @@ Note that the given example is only for associate SalesVolume object
 }
 ```
 
-|Parameter|Type|Required|Description|input/output parameter|
+|Parameter|Type|Required|Description|I/O type|
 |---|---|---|---|---|---|
 |associate_id|integer|false| Associate identifier (used with associate sales volume)|output|
 |location_id|integer|false|Location idenfifier (used with location sales volume)|output|
