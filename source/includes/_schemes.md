@@ -4874,7 +4874,8 @@ Example
 
 ### Properties
 
-
+|Name|Type|Required|Description|I/O type|
+|---|---|---|---|---|
 |address|string|false|Address|both|
 |address2|string|false|Address line 2|both|
 |beneficiaryPercent|integer(int64)|false|Beneficiary percentage|both|
