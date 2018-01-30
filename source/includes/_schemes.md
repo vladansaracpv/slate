@@ -1192,22 +1192,22 @@ Example
 
 |Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
-|accompliceAssociate|[Associate](#schemaassociate)|false|No description|output|
-|commissionFee|integer(int64)|false|No description|output|
-|dateTime|string(date-time)|false|No description|output|
-|destinationAddress|string|false|No description|output|
-|direction|string|false|No description|output|
-|externalWallet|[ExternalWallet](#schemaexternalwallet)|false|No description|output|
-|id|integer(int64)|false|No description|output|
-|location|[Location](#schemalocation)|false|No description|output|
-|note|string|false|No description|output|
-|originalAmount|integer(int64)|false|No description|output|
-|ownerAssociate|[Associate](#schemaassociate)|false|No description|output|
-|pointOfSale|[PointOfSale](#schemapointofsale)|false|No description|output|
-|rawTransaction|string|false|No description|output|
-|rawTxId|string|false|No description|output|
-|type|string|false|No description|output|
-|user|[User](#schemauser)|false|No description|output|
+|accompliceAssociate|[Associate](#schemaassociate)|false|Associate object to which transaction was sent|output|
+|commissionFee|integer(int64)|false|Comission fee|output|
+|dateTime|string(date-time)|false|Date and time of the transaction YYY-MM-DDTHH:MM:SSZ|output|
+|destinationAddress|string|false|Destination address|output|
+|direction|string|false|Type of transaction {IN, OUT}|output|
+|externalWallet|[ExternalWallet](#schemaexternalwallet)|false|External wallet object|output|
+|id|integer(int64)|false|Database transaction ID|output|
+|location|[Location](#schemalocation)|false|Location object|output|
+|note|string|false|Additional note|output|
+|originalAmount|integer(int64)|false|Amount originally requested|output|
+|ownerAssociate|[Associate](#schemaassociate)|false|Associate object of the transaction owner|output|
+|pointOfSale|[PointOfSale](#schemapointofsale)|false|Point of sale object|output|
+|rawTransaction|string|false|Raw transaction JSON|output|
+|rawTxId|string|false|raw transaction ID|output|
+|type|string|false|Type of the transaction|output|
+|user|[User](#schemauser)|false|User object related to the transaction|output|
 
 
 #### Enumerated Values
@@ -1307,15 +1307,15 @@ Example
 
 |Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
-|active|boolean|false|No description|output|
-|deletedDate|string(date-time)|false|No description|output|
-|id|integer(int64)|false|Mandatory on update|both|
-|inventoryNumber|string|false|No description|both|
-|location|[LocationPOS](#schemalocationpos)|true|No description|both|
-|name|string|false|No description|both|
-|note|string|false|No description|both|
-|pointOfSaleType|string|true|No description|both|
-|virtualPointOfSalesEnabled|boolean|true|No description|both|
+|active|boolean|false|Status of the POS|output|
+|deletedDate|string(date-time)|false|Date when the POS has been deleted YYY-MM-DDTHH:MM:SSZ - for future use|output|
+|id|integer(int64)|false|ID of the POS - Mandatory on update|both|
+|inventoryNumber|string|false|Inventory number for POS|both|
+|location|[LocationPOS](#schemalocationpos)|true|LocationPOS object (id of teh location)|both|
+|name|string|false|Name of POS|both|
+|note|string|false|Additional note|both|
+|pointOfSaleType|string|true|POS type {GREENBITS, OTHER}|both|
+|virtualPointOfSalesEnabled|boolean|true|Enable POS (use true when creating)|both|
 
 
 #### Enumerated Values
@@ -1352,13 +1352,13 @@ Example
 
 |Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
-|address|string|false|No description|output|
-|city|string|false|No description|output|
-|geolocation|string|false|No description|output|
-|id|integer(int64)|false|No description|output|
-|name|string|false|No description|output|
-|noofpos|integer(int64)|false|No description|output|
-|state|string|false|No description|output|
+|address|string|false|Address|output|
+|city|string|false|City|output|
+|geolocation|string|false|Geolocation|output|
+|id|integer(int64)|false|ID|output|
+|name|string|false|Name|output|
+|noofpos|integer(int64)|false|Number of POS|output|
+|state|string|false|State|output|
 
 
 <h2 id="tocSrequestfordeleteassociate">RequestForDeleteAssociate</h2>
@@ -1772,10 +1772,10 @@ Example
 
 |Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
-|id|integer(int64)|false|No description|output|
-|merchant|[Associate](#schemaassociate)|true|No description|input|
-|note|string|false|No description|both|
-|vendor|[Associate](#schemaassociate)|true|No description|input|
+|id|integer(int64)|false|ID of the favorite vendor|output|
+|merchant|[Associate](#schemaassociate)|true|Merchants Associate object|input|
+|note|string|false|Additional note|both|
+|vendor|[Associate](#schemaassociate)|true|Vendor's associate object|input|
 
 
 <h2 id="tocSnewcustomervm">NewCustomerVM</h2>
@@ -4273,24 +4273,24 @@ Example
 
 |Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
-|address|string|true|No description|output|
-|address2|string|false|No description|output|
-|associate|[Associate](#schemaassociate)|false|No description|output|
-|city|string|true|No description|output|
-|country|string|true|No description|output|
-|deletedDate|string(date-time)|false|No description|output|
-|emailAddress|string|false|No description|output|
-|file|string|false|No description|output|
-|geoLocation|string|false|No description|output|
-|id|integer(int64)|false|No description|output|
-|name|string|true|No description|output|
-|note|string|false|No description|output|
-|parentLocation|[Location](#schemalocation)|false|No description|output|
-|phone|string|false|No description|output|
-|pointOfSales|[[PointOfSale](#schemapointofsale)]|false|No description|output|
-|state|[CountryState](#schemacountrystate)|true|No description|both|
-|website|string|false|website URL|output|
-|zip|string|true|Zip code|output|
+|address|string|true|Address|output|
+|address2|string|false|Address line 2|output|
+|associate|[Associate](#schemaassociate)|false|Associate object|output|
+|city|string|true|City|output|
+|country|string|true|Country|output|
+|deletedDate|string(date-time)|false|Deleted date (YYYY-MM-DD) - not used|output|
+|emailAddress|string|false|Email address|output|
+|file|string|false|File uuid - license for the location|output|
+|geoLocation|string|false|Geo location data example: 34.083275, -101.794707|output|
+|id|integer(int64)|false|ID of the location, read-only|output|
+|name|string|true|Name|output|
+|note|string|false|Additional note|output|
+|parentLocation|[Location](#schemalocation)|false|Parent location object, not used|output|
+|phone|string|false|Phone number|output|
+|pointOfSales|[[PointOfSale](#schemapointofsale)]|false|array of POS objects|output|
+|state|[CountryState](#schemacountrystate)|true|State object related to address of the location|both|
+|website|string|false|Location website|output|
+|zip|string|true|Zip code related to locatio address|output|
 
 
 <h2 id="tocSlocationpos">LocationPOS</h2>
@@ -4311,7 +4311,7 @@ Example
 
 |Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
-|id|integer(int64)|false|No description|both|
+|id|integer(int64)|false|ID of the location to witch the POS belongs|both|
 
 <h2 id="tocSlocationexternalvm">LocationExternalVm</h2>
 
@@ -4381,24 +4381,24 @@ Example
 
 |Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
-|address|string|true|No description|both|
-|address2|string|false|No description|both|
-|city|string|true|No description|both|
-|contact|[Contact](#schemacontact)|true|No description|both|
-|country|string|true|No description|both|
-|emailAddress|string|false|No description|both|
+|address|string|true|Address|both|
+|address2|string|false|Address line 2|both|
+|city|string|true|City|both|
+|contact|[Contact](#schemacontact)|true|COntact object for location|both|
+|country|string|true|Country|both|
+|emailAddress|string|false|Email address|both|
 |file|string|true|Location license with format: data:image/png;base64,image_in_base_64|input|
 |fileContentType|string|true|[FileContentType](#tocFileContentType)|input|
-|geoLocation|string|true|Example 33.8608908,-117.7381407|both|
-|id|integer(int64)|false|Mandatory on update|both|
+|geoLocation|string|true|Geolocation data Example 33.8608908,-117.7381407|both|
+|id|integer(int64)|false|Location ID reado-only- Mandatory on update|both|
 |merchantId|integer(int64)|true|ID of a merchant for which location needs to be created|both|
-|name|string|true|No description|both|
-|noOfPos|integer(int32)|false|No description|both|
-|note|string|false|No description|both|
+|name|string|true|Name of the location|both|
+|noOfPos|integer(int32)|false|Number of POS|output|
+|note|string|false|Additional note|both|
 |parentLocationId|integer(int64)|false|For future use|both|
-|phone|string|true|No description|both|
-|state|[CountryState](#schemacountrystate)|true|No description|both|
-|website|string|true|No description|both|
+|phone|string|true|Phone number for a location|both|
+|state|[CountryState](#schemacountrystate)|true|State object for a location - related to address|both|
+|website|string|true|Location website|both|
 |zip|string|true|Zip code|both|
 
 
@@ -4468,24 +4468,24 @@ Example
 
 |Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
-|address|string|true|No description|both|
-|address2|string|false|No description|both|
-|city|string|true|No description|both|
-|contact|[Contact](#schemacontact)|true|No description|both|
-|country|string|true|No description|both|
-|emailAddress|string|false|No description|both|
+|address|string|true|Address|both|
+|address2|string|false|Address line 2|both|
+|city|string|true|City|both|
+|contact|[Contact](#schemacontact)|true|Contact object related to location|both|
+|country|string|true|Country|both|
+|emailAddress|string|false|Email address|both|
 |file|string|true|Location license with format: data:image/png;base64,image_in_base_64|input|
 |fileContentType|string|true|[FileContentType](#tocFileContentType)|input|
-|geoLocation|string|true|Example 33.8608908,-117.7381407|both|
-|id|integer(int64)|false|Mandatory on update|both|
-|name|string|true|No description|both|
-|noOfPos|integer(int32)|false|No description|both|
-|note|string|false|No description|both|
+|geoLocation|string|true|Geo location data Example 33.8608908,-117.7381407|both|
+|id|integer(int64)|false|Location ID read-only, Mandatory on update|both|
+|name|string|true|Name of the Location|both|
+|noOfPos|integer(int32)|false|Number of POS|output|
+|note|string|false|Additional note|both|
 |parentLocationId|integer(int64)|false|For future use|both|
-|phone|string|true|No description|both|
-|state|[CountryState](#schemacountrystate)|true|No description|both|
-|website|string|true|No description|both|
-|zip|string|true|Zip code|both|
+|phone|string|true|Phone number|both|
+|state|[CountryState](#schemacountrystate)|true|State object - related to address of the location|both|
+|website|string|true|Website of the location|both|
+|zip|string|true|Zip code of the location|both|
 
 
 <h2 id="tocSlocationwithtransactionvm">LocationWithTransactionVm</h2>
@@ -4557,30 +4557,27 @@ Example
 
 ### Properties
 
-
 |Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
-|address|string|true|No description|output|
-|address2|string|false|No description|output|
-|city|string|true|No description|output|
-|contact|[Contact](#schemacontact)|true|No description|output|
-|country|string|true|No description|output|
-|emailAddress|string|false|No description|output|
-|file|string|false|No description|output|
-|fileBytes|string(byte)|false|No description|output|
-|fileContentType|string|false|No description|output|
-|geoLocation|string|false|No description|output|
-|id|integer(int64)|false|No description|output|
-|lastTransaction|[LastTransactionVm](#schemalasttransactionvm)|false|No description|output|
-|name|string|true|No description|output|
-|noOfPos|integer(int32)|false|No description|output|
-|note|string|false|No description|output|
-|parentLocationId|integer(int64)|false|For future use|output|
-|phone|string|false|No description|output|
-|state|[CountryState](#schemacountrystate)|true|No description|output|
-|website|string|false|website URL|output|
-|zip|string|true|Zip code|output|
-
+|address|string|true|Address|both|
+|address2|string|false|Address line 2|both|
+|city|string|true|City|both|
+|contact|[Contact](#schemacontact)|true|Contact object related to location|both|
+|country|string|true|Country|both|
+|emailAddress|string|false|Email address|both|
+|file|string|true|Location license with format: data:image/png;base64,image_in_base_64|input|
+|fileContentType|string|true|[FileContentType](#tocFileContentType)|input|
+|geoLocation|string|true|Geo location data Example 33.8608908,-117.7381407|both|
+|id|integer(int64)|false|Location ID read-only, Mandatory on update|both|
+|lastTransaction|[LastTransactionVm](#schemalasttransactionvm)|false|Last transation object|output|
+|name|string|true|Name of the Location|both|
+|noOfPos|integer(int32)|false|Number of POS|output|
+|note|string|false|Additional note|both|
+|parentLocationId|integer(int64)|false|For future use|both|
+|phone|string|true|Phone number|both|
+|state|[CountryState](#schemacountrystate)|true|State object - related to address of the location|both|
+|website|string|true|Website of the location|both|
+|zip|string|true|Zip code of the location|both|
 
 <h2 id="tocSinvitation">Invitation</h2>
 
@@ -4606,13 +4603,13 @@ Example
 
 |Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
-|acceptedDateTime|string(date-time)|false|No description|output|
-|associateType|string|false|No description|output|
-|id|integer(int64)|false|No description|output|
-|inviteKey|string|false|No description|output|
-|invitedMail|string|true|No description|output|
-|ivitationDateTime|string(date-time)|false|No description|output|
-|mailSent|boolean|false|No description|output|
+|acceptedDateTime|string(date-time)|false|Accepted datetime of the invitation, for future use|output|
+|associateType|string|false|Associate type {PARTNER, MERCHANT, VENDOR, CUSTOMER}|output|
+|id|integer(int64)|false|ID of the invitation|output|
+|inviteKey|string|false|Invitation key|output|
+|invitedMail|string|true|Email to which the invitation has been sent|output|
+|ivitationDateTime|string(date-time)|false|Date and time of the invitation|output|
+|mailSent|boolean|false|Has email been sent or not|output|
 
 
 #### Enumerated Values
@@ -4645,8 +4642,8 @@ Example
 
 |Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
-|id|integer(int64)|true|No description|input|
-|reason|string|false|No description|input|
+|id|integer(int64)|true|ID of the associate to deactivate|input|
+|reason|string|false|Reason for deactivation|input|
 
 <h2 id="tocScountrystate">CountryState</h2>
 
@@ -4718,30 +4715,30 @@ Example
 
 |Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
-|address|string|false|No description|both|
-|address2|string|false|No description|both|
-|beneficiaryPercent|integer(int64)|false|No description|both|
-|birthDate|string(date)|false|YYYY-MM-DD|both|
-|city|string|false|No description|both|
-|file|string|false|No description|output|
-|fileBytes|string(byte)|false|No description|input|
-|fileContentType|string|false|No description|input|
-|firstName|string|true|No description|both|
-|gender|string|false|No description|both|
-|id|integer(int64)|false|No description|both|
-|lastName|string|true|No description|both|
-|nationality|string|false|No description|both|
-|note|string|false|No description|both|
-|passportExpiryDate|string(date)|false|YYYY-MM-DD|both|
-|passportIssueDate|string(date)|false|YYYY-MM-DD|both|
-|passportNumber|string|false|No description|both|
-|position|string|true|No description|both|
-|primaryEmailAddress|string|true|No description|both|
-|primaryMobilePhone|string|true|No description|both|
-|secondaryEmailAddress|string|false|No description|both|
-|secondaryMobilePhone|string|false|No description|both|
-|state|[CountryState](#schemacountrystate)|false|No description|both|
-|zip|string|false|No description|both|
+|address|string|false|Contact address|both|
+|address2|string|false|Contact address line 2|both|
+|beneficiaryPercent|integer(int64)|false|Beneficiary percentage for a company (for authorized signer contact)|both|
+|birthDate|string(date)|false|Birth date for authorized signer contact YYYY-MM-DD|both|
+|city|string|false|City|both|
+|file|string|false|File UUID (for identification document)|output|
+|fileBytes|string(byte)|false|Base64 encoded file content Max 5.000.000 bytes|input|
+|fileContentType|string|false|[Allowed types](#tocFileContentType)|input|
+|firstName|string|true|First name|both|
+|gender|string|false|Gender|both|
+|id|integer(int64)|false|ID of the contact (read-ony)|both|
+|lastName|string|true|Last name|both|
+|nationality|string|false|Nationality for Authorized Signer|both|
+|note|string|false|Additional note|both|
+|passportExpiryDate|string(date)|false|Passport expiry date for Authorized Signer contactYYYY-MM-DD|both|
+|passportIssueDate|string(date)|false|Passport issue date for Authorized Signer contact YYYY-MM-DD|both|
+|passportNumber|string|false|Passport number for Authorized Signer contact|both|
+|position|string|true|Position for Location contacts|both|
+|primaryEmailAddress|string|true|Primary email address|both|
+|primaryMobilePhone|string|true|Primary mobile phone|both|
+|secondaryEmailAddress|string|false|Secondary email address|both|
+|secondaryMobilePhone|string|false|Secondary mobile phone|both|
+|state|[CountryState](#schemacountrystate)|false|State object related to address|both|
+|zip|string|false|Zip code|both|
 
 <h2 id="tocSchemaAuthorizedSignervm">AuthorizedSignerVM</h2>
 
@@ -4788,30 +4785,30 @@ Example
 
 |Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
-|address|string|false|No description|both|
-|address2|string|false|No description|both|
-|beneficiaryPercent|integer(int64)|false|No description|both|
-|birthDate|string(date)|true|YYYY-MM-DD|both|
-|city|string|false|No description|both|
+|address|string|false|Address|both|
+|address2|string|false|Address line 2|both|
+|beneficiaryPercent|integer(int64)|false|Beneficiary percentage|both|
+|birthDate|string(date)|true|Birth date YYYY-MM-DD|both|
+|city|string|false|City|both|
 |file|string|false|UUID of the file once it's uploaded. Provided only within GET method.|output|
 |fileBytes|string(byte)|true|Base64 encoded file content Max 5.000.000 bytes|input|
 |fileContentType|string|true|[Allowed types](#tocFileContentType)|input|
-|firstName|string|true|No description|both|
-|gender|string|false|No description|both|
-|id|integer(int64)|false|No description|both|
-|lastName|string|true|No description|both|
-|nationality|string|true|No description|both|
-|note|string|false|No description|both|
-|passportExpiryDate|string(date)|true|YYYY-MM-DD|
-|passportIssueDate|string(date)|true|YYYY-MM-DD|
-|passportNumber|string|true|No description|both|
-|position|string|false|No description|both|
-|primaryEmailAddress|string|true|No description|both|
-|primaryMobilePhone|string|true|No description|both|
-|secondaryEmailAddress|string|false|No description|both|
-|secondaryMobilePhone|string|false|No description|both|
-|state|[CountryState](#schemacountrystate)|false|No description|both|
-|zip|string|false|No description|both|
+|firstName|string|true|First name|both|
+|gender|string|false|Gender|both|
+|id|integer(int64)|false|ID - read-only|both|
+|lastName|string|true|Last name|both|
+|nationality|string|true|Nationality|both|
+|note|string|false|Additional note|both|
+|passportExpiryDate|string(date)|true|Expiry date of the passport in format YYYY-MM-DD|
+|passportIssueDate|string(date)|true|Issue date of the passport in format YYYY-MM-DD|
+|passportNumber|string|true|Passport number|both|
+|position|string|false|Position|both|
+|primaryEmailAddress|string|true|Primary email|both|
+|primaryMobilePhone|string|true|Primary mobile phone|both|
+|secondaryEmailAddress|string|false|Secondary email|both|
+|secondaryMobilePhone|string|false|NSecondary mobile phone|both|
+|state|[CountryState](#schemacountrystate)|false|State object|both|
+|zip|string|false|Zip code|both|
 
 #### Enumerated Values
 
@@ -4878,34 +4875,33 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|I/O type|
-|---|---|---|---|---|
-|address|string|false|No description|both|
-|address2|string|false|No description|both|
-|beneficiaryPercent|integer(int64)|false|No description|both|
-|birthDate|string(date)|false|No description|both|
-|city|string|false|No description|both|
+|address|string|false|Address|both|
+|address2|string|false|Address line 2|both|
+|beneficiaryPercent|integer(int64)|false|Beneficiary percentage|both|
+|birthDate|string(date)|true|Birth date YYYY-MM-DD|both|
+|city|string|false|City|both|
 |contactType|string|true|[Enumerated Values](#tocenumeratedvalues)|both|
-|file|string|false|No description|output|
-|firstName|string|true|No description|both|
-|gender|string|false|No description|both|
-|id|integer(int64)|false|No description|both|
-|lastName|string|true|No description|both|
-|nationality|string|false|No description|both|
-|note|string|false|No description|both|
-|notificationCronSchedule|string|false|No description|both|
-|notificationEvent|string|false|No description|both|
-|notifyByEmail|boolean|false|No description|both|
-|notifyByTextMessage|boolean|false|No description|both|
-|passportExpiryDate|string(date)|false|No description|both|
-|passportIssueDate|string(date)|false|No description|both|
-|passportNumber|string|false|No description|both|
-|position|string|false|No description|both|
-|primaryEmailAddress|string|true|No description|both|
-|primaryMobilePhone|string|false|No description|both|
-|secondaryEmailAddress|string|false|No description|both|
-|secondaryMobilePhone|string|false|No description|both|
-|zip|string|false|No description|both|
+|file|string|false|UUID of the file once it's uploaded. Provided only within GET method.|output|
+|firstName|string|true|First name|both|
+|gender|string|false|Gender|both|
+|id|integer(int64)|false|ID - read-only|both|
+|lastName|string|true|Last name|both|
+|nationality|string|true|Nationality|both|
+|note|string|false|Additional note|both|
+|notificationCronSchedule|string|false|Schedule for notifications, for future use|both|
+|notificationEvent|string|false|Notification event - for future use|both|
+|notifyByEmail|boolean|false|Notify by email - for future use|both|
+|notifyByTextMessage|boolean|false|Notify by text message - for future use|both|
+|passportExpiryDate|string(date)|true|Expiry date of the passport in format YYYY-MM-DD|
+|passportIssueDate|string(date)|true|Issue date of the passport in format YYYY-MM-DD|
+|passportNumber|string|true|Passport number|both|
+|position|string|false|Position|both|
+|primaryEmailAddress|string|true|Primary email|both|
+|primaryMobilePhone|string|true|Primary mobile phone|both|
+|secondaryEmailAddress|string|false|Secondary email|both|
+|secondaryMobilePhone|string|false|NSecondary mobile phone|both|
+|state|[CountryState](#schemacountrystate)|false|State object|both|
+|zip|string|false|Zip code|both|
 
 <h3 id="tocenumeratedvalues">Enumerated Values</h3>
 
@@ -4948,7 +4944,7 @@ Example
 
 |Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
-|content|Paginated content|false|No description|output|
+|content|Paginated content|false|General content|output|
 |first|boolean|false|is Current page first page|output|
 |last|boolean|false|is Current page last page|output|
 |number|integer(int32)|false|page index (start from 0)|output|
@@ -6161,15 +6157,15 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 
 |Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
-|amountDash|string|false|No description|output|
-|amountFiat|string|false|No description|output|
-|conversionFrom|string|false|No description|output|
-|conversionRate|string|false|No description|output|
-|conversionTo|string|false|No description|output|
-|id|integer(int64)|false|No description|output|
-|status|string|false|No description|output|
-|timeAndDate|string(date-time)|false|No description|output|
-|transactionId|string|false|No description|output|
+|amountDash|string|false|Conversion amount in DASH |output|
+|amountFiat|string|false|Conversion amount in FIAT(USD)|output|
+|conversionFrom|string|false|FROM Conversion currency|output|
+|conversionRate|string|false|Conversion rate|output|
+|conversionTo|string|false|TO conversion currency|output|
+|id|integer(int64)|false|ID of the transatcion|output|
+|status|string|false|Status of the transaction {Pending, Succeded, Failed}|output|
+|timeAndDate|string(date-time)|false|Date and time of the transaction YYY-MM-DDTHH:MM:SSZ|output|
+|transactionId|string|false|Internal transaction ID|output|
 
 
 <h2 id="tocScommissionfee">CommissionFee</h2>
@@ -6191,8 +6187,8 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 
 |Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
-|associateId|integer(int64)|true|No description|both|
-|commissionFee|number|true|No description|both|
+|associateId|integer(int64)|true|ID of the associate|both|
+|commissionFee|number|true|Commission fee (0,1)|both|
 
 
 <h2 id="tocScoinfirm">Coinfirm</h2>
@@ -6392,36 +6388,36 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 
 |Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
-|address|string|true|No description|output|
-|altAutosellInternal|boolean|false|No description|output|
-|associateType|string|true|No description|output|
-|autosell|boolean|false|No description|output|
-|beneficiaryPercent|integer(int64)|false|No description|output|
-|canEditOnboarded|boolean|false|No description|output|
-|city|string|true|No description|output|
-|coinaPultApiKey|string|false|No description|output|
-|commissionFee|number|false|No description|output|
-|companyEIN|string|false|No description|output|
-|companyWebsite|string|true|No description|output|
-|createdDate|string(date-time)|false|No description|output|
-|cryptoCapitalApiKey|string|false|No description|output|
+|address|string|true|Address|output|
+|altAutosellInternal|boolean|false|Is autosell enabled for internal transactions (only for Alt Thirty Six)|output|
+|associateType|string|true|Associate type {PARTNER, MERCHANT, VENDOR, CUSTOMER}|output|
+|autosell|boolean|false|Is autosell enabled|output|
+|beneficiaryPercent|integer(int64)|false|Beneficiary percentage|output|
+|canEditOnboarded|boolean|false|Can a partner edit his onboarded merhcants|output|
+|city|string|true|City|output|
+|coinaPultApiKey|string|false|Coinapult API key|output|
+|commissionFee|number|false|Comission fee (0,1)|output|
+|companyEIN|string|false|Employer Identification Number of the company|output|
+|companyWebsite|string|true|Website of the company|output|
+|createdDate|string(date-time)|false|Provides info when the entity has been created|output|
+|cryptoCapitalApiKey|string|false|CryptoCapital API key - for future usage|output|
 |customers|integer(int32)|false|Number of associated customers|output|
-|deletedDate|string(date-time)|false|No description|output|
-|emailAddress|string|true|No description|output|
-|enabled|boolean|false|No description|output|
-|enrolledBy|[Associate](#schemaassociate)|false|No description|output|
-|id|integer(int64)|false|No description|output|
-|incorporationDate|string(date)|false|No description|output|
-|internalFee|number(double)|false|No description|output|
-|legalBusinessName|string|true|No description|output|
-|locationsCount|integer(int32)|false|No description|output|
+|deletedDate|string(date-time)|false|When was the associate deleted - for future use|output|
+|emailAddress|string|true|Email address|output|
+|enabled|boolean|false|Provides info if the entity has been approved by AltThirtySix Admin|output|
+|enrolledBy|[Associate](#schemaassociate)|false|Provides info about the parent of an entity|output|
+|id|integer(int64)|false|ID of the entity assigned by system|output|
+|incorporationDate|string(date)|false|Company incorporation date with format YYYY-MM-DD|output|
+|internalFee|number(double)|false|Current fee for internal transactions in percentage (0,1)|output|
+|legalBusinessName|string|true|Company legal business name|output|
+|locationsCount|integer(int32)|false|Number of locations|output|
 |merchants|integer(int32)|false|Number of associated merchants|output|
-|note|string|false|No description|output|
+|note|string|false|Additional note|output|
 |partners|integer(int32)|false|Number of associated partners|output|
-|phone|string|true|No description|output|
+|phone|string|true|Phone number|output|
 |posCount|integer(int32)|false|Number of POS|output|
-|state|[CountryState](#schemacountrystate)|true|No description|output|
-|usBankAccount|string|false|No description|output|
+|state|[CountryState](#schemacountrystate)|true|State object|output|
+|usBankAccount|string|false|US bank account|output|
 |vendors|integer(int32)|false|Number of associated vendors|output|
 |zip|string|true|Zip code|output|
 
@@ -6457,9 +6453,9 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 
 |Name|Type|Required|Description|I/O type|
 |---|---|---|---|---|
-|apiKey|string|true|No description|both|
-|apiSecret|string|true|No description|input|
-|registeredEmail|string|true|No description|both|
+|apiKey|string|true|API key for Coinapult account|both|
+|apiSecret|string|true|API secret for Coinapult account|input|
+|registeredEmail|string|true|Email of the registered coinapult account|both|
 
 <!-- SalesVolume -->
 
