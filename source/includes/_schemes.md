@@ -4643,10 +4643,10 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|id|integer(int64)|true|No description|
-|reason|string|false|No description|
+|Name|Type|Required|Description|I/O type|
+|---|---|---|---|---|
+|id|integer(int64)|true|No description|input|
+|reason|string|false|No description|input|
 
 <h2 id="tocScountrystate">CountryState</h2>
 
@@ -4666,11 +4666,11 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|abbreviation|string|false|No description|
-|id|integer(int64)|true|[Get all states](#opIdgetAllCountryStatesUsingGET)|
-|state|string|false|No description|
+|Name|Type|Required|Description|I/O type|
+|---|---|---|---|---|
+|abbreviation|string|false|State abbreviation|output|
+|id|integer(int64)|true|[Get all states](#opIdgetAllCountryStatesUsingGET)|output|
+|state|string|false|State name|output|
 
 
 <h2 id="tocScontactvm">ContactVM</h2>
@@ -4716,32 +4716,32 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|address|string|false|No description|
-|address2|string|false|No description|
-|beneficiaryPercent|integer(int64)|false|No description|
-|birthDate|string(date)|false|YYYY-MM-DD|
-|city|string|false|No description|
-|file|string|false|No description|
-|fileBytes|string(byte)|false|No description|
-|fileContentType|string|false|No description|
-|firstName|string|true|No description|
-|gender|string|false|No description|
-|id|integer(int64)|false|No description|
-|lastName|string|true|No description|
-|nationality|string|false|No description|
-|note|string|false|No description|
-|passportExpiryDate|string(date)|false|YYYY-MM-DD|
-|passportIssueDate|string(date)|false|YYYY-MM-DD|
-|passportNumber|string|false|No description|
-|position|string|true|No description|
-|primaryEmailAddress|string|true|No description|
-|primaryMobilePhone|string|true|No description|
-|secondaryEmailAddress|string|false|No description|
-|secondaryMobilePhone|string|false|No description|
-|state|[CountryState](#schemacountrystate)|false|No description|
-|zip|string|false|No description|
+|Name|Type|Required|Description|I/O type|
+|---|---|---|---|---|
+|address|string|false|No description|both|
+|address2|string|false|No description|both|
+|beneficiaryPercent|integer(int64)|false|No description|both|
+|birthDate|string(date)|false|YYYY-MM-DD|both|
+|city|string|false|No description|both|
+|file|string|false|No description|output|
+|fileBytes|string(byte)|false|No description|input|
+|fileContentType|string|false|No description|input|
+|firstName|string|true|No description|both|
+|gender|string|false|No description|both|
+|id|integer(int64)|false|No description|both|
+|lastName|string|true|No description|both|
+|nationality|string|false|No description|both|
+|note|string|false|No description|both|
+|passportExpiryDate|string(date)|false|YYYY-MM-DD|both|
+|passportIssueDate|string(date)|false|YYYY-MM-DD|both|
+|passportNumber|string|false|No description|both|
+|position|string|true|No description|both|
+|primaryEmailAddress|string|true|No description|both|
+|primaryMobilePhone|string|true|No description|both|
+|secondaryEmailAddress|string|false|No description|both|
+|secondaryMobilePhone|string|false|No description|both|
+|state|[CountryState](#schemacountrystate)|false|No description|both|
+|zip|string|false|No description|both|
 
 <h2 id="tocSchemaAuthorizedSignervm">AuthorizedSignerVM</h2>
 
@@ -4786,32 +4786,32 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|address|string|false|No description|
-|address2|string|false|No description|
-|beneficiaryPercent|integer(int64)|false|No description|
-|birthDate|string(date)|true|YYYY-MM-DD|
-|city|string|false|No description|
-|file|string|false|UUID of the file once it's uploaded. Provided only within GET method.|
-|fileBytes|string(byte)|true|Base64 encoded file content Max 5.000.000 bytes|
-|fileContentType|string|true|[Allowed types](#tocFileContentType)|
-|firstName|string|true|No description|
-|gender|string|false|No description|
-|id|integer(int64)|false|No description|
-|lastName|string|true|No description|
-|nationality|string|true|No description|
-|note|string|false|No description|
+|Name|Type|Required|Description|I/O type|
+|---|---|---|---|---|
+|address|string|false|No description|both|
+|address2|string|false|No description|both|
+|beneficiaryPercent|integer(int64)|false|No description|both|
+|birthDate|string(date)|true|YYYY-MM-DD|both|
+|city|string|false|No description|both|
+|file|string|false|UUID of the file once it's uploaded. Provided only within GET method.|output|
+|fileBytes|string(byte)|true|Base64 encoded file content Max 5.000.000 bytes|input|
+|fileContentType|string|true|[Allowed types](#tocFileContentType)|input|
+|firstName|string|true|No description|both|
+|gender|string|false|No description|both|
+|id|integer(int64)|false|No description|both|
+|lastName|string|true|No description|both|
+|nationality|string|true|No description|both|
+|note|string|false|No description|both|
 |passportExpiryDate|string(date)|true|YYYY-MM-DD|
 |passportIssueDate|string(date)|true|YYYY-MM-DD|
-|passportNumber|string|true|No description|
-|position|string|false|No description|
-|primaryEmailAddress|string|true|No description|
-|primaryMobilePhone|string|true|No description|
-|secondaryEmailAddress|string|false|No description|
-|secondaryMobilePhone|string|false|No description|
-|state|[CountryState](#schemacountrystate)|false|No description|
-|zip|string|false|No description|
+|passportNumber|string|true|No description|both|
+|position|string|false|No description|both|
+|primaryEmailAddress|string|true|No description|both|
+|primaryMobilePhone|string|true|No description|both|
+|secondaryEmailAddress|string|false|No description|both|
+|secondaryMobilePhone|string|false|No description|both|
+|state|[CountryState](#schemacountrystate)|false|No description|both|
+|zip|string|false|No description|both|
 
 #### Enumerated Values
 
@@ -4878,34 +4878,34 @@ Example
 ### Properties
 
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|address|string|false|No description|
-|address2|string|false|No description|
-|beneficiaryPercent|integer(int64)|false|No description|
-|birthDate|string(date)|false|No description|
-|city|string|false|No description|
-|contactType|string|true|[Enumerated Values](#tocenumeratedvalues)|
-|file|string|false|No description|
-|firstName|string|true|No description|
-|gender|string|false|No description|
-|id|integer(int64)|false|No description|
-|lastName|string|true|No description|
-|nationality|string|false|No description|
-|note|string|false|No description|
-|notificationCronSchedule|string|false|No description|
-|notificationEvent|string|false|No description|
-|notifyByEmail|boolean|false|No description|
-|notifyByTextMessage|boolean|false|No description|
-|passportExpiryDate|string(date)|false|No description|
-|passportIssueDate|string(date)|false|No description|
-|passportNumber|string|false|No description|
-|position|string|false|No description|
-|primaryEmailAddress|string|true|No description|
-|primaryMobilePhone|string|false|No description|
-|secondaryEmailAddress|string|false|No description|
-|secondaryMobilePhone|string|false|No description|
-|zip|string|false|No description|
+|Name|Type|Required|Description|I/O type|
+|---|---|---|---|---|
+|address|string|false|No description|both|
+|address2|string|false|No description|both|
+|beneficiaryPercent|integer(int64)|false|No description|both|
+|birthDate|string(date)|false|No description|both|
+|city|string|false|No description|both|
+|contactType|string|true|[Enumerated Values](#tocenumeratedvalues)|both|
+|file|string|false|No description|output|
+|firstName|string|true|No description|both|
+|gender|string|false|No description|both|
+|id|integer(int64)|false|No description|both|
+|lastName|string|true|No description|both|
+|nationality|string|false|No description|both|
+|note|string|false|No description|both|
+|notificationCronSchedule|string|false|No description|both|
+|notificationEvent|string|false|No description|both|
+|notifyByEmail|boolean|false|No description|both|
+|notifyByTextMessage|boolean|false|No description|both|
+|passportExpiryDate|string(date)|false|No description|both|
+|passportIssueDate|string(date)|false|No description|both|
+|passportNumber|string|false|No description|both|
+|position|string|false|No description|both|
+|primaryEmailAddress|string|true|No description|both|
+|primaryMobilePhone|string|false|No description|both|
+|secondaryEmailAddress|string|false|No description|both|
+|secondaryMobilePhone|string|false|No description|both|
+|zip|string|false|No description|both|
 
 <h3 id="tocenumeratedvalues">Enumerated Values</h3>
 
@@ -4946,31 +4946,31 @@ Example
 
 ### Properties
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|content|Paginated content|false|No description|
-|first|boolean|false|is Current page first page|
-|last|boolean|false|is Current page last page|
-|number|integer(int32)|false|page index (start from 0)|
-|numberOfElements|integer(int32)|false|number Of Elements on current page|
-|size|integer(int32)|false|number of items to be returned|
-|sort|[Sort](#schemasort)|false|sorting parameters|
-|totalElements|integer(int64)|false|total number of elements|
-|totalPages|integer(int32)|false|total number of pages|
+|Name|Type|Required|Description|I/O type|
+|---|---|---|---|---|
+|content|Paginated content|false|No description|output|
+|first|boolean|false|is Current page first page|output|
+|last|boolean|false|is Current page last page|output|
+|number|integer(int32)|false|page index (start from 0)|output|
+|numberOfElements|integer(int32)|false|number Of Elements on current page|output|
+|size|integer(int32)|false|number of items to be returned|output|
+|sort|[Sort](#schemasort)|false|sorting parameters|output|
+|totalElements|integer(int64)|false|total number of elements|output|
+|totalPages|integer(int32)|false|total number of pages|output|
 
 
 <h2 id="reportingPaginationObject">Reporting pagination object</h2>
 
 ### Properties
 
-|Name|Type|Required|Description|
-|---|---|---|---|
-|first|boolean|true|refers to whether the requested page is first page|
-|last|boolean|true|refers to whether the requested page is last page|
-|number|integer|true|current number of a page, zero index rule is used|
-|numberOfElements|integer|true|total number of elements in the requested list of objects|
-|size|integer|true|size of the page as requested|
-|totalPages|integer|true|total number of pages for the requested list of objects|
+|Name|Type|Required|Description|I/O type|
+|---|---|---|---|---|
+|first|boolean|true|refers to whether the requested page is first page|output|
+|last|boolean|true|refers to whether the requested page is last page|output|
+|number|integer|true|current number of a page, zero index rule is used|output|
+|numberOfElements|integer|true|total number of elements in the requested list of objects|output|
+|size|integer|true|size of the page as requested|output|
+|totalPages|integer|true|total number of pages for the requested list of objects|output|
 
 
 <h2 id="tocPOSRequest">POSRequest</h2>
@@ -4987,14 +4987,14 @@ Example
 "user_id": string
 }
 ```
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|timestamp_req|integer|false|Internal transaction id, this is part of internal transaction storage.
-|amount|string|true|Amount in currency as defined in currency parameter. Currently only USD is supported.
-|currency|string|true|FIAT Currency from which we transfer to DASH (please use USD)
-|convert_to|string|true|Cryptocurrency to which conversion is done (please use DASH, or BTC). For sandbox purposes Product36 uses Bitcoin Testnet3 blockchain.
-|location_id|integer|optional|Identifier of the location for which POS is registered. It is required for virtual POS, but not for registered POS request
-|user_id|integer|true|General purpose value, can be any string. Providers can use this value to put anything inside, for example it can be local user id.
+|Parameter|Type|Required|Description|I/O type|
+|---|---|---|---|---|---|
+|timestamp_req|integer|false|Internal transaction id, this is part of internal transaction storage.|input|
+|amount|string|true|Amount in currency as defined in currency parameter. Currently only USD is supported.|input|
+|currency|string|true|FIAT Currency from which we transfer to DASH (please use USD)|input|
+|convert_to|string|true|Cryptocurrency to which conversion is done (please use DASH, or BTC). For sandbox purposes Product36 uses Bitcoin Testnet3 blockchain.|input|
+|location_id|integer|optional|Identifier of the location for which POS is registered. It is required for virtual POS, but not for registered POS request|input|
+|user_id|integer|true|General purpose value, can be any string. Providers can use this value to put anything inside, for example it can be local user id.|input|
 
 <h2 id="tocPOSRequest">POSResponse</h2>
 
@@ -5013,16 +5013,16 @@ Example
 }
 
 ```
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|tx_id|string|-|Timestamp of the current request moment (used for statistics on server)
-|requested_amount|integer|-|FIAT value that sender required
-|requested_currency|string|-|FIAT currency that is requested.
-|converted_amount|number|-|Amount in cryptocurrency.
-|converted_currency|string|-|Currency to which FIAT value is converted.
-|conversion_rate|number|-|Conversion rate used for calculation of "converted_amount"
-|timetamp_system|integer|-|timestamp when transaction has been created in the system.
-|pay_to_address|string|-|Destination address for the transaction.
+|Parameter|Type|Required|Description|I/O type|
+|---|---|---|---|---|---|
+|tx_id|string|-|Timestamp of the current request moment (used for statistics on server)|output|
+|requested_amount|integer|-|FIAT value that sender required|output|
+|requested_currency|string|-|FIAT currency that is requested.|output|
+|converted_amount|number|-|Amount in cryptocurrency.|output|
+|converted_currency|string|-|Currency to which FIAT value is converted.|output|
+|conversion_rate|number|-|Conversion rate used for calculation of "converted_amount"|output|
+|timetamp_system|integer|-|timestamp when transaction has been created in the system.|output|
+|pay_to_address|string|-|Destination address for the transaction.|output|
 
 The values converted_amount and pay_to_address are used as the information for generating customer transaction either directly entered or to generate QR code for payment.
 Prior to transaction processing, service endpoint checks that the appropriate data embodied in API key match the values sent in message body.
@@ -5046,17 +5046,17 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 }
 
 ```
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|timerange_from|string|true|start point in the time range.
-|timerange_to|string|true|end point of the time range.
-|number_of_sales|integer|true| total number of sales for user
-|avg_tx_amount|number|true|average transaction amount of all transactions
-|avg_tx_amount_fiat|number|true|average transaction amount converted to FIAT (defaults to USD)
-|total_sales|number|total sales sum
-|total_sales_fiat|number|true|total sales sum in FIAT (defaults to USD)
-|total_commission_fee_charged|number|true|total commission fee.
-|total_commission_fee_charged_fiat|number|true|total commission fee converted to FIAT.
+|Parameter|Type|Required|Description|I/O type|
+|---|---|---|---|---|---|
+|timerange_from|string|true|start point in the time range.|output|
+|timerange_to|string|true|end point of the time range.|output|
+|number_of_sales|integer|true| total number of sales for user|output|
+|avg_tx_amount|number|true|average transaction amount of all transactions|output|
+|avg_tx_amount_fiat|number|true|average transaction amount converted to FIAT (defaults to USD)|output|
+|total_sales|number|total sales sum|output|
+|total_sales_fiat|number|true|total sales sum in FIAT (defaults to USD)|output|
+|total_commission_fee_charged|number|true|total commission fee.|output|
+|total_commission_fee_charged_fiat|number|true|total commission fee converted to FIAT.|output|
 
 <!-- LocationPerformanceItem-->
 <h2 id="tocLocationPerformanceItem">LocationPerformanceItem</h2>
@@ -5074,15 +5074,15 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
   "associate_owner_id": 2102
 }
 ```
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|location_id|integer|true|Location identifier
-|location_name|string|true|Name of the location
-|location_address|string|true|Location postal address
-|item_sales_crypto|number|true|Sum of all sales for a given time range
-|item_sales_fiat|number|true|Sum of all sales for a given time range in FIAT value
-|associate_owner|string|true|Name of location merchant owner
-|associate_owner_id|integer|true|Merchant owner identifier
+|Parameter|Type|Required|Description|I/O type|
+|---|---|---|---|---|---|
+|location_id|integer|true|Location identifier|output|
+|location_name|string|true|Name of the location|output|
+|location_address|string|true|Location postal address|output|
+|item_sales_crypto|number|true|Sum of all sales for a given time range|output|
+|item_sales_fiat|number|true|Sum of all sales for a given time range in FIAT value|output|
+|associate_owner|string|true|Name of location merchant owner|output|
+|associate_owner_id|integer|true|Merchant owner identifier|output|
 
 <!-- RolePerformanceItem-->
 <h2 id="tocRolePerformanceItem">RolePerformanceItem</h2>
@@ -5099,13 +5099,13 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 }
 
 ```
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|item_id|integer|true|Merchant identifier
-|item_name|string|true|Merchant name as defined in the system
-|item_sales_crypto|number|true|Sum of all sales
-|item_sales_fiat|number|true|um of all sales in FIAT value
-|pos_count|integer|true|Number of POS-es associated with merchant
+|Parameter|Type|Required|Description|I/O type|
+|---|---|---|---|---|---|
+|item_id|integer|true|Merchant identifier|output|
+|item_name|string|true|Merchant name as defined in the system|output|
+|item_sales_crypto|number|true|Sum of all sales|output|
+|item_sales_fiat|number|true|um of all sales in FIAT value|output|
+|pos_count|integer|true|Number of POS-es associated with merchant|output|
 
 <!-- SalesItem-->
 <h2 id="tocSalesItem">SalesItem</h2>
@@ -5120,12 +5120,12 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
   "time_to": "2017-10-12T15:00:00.000Z"
 }
 ```
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|total_amount_of_sales|number|true|Total amount of sales in cryptocurrency
-|item_name|string|true|Total amount of sales in FIAT value
-|time_from|number|true|Sum of all sales
-|time_to|number|true|Sum of all sales in FIAT value
+|Parameter|Type|Required|Description|I/O type|
+|---|---|---|---|---|---|
+|total_amount_of_sales|number|true|Total amount of sales in cryptocurrency|output|
+|item_name|string|true|Total amount of sales in FIAT value|output|
+|time_from|number|true|Sum of all sales|output|
+|time_to|number|true|Sum of all sales in FIAT value|output|
 
 <!-- TaxItem-->
 <h2 id="tocTaxItem">TaxItem</h2>
@@ -5140,12 +5140,12 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
   "time_to": "2017-10-12T15:00:00.000Z"
 }
 ```
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|total_amount_of_tax|number|true|Total amount of tax in cryptocurrency
-|total_amount_of_tax_fiat|string|true|Total amount of tax in FIAT value
-|time_from|string|true|Start of interval (ISO format, timestamp...)
-|time_to|string|true|End of interval (ISO format, timestamp ...)
+|Parameter|Type|Required|Description|I/O type|
+|---|---|---|---|---|---|
+|total_amount_of_tax|number|true|Total amount of tax in cryptocurrency|output|
+|total_amount_of_tax_fiat|string|true|Total amount of tax in FIAT value|output|
+|time_from|string|true|Start of interval (ISO format, timestamp...)|output|
+|time_to|string|true|End of interval (ISO format, timestamp ...)|output|
 
 <!-- SummaryItem-->
 <h2 id="tocSummaryItem">SummaryItem</h2>
@@ -5167,19 +5167,19 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
     "incomeFiat": 156.256
   }
 ```
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|totalSalesVolume|number|true|Total sales volume in cryprocurrency
-|totalSalesVolumeFiat|number|true|Total sales volume in in FIAT value
-|totalSalesCount|integer|true|Total sales count for a given period of time.
-|avgTXAmount|number|true|Average transaction value in cryptocurrency
-|avgTXAmountFiat|number|true|Average transaction value in FIAT value
-|totalSalesCommission|number|true| Total sales commission generated in cryptocurrency
-|totalSalesCommissionFiat|number|true|Total income (vendor) in FIAT
-|totalInternalCommissions|number|false|Total commissions from internal transactions, omitted for locations and pos
-|totalInternalCommissionsFiat|number|false|Total income (vendor). Total commissions from internal transactions, omitted for locations and pos
-|income|number|false|Total sales commission generated in cryptocurrency (available only for Patners)
-|incomeFiat|number|false|Total sales commission generated in FIAT (available only for Partners)
+|Parameter|Type|Required|Description|I/O type|
+|---|---|---|---|---|---|
+|totalSalesVolume|number|true|Total sales volume in cryprocurrency|output|
+|totalSalesVolumeFiat|number|true|Total sales volume in in FIAT value|output|
+|totalSalesCount|integer|true|Total sales count for a given period of time.|output|
+|avgTXAmount|number|true|Average transaction value in cryptocurrency|output|
+|avgTXAmountFiat|number|true|Average transaction value in FIAT value|output|
+|totalSalesCommission|number|true| Total sales commission generated in cryptocurrency|output|
+|totalSalesCommissionFiat|number|true|Total income (vendor) in FIAT|output|
+|totalInternalCommissions|number|false|Total commissions from internal transactions, omitted for locations and pos|output|
+|totalInternalCommissionsFiat|number|false|Total income (vendor). Total commissions from internal transactions, omitted for locations and pos|output|
+|income|number|false|Total sales commission generated in cryptocurrency (available only for Patners)|output|
+|incomeFiat|number|false|Total sales commission generated in FIAT (available only for Partners)|output|
 
 <!-- PartnerResponseItem-->
 <h2 id="tocPartnerResponseItem">PartnerResponseItem</h2>
@@ -5200,17 +5200,17 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
   "posCnt": 0
 }
 ```
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|id|integer|true|Partner identifier
-|name|string|true|Partner Name
-|commissionFee|number|true|Commission fee sum for this partner in cryptocurrency
-|commissionFeeFiat|number|true|Commission fee sum for this partner in FIAT
-|totalSales|number|true|Total sales for this partner in cryptocurrency
-|totalSalesFiat|number|true|Total sales for this partner in FIAT
-|merchantCnt|integer|true|Total merchant count enrolled by this merchant
-|locationCnt|number|true|Total locations number summed for all merchants enrolled by this partner
-|posCnt|number|true|Total point of sales number summed for all merchants enrolled by this partner (by locations).
+|Parameter|Type|Required|Description|I/O type|
+|---|---|---|---|---|---|
+|id|integer|true|Partner identifier|output|
+|name|string|true|Partner Name|output|
+|commissionFee|number|true|Commission fee sum for this partner in cryptocurrency|output|
+|commissionFeeFiat|number|true|Commission fee sum for this partner in FIAT|output|
+|totalSales|number|true|Total sales for this partner in cryptocurrency|output|
+|totalSalesFiat|number|true|Total sales for this partner in FIAT|output|
+|merchantCnt|integer|true|Total merchant count enrolled by this merchant|output|
+|locationCnt|number|true|Total locations number summed for all merchants enrolled by this partner|output|
+|posCnt|number|true|Total point of sales number summed for all merchants enrolled by this partner (by locations).|output|
 
 
 <!-- MerchantResponseItem-->
@@ -5234,19 +5234,19 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 }
 
 ```
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|id|integer|true|Merchant identifier
-|name|string|true|Merchant Name
-|email|string|true|Merchant email (main email used for registration process)
-|vendorCnt|integer|true|Number of vendors connected to this merchant
-|locationsCnt|integer|true|Number of location owned by this merchant
-|posCnt|integer|true|total number of POSs related to locations related to merchant.
-|customersCnt|integer|true|Number of customers related to this merchant
-|totalSalesCommission|number|true|Total commission sales from this merchant in cryptocurrency
-|totalSalesCommissionFiat|number|true|Total commission sales from this merchant in FIAT (USD default)
-|totalSales|number|true|Total sales for this merchant in cryptocurrency
-|totalSalesFiat|number|true|Total sales for this merchant in FIAT (USD default)
+|Parameter|Type|Required|Description|I/O type|
+|---|---|---|---|---|---|
+|id|integer|true|Merchant identifier|output|
+|name|string|true|Merchant Name|output|
+|email|string|true|Merchant email (main email used for registration process)|output|
+|vendorCnt|integer|true|Number of vendors connected to this merchant|output|
+|locationsCnt|integer|true|Number of location owned by this merchant|output|
+|posCnt|integer|true|total number of POSs related to locations related to merchant.|output|
+|customersCnt|integer|true|Number of customers related to this merchant|output|
+|totalSalesCommission|number|true|Total commission sales from this merchant in cryptocurrency|output|
+|totalSalesCommissionFiat|number|true|Total commission sales from this merchant in FIAT (USD default)|output|
+|totalSales|number|true|Total sales for this merchant in cryptocurrency|output|
+|totalSalesFiat|number|true|Total sales for this merchant in FIAT (USD default)|output|
 
 
 <!-- LocationResponseItem-->
@@ -5268,18 +5268,18 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
     "totalCount": 1
 }
 ```
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|id|integer|true|Location identifier
-|name|string|true|Location Name
-|address|string|true|Location registered address
-|numberOfPOS|integer|true|Number of POS devices bound to this location.
-|posCnt|integer|true|total number of POSs related to locations.
-|customersCnt|integer|true|Number of customers related to this merchant
-|totalSales|number|true|Total sales for this merchant in cryptocurrency
-|totalSalesFiat|number|true|Total sales for this merchant in FIAT (USD default)
-|totalSalesCommission|number|true|Total commission sales from this merchant in cryptocurrency
-|totalSalesCommissionFiat|number|true|Total commission sales from this merchant in FIAT (USD default)
+|Parameter|Type|Required|Description|I/O type|
+|---|---|---|---|---|---|
+|id|integer|true|Location identifier|output|
+|name|string|true|Location Name|output|
+|address|string|true|Location registered address|output|
+|numberOfPOS|integer|true|Number of POS devices bound to this location.|output|
+|posCnt|integer|true|total number of POSs related to locations.|output|
+|customersCnt|integer|true|Number of customers related to this merchant|output|
+|totalSales|number|true|Total sales for this merchant in cryptocurrency|output|
+|totalSalesFiat|number|true|Total sales for this merchant in FIAT (USD default)|output|
+|totalSalesCommission|number|true|Total commission sales from this merchant in cryptocurrency|output|
+|totalSalesCommissionFiat|number|true|Total commission sales from this merchant in FIAT (USD default)|output|
 |totalCount|number|true|Total sales count
 
 <!-- POSResponseItem-->
@@ -5299,16 +5299,16 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
   "avgTransactionFiat": 0
 }
 ```
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|id|integer|true|POS identifier (For virtual POS id is always -100)
-|inventoryNumber|string|true|POS inventoryNumber
-|name|string|true|POS Name
-|totalSales|number|true|Total sales volume for this POS in cryptocurrency
-|totalSalesFiat|number|true|Total sales volume for this POS in FIAT (USD default)
-|totalCount|integer|true|Total number of sales realized with this POS
-|avgTransaction|number|true|Average transaction on this POS in cryprocurrency
-|avgTransactionFiat|number|true|Average transaction on this POS in Fiat
+|Parameter|Type|Required|Description|I/O type|
+|---|---|---|---|---|---|
+|id|integer|true|POS identifier (For virtual POS id is always -100)|output|
+|inventoryNumber|string|true|POS inventoryNumber|output|
+|name|string|true|POS Name|output|
+|totalSales|number|true|Total sales volume for this POS in cryptocurrency|output|
+|totalSalesFiat|number|true|Total sales volume for this POS in FIAT (USD default)|output|
+|totalCount|integer|true|Total number of sales realized with this POS|output|
+|avgTransaction|number|true|Average transaction on this POS in cryprocurrency|output|
+|avgTransactionFiat|number|true|Average transaction on this POS in Fiat|output|
 
 
 <!-- TaxResposeItem-->
@@ -5330,17 +5330,17 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
     }
 
 ```
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|totalTax|number|true|the amount of tax reported for received transactions. This is for information reporting only and is not part of any calculations.
-|totalAmountReceived|number|true|Total amount received in cryptocurrency
-|totalAmountReceivedFiat|number|true|Total amount received in cryptocurrency Fiat
-|totalAmountSent|number|true|Total amount sent in cryptocurrency
-|totalAmountSentFiat|number|true|Total amount sent in cryptocurrency Fiat
-|totalFee|number|true|Total fee applied to transactions in cryptocurrency
-|totalFeeFiat|number|true|Total fee applied to transactions in Fiat
-|totalNumTxSpent|integer|false|Total number of transactions that spent value
-|totalNumTxReceived|integer|fasle|Total bumber of transactions that received value
+|Parameter|Type|Required|Description|I/O type|
+|---|---|---|---|---|---|
+|totalTax|number|true|the amount of tax reported for received transactions. This is for information reporting only and is not part of any calculations.|output|
+|totalAmountReceived|number|true|Total amount received in cryptocurrency|output|
+|totalAmountReceivedFiat|number|true|Total amount received in cryptocurrency Fiat|output|
+|totalAmountSent|number|true|Total amount sent in cryptocurrency|output|
+|totalAmountSentFiat|number|true|Total amount sent in cryptocurrency Fiat|output|
+|totalFee|number|true|Total fee applied to transactions in cryptocurrency|output|
+|totalFeeFiat|number|true|Total fee applied to transactions in Fiat|output|
+|totalNumTxSpent|integer|false|Total number of transactions that spent value|output|
+|totalNumTxReceived|integer|fasle|Total bumber of transactions that received value|output|
 
 <!-- CommissionResposeItem-->
 <h2 id="tocCommissionResposeItemItem">CommissionResposeItem</h2>
@@ -5359,15 +5359,15 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 }
 
 ```
-|Parameter|Type|Required|Description|
-|---|---|---|---|---|
-|associateId|integer|true|Associate identifier
-|name|string|true|Associate name
-|role|number|true|Associate role
-|sales_commission_sum|number|true|Total commissions from sales in cryptocurrency
-|sales_commission_sum_fiat|number|true|Total commissions from sales in Fiat
-|internal_commission_sum|number|true|Total commission sum from internal transactions
-|internal_commission_sum_fiat|number|true|Total commission sum from internal transactions in Fiat
+|Parameter|Type|Required|Description|I/O type|
+|---|---|---|---|---|---|
+|associateId|integer|true|Associate identifier|output|
+|name|string|true|Associate name|output|
+|role|number|true|Associate role|output|
+|sales_commission_sum|number|true|Total commissions from sales in cryptocurrency|output|
+|sales_commission_sum_fiat|number|true|Total commissions from sales in Fiat|output|
+|internal_commission_sum|number|true|Total commission sum from internal transactions|output|
+|internal_commission_sum_fiat|number|true|Total commission sum from internal transactions in Fiat|output|
 
 
 <!-- ReportMetadata -->
