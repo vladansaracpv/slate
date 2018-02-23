@@ -1312,7 +1312,7 @@ Example
 |id|integer(int64)|false|ID of the POS - Mandatory on update|both|
 |inventoryNumber|string|false|Inventory number for POS|both|
 |location|[LocationPOS](#schemalocationpos)|true|LocationPOS object (id of teh location)|both|
-|name|string|false|Name of POS|both|
+|name|string|true|Name of POS|both|
 |note|string|false|Additional note|both|
 |pointOfSaleType|string|true|POS type {GREENBITS, OTHER}|both|
 |virtualPointOfSalesEnabled|boolean|true|Enable POS (use true when creating)|both|

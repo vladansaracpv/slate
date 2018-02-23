@@ -364,7 +364,8 @@ System.out.println(result);
     "id": 1
   },
   "pointOfSaleType": "GREENBITS",
-  "virtualPointOfSalesEnabled": true
+  "virtualPointOfSalesEnabled": true,
+  "name": "POS1"
 }
 ```
 
