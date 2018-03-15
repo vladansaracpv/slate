@@ -6015,6 +6015,22 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 
 <!-- InternalRequest -->
 
+<h2 id="tocFIATCashoutRequest">FIATCashoutRequest</h2>
+
+<a id="schemafiatcashoutrequest"></a>
+
+```json
+{
+    "type":"INTERNAL_CRYPTO_TO_INTERNAL_CRYPTO"
+}
+```
+
+|Parameter|Type|Required|Description|I/O type|
+|---|---|---|---|---|---|
+|type|string|true|INTERNAL_FIAT_TO_EXTERNAL_FIAT|input|
+
+<!-- InternalRequest -->
+
 <h2 id="tocInternalRequest">InternalRequest</h2>
 
 <a id="schemainternalrequest"></a>
@@ -6034,7 +6050,7 @@ Important note: There is minimal FIAT value that can be converted, otherwise sys
 
 |Parameter|Type|Required|Description|I/O type|
 |---|---|---|---|---|---|
-|type|string|false| Enumeration (INTERNAL_CRYPTO_TO_INTERNAL_CRYPTO, INTERNAL_CRYPTO_TO_EXTERNAL_CRYPTO, INTERNAL_CRYPTO_TO_FIAT, FIAT_TO_INTERNAL_CRYPTO, INTERNAL_FIAT_TO_EXTERNAL_FIAT).|input|
+|type|string|true| Enumeration (INTERNAL_CRYPTO_TO_INTERNAL_CRYPTO, INTERNAL_CRYPTO_TO_EXTERNAL_CRYPTO, INTERNAL_CRYPTO_TO_FIAT, FIAT_TO_INTERNAL_CRYPTO, INTERNAL_FIAT_TO_EXTERNAL_FIAT).|input|
 |source_associate_id|integer|true|Internal associate Id of transaction initiator|input|
 |destination_associate_id|integer|true|Internal associate id of transaction destination|input|
 |amount|number|true|Amount to transfer|input|

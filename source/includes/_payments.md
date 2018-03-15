@@ -978,6 +978,13 @@ result = buf.toString();
 System.out.println(result);
 ```
 
+>Body parameter
+
+```json
+{
+    "type":"INTERNAL_FIAT_TO_EXTERNAL_FIAT",
+}
+```
 
 > Example responses
 
@@ -1003,6 +1010,10 @@ System.out.println(result);
 **Required user role:**
 
    * `Available to all user roles`
+
+|Parameter|In|Type|Required|Description|
+|---|---|---|---|---|
+|body|body|[FIATCashout](#tocFIATCashoutRequest)|true|FIATCashout object|
 
 <h3 id="poscreatenewpaymentrequest-responses">Responses</h3>
 
@@ -1135,6 +1146,7 @@ System.out.println(result);
 {
     "type": "INTERNAL_FIAT_TO_EXTERNAL_FIAT",
     "timestamp_req":"1506895789",
+    "source_associate_id": 20,
     "bank_account": "9000000000",
     "amount":  1,
     "currency_out": "USD",
@@ -1178,7 +1190,8 @@ System.out.println(result);
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
-|body|body|[InternalRequest](#tocInternalRequest)|false|InternalRequest object|
+|body|body|[InternalRequest](#tocInternalRequest)|true|InternalRequest object|
+
 
 
 <h3 id="poscreatenewpaymentrequest-responses">Responses</h3>
